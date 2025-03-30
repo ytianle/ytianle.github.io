@@ -2,7 +2,7 @@
 ᴴₒᴴₒᴴₒ: ture
 ---
 
-# **:rocket: Software Engineering**
+# **👨‍💻 Software Engineering**
 
 >**Being a software engineer requires an understanding of the various technologies used in the industry.**
 

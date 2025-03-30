@@ -2,7 +2,7 @@
 ᴴₒᴴₒᴴₒ: ture
 ---
 
-# **:speech_balloon: Casual Literary Notes**
+# **🏓 Casual Literary Notes**
 
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}

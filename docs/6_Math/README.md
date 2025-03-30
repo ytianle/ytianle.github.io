@@ -3,7 +3,7 @@ comments: true
 ᴴₒᴴₒᴴₒ: ture
 ---
 
-# **:bar_chart: Math**
+# **🔢 Math**
 
 This chapter is about 
 
