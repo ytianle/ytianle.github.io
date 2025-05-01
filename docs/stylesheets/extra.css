@@ -89,17 +89,16 @@
     background-repeat: repeat repeat;
     background-blend-mode: multiply;
 }
+    */
 
 [data-md-color-scheme="slate"] .md-header{
-    background-image: url("xmas13.png");
-    background-size:contain;
-    text-shadow: #FC0 1px 0 20px;
+    background-color: #221a2e;
 }
 [data-md-color-scheme="slate"] .md-tabs{
-    background-image: url("xmas22.png");
-    background-size:contain;
-    text-shadow: #FC0 1px 0 20px;
+    background-color: #221a2e;
 }
+
+/*
 [data-md-color-scheme="slate"]{
     background-image: url("man.png");
     background-size:contain;
@@ -317,6 +316,16 @@ For christmas*/
     margin-bottom: 0.6em !important;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.md-nav__link>*{
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+h1{
+    font-family: 'Press Start 2P', cursive !important;
+}
+
 p{
     margin-top: 0.4em !important;
     margin-bottom: 0em !important;
@@ -373,4 +382,56 @@ h4{
 
 .md-typeset summary {
     margin-bottom: 0.5em;
+}
+
+
+
+[data-md-color-scheme="default"]  #layer_sk{
+    filter: hue-rotate(20deg) brightness(0.8) saturate(1) contrast(1.5);
+}
+[data-md-color-scheme="default"]  #text_name{
+
+}
+[data-md-color-scheme="default"]  #pumpking{
+    filter: brightness(0.9) contrast(1.2) hue-rotate(-14deg);
+}
+[data-md-color-scheme="default"]  #layer_bg2{
+    filter: contrast(0.7) saturate(1.6) hue-rotate(15deg)
+}
+[data-md-color-scheme="default"]  #layer_bg1{
+    filter: brightness(0.95) contrast(1.1) saturate(1) hue-rotate(15deg)
+}
+[data-md-color-scheme="default"]  #text_welcome{
+}
+[data-md-color-scheme="default"]  #layer_main{
+    filter: brightness(0.85) contrast(1.2) saturate(1);
+}
+[data-md-color-scheme="default"]  #alice{
+}
+
+
+
+[data-md-color-scheme="slate"]  #layer_sk{
+    filter:  invert(1) hue-rotate(211deg) contrast(1.5) brightness(0.5) saturate(0.5);
+}
+[data-md-color-scheme="slate"]  #text_name{
+    color: #ccbef5 !important;
+}
+[data-md-color-scheme="slate"]  #pumpking{
+    filter: invert(1) brightness(0.5) contrast(4) saturate(20.2) hue-rotate(131deg);
+}
+[data-md-color-scheme="slate"]  #layer_bg2{
+    filter: brightness(1.55) contrast(1.4) saturate(0.5) hue-rotate(238deg) sepia(0.1) invert(1);
+}
+[data-md-color-scheme="slate"]  #layer_bg1{
+    filter: brightness(0.4) contrast(1.9) saturate(0.2) hue-rotate(322deg);
+}
+[data-md-color-scheme="slate"]  #text_welcome{
+
+}
+[data-md-color-scheme="slate"]  #layer_main{
+    filter: brightness(0.4) contrast(1.9) saturate(0.2) hue-rotate(322deg) drop-shadow(1px -11px 10px #302F80)
+}
+[data-md-color-scheme="slate"]  #alice{
+    filter: brightness(0.65) contrast(3.5) saturate(0.2) hue-rotate(233deg)
 }

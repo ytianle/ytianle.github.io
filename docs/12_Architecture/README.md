@@ -2,7 +2,7 @@
 ᴴₒᴴₒᴴₒ: ture
 ---
 
-# **👷🏻‍♂️Software Architecture**
+# **🏭 Software Architecture**
 
 ![picture 1](./SoftArch.gif){width="60%", : .center}
 

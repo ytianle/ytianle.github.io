@@ -2,7 +2,7 @@
 ᴴₒᴴₒᴴₒ: ture
 ---
 
-# **:race_car: Game Developement**
+# **🎮 Game Developement**
 
 >**This chapter is for notes taken during `Game Development`.**
 

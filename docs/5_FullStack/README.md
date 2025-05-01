@@ -2,7 +2,7 @@
 ᴴₒᴴₒᴴₒ: ture
 ---
 
-# **💻 Full Stack**
+# **⛓️‍💥 Full Stack**
 
 ![picture 1](./full_stack.png){width="60%", : .center}     
 

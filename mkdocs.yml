@@ -102,6 +102,7 @@ plugins:
       enabled: true
   - table-reader
   - markmap
+  - blog
 
 repo_url: https://github.com/yuantianle
 repo_name: yuantianle's GitHub
@@ -152,8 +153,9 @@ markdown_extensions:
 
 nav:
   - Intro: index.md
-
-  - CG:
+  - 🎙️Excerpt:
+     - blog/index.md
+  - 🐇CG:
       - 1_Computer_Graphics/README.md
       - Advanced Graphics:
           - 1_Computer_Graphics/Advanced_Graphics/README.md
@@ -171,7 +173,7 @@ nav:
           - Vulkan: 1_Computer_Graphics/Tools/Vulkan/README.md
       - Visual Effects:
           - 1_Computer_Graphics/Visual_Effects/README.md
-  - Game Dev:
+  - 🎮Game Dev:
       - 11_Game_Development/README.md
       - Unity:
           - 11_Game_Development/Unity/README.md
@@ -198,7 +200,7 @@ nav:
 
       - Unreal:
           - 11_Game_Development/Unreal/README.md
-  - SDE:
+  - 👨‍💻SDE:
       - 2_Software_Engineering/README.md
 
       - CS561 Review: 2_Software_Engineering/Review.md
@@ -265,7 +267,7 @@ nav:
           - Lock, mutex, and Semaphore: 2_Software_Engineering/Others/Lock_mutex_semaphore.md
           - Self-documenting code: 2_Software_Engineering/Others/Self_documenting_code.md
 
-  - C++:
+  - ©️C++:
       - 3_C++/README.md
       - Fast Read Catalog: 3_C++/fast_read.md
       - Oldschool C++:
@@ -300,7 +302,7 @@ nav:
           - Basic Concepts: 3_C++/OOP/concepts.md
           - UML & Object relationships: 3_C++/OOP/UML.md
 
-  - Algorithm:
+  - 🧮Algorithm:
       - 4_Algorithms/README.md
       - Typical Algorithms:
           - 4_Algorithms/Typical_Questions/README.md
@@ -317,7 +319,7 @@ nav:
               - STDIN and STDOUT: 4_Algorithms/Typical_Questions/Hackerrank/STDIN&STDOUT.md
       - Practic Sheet:
           - 4_Algorithms/Practice_Sheet/README.md
-  - Full Stack:
+  - ⛓️‍💥Full Stack:
       - 5_FullStack/README.md
       - Check List: 5_FullStack/CheckList.md
       - Basic knowledge:
@@ -367,7 +369,7 @@ nav:
           - ORM: 5_FullStack/NET/ORM/README.md
           - HTTP Request: 5_FullStack/NET/HttpRequest/README.md
 
-  - SoftArch:
+  - 🏭SoftArch:
     - 12_Architecture/README.md
     - Principles: 12_Architecture/Principles/README.md
     - Design Patterns:
@@ -393,7 +395,7 @@ nav:
         - BASE: 12_Architecture/Distribute_System/BASE/README.md
         - ACID: 12_Architecture/Distribute_System/ACID/README.md
 
-  - ICS:
+  - 👨🏻‍💼ICS:
       - 10_Interview/README.md
       - OOP: 10_Interview/Other/oop_guide.md
       - Game DevOP:
@@ -407,7 +409,7 @@ nav:
       - Kernel: 10_Interview/Kernel/README.md
       - Networking: 10_Interview/Networking/README.md
 
-  - Math:
+  - 🔢Math:
       - 6_Math/README.md
       - Concepts: 6_Math/Concepts/Math_questions.md
       - Optimization: 
@@ -415,12 +417,12 @@ nav:
             - Methods Classification: 6_Math/Optimization/Methods_classification/Methods_classification.md
       - Numercial Methods: 6_Math/Numerical/README.md
 
-  - By-time:
+  - 🏓By-time:
       - Dunhuang Wall Painting: 7_Casual_Literary_Notes/Dunhuang.md
-  - 日本語:
+  - 🎏日本語:
       - 8_Japanese_Learning/README.md
       - 五十音図: 8_Japanese_Learning/五十音図/README.md
-  - Guitar Sheets:
+  - 🎸Guitar Sheets:
       - 9_Guitar_Garage/README.md
       - 每天多爱你一些: 9_Guitar_Garage/Sheet/每天多爱你一些.md
 

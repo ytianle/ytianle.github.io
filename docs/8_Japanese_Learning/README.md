@@ -2,7 +2,7 @@
 ᴴₒᴴₒᴴₒ: ture
 ---
 
-# ** 👺 Japanese Learning Notes**
+# **🎏 Japanese Learning Notes**
 
 ### **This chapter is split into sections below:**
 
