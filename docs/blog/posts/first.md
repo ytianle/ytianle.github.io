@@ -1,14 +1,15 @@
 ---
 date: 2025-03-28
-readtime: 5
+readtime: 10
 categories:
   - Game Development
+  - Programming
 authors:
   - tianle
 comments: true
 ---
 
-# **Goal of using `Try-catch`**
+# Goal of using `Try-catch`
 
 > "`Try-catch` should never replace proper control flow. Don’t use it to handle null references or check for empty lists. It’s not meant for regular logic — it’s <u>meant for unpredictable failures like file I/O, networking, reflection, or untrusted input</u>."
 
