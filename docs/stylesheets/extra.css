@@ -316,14 +316,17 @@ For christmas*/
     margin-bottom: 0.6em !important;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 
 .md-nav__link>*{
-    font-family: 'Press Start 2P', cursive !important;
+    font-family: 'Poppins', 'Nunito Sans', 'Arial', sans-serif !important;
+    font-weight: 600 !important;
 }
 
 h1{
-    font-family: 'Press Start 2P', cursive !important;
+    font-family: 'Poppins', 'Nunito Sans', 'Arial', sans-serif !important;
+    font-weight: 600 !important;
 }
 
 p{
