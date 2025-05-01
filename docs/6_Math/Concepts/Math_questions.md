@@ -7,37 +7,36 @@ comments: true
 
 > This material is for related questions:
 
-??? warning "Table of contents"
-
-    - [**Convex hull**](#convex-hull)
-    - [**Dot and Cross products**](#dot-and-cross-products)
-    - [**Point in Tri**](#point-in-tri)
-    - [**Convex polygon**](#convex-polygon)
-    - [**Reflection vector**](#reflection-vector)
-    - [**Polygon area**](#polygon-area)
-    - [**3D two lines' distance**](#3d-two-lines-distance)
-    - [**Zero determinant**](#zero-determinant)
-    - [**Homogeneous coordinates**](#homogeneous-coordinates)
-    - [**Posit homo v.s. Direct homo**](#posit-homo-vs-direct-homo)
-    - [**Benifits of homo**](#benifits-of-homo)
-    - [**Ray-sphere intersection**](#ray-sphere-intersection)
-    - [**Normal matrix**](#normal-matrix)
-    - [**Clipping space transformation**](#clipping-space-transformation)
-    - [**Viewing frustum**](#viewing-frustum)
-    - [**Dimensions of vectors/matrices**](#dimensions-of-vectorsmatrices)
-    - [**M matrix**](#m-matrix)
-    - [**M matrix decomposation**](#m-matrix-decomposation)
-    - [**Order of matrix concatenation**](#order-of-matrix-concatenation)
-    - [**Orthogonal matrices**](#orthogonal-matrices)
-    - [**Eigenvalues and Eigenvectors**](#eigenvalues-and-eigenvectors)
-    - [**Rotation matrix eigenvalues**](#rotation-matrix-eigenvalues)
-    - [**Least squares method**](#least-squares-method)
-    - [**Euler angles**](#euler-angles)
-    - [**Gimbal lock**](#gimbal-lock)
-    - [**Quaternions**](#quaternions)
-    - [**Monte Carlo integration**](#monte-carlo-integration)
-    - [**Nonlinear to linear**](#nonlinear-to-linear)
-
+```markmap
+- [**Convex hull**](#convex-hull)
+- [**Dot and Cross products**](#dot-and-cross-products)
+- [**Point in Tri**](#point-in-tri)
+- [**Convex polygon**](#convex-polygon)
+- [**Reflection vector**](#reflection-vector)
+- [**Polygon area**](#polygon-area)
+- [**3D two lines' distance**](#3d-two-lines-distance)
+- [**Zero determinant**](#zero-determinant)
+- [**Homogeneous coordinates**](#homogeneous-coordinates)
+- [**Posit homo v.s. Direct homo**](#posit-homo-vs-direct-homo)
+- [**Benifits of homo**](#benifits-of-homo)
+- [**Ray-sphere intersection**](#ray-sphere-intersection)
+- [**Normal matrix**](#normal-matrix)
+- [**Clipping space transformation**](#clipping-space-transformation)
+- [**Viewing frustum**](#viewing-frustum)
+- [**Dimensions of vectors/matrices**](#dimensions-of-vectorsmatrices)
+- [**M matrix**](#m-matrix)
+- [**M matrix decomposation**](#m-matrix-decomposation)
+- [**Order of matrix concatenation**](#order-of-matrix-concatenation)
+- [**Orthogonal matrices**](#orthogonal-matrices)
+- [**Eigenvalues and Eigenvectors**](#eigenvalues-and-eigenvectors)
+- [**Rotation matrix eigenvalues**](#rotation-matrix-eigenvalues)
+- [**Least squares method**](#least-squares-method)
+- [**Euler angles**](#euler-angles)
+- [**Gimbal lock**](#gimbal-lock)
+- [**Quaternions**](#quaternions)
+- [**Monte Carlo integration**](#monte-carlo-integration)
+- [**Nonlinear to linear**](#nonlinear-to-linear)
+```
 
 ## **Convex hull**
 
@@ -70,15 +69,20 @@ comments: true
 
     ![picture 3](Images/barycentric_coordinate.png){width="40%", : .center}  
 
-    - Angle summation ([Link](https://www.researchgate.net/publication/321421519_OPTIMUM_TOOLS_FOR_FINISHING_SCULPTURED_SURFACES_DEFINED_BY_3D_IRREGULAR_CLOUD_OF_POINTS#pf2))
+    - Angle summation ([Link](https://www.researchgate.net/publication/321421519_OPTIMUM_TOOLS_FOR_FINISHING_SCULPTURED_SURFACES_DEFINED_BY_3D_IRREGULAR_CLOUD_OF_POINTS#pf2)): 
+        - If the point is inside the triangle, the sum of the angles between the point and each pair of vertices should be 360 degrees. 
+        - If the point is outside, the corresponding sum will be 0.
 
     ![Alt text](Images/interial_angle.png){width="40%", : .center}
 
-    - Ray intersection ([Link](https://www.baeldung.com/cs/check-if-point-is-in-2d-triangle#1-mathematical-idea-1))
+    - Ray intersection ([Link](https://www.baeldung.com/cs/check-if-point-is-in-2d-triangle#1-mathematical-idea-1)):
+        - If a ray cast from the point intersects the triangle 1 time, the point is inside the triangle.
+        - If the ray intersects 2 times, the point is outside.
 
     ![Alt text](Images/interial_ray.png){width="40%", : .center}
 
-    - Area comparison. ([Link](https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/))
+    - Area comparison. ([Link](https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/)): A should be equal to the sum of A1 + A2 + A3.
+        - $$S_{pol}=1/2\cdot\sum_{i=0}^{n-1}(x_i\cdot y_{i+1}-y_i\cdot x_{i+1})$$
 
     ![Alt text](Images/interial_area.jpg){width="40%", : .center}
 
@@ -125,60 +129,44 @@ comments: true
 
 ## **Zero determinant**
 
-???+Note "Significance of a determinant being equal to zero?"
+???+Note "Significance of a `determinant` being equal to zero?"
 
     **Answer:** A determinant of zero indicates linear dependence of the matrix columns or rows.
     
-    - **Linear Dependence:** If the determinant of a square matrix is zero, it means that the rows (or columns) of the matrix are linearly dependent. In simpler terms, one of the rows (or columns) can be expressed as a linear combination of the other rows (or columns).
+    - **Linear Dependence:** If the determinant of a square matrix is zero, it means that the <u>rows (or columns) of the matrix are linearly dependent</u>. In simpler terms, one of the rows (or columns) can be expressed as a linear combination of the other rows (or columns).
 
-    - **Singular Matrix:** A matrix with a determinant of zero is called a singular matrix. Singular matrices do not have an inverse, meaning they are non-invertible. Non-singular matrices, on the other hand, have a non-zero determinant and possess an inverse.
+    - **Singular Matrix:** A matrix with a determinant of zero is called a singular matrix. Singular matrices <u>do not have an inverse</u>, <u>meaning they are non-invertible</u>. Non-singular matrices, on the other hand, have a non-zero determinant and possess an inverse.
+    
+    - **Area Interpretation:** For a 2x2 matrix, the determinant gives the area of the parallelogram spanned by its row or column vectors. If the <u>determinant is zero, it means that the area is zero, implying that the vectors are collinear</u>.
 
-    - **Volume Interpretation:** For a 3x3 matrix, the determinant gives the volume of the parallelepiped spanned by its row or column vectors. A determinant of zero implies that the volume is zero, which means that the three vectors lie in the same plane.
+    - **Volume Interpretation:** For a 3x3 matrix, the determinant gives <u>the volume of the parallelepiped spanned by its row or column vectors</u>. A determinant of zero implies that <u>the volume is zero</u>, which means that the three vectors lie in the same plane.
 
-    - **No Unique Solution:** If you're trying to solve a system of linear equations using the matrix form $AX=B$, and matrix $A$ has a determinant of zero, it means that the system either has infinitely many solutions or no solutions (depending on the system). In the context of linear systems, the determinant can help determine the nature of the solutions.
+    - **No Unique Solution:** If you're trying to solve a system of linear equations using the matrix form $AX=B$, and matrix $A$ has a determinant of zero, it means that the <u>system either has infinitely many solutions or no solutions</u> (depending on the system). In the context of linear systems, the determinant can help determine the nature of the solutions.
 
-    - **Eigenvalues:** For a square matrix, the determinant of the matrix minus a scalar multiple of the identity matrix gives the characteristic polynomial. The roots of this polynomial are the eigenvalues of the matrix. If the determinant of the matrix itself is zero, then one of the eigenvalues is zero.
+    - **Eigenvalues:** For a square matrix, the determinant of the matrix minus a scalar multiple of the identity matrix gives the characteristic polynomial. The roots of this polynomial are the eigenvalues of the matrix. <u>If the determinant of the matrix itself is zero, then one of the eigenvalues is zero.</u>
 
-    - **Stability in Differential Equations:** In the study of differential equations, particularly systems of linear differential equations, the determinant of the coefficient matrix can play a role in determining the stability and behavior of solutions.
+    - **Stability in Differential Equations:** In the study of differential equations, particularly systems of linear differential equations, the determinant of the coefficient matrix can play <u>a role in determining the stability and behavior of solutions</u>.
 
-    - **Geometric Interpretation:** For a 2x2 matrix, the determinant gives the area of the parallelogram spanned by its row or column vectors. If the determinant is zero, it means that the area is zero, implying that the vectors are collinear.
-
-    - **Change of Variables in Multivariable Calculus:** The determinant of the Jacobian matrix in a change of variables for multiple integrals gives a scaling factor for integration. A zero determinant can indicate problems in the transformation.
+    - **Change of Variables in Multivariable Calculus:** The determinant of the <u>Jacobian matrix</u> in a change of variables for multiple integrals <u>gives a scaling factor for integration</u>. A zero determinant can indicate <u>problems in the transformation</u>.
 
 
 ## **Homogeneous coordinates**
 
-???+Note "What are homogeneous coordinates?"
+???+Note "What are `homogeneous coordinates`?"
 
-    **Answer:** Homogeneous coordinates represent points in higher-dimensional space and allow for convenient transformations.
+    **Answer:** `Homogeneous coordinates` represent points in higher-dimensional space and allow for <u>convenient transformations</u>.
 
-    Here are some matrix for two-dimensional transformation in homogeneous coordinate:
+    - Here are some matrix for two-dimensional transformation in homogeneous coordinate:
     
-    ![Alt text](Images/homogeneous-coordinates.png){width="60%", : .center}
+        ![Alt text](Images/homogeneous-coordinates.png){width="60%", : .center}
 
-## **Posit homo v.s. Direct homo**
-
-???+Note "How to differentiate between a position and a direction using homogeneous coordinates?"
-
-    **Answer:** In homogeneous coordinates, the distinction between a position (or point) and a direction (or vector) can be made using the additional coordinate, often referred to as the "w-coordinate."
-
-    - **Position (or Point):** Represented as $(x',y',w)$ in 2D or $(x',y',z',w)$ in 3D. The w-coordinate for a position is usually 1 (or non-zero in a more general sense). When you convert from homogeneous to Cartesian coordinates, you'd divide by w to get the actual point: $x=x'/w,y=y'/w$and in 3D, $z=z'/w$.
-
-    - **Direction (or Vector):** Represented similarly as $(x',y',w)$ in 2D or $(x',y',z',w)$ in 3D. The w-coordinate for a direction vector is 0. This denotes that vectors, being directions, do not have a specific position in space and aren't affected by translations. If you were to convert a direction from homogeneous to Cartesian coordinates (though you typically wouldn't need to), the division by w would lead to a division by zero, which further underscores that the concept of a specific "position" doesn't apply to directions.
-
-    Here's a practical interpretation. Imagine you're working in 3D graphics:
-
-    - If you have the homogeneous coordinate $(2,3,4,1)$, it represents the point $(2,3,4)$ in Cartesian coordinates.
-
-    - If you have the homogeneous coordinate $(2,3,4,0)$, it represents a direction, not a specific point. It might describe, for instance, the direction of a light ray or a vector in space.
-
-## **Benifits of homo**
+## **Benifits of homogeneous coordinates**
 
 ???+Note "Why use homogeneous coordinates? What are the advantages?"
 
     **Answer:**
 
-    - **Unified Transformation Matrices:** Homogeneous coordinates allow for a unified matrix representation for multiple transformations (translation, rotation, scaling, and shearing). This makes it possible to concatenate various transformations into a single matrix.
+    - **Unified Transformation Matrices:** Homogeneous coordinates allow for a <u>unified matrix representation for multiple transformations</u> (translation, rotation, scaling, and shearing). This makes it possible to concatenate various transformations into a single matrix.
 
     - **Easier Translations:** In standard Cartesian coordinates, translations are not representable as linear transformations. With homogeneous coordinates, translations become linear, and hence, can be expressed as matrix multiplications.
 
@@ -193,6 +181,22 @@ comments: true
     - **Flexibility:** They can seamlessly toggle between representing positions and directions using the same coordinate system.
 
     - **Robustness in Computer Vision:** Homogeneous coordinates provide a robust framework for dealing with points and transformations in computer vision tasks, such as camera calibration and 3D reconstruction.
+
+## **Posit homo v.s. Direct homo**
+
+???+Note "How to differentiate between a <u>position</u> and a <u>direction</u> using homogeneous coordinates?"
+
+    **Answer:** In homogeneous coordinates, the distinction between a <u>position</u> (or point) and a <u>direction</u> (or vector) can be made using the <u>additional coordinate</u>, often referred to as the "w-coordinate."
+
+    - **Position (or Point):** Represented as $(x',y',w)$ in 2D or $(x',y',z',w)$ in 3D. <u>The w-coordinate for a position is usually 1 (or non-zero in a more general sense)</u>. When you convert from homogeneous to Cartesian coordinates, <u>you'd divide by w</u> to get the actual point: $x=x'/w,y=y'/w$and in 3D, $z=z'/w$.
+
+    - **Direction (or Vector):** Represented similarly as $(x',y',w)$ in 2D or $(x',y',z',w)$ in 3D. <u>The w-coordinate for a direction vector is 0</u>. This denotes that vectors, being directions, <u>do not have a specific position in space and aren't affected by translations</u>. If you were to convert a direction from homogeneous to Cartesian coordinates (though you typically wouldn't need to), the division by w would lead to a division by zero, which further underscores that the concept of a specific "position" doesn't apply to directions.
+
+    <br>**E.g.** Here's a practical interpretation. Imagine you're working in 3D graphics:
+
+    - If you have the homogeneous coordinate $(2,3,4,1)$, it represents the point $(2,3,4)$ in Cartesian coordinates.
+
+    - If you have the homogeneous coordinate $(2,3,4,0)$, it represents a direction, not a specific point. It might describe, for instance, the direction of a light ray or a vector in space.
 
 ## **Ray-sphere intersection**
 

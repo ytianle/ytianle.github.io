@@ -11,3 +11,4 @@ This chapter is about
 
 1. [Concepts](Concepts/Math_questions.md).
 2. [Optimization](Optimization/Optimization.md).
+3. [Numerical Methods](Numerical/README.md).
