@@ -588,34 +588,9 @@
     links: node_links,
     copy: node_copy
   };
-  const name = "d3-flextree";
   const version$1 = "2.1.2";
-  const main = "build/d3-flextree.js";
-  const module = "index";
-  const author = { "name": "Chris Maloney", "url": "http://chrismaloney.org" };
-  const description = "Flexible tree layout algorithm that allows for variable node sizes.";
-  const keywords = ["d3", "d3-module", "layout", "tree", "hierarchy", "d3-hierarchy", "plugin", "d3-plugin", "infovis", "visualization", "2d"];
-  const homepage = "https://github.com/klortho/d3-flextree";
-  const license = "WTFPL";
-  const repository = { "type": "git", "url": "https://github.com/klortho/d3-flextree.git" };
-  const scripts = { "clean": "rm -rf build demo test", "build:demo": "rollup -c --environment BUILD:demo", "build:dev": "rollup -c --environment BUILD:dev", "build:prod": "rollup -c --environment BUILD:prod", "build:test": "rollup -c --environment BUILD:test", "build": "rollup -c", "lint": "eslint index.js src", "test:main": "node test/bundle.js", "test:browser": "node test/browser-tests.js", "test": "npm-run-all test:*", "prepare": "npm-run-all clean build lint test" };
-  const dependencies = { "d3-hierarchy": "^1.1.5" };
-  const devDependencies = { "babel-plugin-external-helpers": "^6.22.0", "babel-preset-es2015-rollup": "^3.0.0", "d3": "^4.13.0", "d3-selection-multi": "^1.0.1", "eslint": "^4.19.1", "jsdom": "^11.6.2", "npm-run-all": "^4.1.2", "rollup": "^0.55.3", "rollup-plugin-babel": "^2.7.1", "rollup-plugin-commonjs": "^8.0.2", "rollup-plugin-copy": "^0.2.3", "rollup-plugin-json": "^2.3.0", "rollup-plugin-node-resolve": "^3.0.2", "rollup-plugin-uglify": "^3.0.0", "uglify-es": "^3.3.9" };
   const packageInfo = {
-    name,
-    version: version$1,
-    main,
-    module,
-    "jsnext:main": "index",
-    author,
-    description,
-    keywords,
-    homepage,
-    license,
-    repository,
-    scripts,
-    dependencies,
-    devDependencies
+    version: version$1
   };
   const { version } = packageInfo;
   const defaults = Object.freeze({
@@ -625,8 +600,8 @@
   });
   function flextree(options) {
     const opts = Object.assign({}, defaults, options);
-    function accessor(name2) {
-      const opt = opts[name2];
+    function accessor(name) {
+      const opt = opts[name];
       return typeof opt === "function" ? opt : () => opt;
     }
     function layout(tree) {

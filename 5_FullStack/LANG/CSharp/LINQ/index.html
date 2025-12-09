@@ -7,11 +7,13 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../" rel="prev"/>
 <link href="../../../NET/" rel="next"/>
+<link href="../../../.." hreflang="en" rel="alternate"/>
+<link href="https://yuantianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN" rel="alternate"/>
 <link href="../../../../images/self.ico" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.12" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
 <title>LINQ - Tianle Yuan's Blog</title>
-<link href="../../../../assets/stylesheets/main.2afb09e1.min.css" rel="stylesheet"/>
-<link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -130,7 +132,7 @@
 <div class="md-header__source">
 <a class="md-source" data-md-component="source" href="https://github.com/yuantianle" title="Go to repository">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
 </div>
 <div class="md-source__repository">
     yuantianle's GitHub
@@ -315,7 +317,7 @@
 <div class="md-nav__source">
 <a class="md-source" data-md-component="source" href="https://github.com/yuantianle" title="Go to repository">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
 </div>
 <div class="md-source__repository">
     yuantianle's GitHub
@@ -326,7 +328,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../..">
 <span class="md-ellipsis">
+    
+  
     Intro
+  
+
     
   </span>
 </a>
@@ -336,7 +342,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../blog/">
 <span class="md-ellipsis">
+    
+  
     🔊BroadCast
+  
+
     
   </span>
 </a>
@@ -347,14 +357,22 @@
 <nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
-            🔊BroadCast
+            
+  
+    🔊BroadCast
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
 <span class="md-ellipsis">
+    
+  
     Archive
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -362,13 +380,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
-            Archive
+            
+  
+    Archive
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../blog/archive/2025/">
 <span class="md-ellipsis">
+    
+  
     2025
+  
+
     
   </span>
 </a>
@@ -380,7 +406,11 @@
 <input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
 <span class="md-ellipsis">
+    
+  
     Categories
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -388,13 +418,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_3">
 <span class="md-nav__icon md-icon"></span>
-            Categories
+            
+  
+    Categories
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../blog/category/cg-tech/">
 <span class="md-ellipsis">
+    
+  
     CG tech
+  
+
     
   </span>
 </a>
@@ -402,7 +440,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../blog/category/game-development/">
 <span class="md-ellipsis">
+    
+  
     Game Development
+  
+
     
   </span>
 </a>
@@ -410,7 +452,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../blog/category/programming/">
 <span class="md-ellipsis">
+    
+  
     Programming
+  
+
     
   </span>
 </a>
@@ -418,7 +464,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../blog/category/radiosity/">
 <span class="md-ellipsis">
+    
+  
     Radiosity
+  
+
     
   </span>
 </a>
@@ -426,7 +476,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../blog/category/ray-tracing/">
 <span class="md-ellipsis">
+    
+  
     Ray tracing
+  
+
     
   </span>
 </a>
@@ -442,7 +496,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/">
 <span class="md-ellipsis">
+    
+  
     🐇CG
+  
+
     
   </span>
 </a>
@@ -453,7 +511,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-            🐇CG
+            
+  
+    🐇CG
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -461,7 +523,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Advanced_Graphics/">
 <span class="md-ellipsis">
+    
+  
     Advanced Graphics
+  
+
     
   </span>
 </a>
@@ -472,13 +538,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_2">
 <span class="md-nav__icon md-icon"></span>
-            Advanced Graphics
+            
+  
+    Advanced Graphics
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Advanced_Graphics/Noise/">
 <span class="md-ellipsis">
+    
+  
     Noise
+  
+
     
   </span>
 </a>
@@ -486,7 +560,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Advanced_Graphics/RayTracing/">
 <span class="md-ellipsis">
+    
+  
     Ray Tracing
+  
+
     
   </span>
 </a>
@@ -494,7 +572,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Advanced_Graphics/Bluring/">
 <span class="md-ellipsis">
+    
+  
     Bluring
+  
+
     
   </span>
 </a>
@@ -507,7 +589,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Scientific_Visualization/">
 <span class="md-ellipsis">
+    
+  
     Scientific Visualization
+  
+
     
   </span>
 </a>
@@ -518,13 +604,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_3">
 <span class="md-nav__icon md-icon"></span>
-            Scientific Visualization
+            
+  
+    Scientific Visualization
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Scientific_Visualization/Thermal/">
 <span class="md-ellipsis">
+    
+  
     Thermal Dynamics
+  
+
     
   </span>
 </a>
@@ -537,7 +631,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Tools/">
 <span class="md-ellipsis">
+    
+  
     Tools
+  
+
     
   </span>
 </a>
@@ -548,13 +646,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_4">
 <span class="md-nav__icon md-icon"></span>
-            Tools
+            
+  
+    Tools
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Tools/OpenCV/">
 <span class="md-ellipsis">
+    
+  
     OpenCV
+  
+
     
   </span>
 </a>
@@ -562,7 +668,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Tools/Shader/">
 <span class="md-ellipsis">
+    
+  
     Shader
+  
+
     
   </span>
 </a>
@@ -570,7 +680,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Tools/Threejs/">
 <span class="md-ellipsis">
+    
+  
     Three.js
+  
+
     
   </span>
 </a>
@@ -578,7 +692,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Tools/Vulkan/">
 <span class="md-ellipsis">
+    
+  
     Vulkan
+  
+
     
   </span>
 </a>
@@ -591,7 +709,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../1_Computer_Graphics/Visual_Effects/">
 <span class="md-ellipsis">
+    
+  
     Visual Effects
+  
+
     
   </span>
 </a>
@@ -599,7 +721,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_5">
 <span class="md-nav__icon md-icon"></span>
-            Visual Effects
+            
+  
+    Visual Effects
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 </ul>
@@ -613,7 +739,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../11_Game_Development/">
 <span class="md-ellipsis">
+    
+  
     🎮Game Dev
+  
+
     
   </span>
 </a>
@@ -624,7 +754,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
-            🎮Game Dev
+            
+  
+    🎮Game Dev
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -632,7 +766,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/">
 <span class="md-ellipsis">
+    
+  
     Unity
+  
+
     
   </span>
 </a>
@@ -643,7 +781,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_4_2">
 <span class="md-nav__icon md-icon"></span>
-            Unity
+            
+  
+    Unity
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -651,7 +793,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/Shader_Graph/">
 <span class="md-ellipsis">
+    
+  
     Shader Graph
+  
+
     
   </span>
 </a>
@@ -662,13 +808,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_2_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_4_2_2">
 <span class="md-nav__icon md-icon"></span>
-            Shader Graph
+            
+  
+    Shader Graph
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/Shader_Graph/Flipbook/Flipbook">
 <span class="md-ellipsis">
+    
+  
     Flipbook Node
+  
+
     
   </span>
 </a>
@@ -681,7 +835,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/VFX/">
 <span class="md-ellipsis">
+    
+  
     VFX
+  
+
     
   </span>
 </a>
@@ -692,7 +850,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_2_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_4_2_3">
 <span class="md-nav__icon md-icon"></span>
-            VFX
+            
+  
+    VFX
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -700,7 +862,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/VFX/VFX_Concepts/">
 <span class="md-ellipsis">
+    
+  
     VFX Concepts
+  
+
     
   </span>
 </a>
@@ -711,13 +877,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_2_3_2_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_4_2_3_2">
 <span class="md-nav__icon md-icon"></span>
-            VFX Concepts
+            
+  
+    VFX Concepts
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/VFX/VFX_Concepts/Parameter_vs_Attribute/Parameter_vs_Attribute">
 <span class="md-ellipsis">
+    
+  
     VFX Graph
+  
+
     
   </span>
 </a>
@@ -729,7 +903,11 @@
 <input class="md-nav__toggle md-toggle" id="__nav_4_2_3_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_2_3_3" id="__nav_4_2_3_3_label" tabindex="0">
 <span class="md-ellipsis">
+    
+  
     Visual Effects
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -737,13 +915,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_2_3_3_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_4_2_3_3">
 <span class="md-nav__icon md-icon"></span>
-            Visual Effects
+            
+  
+    Visual Effects
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/VFX/VisualEffects/README.md">
 <span class="md-ellipsis">
+    
+  
     None
+  
+
     
   </span>
 </a>
@@ -751,7 +937,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/VFX/VisualEffects/Fog">
 <span class="md-ellipsis">
+    
+  
     Fog
+  
+
     
   </span>
 </a>
@@ -759,7 +949,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/VFX/VisualEffects/Tracing">
 <span class="md-ellipsis">
+    
+  
     Tracing
+  
+
     
   </span>
 </a>
@@ -773,7 +967,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/Design_Pattern/">
 <span class="md-ellipsis">
+    
+  
     Game Design Pattern
+  
+
     
   </span>
 </a>
@@ -783,7 +981,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/Unity_Investigation/">
 <span class="md-ellipsis">
+    
+  
     Investigation
+  
+
     
   </span>
 </a>
@@ -794,13 +996,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_2_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_4_2_5">
 <span class="md-nav__icon md-icon"></span>
-            Investigation
+            
+  
+    Investigation
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/Unity_Investigation/URP">
 <span class="md-ellipsis">
+    
+  
     URP
+  
+
     
   </span>
 </a>
@@ -808,7 +1018,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/Unity_Investigation/Unity_Debug/Unity_Debug">
 <span class="md-ellipsis">
+    
+  
     Unity Debug
+  
+
     
   </span>
 </a>
@@ -816,7 +1030,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/Unity_Investigation/Unity_LifeCycle/Unity_LifeCycle">
 <span class="md-ellipsis">
+    
+  
     Unity Life Cycle
+  
+
     
   </span>
 </a>
@@ -824,7 +1042,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/Unity_Investigation/Awaitable/Awaitable">
 <span class="md-ellipsis">
+    
+  
     Awaitable
+  
+
     
   </span>
 </a>
@@ -835,7 +1057,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unity/Reading_Materials/">
 <span class="md-ellipsis">
+    
+  
     Reading materials
+  
+
     
   </span>
 </a>
@@ -847,7 +1073,11 @@
 <input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
 <span class="md-ellipsis">
+    
+  
     Unreal
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -855,13 +1085,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_4_3">
 <span class="md-nav__icon md-icon"></span>
-            Unreal
+            
+  
+    Unreal
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../11_Game_Development/Unreal/README.md">
 <span class="md-ellipsis">
+    
+  
     None
+  
+
     
   </span>
 </a>
@@ -877,7 +1115,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/">
 <span class="md-ellipsis">
+    
+  
     👨‍💻SDE
+  
+
     
   </span>
 </a>
@@ -888,13 +1130,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
-            👨‍💻SDE
+            
+  
+    👨‍💻SDE
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Review/">
 <span class="md-ellipsis">
+    
+  
     CS561 Review
+  
+
     
   </span>
 </a>
@@ -904,7 +1154,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Agile/">
 <span class="md-ellipsis">
+    
+  
     Agile
+  
+
     
   </span>
 </a>
@@ -915,13 +1169,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_3">
 <span class="md-nav__icon md-icon"></span>
-            Agile
+            
+  
+    Agile
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Agile/intro/">
 <span class="md-ellipsis">
+    
+  
     Agile Intro
+  
+
     
   </span>
 </a>
@@ -929,7 +1191,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Agile/scrum/">
 <span class="md-ellipsis">
+    
+  
     Agile Scrum
+  
+
     
   </span>
 </a>
@@ -942,7 +1208,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Github/">
 <span class="md-ellipsis">
+    
+  
     Git &amp; GitHub
+  
+
     
   </span>
 </a>
@@ -953,13 +1223,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_4">
 <span class="md-nav__icon md-icon"></span>
-            Git &amp; GitHub
+            
+  
+    Git &amp; GitHub
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Github/theory/">
 <span class="md-ellipsis">
+    
+  
     Git Theory
+  
+
     
   </span>
 </a>
@@ -967,7 +1245,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Github/commands/">
 <span class="md-ellipsis">
+    
+  
     Git Commands
+  
+
     
   </span>
 </a>
@@ -975,7 +1257,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Github/action/">
 <span class="md-ellipsis">
+    
+  
     GitHub Action
+  
+
     
   </span>
 </a>
@@ -983,7 +1269,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Github/sematicsversion/">
 <span class="md-ellipsis">
+    
+  
     GitHub Semantics Versioning
+  
+
     
   </span>
 </a>
@@ -996,7 +1286,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Test/">
 <span class="md-ellipsis">
+    
+  
     Test
+  
+
     
   </span>
 </a>
@@ -1007,13 +1301,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_5">
 <span class="md-nav__icon md-icon"></span>
-            Test
+            
+  
+    Test
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Test/test/">
 <span class="md-ellipsis">
+    
+  
     Test Basic
+  
+
     
   </span>
 </a>
@@ -1026,7 +1328,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Docker/">
 <span class="md-ellipsis">
+    
+  
     Docker
+  
+
     
   </span>
 </a>
@@ -1037,7 +1343,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_6">
 <span class="md-nav__icon md-icon"></span>
-            Docker
+            
+  
+    Docker
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1045,7 +1355,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Docker/Guidance/">
 <span class="md-ellipsis">
+    
+  
     Guidance
+  
+
     
   </span>
 </a>
@@ -1056,13 +1370,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_6_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_5_6_2">
 <span class="md-nav__icon md-icon"></span>
-            Guidance
+            
+  
+    Guidance
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Docker/Guidance/docker_compose/">
 <span class="md-ellipsis">
+    
+  
     Compose -&gt; Container
+  
+
     
   </span>
 </a>
@@ -1070,7 +1392,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Docker/Guidance/docker_run/">
 <span class="md-ellipsis">
+    
+  
     Run -&gt; Container
+  
+
     
   </span>
 </a>
@@ -1081,7 +1407,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Docker/A_good_model_for_Docker_Image_initialization/">
 <span class="md-ellipsis">
+    
+  
     Docker Image (DIY)
+  
+
     
   </span>
 </a>
@@ -1089,7 +1419,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Docker/Docker_compose/">
 <span class="md-ellipsis">
+    
+  
     Docker Compose
+  
+
     
   </span>
 </a>
@@ -1097,7 +1431,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Docker/Docker_Command/">
 <span class="md-ellipsis">
+    
+  
     Command Line
+  
+
     
   </span>
 </a>
@@ -1110,7 +1448,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Swift/">
 <span class="md-ellipsis">
+    
+  
     Swift
+  
+
     
   </span>
 </a>
@@ -1121,7 +1463,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_7_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_7">
 <span class="md-nav__icon md-icon"></span>
-            Swift
+            
+  
+    Swift
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1129,7 +1475,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Swift/Swift_on_win10/">
 <span class="md-ellipsis">
+    
+  
     Swift on Windows 10
+  
+
     
   </span>
 </a>
@@ -1140,13 +1490,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_7_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_5_7_2">
 <span class="md-nav__icon md-icon"></span>
-            Swift on Windows 10
+            
+  
+    Swift on Windows 10
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Swift/Swift_on_win10/TL_DR/">
 <span class="md-ellipsis">
+    
+  
     TL;DR
+  
+
     
   </span>
 </a>
@@ -1154,7 +1512,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Swift/Swift_on_win10/VS_Code_Docker_for_a_nice_Swift_edition_on_Windows10/">
 <span class="md-ellipsis">
+    
+  
     VS Code-Docker for Swift on Win10
+  
+
     
   </span>
 </a>
@@ -1167,7 +1529,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Swift/Notes/">
 <span class="md-ellipsis">
+    
+  
     Learning Notes
+  
+
     
   </span>
 </a>
@@ -1178,13 +1544,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_7_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_5_7_3">
 <span class="md-nav__icon md-icon"></span>
-            Learning Notes
+            
+  
+    Learning Notes
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Swift/Notes/Dispatch_queue/">
 <span class="md-ellipsis">
+    
+  
     Dispatch queue
+  
+
     
   </span>
 </a>
@@ -1192,7 +1566,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Swift/Notes/Map_reduce/">
 <span class="md-ellipsis">
+    
+  
     Map-Reduce
+  
+
     
   </span>
 </a>
@@ -1208,7 +1586,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/">
 <span class="md-ellipsis">
+    
+  
     AWS
+  
+
     
   </span>
 </a>
@@ -1219,7 +1601,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_8">
 <span class="md-nav__icon md-icon"></span>
-            AWS
+            
+  
+    AWS
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1227,7 +1613,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/Basic/">
 <span class="md-ellipsis">
+    
+  
     Basic Concepts
+  
+
     
   </span>
 </a>
@@ -1238,13 +1628,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_8_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_5_8_2">
 <span class="md-nav__icon md-icon"></span>
-            Basic Concepts
+            
+  
+    Basic Concepts
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/Basic/IAM/">
 <span class="md-ellipsis">
+    
+  
     IAM
+  
+
     
   </span>
 </a>
@@ -1252,7 +1650,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/Basic/EC2/">
 <span class="md-ellipsis">
+    
+  
     EC2
+  
+
     
   </span>
 </a>
@@ -1260,7 +1662,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/Basic/LoadBalancer_Scaling/">
 <span class="md-ellipsis">
+    
+  
     Load Balancer &amp; Scaling
+  
+
     
   </span>
 </a>
@@ -1268,7 +1674,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/Basic/S3/">
 <span class="md-ellipsis">
+    
+  
     S3
+  
+
     
   </span>
 </a>
@@ -1276,7 +1686,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/Basic/ECS/">
 <span class="md-ellipsis">
+    
+  
     ECS &amp; Docker Container
+  
+
     
   </span>
 </a>
@@ -1284,7 +1698,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/Basic/Serverless/">
 <span class="md-ellipsis">
+    
+  
     Serverless Application
+  
+
     
   </span>
 </a>
@@ -1292,7 +1710,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/Basic/Zone_region/">
 <span class="md-ellipsis">
+    
+  
     Availability Zone and Region
+  
+
     
   </span>
 </a>
@@ -1303,7 +1725,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/AWS/Application/">
 <span class="md-ellipsis">
+    
+  
     Application
+  
+
     
   </span>
 </a>
@@ -1316,7 +1742,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Terminal/">
 <span class="md-ellipsis">
+    
+  
     Bash Commands
+  
+
     
   </span>
 </a>
@@ -1327,13 +1757,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_9_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_9">
 <span class="md-nav__icon md-icon"></span>
-            Bash Commands
+            
+  
+    Bash Commands
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Terminal/contents/">
 <span class="md-ellipsis">
+    
+  
     CONTENTS
+  
+
     
   </span>
 </a>
@@ -1346,7 +1784,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/VS_Code/">
 <span class="md-ellipsis">
+    
+  
     VS_Code
+  
+
     
   </span>
 </a>
@@ -1354,7 +1796,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_10_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_10">
 <span class="md-nav__icon md-icon"></span>
-            VS_Code
+            
+  
+    VS_Code
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 </ul>
@@ -1365,7 +1811,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Others/">
 <span class="md-ellipsis">
+    
+  
     Others
+  
+
     
   </span>
 </a>
@@ -1376,13 +1826,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_11_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_11">
 <span class="md-nav__icon md-icon"></span>
-            Others
+            
+  
+    Others
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Others/engineer/">
 <span class="md-ellipsis">
+    
+  
     Engineer Principles
+  
+
     
   </span>
 </a>
@@ -1390,7 +1848,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Others/crypto/">
 <span class="md-ellipsis">
+    
+  
     Cryptographic
+  
+
     
   </span>
 </a>
@@ -1398,7 +1860,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Others/Concurrency/">
 <span class="md-ellipsis">
+    
+  
     Concurrency v.s. Parallelism
+  
+
     
   </span>
 </a>
@@ -1406,7 +1872,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Others/Lock_mutex_semaphore/">
 <span class="md-ellipsis">
+    
+  
     Lock, mutex, and Semaphore
+  
+
     
   </span>
 </a>
@@ -1414,7 +1884,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../2_Software_Engineering/Others/Self_documenting_code/">
 <span class="md-ellipsis">
+    
+  
     Self-documenting code
+  
+
     
   </span>
 </a>
@@ -1430,7 +1904,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/">
 <span class="md-ellipsis">
+    
+  
     ©️C++
+  
+
     
   </span>
 </a>
@@ -1441,13 +1919,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
-            ©️C++
+            
+  
+    ©️C++
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/fast_read/">
 <span class="md-ellipsis">
+    
+  
     Fast Read Catalog
+  
+
     
   </span>
 </a>
@@ -1457,7 +1943,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BOLD/">
 <span class="md-ellipsis">
+    
+  
     Oldschool C++
+  
+
     
   </span>
 </a>
@@ -1468,13 +1958,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_6_3">
 <span class="md-nav__icon md-icon"></span>
-            Oldschool C++
+            
+  
+    Oldschool C++
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BOLD/ptr_ref/">
 <span class="md-ellipsis">
+    
+  
     Pointer &amp; reference
+  
+
     
   </span>
 </a>
@@ -1484,7 +1982,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BOLD/Inheritance/">
 <span class="md-ellipsis">
+    
+  
     Inheritance
+  
+
     
   </span>
 </a>
@@ -1495,13 +1997,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_3_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_6_3_3">
 <span class="md-nav__icon md-icon"></span>
-            Inheritance
+            
+  
+    Inheritance
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BOLD/Inheritance/Inheritance/">
 <span class="md-ellipsis">
+    
+  
     CONTENTS
+  
+
     
   </span>
 </a>
@@ -1514,7 +2024,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BOLD/Template/">
 <span class="md-ellipsis">
+    
+  
     Template
+  
+
     
   </span>
 </a>
@@ -1525,13 +2039,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_3_4_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_6_3_4">
 <span class="md-nav__icon md-icon"></span>
-            Template
+            
+  
+    Template
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BOLD/Template/content/">
 <span class="md-ellipsis">
+    
+  
     CONTENTS
+  
+
     
   </span>
 </a>
@@ -1547,7 +2069,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/">
 <span class="md-ellipsis">
+    
+  
     Modern C++
+  
+
     
   </span>
 </a>
@@ -1558,7 +2084,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_6_4">
 <span class="md-nav__icon md-icon"></span>
-            Modern C++
+            
+  
+    Modern C++
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1566,7 +2096,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/C%2B%2B11/">
 <span class="md-ellipsis">
+    
+  
     C++11
+  
+
     
   </span>
 </a>
@@ -1577,13 +2111,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_4_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_6_4_2">
 <span class="md-nav__icon md-icon"></span>
-            C++11
+            
+  
+    C++11
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/C%2B%2B11/auto/">
 <span class="md-ellipsis">
+    
+  
     auto &amp; decltype
+  
+
     
   </span>
 </a>
@@ -1591,7 +2133,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/C%2B%2B11/smart_pointer/">
 <span class="md-ellipsis">
+    
+  
     Smart pointer
+  
+
     
   </span>
 </a>
@@ -1604,7 +2150,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/C%2B%2B14/">
 <span class="md-ellipsis">
+    
+  
     C++14
+  
+
     
   </span>
 </a>
@@ -1615,13 +2165,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_4_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_6_4_3">
 <span class="md-nav__icon md-icon"></span>
-            C++14
+            
+  
+    C++14
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/C%2B%2B14/content/">
 <span class="md-ellipsis">
+    
+  
     CONTENTS
+  
+
     
   </span>
 </a>
@@ -1634,7 +2192,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/C%2B%2B17/">
 <span class="md-ellipsis">
+    
+  
     C++17
+  
+
     
   </span>
 </a>
@@ -1645,13 +2207,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_4_4_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_6_4_4">
 <span class="md-nav__icon md-icon"></span>
-            C++17
+            
+  
+    C++17
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/C%2B%2B17/content/">
 <span class="md-ellipsis">
+    
+  
     CONTENTS
+  
+
     
   </span>
 </a>
@@ -1664,7 +2234,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/C%2B%2B20/">
 <span class="md-ellipsis">
+    
+  
     C++20
+  
+
     
   </span>
 </a>
@@ -1675,13 +2249,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_4_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_6_4_5">
 <span class="md-nav__icon md-icon"></span>
-            C++20
+            
+  
+    C++20
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/C%2B%2BNEW/C%2B%2B20/content/">
 <span class="md-ellipsis">
+    
+  
     CONTENTS
+  
+
     
   </span>
 </a>
@@ -1697,7 +2279,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/STL/">
 <span class="md-ellipsis">
+    
+  
     STL
+  
+
     
   </span>
 </a>
@@ -1708,13 +2294,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_6_5">
 <span class="md-nav__icon md-icon"></span>
-            STL
+            
+  
+    STL
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/STL/unodered_set/">
 <span class="md-ellipsis">
+    
+  
     unordered_set
+  
+
     
   </span>
 </a>
@@ -1726,7 +2320,11 @@
 <input class="md-nav__toggle md-toggle" id="__nav_6_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
 <span class="md-ellipsis">
+    
+  
     OOP concepts
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -1734,13 +2332,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_6_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_6_6">
 <span class="md-nav__icon md-icon"></span>
-            OOP concepts
+            
+  
+    OOP concepts
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C++/OOP/README.md">
 <span class="md-ellipsis">
+    
+  
     None
+  
+
     
   </span>
 </a>
@@ -1748,7 +2354,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/OOP/concepts/">
 <span class="md-ellipsis">
+    
+  
     Basic Concepts
+  
+
     
   </span>
 </a>
@@ -1756,7 +2366,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../3_C%2B%2B/OOP/UML/">
 <span class="md-ellipsis">
+    
+  
     UML &amp; Object relationships
+  
+
     
   </span>
 </a>
@@ -1772,7 +2386,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../4_Algorithms/">
 <span class="md-ellipsis">
+    
+  
     🧮Algorithm
+  
+
     
   </span>
 </a>
@@ -1783,7 +2401,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
-            🧮Algorithm
+            
+  
+    🧮Algorithm
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1791,7 +2413,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/">
 <span class="md-ellipsis">
+    
+  
     Typical Algorithms
+  
+
     
   </span>
 </a>
@@ -1802,14 +2428,22 @@
 <nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_7_2">
 <span class="md-nav__icon md-icon"></span>
-            Typical Algorithms
+            
+  
+    Typical Algorithms
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_7_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7_2_2" id="__nav_7_2_2_label" tabindex="0">
 <span class="md-ellipsis">
+    
+  
     Leetcode
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -1817,13 +2451,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_7_2_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_7_2_2">
 <span class="md-nav__icon md-icon"></span>
-            Leetcode
+            
+  
+    Leetcode
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/Leetcode/Topology_sort/">
 <span class="md-ellipsis">
+    
+  
     Topology Sort
+  
+
     
   </span>
 </a>
@@ -1831,7 +2473,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/Leetcode/Dijkstra/">
 <span class="md-ellipsis">
+    
+  
     Dijkstra
+  
+
     
   </span>
 </a>
@@ -1839,7 +2485,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/Leetcode/Bipartition/">
 <span class="md-ellipsis">
+    
+  
     Bipartition
+  
+
     
   </span>
 </a>
@@ -1847,7 +2497,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/Leetcode/Unionfind/">
 <span class="md-ellipsis">
+    
+  
     Union-Find
+  
+
     
   </span>
 </a>
@@ -1855,7 +2509,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/Leetcode/Quick_sort/">
 <span class="md-ellipsis">
+    
+  
     Quick Sort
+  
+
     
   </span>
 </a>
@@ -1863,7 +2521,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/Leetcode/Counting_sort/">
 <span class="md-ellipsis">
+    
+  
     Counting Sort
+  
+
     
   </span>
 </a>
@@ -1871,7 +2533,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/Leetcode/Monotonic_queue/">
 <span class="md-ellipsis">
+    
+  
     Monotonic Queue
+  
+
     
   </span>
 </a>
@@ -1879,7 +2545,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/Leetcode/Backtracking/">
 <span class="md-ellipsis">
+    
+  
     Backtracking
+  
+
     
   </span>
 </a>
@@ -1891,7 +2561,11 @@
 <input class="md-nav__toggle md-toggle" id="__nav_7_2_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_7_2_3" id="__nav_7_2_3_label" tabindex="0">
 <span class="md-ellipsis">
+    
+  
     Hackerrank
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -1899,13 +2573,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_7_2_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_7_2_3">
 <span class="md-nav__icon md-icon"></span>
-            Hackerrank
+            
+  
+    Hackerrank
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../4_Algorithms/Typical_Questions/Hackerrank/STDIN%26STDOUT/">
 <span class="md-ellipsis">
+    
+  
     STDIN and STDOUT
+  
+
     
   </span>
 </a>
@@ -1921,7 +2603,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../4_Algorithms/Practice_Sheet/">
 <span class="md-ellipsis">
+    
+  
     Practic Sheet
+  
+
     
   </span>
 </a>
@@ -1929,7 +2615,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_7_3">
 <span class="md-nav__icon md-icon"></span>
-            Practic Sheet
+            
+  
+    Practic Sheet
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 </ul>
@@ -1943,7 +2633,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../">
 <span class="md-ellipsis">
+    
+  
     ⛓️‍💥Full Stack
+  
+
     
   </span>
 </a>
@@ -1954,13 +2648,21 @@
 <nav aria-expanded="true" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
-            ⛓️‍💥Full Stack
+            
+  
+    ⛓️‍💥Full Stack
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../CheckList/">
 <span class="md-ellipsis">
+    
+  
     Check List
+  
+
     
   </span>
 </a>
@@ -1970,7 +2672,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../BASIC/">
 <span class="md-ellipsis">
+    
+  
     Basic knowledge
+  
+
     
   </span>
 </a>
@@ -1981,7 +2687,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_8_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_8_3">
 <span class="md-nav__icon md-icon"></span>
-            Basic knowledge
+            
+  
+    Basic knowledge
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1989,7 +2699,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../BASIC/Frontend/">
 <span class="md-ellipsis">
+    
+  
     Front End
+  
+
     
   </span>
 </a>
@@ -2000,13 +2714,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_8_3_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_8_3_2">
 <span class="md-nav__icon md-icon"></span>
-            Front End
+            
+  
+    Front End
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Frontend/Mock/">
 <span class="md-ellipsis">
+    
+  
     Mock
+  
+
     
   </span>
 </a>
@@ -2014,7 +2736,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Frontend/Auth/">
 <span class="md-ellipsis">
+    
+  
     Auth
+  
+
     
   </span>
 </a>
@@ -2022,7 +2748,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Frontend/uri/">
 <span class="md-ellipsis">
+    
+  
     URI
+  
+
     
   </span>
 </a>
@@ -2035,7 +2765,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../BASIC/API/">
 <span class="md-ellipsis">
+    
+  
     APIs
+  
+
     
   </span>
 </a>
@@ -2046,13 +2780,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_8_3_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_8_3_3">
 <span class="md-nav__icon md-icon"></span>
-            APIs
+            
+  
+    APIs
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/API/rest_api/">
 <span class="md-ellipsis">
+    
+  
     REST API
+  
+
     
   </span>
 </a>
@@ -2065,7 +2807,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../BASIC/Backend/">
 <span class="md-ellipsis">
+    
+  
     Back End
+  
+
     
   </span>
 </a>
@@ -2076,13 +2822,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_8_3_4_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_8_3_4">
 <span class="md-nav__icon md-icon"></span>
-            Back End
+            
+  
+    Back End
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Backend/nodejs/">
 <span class="md-ellipsis">
+    
+  
     Node.js
+  
+
     
   </span>
 </a>
@@ -2090,7 +2844,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Backend/expressjs/">
 <span class="md-ellipsis">
+    
+  
     Express.js
+  
+
     
   </span>
 </a>
@@ -2098,7 +2856,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Backend/routing/">
 <span class="md-ellipsis">
+    
+  
     Routing
+  
+
     
   </span>
 </a>
@@ -2111,7 +2873,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../BASIC/Web/">
 <span class="md-ellipsis">
+    
+  
     Network
+  
+
     
   </span>
 </a>
@@ -2122,13 +2888,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_8_3_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_8_3_5">
 <span class="md-nav__icon md-icon"></span>
-            Network
+            
+  
+    Network
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Web/Indices/">
 <span class="md-ellipsis">
+    
+  
     Performance Indices
+  
+
     
   </span>
 </a>
@@ -2138,7 +2912,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../BASIC/Web/OIS/">
 <span class="md-ellipsis">
+    
+  
     OIS
+  
+
     
   </span>
 </a>
@@ -2149,13 +2927,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_8_3_5_3_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_8_3_5_3">
 <span class="md-nav__icon md-icon"></span>
-            OIS
+            
+  
+    OIS
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Web/OIS/physical/">
 <span class="md-ellipsis">
+    
+  
     Physical Layer
+  
+
     
   </span>
 </a>
@@ -2163,7 +2949,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Web/OIS/datalink/">
 <span class="md-ellipsis">
+    
+  
     Data Link Layer
+  
+
     
   </span>
 </a>
@@ -2171,7 +2961,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Web/OIS/network/">
 <span class="md-ellipsis">
+    
+  
     Network Layer
+  
+
     
   </span>
 </a>
@@ -2179,7 +2973,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Web/OIS/transport/">
 <span class="md-ellipsis">
+    
+  
     Transport Layer
+  
+
     
   </span>
 </a>
@@ -2187,7 +2985,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Web/OIS/session/">
 <span class="md-ellipsis">
+    
+  
     Session Layer
+  
+
     
   </span>
 </a>
@@ -2195,7 +2997,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Web/OIS/presentation/">
 <span class="md-ellipsis">
+    
+  
     Presentaion Layer
+  
+
     
   </span>
 </a>
@@ -2203,7 +3009,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Web/OIS/application/">
 <span class="md-ellipsis">
+    
+  
     Application Layer
+  
+
     
   </span>
 </a>
@@ -2216,7 +3026,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../BASIC/Web/Protocols/">
 <span class="md-ellipsis">
+    
+  
     Protocols
+  
+
     
   </span>
 </a>
@@ -2227,13 +3041,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_8_3_5_4_label" class="md-nav" data-md-level="4">
 <label class="md-nav__title" for="__nav_8_3_5_4">
 <span class="md-nav__icon md-icon"></span>
-            Protocols
+            
+  
+    Protocols
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../BASIC/Web/Protocols/HTTP/">
 <span class="md-ellipsis">
+    
+  
     HTTP
+  
+
     
   </span>
 </a>
@@ -2252,7 +3074,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
+    
+  
     Programming Language
+  
+
     
   </span>
 </a>
@@ -2263,13 +3089,21 @@
 <nav aria-expanded="true" aria-labelledby="__nav_8_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_8_4">
 <span class="md-nav__icon md-icon"></span>
-            Programming Language
+            
+  
+    Programming Language
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../JS/">
 <span class="md-ellipsis">
+    
+  
     Javascript
+  
+
     
   </span>
 </a>
@@ -2279,7 +3113,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../SQL/">
 <span class="md-ellipsis">
+    
+  
     SQL
+  
+
     
   </span>
 </a>
@@ -2290,13 +3128,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_8_4_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_8_4_3">
 <span class="md-nav__icon md-icon"></span>
-            SQL
+            
+  
+    SQL
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../SQL/basic/">
 <span class="md-ellipsis">
+    
+  
     Basic Management
+  
+
     
   </span>
 </a>
@@ -2304,7 +3150,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../SQL/particle/">
 <span class="md-ellipsis">
+    
+  
     Structural Operators
+  
+
     
   </span>
 </a>
@@ -2312,7 +3162,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../SQL/higher/">
 <span class="md-ellipsis">
+    
+  
     Higher-level Management
+  
+
     
   </span>
 </a>
@@ -2320,7 +3174,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../SQL/multi_table/">
 <span class="md-ellipsis">
+    
+  
     Multiple Table Operation
+  
+
     
   </span>
 </a>
@@ -2333,7 +3191,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../">
 <span class="md-ellipsis">
+    
+  
     C#
+  
+
     
   </span>
 </a>
@@ -2344,21 +3206,33 @@
 <nav aria-expanded="true" aria-labelledby="__nav_8_4_4_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_8_4_4">
 <span class="md-nav__icon md-icon"></span>
-            C#
+            
+  
+    C#
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
+    
+  
     LINQ
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
+    
+  
     LINQ
+  
+
     
   </span>
 </a>
@@ -2371,21 +3245,27 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#linq_1">
 <span class="md-ellipsis">
-      LINQ
+      
+        LINQ
+      
     </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#linq-query-syntax">
 <span class="md-ellipsis">
-      LINQ Query Syntax
+      
+        LINQ Query Syntax
+      
     </span>
 </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#different-excution-in-linq">
 <span class="md-ellipsis">
-      Different excution in LINQ
+      
+        Different excution in LINQ
+      
     </span>
 </a>
 </li>
@@ -2403,7 +3283,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../NET/">
 <span class="md-ellipsis">
+    
+  
     .NET
+  
+
     
   </span>
 </a>
@@ -2414,13 +3298,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_8_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_8_5">
 <span class="md-nav__icon md-icon"></span>
-            .NET
+            
+  
+    .NET
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../NET/ORM/">
 <span class="md-ellipsis">
+    
+  
     ORM
+  
+
     
   </span>
 </a>
@@ -2428,7 +3320,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../NET/HttpRequest/">
 <span class="md-ellipsis">
+    
+  
     HTTP Request
+  
+
     
   </span>
 </a>
@@ -2444,7 +3340,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../12_Architecture/">
 <span class="md-ellipsis">
+    
+  
     🏭SoftArch
+  
+
     
   </span>
 </a>
@@ -2455,13 +3355,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
-            🏭SoftArch
+            
+  
+    🏭SoftArch
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Principles/README.md">
 <span class="md-ellipsis">
+    
+  
     Principles
+  
+
     
   </span>
 </a>
@@ -2471,7 +3379,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../12_Architecture/Design_Patterns/">
 <span class="md-ellipsis">
+    
+  
     Design Patterns
+  
+
     
   </span>
 </a>
@@ -2482,13 +3394,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_9_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_3">
 <span class="md-nav__icon md-icon"></span>
-            Design Patterns
+            
+  
+    Design Patterns
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Design_Patterns/ProgramTech/">
 <span class="md-ellipsis">
+    
+  
     Programming techniques
+  
+
     
   </span>
 </a>
@@ -2498,7 +3418,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../12_Architecture/Design_Patterns/DesignPatterns/">
 <span class="md-ellipsis">
+    
+  
     Catagory of Desgin Patterns
+  
+
     
   </span>
 </a>
@@ -2509,13 +3433,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_9_3_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_9_3_3">
 <span class="md-nav__icon md-icon"></span>
-            Catagory of Desgin Patterns
+            
+  
+    Catagory of Desgin Patterns
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Design_Patterns/DesignPatterns/Factory/">
 <span class="md-ellipsis">
+    
+  
     Factory
+  
+
     
   </span>
 </a>
@@ -2523,7 +3455,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../X">
 <span class="md-ellipsis">
+    
+  
     Singleton
+  
+
     
   </span>
 </a>
@@ -2531,7 +3467,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../X">
 <span class="md-ellipsis">
+    
+  
     Observer
+  
+
     
   </span>
 </a>
@@ -2539,7 +3479,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../X">
 <span class="md-ellipsis">
+    
+  
     Object Pool
+  
+
     
   </span>
 </a>
@@ -2555,7 +3499,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../12_Architecture/Arch_Styles/">
 <span class="md-ellipsis">
+    
+  
     Arch Styles
+  
+
     
   </span>
 </a>
@@ -2566,13 +3514,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_9_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_4">
 <span class="md-nav__icon md-icon"></span>
-            Arch Styles
+            
+  
+    Arch Styles
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Arch_Styles/MVC/README.md">
 <span class="md-ellipsis">
+    
+  
     MVC
+  
+
     
   </span>
 </a>
@@ -2580,7 +3536,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Arch_Styles/MVVM/README.md">
 <span class="md-ellipsis">
+    
+  
     MVVM
+  
+
     
   </span>
 </a>
@@ -2588,7 +3548,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Arch_Styles/Microservices/README.md">
 <span class="md-ellipsis">
+    
+  
     Microservices
+  
+
     
   </span>
 </a>
@@ -2596,7 +3560,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Arch_Styles/SOA/README.md">
 <span class="md-ellipsis">
+    
+  
     SOA
+  
+
     
   </span>
 </a>
@@ -2604,7 +3572,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Arch_Styles/Event_driven/README.md">
 <span class="md-ellipsis">
+    
+  
     Event-driven
+  
+
     
   </span>
 </a>
@@ -2617,7 +3589,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../12_Architecture/Distribute_System/">
 <span class="md-ellipsis">
+    
+  
     Distribute Sys Theorem
+  
+
     
   </span>
 </a>
@@ -2628,13 +3604,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_9_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_5">
 <span class="md-nav__icon md-icon"></span>
-            Distribute Sys Theorem
+            
+  
+    Distribute Sys Theorem
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Distribute_System/CAP/">
 <span class="md-ellipsis">
+    
+  
     CAP
+  
+
     
   </span>
 </a>
@@ -2642,7 +3626,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Distribute_System/PACELC/README.md">
 <span class="md-ellipsis">
+    
+  
     PACELC
+  
+
     
   </span>
 </a>
@@ -2650,7 +3638,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Distribute_System/BASE/README.md">
 <span class="md-ellipsis">
+    
+  
     BASE
+  
+
     
   </span>
 </a>
@@ -2658,7 +3650,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../12_Architecture/Distribute_System/ACID/README.md">
 <span class="md-ellipsis">
+    
+  
     ACID
+  
+
     
   </span>
 </a>
@@ -2674,7 +3670,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../10_Interview/">
 <span class="md-ellipsis">
+    
+  
     👨🏻‍💼ICS
+  
+
     
   </span>
 </a>
@@ -2685,13 +3685,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
-            👨🏻‍💼ICS
+            
+  
+    👨🏻‍💼ICS
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../10_Interview/Other/oop_guide/">
 <span class="md-ellipsis">
+    
+  
     OOP
+  
+
     
   </span>
 </a>
@@ -2701,7 +3709,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../10_Interview/Game_DevOP/">
 <span class="md-ellipsis">
+    
+  
     Game DevOP
+  
+
     
   </span>
 </a>
@@ -2712,13 +3724,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_10_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_10_3">
 <span class="md-nav__icon md-icon"></span>
-            Game DevOP
+            
+  
+    Game DevOP
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../10_Interview/Game_DevOP/Coding_questions/">
 <span class="md-ellipsis">
+    
+  
     Coding Questions
+  
+
     
   </span>
 </a>
@@ -2726,7 +3746,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../10_Interview/Game_DevOP/C%2B%2B_questions/">
 <span class="md-ellipsis">
+    
+  
     C++ Questions
+  
+
     
   </span>
 </a>
@@ -2734,7 +3758,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../10_Interview/Game_DevOP/CG_questions/">
 <span class="md-ellipsis">
+    
+  
     CG Questions
+  
+
     
   </span>
 </a>
@@ -2742,7 +3770,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../10_Interview/Game_DevOP/Math_questions/">
 <span class="md-ellipsis">
+    
+  
     Math Questions
+  
+
     
   </span>
 </a>
@@ -2753,7 +3785,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../10_Interview/Other/sql_guide/">
 <span class="md-ellipsis">
+    
+  
     Database Management
+  
+
     
   </span>
 </a>
@@ -2761,7 +3797,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../10_Interview/Operating_system/">
 <span class="md-ellipsis">
+    
+  
     Operating System
+  
+
     
   </span>
 </a>
@@ -2769,7 +3809,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../10_Interview/Kernel/">
 <span class="md-ellipsis">
+    
+  
     Kernel
+  
+
     
   </span>
 </a>
@@ -2777,7 +3821,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../10_Interview/Networking/">
 <span class="md-ellipsis">
+    
+  
     Networking
+  
+
     
   </span>
 </a>
@@ -2790,7 +3838,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../6_Math/">
 <span class="md-ellipsis">
+    
+  
     🔢Math
+  
+
     
   </span>
 </a>
@@ -2801,13 +3853,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_11_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_11">
 <span class="md-nav__icon md-icon"></span>
-            🔢Math
+            
+  
+    🔢Math
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../6_Math/Concepts/Math_questions/">
 <span class="md-ellipsis">
+    
+  
     Concepts
+  
+
     
   </span>
 </a>
@@ -2816,7 +3876,11 @@
 <input class="md-nav__toggle md-toggle" id="__nav_11_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
 <span class="md-ellipsis">
+    
+  
     Optimization
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -2824,13 +3888,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_11_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_11_3">
 <span class="md-nav__icon md-icon"></span>
-            Optimization
+            
+  
+    Optimization
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../6_Math/Optimization/Optimization/">
 <span class="md-ellipsis">
+    
+  
     📊 Math Optimization
+  
+
     
   </span>
 </a>
@@ -2838,7 +3910,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../6_Math/Optimization/Methods_classification/Methods_classification/">
 <span class="md-ellipsis">
+    
+  
     Methods Classification
+  
+
     
   </span>
 </a>
@@ -2849,7 +3925,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../6_Math/Numerical/">
 <span class="md-ellipsis">
+    
+  
     Numercial Methods
+  
+
     
   </span>
 </a>
@@ -2861,7 +3941,11 @@
 <input class="md-nav__toggle md-toggle" id="__nav_12" type="checkbox"/>
 <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
 <span class="md-ellipsis">
+    
+  
     🏓By-time
+  
+
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -2869,13 +3953,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_12_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_12">
 <span class="md-nav__icon md-icon"></span>
-            🏓By-time
+            
+  
+    🏓By-time
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../7_Casual_Literary_Notes/Dunhuang/">
 <span class="md-ellipsis">
+    
+  
     Dunhuang Wall Painting
+  
+
     
   </span>
 </a>
@@ -2888,7 +3980,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../8_Japanese_Learning/">
 <span class="md-ellipsis">
+    
+  
     🎏日本語
+  
+
     
   </span>
 </a>
@@ -2899,13 +3995,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_13_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_13">
 <span class="md-nav__icon md-icon"></span>
-            🎏日本語
+            
+  
+    🎏日本語
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../8_Japanese_Learning/%E4%BA%94%E5%8D%81%E9%9F%B3%E5%9B%B3/">
 <span class="md-ellipsis">
+    
+  
     五十音図
+  
+
     
   </span>
 </a>
@@ -2918,7 +4022,11 @@
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../../9_Guitar_Garage/">
 <span class="md-ellipsis">
+    
+  
     🎸Guitar Sheets
+  
+
     
   </span>
 </a>
@@ -2929,13 +4037,21 @@
 <nav aria-expanded="false" aria-labelledby="__nav_14_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_14">
 <span class="md-nav__icon md-icon"></span>
-            🎸Guitar Sheets
+            
+  
+    🎸Guitar Sheets
+  
+
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../9_Guitar_Garage/Sheet/%E6%AF%8F%E5%A4%A9%E5%A4%9A%E7%88%B1%E4%BD%A0%E4%B8%80%E4%BA%9B/">
 <span class="md-ellipsis">
+    
+  
     每天多爱你一些
+  
+
     
   </span>
 </a>
@@ -3094,13 +4210,13 @@ This query groups a list of products by category and counts the number of   prod
 <span class="md-icon" title="Last update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="October 29, 2024 02:44:43">October 29, 2024 02:44:43</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="October 29, 2024 02:44:43 UTC">October 29, 2024 02:44:43</span>
 </span>
 <span class="md-source-file__fact">
 <span class="md-icon" title="Created">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="October 27, 2024 07:23:30">October 27, 2024 07:23:30</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="October 27, 2024 07:23:30 UTC">October 27, 2024 07:23:30</span>
 </span>
 <span class="md-source-file__fact">
 <span class="md-icon" title="Contributors">
@@ -3163,13 +4279,13 @@ This query groups a list of products by category and counts the number of   prod
 </div>
 <div class="md-social">
 <a class="md-social__link" href="https://www.linkedin.com/in/yuantianle/" rel="noopener" target="_blank" title="Tianle Yuan on Twitter">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
 </a>
 <a class="md-social__link" href="https://github.com/yuantianle" rel="noopener" target="_blank" title="Tianle Yuan on GitHub">
-<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
 </a>
 <a class="md-social__link" href="https://yuantianle.com" rel="noopener" target="_blank" title="Go back to Tianle's Main Page">
-<svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M543.8 287.6c17 0 32-14 32-32.1 1-9-3-17-11-24L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24 0 18 14 32.1 32 32.1h32V448c0 35.3 28.7 64 64 64h320.4c35.5 0 64.2-28.8 64-64.3l-.7-160.2h32zM256 208c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v48h48c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-48v48c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-48h-48c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h48z"></path></svg>
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272h16v176c0 35.3 28.7 64 64 64h288c35.3 0 64-28.7 64-64V272h16c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1zM224 248c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v40h40c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-40v40c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-40h-40c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h40z"></path></svg>
 </a>
 </div>
 </div>
@@ -3179,8 +4295,8 @@ This query groups a list of products by category and counts the number of   prod
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.indexes", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.integrate", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.indexes", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.integrate", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
 <script src="../../../../javascripts/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
