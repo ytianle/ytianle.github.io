@@ -10003,7 +10003,7 @@
 </details>
 <h2 id="iii-dead-lock-in-dispatch-queue"><strong>III. Dead lock in dispatch queue</strong><a class="headerlink" href="#iii-dead-lock-in-dispatch-queue" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>To understand dead lock happends in dispatch queue processing, we firstly need to know what is the <a href="../../../Others/Concurrency/">Concurrency</a>.</p>
-<h3 id="dead-lock-case-1-dispatch-queue"><strong><img alt="🔒" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f512.svg" title=":lock:"/> Dead lock case 1 (dispatch queue)</strong><a class="headerlink" href="#dead-lock-case-1-dispatch-queue" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="dead-lock-case-1-dispatch-queue"><strong><img alt="🔒" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f512.svg" title=":lock:"/> Dead lock case 1 (dispatch queue)</strong><a class="headerlink" href="#dead-lock-case-1-dispatch-queue" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p><strong>Code</strong></p>
 <div class="highlight"><span class="filename">dl_1.swift</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kd">import</span><span class="w"> </span><span class="nc">Foundation</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>
@@ -10030,7 +10030,7 @@
 </code></pre></div>
 <p><strong>Explaination Picture</strong></p>
 <p><img :=":" _="," alt="image" class="center" src="../deadlock1.jpg" width="90%"/></p>
-<h3 id="dead-lock-case-2-serial-queue"><strong><img alt="🔒" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f512.svg" title=":lock:"/> Dead lock case 2 (serial queue)</strong><a class="headerlink" href="#dead-lock-case-2-serial-queue" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="dead-lock-case-2-serial-queue"><strong><img alt="🔒" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f512.svg" title=":lock:"/> Dead lock case 2 (serial queue)</strong><a class="headerlink" href="#dead-lock-case-2-serial-queue" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p><strong>Code</strong></p>
 <div class="highlight"><span class="filename">dl_2.swift</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="kd">import</span><span class="w"> </span><span class="nc">Foundation</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>
@@ -10049,9 +10049,9 @@
 <p><img :=":" _="," alt="image" class="center" src="../deadlock2.jpg" width="90%"/></p>
 <details class="danger" open="open">
 <summary>Be careful!!</summary>
-<p>Please DISTINGUISH the difference between <code>DispatchQueue.main.sync{...}</code> and <code>myQueue.sync{...}</code> by take a look at <a href="#no-dead-lock-case-serial-queue-with-sync">the case shown below</a> <img alt="🔻" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f53b.svg" title=":small_red_triangle_down:"/> </p>
+<p>Please DISTINGUISH the difference between <code>DispatchQueue.main.sync{...}</code> and <code>myQueue.sync{...}</code> by take a look at <a href="#no-dead-lock-case-serial-queue-with-sync">the case shown below</a> <img alt="🔻" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f53b.svg" title=":small_red_triangle_down:"/> </p>
 </details>
-<h3 id="no-dead-lock-case-serial-queue-with-sync"><strong><img alt="🔐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f510.svg" title=":closed_lock_with_key:"/> No dead lock case (serial queue with <code>sync</code>)</strong><a class="headerlink" href="#no-dead-lock-case-serial-queue-with-sync" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="no-dead-lock-case-serial-queue-with-sync"><strong><img alt="🔐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f510.svg" title=":closed_lock_with_key:"/> No dead lock case (serial queue with <code>sync</code>)</strong><a class="headerlink" href="#no-dead-lock-case-serial-queue-with-sync" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p><strong>Code</strong></p>
 <div class="highlight"><span class="filename">ndl.swift</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kd">import</span><span class="w"> </span><span class="nc">Foundation</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a>
@@ -10072,7 +10072,7 @@
 </code></pre></div>
 <p><strong>Explaination Picture</strong></p>
 <p><img :=":" _="," alt="image" class="center" src="../ndeadlock1.jpg" width="90%"/></p>
-<h3 id="application-of-dispatch-queue"><strong><img alt="🦾" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9be.svg" title=":mechanical_arm:"/> Application of Dispatch Queue</strong><a class="headerlink" href="#application-of-dispatch-queue" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="application-of-dispatch-queue"><strong><img alt="🦾" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f9be.svg" title=":mechanical_arm:"/> Application of Dispatch Queue</strong><a class="headerlink" href="#application-of-dispatch-queue" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p>The example shown below indicates that we can use <code>Dispatch Queue</code> as a "thread lock" to protect the thread processing for a code block from interrupted by other thread.</p>
 <div class="highlight"><span class="filename">application.swift</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kd">import</span><span class="w"> </span><span class="nc">Foundation</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos=" 2 "></span></a>
