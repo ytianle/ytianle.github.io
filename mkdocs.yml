@@ -66,7 +66,7 @@ extra:
       link: ""
     - name: 中文(谷歌)
       lang: "zh-CN"
-      link: "https://yuantianle-github-io.translate.goog/?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=en&_x_tr_pto=wapp"
+      link: "https://ytianle-github-io.translate.goog/?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=en&_x_tr_pto=wapp"
       # _x_tr_sl = source language
       # _x_tr_tl = translation language
 
@@ -76,7 +76,7 @@ extra:
       name: Tianle Yuan on Twitter
 
     - icon: fontawesome/brands/github
-      link: https://github.com/yuantianle
+      link: https://github.com/ytianle
       name: Tianle Yuan on GitHub
 
     - icon: fontawesome/solid/house-medical
