@@ -1,9 +1,0 @@
-ssg:
-  name: mkdocs
-
-collections_config:
-  docs:
-    path: docs
-    _enabled_editors:
-      - content   # markdown editing
-      - data      # yaml / .pages editing

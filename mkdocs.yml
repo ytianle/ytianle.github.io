@@ -154,25 +154,25 @@ markdown_extensions:
 nav:
   - Intro: index.md
   - 🔊BroadCast:
-     - blog/index.md
+    - blog/index.md
   - 🐇CG:
-      - 1_Computer_Graphics/README.md
-      - Advanced Graphics:
-          - 1_Computer_Graphics/Advanced_Graphics/README.md
-          - Noise: 1_Computer_Graphics/Advanced_Graphics/Noise/README.md
-          - Ray Tracing: 1_Computer_Graphics/Advanced_Graphics/RayTracing/README.md
-          - Bluring: 1_Computer_Graphics/Advanced_Graphics/Bluring/README.md
-      - Scientific Visualization:
-          - 1_Computer_Graphics/Scientific_Visualization/README.md
-          - Thermal Dynamics: 1_Computer_Graphics/Scientific_Visualization/Thermal/README.md
-      - Tools:
-          - 1_Computer_Graphics/Tools/README.md
-          - OpenCV: 1_Computer_Graphics/Tools/OpenCV/README.md
-          - Shader: 1_Computer_Graphics/Tools/Shader/README.md
-          - Three.js: 1_Computer_Graphics/Tools/Threejs/README.md
-          - Vulkan: 1_Computer_Graphics/Tools/Vulkan/README.md
-      - Visual Effects:
-          - 1_Computer_Graphics/Visual_Effects/README.md
+    - 1_Computer_Graphics/README.md
+    - Advanced Graphics:
+        - 1_Computer_Graphics/Advanced_Graphics/README.md
+        - Noise: 1_Computer_Graphics/Advanced_Graphics/Noise/README.md
+        - Ray Tracing: 1_Computer_Graphics/Advanced_Graphics/RayTracing/README.md
+        - Bluring: 1_Computer_Graphics/Advanced_Graphics/Bluring/README.md
+    - Scientific Visualization:
+        - 1_Computer_Graphics/Scientific_Visualization/README.md
+        - Thermal Dynamics: 1_Computer_Graphics/Scientific_Visualization/Thermal/README.md
+    - Tools:
+        - 1_Computer_Graphics/Tools/README.md
+        - OpenCV: 1_Computer_Graphics/Tools/OpenCV/README.md
+        - Shader: 1_Computer_Graphics/Tools/Shader/README.md
+        - Three.js: 1_Computer_Graphics/Tools/Threejs/README.md
+        - Vulkan: 1_Computer_Graphics/Tools/Vulkan/README.md
+    - Visual Effects:
+        - 1_Computer_Graphics/Visual_Effects/README.md
   - 🎮Game Dev:
       - 11_Game_Development/README.md
       - Unity:
