@@ -104,10 +104,10 @@ plugins:
   - markmap
   - blog
 
-repo_url: https://github.com/yuantianle
-repo_name: yuantianle's GitHub
+repo_url: https://github.com/ytianle
+repo_name: ytianle's GitHub
 
-copyright: Copyright &copy; 2020 - 2024 Tianle Yuan
+copyright: Copyright &copy; 2020 - 2026 Tianle Yuan
 
 markdown_extensions:
   - admonition #MkDocs 警告框
@@ -425,4 +425,4 @@ nav:
     - 9_Guitar_Garage/README.md
     - 每天多爱你一些: 9_Guitar_Garage/Sheet/每天多爱你一些.md
 
-edit_uri: yuantianle.github.io/edit/main/docs/
+edit_uri: ytianle.github.io/edit/main/docs/
