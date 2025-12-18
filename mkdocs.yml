@@ -1,4 +1,4 @@
-site_name: Tianle Yuan's Blog
+site_name: Tianle's Blog
 
 theme:
   name: material
@@ -152,7 +152,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 nav:
-  - Intro: index.md
+  - 🖲️Intro: index.md
   - 🔊BroadCast:
     - blog/index.md
   - 🐇CG:
