@@ -219,6 +219,12 @@ For christmas*/
 .e_vscode {
     color: #1d8ff2;
   }
+
+/* Homepage images: keep original colors in dark mode */
+[data-md-color-scheme="slate"] #pumpking,
+[data-md-color-scheme="slate"] #alice {
+    filter: none;
+}
 .e_cpp {
     color: #f4ce65;
   }

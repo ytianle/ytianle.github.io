@@ -112,6 +112,63 @@
         let layer_main = document.getElementById("layer_main");
         let alice = document.getElementById("alice");
 
+        // Switch homepage assets (Alice / Pumpkin) with Material palette.
+        (function () {
+            const schemeTargets = [document.body, document.documentElement].filter(Boolean);
+            const dayPumpkinSrc = "assets/images/02.gif";
+            const nightPumpkinSrc = "assets/images/03.gif";
+            const dayCitySrc = "assets/images/empire.png";
+            const nightCitySrc = "assets/images/alice.png";
+
+            const resolveScheme = () => {
+                for (const element of schemeTargets) {
+                    const value = element.getAttribute("data-md-color-scheme");
+                    if (value) {
+                        return value;
+                    }
+                }
+                return null;
+            };
+
+            const applySchemeAssets = () => {
+                const scheme = resolveScheme();
+                const isNight = scheme === "slate";
+
+                if (pumpking) {
+                    const targetPumpkin = isNight ? nightPumpkinSrc : dayPumpkinSrc;
+                    if (pumpking.getAttribute("src") !== targetPumpkin) {
+                        pumpking.src = targetPumpkin;
+                    }
+                }
+
+                if (alice) {
+                    const targetCity = isNight ? nightCitySrc : dayCitySrc;
+                    if (alice.getAttribute("src") !== targetCity) {
+                        alice.src = targetCity;
+                    }
+                }
+            };
+
+            applySchemeAssets();
+
+            if (typeof MutationObserver !== "function" || !schemeTargets.length) {
+                return;
+            }
+
+            const observer = new MutationObserver((mutations) => {
+                for (const mutation of mutations) {
+                    if (mutation.type === "attributes" && mutation.attributeName === "data-md-color-scheme") {
+                        applySchemeAssets();
+                        break;
+                    }
+                }
+            });
+
+            schemeTargets.forEach((element) => {
+                observer.observe(element, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
+            });
+        })();
+
         window.addEventListener('scroll', function () {
             var value = window.scrollY;
 
