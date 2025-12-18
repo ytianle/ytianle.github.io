@@ -422,7 +422,7 @@ h4{
     color: #ffffff !important;
 }
 [data-md-color-scheme="slate"]  #pumpking{
-    filter: invert(1) brightness(0.5) contrast(4) saturate(20.2) hue-rotate(131deg);
+    filter: none;
 }
 [data-md-color-scheme="slate"]  #layer_bg2{
     filter: brightness(1.55) contrast(1.4) saturate(0.5) hue-rotate(238deg) sepia(0.1) invert(1);
@@ -437,5 +437,5 @@ h4{
     filter: brightness(0.4) contrast(1.9) saturate(0.2) hue-rotate(322deg) drop-shadow(1px -11px 10px #302F80)
 }
 [data-md-color-scheme="slate"]  #alice{
-    filter: brightness(0.65) contrast(3.5) saturate(0.2) hue-rotate(233deg)
+    filter: none;
 }
