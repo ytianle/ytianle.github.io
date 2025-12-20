@@ -18047,7 +18047,7 @@ ${end2.comment}` : end2.comment;
   function requireDist() {
     if (hasRequiredDist) return dist;
     hasRequiredDist = 1;
-    var __importDefault = dist.__importDefault || function(mod) {
+    var __importDefault = dist && dist.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
     };
     Object.defineProperty(dist, "__esModule", { value: true });
@@ -18691,7 +18691,7 @@ ${end2.comment}` : end2.comment;
     }
   }
   const transformerVersions = {
-    "markmap-lib": "0.18.11"
+    "markmap-lib": "0.18.12"
   };
   exports.Transformer = Transformer;
   exports.builtInPlugins = builtInPlugins;

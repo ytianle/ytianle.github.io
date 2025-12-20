@@ -3,7 +3,7 @@ site_name: Tianle's Blog
 theme:
   name: material
   favicon: images/self.ico
-  logo: images/logo_reverse.png
+  logo: images/logo.png
   language: en
   palette:
     #scheme: indigo # two color schemes: <light mode>: default <dark mode>: slate
@@ -45,7 +45,6 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
-  - stylesheets/fancybox.css
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -55,7 +54,6 @@ extra_javascript:
   - javascripts/tablesort.js
   - https://cdn.jsdelivr.net/npm/marked/marked.min.js
   - javascripts/extra-internet-markdown-ref.js
-  - javascripts/fancybox.js
 
 extra:
   generator: false
