@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="images/self.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
@@ -53,14 +53,20 @@
     
       <link rel="stylesheet" href="stylesheets/extra.css">
     
-      <link rel="stylesheet" href="stylesheets/fancybox.css">
-    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+  </noscript>
+
   </head>
   
   
@@ -91,7 +97,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="Tianle&#39;s Blog" class="md-header__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
       
-  <img src="images/logo_reverse.png" alt="logo">
+  <img src="images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -234,7 +240,7 @@
     <div class="md-container" data-md-component="container">
       
       
-    
+
         
           
             
@@ -554,65 +560,159 @@
 </nav>
           
         
-         
-    <style>
-        .md-header{position:initial}
-        .md-main__inner{margin:0}
-        .md-content{display:none}
-        @media screen and (min-width:60em){
-            .md-sidebar--secondary{display:none}}
-        @media screen and (min-width:76.25em){
-            .md-sidebar--primary{display:none}}
+      
+<style>
+    :root {
+        /* Intro background (default/day) */
+        --intro-base: #c6d6f0;
+        --intro-glow: rgba(120, 160, 255, 0.32);
+        --intro-top: rgba(198, 214, 240, 0.55);
+        --intro-bottom: rgba(165, 190, 235, 1);
+        --intro-fade-mid: rgba(178, 202, 235, 0.92);
+    }
+
+    [data-md-color-scheme="slate"] {
+        /* Intro background (night) */
+        --intro-base: #070A14;
+        --intro-glow: rgba(140, 110, 255, 0.18);
+        --intro-top: rgba(7, 10, 20, 0.05);
+        --intro-bottom: rgba(7, 10, 20, 1);
+        --intro-fade-mid: rgba(7, 10, 20, 0.92);
+    }
+
+    .md-header {
+        position: initial
+    }
+
+    .md-main__inner {
+        margin: 0
+    }
+
+    .md-content {
+        display: none
+    }
+
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+    }
 
 
-        @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+    .mdx-container,
+    .mdx-container * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
+    .mdx-container {
+        background: var(--intro-base);
+        min-height: 150vh;
+    }
+
+    .mdx-hero__content {
+        margin-bottom: 5%;
+    }
+
+    section {
+        position: relative;
+        width: 100%;
+        height: 140vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--intro-base);
+    }
+
+    /* Ensure the background never shows through transparent PNG areas */
+    #parallax {
+        background:
+            radial-gradient(1200px 600px at 60% 0%, var(--intro-glow), transparent 80%),
+            linear-gradient(to bottom, var(--intro-top), var(--intro-bottom));
+    }
+
+    section img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        will-change: transform;
+    }
+
+    section::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 220px;
+        background: linear-gradient(to top, var(--intro-base) 0%, var(--intro-fade-mid) 35%, transparent 100%);
+        z-index: 10000;
+    }
+
+    .mdx-hero {
+        padding: 3.5rem 0 2.5rem;
+    }
+
+    .mdx-hero__content {
+        max-width: 52rem;
+        padding: 1.6rem 1.8rem;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.16));
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .mdx-hero__content h1 {
+        margin: 0 0 1.2rem 0;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    .mdx-hero__content .md-button--primary {
+        border-radius: 12px;
+        padding: 0.75rem 1.15rem;
+    }
+
+    @media (max-width: 720px) {
+        :root {
+            --home-nav-offset: 6.2rem;
         }
 
-        .mdx-container {
-            background: #00192A;
-            min-height: 150vh;
+        .md-tabs {
+            top: 3rem;
         }
 
-        .mdx-hero__content{
-            margin-bottom: 5%;
+        #text_name {
+            font-size: clamp(2.4rem, 10vw, 4.2rem) !important;
+            margin-left: 12% !important;
+            margin-Top: -30% !important;
         }
 
-        section {
-            position: relative;
-            width: 100%;
-            height: 140vh;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        #text_welcome {
+            font-size: clamp(2.6rem, 12vw, 4.6rem) !important;
+            margin-left: 18% !important;
         }
 
-        section img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
+        .mdx-hero__content {
+            padding: 1.2rem 1.2rem;
+            margin: 0 0.8rem;
         }
+    }
 
-        section::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(to top, #00192A, transparent);
-            z-index: 10000;
-        }
-        
-        /*section::after {
+    /*section::after {
             content: '';
             position: relative;
             top: 0;
@@ -623,122 +723,156 @@
             z-index: 10000;
             mix-blend-mode: color; /*soft-light;
         }*/
+</style>
 
-    </style>
+<div class="mdx-container">
 
-    <div class="mdx-container">
-         
-        <section id="parallax" style="">
-            <img src="assets/images/layer_sky_blue.png" id="layer_sk"  style=" height: 50%; width: auto; margin-left:-90%;"/>
-            <h2 id="text_name"                                     style=" margin-left:90%; margin-Top:-35%; color: rgb(0, 0, 0); position: relative; font-size: 9.5em;">Tianle's Blog</h2>
-            <img src="assets/images/02.gif" id="pumpking"          style=" height: 25%; width: auto; margin-left:37%; margin-top:3%;"/>
-            <img src="assets/images/layer_bg2_blue.png" id="layer_bg2"  style=" height: 55%; width: auto; margin-left:0%; margin-top:15%;"/>
-            <img src="assets/images/layer_bg1.png" id="layer_bg1"  style=" height: 55%; width: auto; margin-left:0%; margin-top:25%;"/>
-            <h2 id="text_welcome"                                  style=" margin-left:110%; margin-Top: 5%; color: rgb(255, 255, 255); position: relative; font-size: 10em;">Welcome!</h2>
-            <img src="assets/images/layer_main.png" id="layer_main"style=" height: 45%; width: auto; margin-left:0%; margin-top: 40%;" />
-            <img src="assets/images/empire.png" id="alice"          style=" height: 55%; width: auto; margin-left:100%; margin-top: 42%;" />
-            
-        </section>
+    <section id="parallax" style="">
+        <img src="assets/images/layer_sky_blue.png" id="layer_sk" fetchpriority="high" decoding="async"
+            style=" height: 50%; width: auto; margin-left:-90%; margin-Top:35%;" />
+        <h2 id="text_name"
+            style=" margin-left:90%; margin-Top:-35%; color: rgb(0, 0, 0); position: relative; font-size: 9.5em;">
+            Tianle's Blog</h2>
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="assets/images/03.gif">
+            <img src="assets/images/02.gif" id="pumpking" decoding="async"
+                style=" height: 25%; width: auto; margin-left:37%; margin-top:3%;" />
+        </picture>
+        <img src="assets/images/layer_bg2_blue.png" id="layer_bg2"
+            style=" height: 55%; width: auto; margin-left:0%; margin-top:15%;" />
+        <img src="assets/images/layer_bg1.png" id="layer_bg1"
+            style=" height: 55%; width: auto; margin-left:0%; margin-top:25%;" />
+        <h2 id="text_welcome"
+            style=" margin-left:110%; margin-Top: 5%; color: rgb(255, 255, 255); position: relative; font-size: 10em;">
+            Welcome!</h2>
+        <img src="assets/images/layer_main.png" id="layer_main" fetchpriority="high" decoding="async"
+            style=" height: 45%; width: auto; margin-left:0%; margin-top: 40%;" />
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="assets/images/alice.png">
+            <img src="assets/images/empire.png" id="alice" decoding="async"
+                style=" height: 55%; width: auto; margin-left:100%; margin-top: 42%;" />
+        </picture>
 
-        <div class="md-grid md-typeset">
-            <div class="mdx-hero">
-              <div class="mdx-hero__content">
+    </section>
+
+    <div class="md-grid md-typeset">
+        <div class="mdx-hero">
+            <div class="mdx-hero__content">
                 <h1 style="color: #fff;">When all else pales, the pursuit of knowledge soars.</h1>
-                <a href="blog/" title="🔊BroadCast" class="md-button md-button--primary">
-                  Go to my blog.
+                <a href="blog/" title="🔊BroadCast"
+                    class="md-button md-button--primary">
+                    Go to my blog.
                 </a>
-              </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        let layer_sk = document.getElementById("layer_sk");
-        let text_name = document.getElementById("text_name");
-        let pumpking = document.getElementById("pumpking");
-        let layer_bg2 = document.getElementById("layer_bg2");
-        let layer_bg1 = document.getElementById("layer_bg1");
-        let text_welcome = document.getElementById("text_welcome");
-        let layer_main = document.getElementById("layer_main");
-        let alice = document.getElementById("alice");
+    let layer_sk = document.getElementById("layer_sk");
+    let text_name = document.getElementById("text_name");
+    let pumpking = document.getElementById("pumpking");
+    let layer_bg2 = document.getElementById("layer_bg2");
+    let layer_bg1 = document.getElementById("layer_bg1");
+    let text_welcome = document.getElementById("text_welcome");
+    let layer_main = document.getElementById("layer_main");
+    let alice = document.getElementById("alice");
 
-        // Switch homepage assets (Alice / Pumpkin) with Material palette.
-        (function () {
-            const schemeTargets = [document.body, document.documentElement].filter(Boolean);
-            const dayPumpkinSrc = "assets/images/02.gif";
-            const nightPumpkinSrc = "assets/images/03.gif";
-            const dayCitySrc = "assets/images/empire.png";
-            const nightCitySrc = "assets/images/alice.png";
-
-            const resolveScheme = () => {
-                for (const element of schemeTargets) {
-                    const value = element.getAttribute("data-md-color-scheme");
-                    if (value) {
-                        return value;
-                    }
-                }
-                return null;
-            };
-
-            const applySchemeAssets = () => {
-                const scheme = resolveScheme();
-                const isNight = scheme === "slate";
-
-                if (pumpking) {
-                    const targetPumpkin = isNight ? nightPumpkinSrc : dayPumpkinSrc;
-                    if (pumpking.getAttribute("src") !== targetPumpkin) {
-                        pumpking.src = targetPumpkin;
-                    }
-                }
-
-                if (alice) {
-                    const targetCity = isNight ? nightCitySrc : dayCitySrc;
-                    if (alice.getAttribute("src") !== targetCity) {
-                        alice.src = targetCity;
-                    }
-                }
-            };
-
-            applySchemeAssets();
-
-            if (typeof MutationObserver !== "function" || !schemeTargets.length) {
-                return;
+    function resolveScheme() {
+        const schemeTargets = [document.body, document.documentElement].filter(Boolean);
+        for (const element of schemeTargets) {
+            const value = element.getAttribute("data-md-color-scheme");
+            if (value) {
+                return value;
             }
+        }
+        return null;
+    }
 
-            const observer = new MutationObserver((mutations) => {
-                for (const mutation of mutations) {
-                    if (mutation.type === "attributes" && mutation.attributeName === "data-md-color-scheme") {
-                        applySchemeAssets();
-                        break;
-                    }
+    function ensureHeroAssetsMatchScheme() {
+        const scheme = resolveScheme();
+        const isNight = scheme === "slate";
+
+        // Keep element size/position unchanged: only swap src.
+        if (pumpking) {
+            const targetPumpkin = isNight ? "assets/images/03.gif" : "assets/images/02.gif";
+            if (pumpking.getAttribute("src") !== targetPumpkin) {
+                pumpking.src = targetPumpkin;
+            }
+        }
+
+        if (alice) {
+            const targetCity = isNight ? "assets/images/alice.png" : "assets/images/empire.png";
+            if (alice.getAttribute("src") !== targetCity) {
+                alice.src = targetCity;
+            }
+        }
+    }
+
+    // Switch homepage assets (Alice / Pumpkin) with Material palette.
+    (function () {
+        const schemeTargets = [document.body, document.documentElement].filter(Boolean);
+
+        const applySchemeAssets = () => {
+            ensureHeroAssetsMatchScheme();
+        };
+
+        applySchemeAssets();
+
+        if (typeof MutationObserver !== "function" || !schemeTargets.length) {
+            return;
+        }
+
+        const observer = new MutationObserver((mutations) => {
+            for (const mutation of mutations) {
+                if (mutation.type === "attributes" && mutation.attributeName === "data-md-color-scheme") {
+                    applySchemeAssets();
+                    break;
                 }
-            });
-
-            schemeTargets.forEach((element) => {
-                observer.observe(element, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
-            });
-        })();
-
-        window.addEventListener('scroll', function () {
-            var value = window.scrollY;
-
-            layer_sk.style.left = value * 1.5 + 'px';
-            text_name.style.left = -value * 1 + 'px';
-            pumpking.style.left = -value * 1.5 + 'px';
-            pumpking.style.top = value * 0.5 + 'px';
-            layer_bg2.style.left = -value * 0.16 + 'px';
-            layer_bg1.style.left = -value * 0.32 + 'px';
-            layer_main.style.left = -value * 2.2 + 'px';
-            text_welcome.style.left = -value * 3.1 + 'px';
-            alice.style.left = -value * 0.48 + 'px';
-            alice.style.top = -value * 0.15 + 'px';
-
+            }
         });
 
-        
-    </script>
-  
+        schemeTargets.forEach((element) => {
+            observer.observe(element, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
+        });
+    })();
+
+    (function () {
+        let ticking = false;
+
+        function setTransform(el, x, y) {
+            if (!el) return;
+            el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        }
+
+        function update() {
+            ticking = false;
+            const value = window.scrollY || 0;
+
+            setTransform(layer_sk, value * 1.5, 0);
+            setTransform(text_name, -value * 1, 0);
+            setTransform(pumpking, -value * 1.5, value * 0.5);
+            setTransform(layer_bg2, -value * 0.16, 0);
+            setTransform(layer_bg1, -value * 0.32, 0);
+            setTransform(layer_main, -value * 2.2, 0);
+            setTransform(text_welcome, -value * 3.1, 0);
+            setTransform(alice, -value * 0.48, -value * 0.15);
+        }
+
+        function onScroll() {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(update);
+        }
+
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+    })();
+
+
+</script>
+
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -759,7 +893,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="." title="Tianle&#39;s Blog" class="md-nav__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
       
-  <img src="images/logo_reverse.png" alt="logo">
+  <img src="images/logo.png" alt="logo">
 
     </a>
     Tianle's Blog
@@ -9953,10 +10087,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.indexes", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.integrate", "content.code.annotate"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.indexes", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.integrate", "content.code.annotate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="javascripts/mathjax.js"></script>
       
@@ -9971,8 +10105,6 @@
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
       
         <script src="javascripts/extra-internet-markdown-ref.js"></script>
-      
-        <script src="javascripts/fancybox.js"></script>
       
     
   </body>

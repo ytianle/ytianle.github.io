@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../images/self.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -55,14 +55,20 @@
     
       <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../../stylesheets/fancybox.css">
-    
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+  </noscript>
+
   </head>
   
   
@@ -98,7 +104,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../../.." title="Tianle&#39;s Blog" class="md-header__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
       
-  <img src="../../../../images/logo_reverse.png" alt="logo">
+  <img src="../../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -581,7 +587,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="Tianle&#39;s Blog" class="md-nav__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
       
-  <img src="../../../../images/logo_reverse.png" alt="logo">
+  <img src="../../../../images/logo.png" alt="logo">
 
     </a>
     Tianle's Blog
@@ -9845,9 +9851,26 @@
               
               <article class="md-content__inner md-typeset">
                      <script
-    src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js"
-    id="yuantianle-github-io-7f7j3xbyx"
-  ></script> 
+    type="text/javascript">
+    (function () {
+      var load = function () {
+        if (document.getElementById("yuantianle-github-io-7f7j3xbyx")) {
+          return
+        }
+        var s = document.createElement("script")
+        s.src = "https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js"
+        s.id = "yuantianle-github-io-7f7j3xbyx"
+        s.defer = true
+        document.head.appendChild(s)
+      }
+
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(load, { timeout: 2500 })
+      } else {
+        window.setTimeout(load, 1200)
+      }
+    })()
+  </script>
   
     <div class="md-source-date" style="text-align: right; font-weight: bold;">
       <small>
@@ -10158,10 +10181,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.indexes", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.integrate", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.indexes", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.integrate", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../../javascripts/mathjax.js"></script>
       
@@ -10176,8 +10199,6 @@
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
       
         <script src="../../../../javascripts/extra-internet-markdown-ref.js"></script>
-      
-        <script src="../../../../javascripts/fancybox.js"></script>
       
     
   </body>
