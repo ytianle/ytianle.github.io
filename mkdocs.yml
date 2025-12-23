@@ -31,11 +31,13 @@ theme:
   features:
     - navigation.instant
     - navigation.indexes
+    - navigation.path
+    - navigation.prune
     - search.suggest
     - search.highlight
     - navigation.tabs
     - navigation.top
-    - toc.integrate
+    - toc.follow
     - content.code.annotate
 
   icon:
@@ -150,277 +152,264 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 nav:
-  - 🖲️Intro: index.md
+  - Home: index.md
   - 🔊BroadCast:
     - blog/index.md
   - 🐇CG:
     - 1_Computer_Graphics/README.md
     - Advanced Graphics:
-        - 1_Computer_Graphics/Advanced_Graphics/README.md
-        - Noise: 1_Computer_Graphics/Advanced_Graphics/Noise/README.md
-        - Ray Tracing: 1_Computer_Graphics/Advanced_Graphics/RayTracing/README.md
-        - Bluring: 1_Computer_Graphics/Advanced_Graphics/Bluring/README.md
+      - 1_Computer_Graphics/Advanced_Graphics/README.md
+      - Noise: 1_Computer_Graphics/Advanced_Graphics/Noise/README.md
+      - Ray Tracing: 1_Computer_Graphics/Advanced_Graphics/RayTracing/README.md
+      - Bluring: 1_Computer_Graphics/Advanced_Graphics/Bluring/README.md
     - Scientific Visualization:
-        - 1_Computer_Graphics/Scientific_Visualization/README.md
-        - Thermal Dynamics: 1_Computer_Graphics/Scientific_Visualization/Thermal/README.md
+      - 1_Computer_Graphics/Scientific_Visualization/README.md
+      - Thermal Dynamics: 1_Computer_Graphics/Scientific_Visualization/Thermal/README.md
     - Tools:
-        - 1_Computer_Graphics/Tools/README.md
-        - OpenCV: 1_Computer_Graphics/Tools/OpenCV/README.md
-        - Shader: 1_Computer_Graphics/Tools/Shader/README.md
-        - Three.js: 1_Computer_Graphics/Tools/Threejs/README.md
-        - Vulkan: 1_Computer_Graphics/Tools/Vulkan/README.md
+      - 1_Computer_Graphics/Tools/README.md
+      - OpenCV: 1_Computer_Graphics/Tools/OpenCV/README.md
+      - Shader: 1_Computer_Graphics/Tools/Shader/README.md
+      - Three.js: 1_Computer_Graphics/Tools/Threejs/README.md
+      - Vulkan: 1_Computer_Graphics/Tools/Vulkan/README.md
     - Visual Effects:
-        - 1_Computer_Graphics/Visual_Effects/README.md
+      - 1_Computer_Graphics/Visual_Effects/README.md
   - 🎮Game Dev:
     - 11_Game_Development/README.md
     - Unity:
-        - 11_Game_Development/Unity/README.md
-        - Shader Graph:
-          - 11_Game_Development/Unity/Shader_Graph/README.md
-          - Flipbook Node: 11_Game_Development/Unity/Shader_Graph/Flipbook/Flipbook.md
-        - VFX:
+      - 11_Game_Development/Unity/README.md
+      - Shader Graph:
+        - 11_Game_Development/Unity/Shader_Graph/README.md
+        - Flipbook Node: 11_Game_Development/Unity/Shader_Graph/Flipbook/Flipbook.md
+      - VFX:
+        - 11_Game_Development/Unity/VFX/README.md
+        - VFX Concepts:
+          - 11_Game_Development/Unity/VFX/VFX_Concepts/README.md
+          - VFX Graph: 11_Game_Development/Unity/VFX/VFX_Concepts/Parameter_vs_Attribute/Parameter_vs_Attribute.md
+        - Visual Effects:
           - 11_Game_Development/Unity/VFX/README.md
-          - VFX Concepts:
-            - 11_Game_Development/Unity/VFX/VFX_Concepts/README.md
-            - VFX Graph: 11_Game_Development/Unity/VFX/VFX_Concepts/Parameter_vs_Attribute/Parameter_vs_Attribute.md
-          - Visual Effects:
-            - 11_Game_Development/Unity/VFX/README.md
-            - Fog: 11_Game_Development/Unity/VFX/VisualEffects/Fog/Fog.md
-            - Tracing: 11_Game_Development/Unity/VFX/VisualEffects/Tracing/Tracing.md
-        - Game Design Pattern: 11_Game_Development/Unity/Design_Pattern/README.md
-        - Investigation:
-          - 11_Game_Development/Unity/Unity_Investigation/README.md
-          - URP: 11_Game_Development/Unity/Unity_Investigation/URP.md
-          - Unity Debug: 11_Game_Development/Unity/Unity_Investigation/Unity_Debug/Unity_debug.md
-          - Unity Life Cycle: 11_Game_Development/Unity/Unity_Investigation/Unity_LifeCycle/Unity_LifeCycle.md
-          - Awaitable: 11_Game_Development/Unity/Unity_Investigation/Awaitable/Awaitable.md
-        - Reading materials: 11_Game_Development/Unity/Reading_Materials/README.md
+          - Fog: 11_Game_Development/Unity/VFX/VisualEffects/Fog/Fog.md
+          - Tracing: 11_Game_Development/Unity/VFX/VisualEffects/Tracing/Tracing.md
+      - Game Design Pattern: 11_Game_Development/Unity/Design_Pattern/README.md
+      - Investigation:
+        - 11_Game_Development/Unity/Unity_Investigation/README.md
+        - URP: 11_Game_Development/Unity/Unity_Investigation/URP.md
+        - Unity Debug: 11_Game_Development/Unity/Unity_Investigation/Unity_Debug/Unity_debug.md
+        - Unity Life Cycle: 11_Game_Development/Unity/Unity_Investigation/Unity_LifeCycle/Unity_LifeCycle.md
+        - Awaitable: 11_Game_Development/Unity/Unity_Investigation/Awaitable/Awaitable.md
+      - Reading materials: 11_Game_Development/Unity/Reading_Materials/README.md
     - Unreal:
-        - 11_Game_Development/Unreal/README.md
+      - 11_Game_Development/Unreal/README.md
   - 👨‍💻SDE:
     - 2_Software_Engineering/README.md
-
     - CS561 Review: 2_Software_Engineering/Review.md
-
     - Agile:
-        - 2_Software_Engineering/Agile/README.md
-        - Agile Intro: 2_Software_Engineering/Agile/intro.md
-        - Agile Scrum: 2_Software_Engineering/Agile/scrum.md
-
+      - 2_Software_Engineering/Agile/README.md
+      - Agile Intro: 2_Software_Engineering/Agile/intro.md
+      - Agile Scrum: 2_Software_Engineering/Agile/scrum.md
     - Git & GitHub:
-        - 2_Software_Engineering/Github/README.md
-        - Git Theory: 2_Software_Engineering/Github/theory.md
-        - Git Commands: 2_Software_Engineering/Github/commands.md
-        - GitHub Action: 2_Software_Engineering/Github/action.md
-        - GitHub Semantics Versioning: 2_Software_Engineering/Github/sematicsversion.md
-
+      - 2_Software_Engineering/Github/README.md
+      - Git Theory: 2_Software_Engineering/Github/theory.md
+      - Git Commands: 2_Software_Engineering/Github/commands.md
+      - GitHub Action: 2_Software_Engineering/Github/action.md
+      - GitHub Semantics Versioning: 2_Software_Engineering/Github/sematicsversion.md
     - Test:
-        - 2_Software_Engineering/Test/README.md
-        - Test Basic: 2_Software_Engineering/Test/test.md
-
+      - 2_Software_Engineering/Test/README.md
+      - Test Basic: 2_Software_Engineering/Test/test.md
     - Docker:
-        - 2_Software_Engineering/Docker/README.md
-        - Guidance:
-            - 2_Software_Engineering/Docker/Guidance/README.md
-            - Compose -> Container: 2_Software_Engineering/Docker/Guidance/docker_compose.md
-            - Run -> Container: 2_Software_Engineering/Docker/Guidance/docker_run.md
-        - Docker Image (DIY): 2_Software_Engineering/Docker/A_good_model_for_Docker_Image_initialization.md
-        - Docker Compose: 2_Software_Engineering/Docker/Docker_compose.md
-        - Command Line: 2_Software_Engineering/Docker/Docker_Command.md
-
+      - 2_Software_Engineering/Docker/README.md
+      - Guidance:
+        - 2_Software_Engineering/Docker/Guidance/README.md
+        - Compose -> Container: 2_Software_Engineering/Docker/Guidance/docker_compose.md
+        - Run -> Container: 2_Software_Engineering/Docker/Guidance/docker_run.md
+      - Docker Image (DIY): 2_Software_Engineering/Docker/A_good_model_for_Docker_Image_initialization.md
+      - Docker Compose: 2_Software_Engineering/Docker/Docker_compose.md
+      - Command Line: 2_Software_Engineering/Docker/Docker_Command.md
     - Swift:
-        - 2_Software_Engineering/Swift/README.md
-        - Swift on Windows 10:
-            - 2_Software_Engineering/Swift/Swift_on_win10/README.md
-            - TL;DR: 2_Software_Engineering/Swift/Swift_on_win10/TL_DR.md
-            - VS Code-Docker for Swift on Win10: 2_Software_Engineering/Swift/Swift_on_win10/VS_Code_Docker_for_a_nice_Swift_edition_on_Windows10.md
-        - Learning Notes:
-            - 2_Software_Engineering/Swift/Notes/README.md
-            - Dispatch queue: 2_Software_Engineering/Swift/Notes/Dispatch_queue.md
-            - Map-Reduce: 2_Software_Engineering/Swift/Notes/Map_reduce.md
-
+      - 2_Software_Engineering/Swift/README.md
+      - Swift on Windows 10:
+        - 2_Software_Engineering/Swift/Swift_on_win10/README.md
+        - TL;DR: 2_Software_Engineering/Swift/Swift_on_win10/TL_DR.md
+        - VS Code-Docker for Swift on Win10: 2_Software_Engineering/Swift/Swift_on_win10/VS_Code_Docker_for_a_nice_Swift_edition_on_Windows10.md
+      - Learning Notes:
+        - 2_Software_Engineering/Swift/Notes/README.md
+        - Dispatch queue: 2_Software_Engineering/Swift/Notes/Dispatch_queue.md
+        - Map-Reduce: 2_Software_Engineering/Swift/Notes/Map_reduce.md
     - AWS:
-        - 2_Software_Engineering/AWS/README.md
-        - Basic Concepts:
-            - 2_Software_Engineering/AWS/Basic/README.md
-            - IAM: 2_Software_Engineering/AWS/Basic/IAM.md
-            - EC2: 2_Software_Engineering/AWS/Basic/EC2.md
-            - Load Balancer & Scaling: 2_Software_Engineering/AWS/Basic/LoadBalancer_Scaling.md
-            - S3: 2_Software_Engineering/AWS/Basic/S3.md
-            - ECS & Docker Container: 2_Software_Engineering/AWS/Basic/ECS.md
-            - Serverless Application: 2_Software_Engineering/AWS/Basic/Serverless.md
-            - Availability Zone and Region: 2_Software_Engineering/AWS/Basic/Zone_region.md
-        - Application: 2_Software_Engineering/AWS/Application/README.md
+      - 2_Software_Engineering/AWS/README.md
+      - Basic Concepts:
+        - 2_Software_Engineering/AWS/Basic/README.md
+        - IAM: 2_Software_Engineering/AWS/Basic/IAM.md
+        - EC2: 2_Software_Engineering/AWS/Basic/EC2.md
+        - Load Balancer & Scaling: 2_Software_Engineering/AWS/Basic/LoadBalancer_Scaling.md
+        - S3: 2_Software_Engineering/AWS/Basic/S3.md
+        - ECS & Docker Container: 2_Software_Engineering/AWS/Basic/ECS.md
+        - Serverless Application: 2_Software_Engineering/AWS/Basic/Serverless.md
+        - Availability Zone and Region: 2_Software_Engineering/AWS/Basic/Zone_region.md
+      - Application: 2_Software_Engineering/AWS/Application/README.md
     - Bash Commands:
-        - 2_Software_Engineering/Terminal/README.md
-        - CONTENTS: 2_Software_Engineering/Terminal/contents.md
+      - 2_Software_Engineering/Terminal/README.md
+      - CONTENTS: 2_Software_Engineering/Terminal/contents.md
     - VS_Code:
-        - 2_Software_Engineering/VS_Code/README.md
+      - 2_Software_Engineering/VS_Code/README.md
     - Others:
-        - 2_Software_Engineering/Others/README.md
-        - Engineer Principles: 2_Software_Engineering/Others/engineer.md
-        - Cryptographic: 2_Software_Engineering/Others/crypto.md
-        - Concurrency v.s. Parallelism: 2_Software_Engineering/Others/Concurrency.md
-        - Lock, mutex, and Semaphore: 2_Software_Engineering/Others/Lock_mutex_semaphore.md
-        - Self-documenting code: 2_Software_Engineering/Others/Self_documenting_code.md
-
+      - 2_Software_Engineering/Others/README.md
+      - Engineer Principles: 2_Software_Engineering/Others/engineer.md
+      - Cryptographic: 2_Software_Engineering/Others/crypto.md
+      - Concurrency v.s. Parallelism: 2_Software_Engineering/Others/Concurrency.md
+      - Lock, mutex, and Semaphore: 2_Software_Engineering/Others/Lock_mutex_semaphore.md
+      - Self-documenting code: 2_Software_Engineering/Others/Self_documenting_code.md
   - ©️C++:
     - 3_C++/README.md
     - Fast Read Catalog: 3_C++/fast_read.md
     - Oldschool C++:
-        - 3_C++/C++OLD/README.md
-        - Pointer & reference: 3_C++/C++OLD/ptr_ref.md
-        - Inheritance:
-            - 3_C++/C++OLD/Inheritance/README.md
-            - CONTENTS: 3_C++/C++OLD/Inheritance/Inheritance.md
-        - Template:
-            - 3_C++/C++OLD/Template/README.md
-            - CONTENTS: 3_C++/C++OLD/Template/content.md
+      - 3_C++/C++OLD/README.md
+      - Pointer & reference: 3_C++/C++OLD/ptr_ref.md
+      - Inheritance:
+        - 3_C++/C++OLD/Inheritance/README.md
+        - CONTENTS: 3_C++/C++OLD/Inheritance/Inheritance.md
+      - Template:
+        - 3_C++/C++OLD/Template/README.md
+        - CONTENTS: 3_C++/C++OLD/Template/content.md
     - Modern C++:
-        - 3_C++/C++NEW/README.md
-        - C++11:
-            - 3_C++/C++NEW/C++11/README.md
-            - auto & decltype: 3_C++/C++NEW/C++11/auto.md
-            - Smart pointer: 3_C++/C++NEW/C++11/smart_pointer.md
-        - C++14:
-            - 3_C++/C++NEW/C++14/README.md
-            - CONTENTS: 3_C++/C++NEW/C++14/content.md
-        - C++17:
-            - 3_C++/C++NEW/C++17/README.md
-            - CONTENTS: 3_C++/C++NEW/C++17/content.md
-        - C++20:
-            - 3_C++/C++NEW/C++20/README.md
-            - CONTENTS: 3_C++/C++NEW/C++20/content.md
+      - 3_C++/C++NEW/README.md
+      - C++11:
+        - 3_C++/C++NEW/C++11/README.md
+        - auto & decltype: 3_C++/C++NEW/C++11/auto.md
+        - Smart pointer: 3_C++/C++NEW/C++11/smart_pointer.md
+      - C++14:
+        - 3_C++/C++NEW/C++14/README.md
+        - CONTENTS: 3_C++/C++NEW/C++14/content.md
+      - C++17:
+        - 3_C++/C++NEW/C++17/README.md
+        - CONTENTS: 3_C++/C++NEW/C++17/content.md
+      - C++20:
+        - 3_C++/C++NEW/C++20/README.md
+        - CONTENTS: 3_C++/C++NEW/C++20/content.md
     - STL:
-        - 3_C++/STL/README.md
-        - unordered_set: 3_C++/STL/unodered_set.md
+      - 3_C++/STL/README.md
+      - unordered_set: 3_C++/STL/unodered_set.md
     - OOP concepts:
-        - 3_C++/OOP/concepts.md
-        - Basic Concepts: 3_C++/OOP/concepts.md
-        - UML & Object relationships: 3_C++/OOP/UML.md
-
+      - 3_C++/OOP/concepts.md
+      - Basic Concepts: 3_C++/OOP/concepts.md
+      - UML & Object relationships: 3_C++/OOP/UML.md
   - 🧮Algorithm:
     - 4_Algorithms/README.md
     - Typical Algorithms:
-        - 4_Algorithms/Typical_Questions/README.md
-        - Leetcode:
-            - Topology Sort: 4_Algorithms/Typical_Questions/Leetcode/Topology_sort.md
-            - Dijkstra: 4_Algorithms/Typical_Questions/Leetcode/Dijkstra.md
-            - Bipartition: 4_Algorithms/Typical_Questions/Leetcode/Bipartition.md
-            - Union-Find: 4_Algorithms/Typical_Questions/Leetcode/Unionfind.md
-            - Quick Sort: 4_Algorithms/Typical_Questions/Leetcode/Quick_sort.md
-            - Counting Sort: 4_Algorithms/Typical_Questions/Leetcode/Counting_sort.md
-            - Monotonic Queue: 4_Algorithms/Typical_Questions/Leetcode/Monotonic_queue.md
-            - Backtracking: 4_Algorithms/Typical_Questions/Leetcode/Backtracking.md
-        - Hackerrank:
-            - STDIN and STDOUT: 4_Algorithms/Typical_Questions/Hackerrank/STDIN&STDOUT.md
+      - 4_Algorithms/Typical_Questions/README.md
+      - Leetcode:
+        - Topology Sort: 4_Algorithms/Typical_Questions/Leetcode/Topology_sort.md
+        - Dijkstra: 4_Algorithms/Typical_Questions/Leetcode/Dijkstra.md
+        - Bipartition: 4_Algorithms/Typical_Questions/Leetcode/Bipartition.md
+        - Union-Find: 4_Algorithms/Typical_Questions/Leetcode/Unionfind.md
+        - Quick Sort: 4_Algorithms/Typical_Questions/Leetcode/Quick_sort.md
+        - Counting Sort: 4_Algorithms/Typical_Questions/Leetcode/Counting_sort.md
+        - Monotonic Queue: 4_Algorithms/Typical_Questions/Leetcode/Monotonic_queue.md
+        - Backtracking: 4_Algorithms/Typical_Questions/Leetcode/Backtracking.md
+      - Hackerrank:
+        - STDIN and STDOUT: 4_Algorithms/Typical_Questions/Hackerrank/STDIN&STDOUT.md
     - Practic Sheet:
-        - 4_Algorithms/Practice_Sheet/README.md
+      - 4_Algorithms/Practice_Sheet/README.md
   - ⛓️‍💥Full Stack:
     - 5_FullStack/README.md
     - Check List: 5_FullStack/CheckList.md
     - Basic knowledge:
-        - 5_FullStack/BASIC/README.md
-        - Front End:
-            - 5_FullStack/BASIC/Frontend/README.md
-            - Mock: 5_FullStack/BASIC/Frontend/Mock.md
-            - Auth: 5_FullStack/BASIC/Frontend/Auth.md
-            - URI: 5_FullStack/BASIC/Frontend/uri.md
-        - APIs:
-            - 5_FullStack/BASIC/API/README.md
-            - REST API: 5_FullStack/BASIC/API/rest_api.md
-        - Back End:
-            - 5_FullStack/BASIC/Backend/README.md
-            - Node.js: 5_FullStack/BASIC/Backend/nodejs.md
-            - Express.js: 5_FullStack/BASIC/Backend/expressjs.md
-            - Routing: 5_FullStack/BASIC/Backend/routing.md
-        - Network:
-            - 5_FullStack/BASIC/Web/README.md
-            - Performance Indices: 5_FullStack/BASIC/Web/Indices.md
-            - OIS:
-                - 5_FullStack/BASIC/Web/OIS/README.md
-                - Physical Layer: 5_FullStack/BASIC/Web/OIS/physical.md
-                - Data Link Layer: 5_FullStack/BASIC/Web/OIS/datalink.md
-                - Network Layer: 5_FullStack/BASIC/Web/OIS/network.md
-                - Transport Layer: 5_FullStack/BASIC/Web/OIS/transport.md
-                - Session Layer: 5_FullStack/BASIC/Web/OIS/session.md
-                - Presentaion Layer: 5_FullStack/BASIC/Web/OIS/presentation.md
-                - Application Layer: 5_FullStack/BASIC/Web/OIS/application.md
-            - Protocols:
-                - 5_FullStack/BASIC/Web/Protocols/README.md
-                - HTTP: 5_FullStack/BASIC/Web/Protocols/HTTP.md
+      - 5_FullStack/BASIC/README.md
+      - Front End:
+        - 5_FullStack/BASIC/Frontend/README.md
+        - Mock: 5_FullStack/BASIC/Frontend/Mock.md
+        - Auth: 5_FullStack/BASIC/Frontend/Auth.md
+        - URI: 5_FullStack/BASIC/Frontend/uri.md
+      - APIs:
+        - 5_FullStack/BASIC/API/README.md
+        - REST API: 5_FullStack/BASIC/API/rest_api.md
+      - Back End:
+        - 5_FullStack/BASIC/Backend/README.md
+        - Node.js: 5_FullStack/BASIC/Backend/nodejs.md
+        - Express.js: 5_FullStack/BASIC/Backend/expressjs.md
+        - Routing: 5_FullStack/BASIC/Backend/routing.md
+      - Network:
+        - 5_FullStack/BASIC/Web/README.md
+        - Performance Indices: 5_FullStack/BASIC/Web/Indices.md
+        - OIS:
+          - 5_FullStack/BASIC/Web/OIS/README.md
+          - Physical Layer: 5_FullStack/BASIC/Web/OIS/physical.md
+          - Data Link Layer: 5_FullStack/BASIC/Web/OIS/datalink.md
+          - Network Layer: 5_FullStack/BASIC/Web/OIS/network.md
+          - Transport Layer: 5_FullStack/BASIC/Web/OIS/transport.md
+          - Session Layer: 5_FullStack/BASIC/Web/OIS/session.md
+          - Presentaion Layer: 5_FullStack/BASIC/Web/OIS/presentation.md
+          - Application Layer: 5_FullStack/BASIC/Web/OIS/application.md
+        - Protocols:
+          - 5_FullStack/BASIC/Web/Protocols/README.md
+          - HTTP: 5_FullStack/BASIC/Web/Protocols/HTTP.md
     - Programming Language:
-        - 5_FullStack/LANG/README.md
-        - Javascript: 5_FullStack/LANG/JS/README.md
-        - SQL:
-            - 5_FullStack/LANG/SQL/README.md
-            - Basic Management: 5_FullStack/LANG/SQL/basic.md
-            - Structural Operators: 5_FullStack/LANG/SQL/particle.md
-            - Higher-level Management: 5_FullStack/LANG/SQL/higher.md
-            - Multiple Table Operation: 5_FullStack/LANG/SQL/multi_table.md
-        - C#: 
-          - 5_FullStack/LANG/CSharp/README.md
-          - LINQ: 5_FullStack/LANG/CSharp/LINQ/README.md
+      - 5_FullStack/LANG/README.md
+      - Javascript: 5_FullStack/LANG/JS/README.md
+      - SQL:
+        - 5_FullStack/LANG/SQL/README.md
+        - Basic Management: 5_FullStack/LANG/SQL/basic.md
+        - Structural Operators: 5_FullStack/LANG/SQL/particle.md
+        - Higher-level Management: 5_FullStack/LANG/SQL/higher.md
+        - Multiple Table Operation: 5_FullStack/LANG/SQL/multi_table.md
+      - C#:
+        - 5_FullStack/LANG/CSharp/README.md
+        - LINQ: 5_FullStack/LANG/CSharp/LINQ/README.md
     - .NET:
-        - 5_FullStack/NET/README.md
-        - ORM: 5_FullStack/NET/ORM/README.md
-        - HTTP Request: 5_FullStack/NET/HttpRequest/README.md
-
+      - 5_FullStack/NET/README.md
+      - ORM: 5_FullStack/NET/ORM/README.md
+      - HTTP Request: 5_FullStack/NET/HttpRequest/README.md
   - 🏭SoftArch:
     - 12_Architecture/README.md
     - Principles: 12_Architecture/Principles/README.md
     - Design Patterns:
-        - 12_Architecture/Design_Patterns/README.md
-        - Programming techniques: 12_Architecture/Design_Patterns/ProgramTech/README.md
-        - Catagory of Desgin Patterns: 
-            - 12_Architecture/Design_Patterns/DesignPatterns/README.md
-            - Factory: 12_Architecture/Design_Patterns/DesignPatterns/Factory/README.md
-            - Singleton: []
-            - Observer: []
-            - Object Pool: []
+      - 12_Architecture/Design_Patterns/README.md
+      - Programming techniques: 12_Architecture/Design_Patterns/ProgramTech/README.md
+      - Catagory of Desgin Patterns:
+        - 12_Architecture/Design_Patterns/DesignPatterns/README.md
+        - Factory: 12_Architecture/Design_Patterns/DesignPatterns/Factory/README.md
+        - Singleton: []
+        - Observer: []
+        - Object Pool: []
     - Arch Styles:
-        - 12_Architecture/Arch_Styles/README.md
-        - MVC: []
-        - MVVM: []
-        - Microservices: []
-        - SOA: []
-        - Event-driven: []
+      - 12_Architecture/Arch_Styles/README.md
+      - MVC: []
+      - MVVM: []
+      - Microservices: []
+      - SOA: []
+      - Event-driven: []
     - Distribute Sys Theorem:
-        - 12_Architecture/Distribute_System/README.md
-        - CAP: 12_Architecture/Distribute_System/CAP/README.md
-        - PACELC: []
-        - BASE: []
-        - ACID: []
-
+      - 12_Architecture/Distribute_System/README.md
+      - CAP: 12_Architecture/Distribute_System/CAP/README.md
+      - PACELC: []
+      - BASE: []
+      - ACID: []
   - 👨🏻‍💼ICS:
     - 10_Interview/README.md
     - OOP: 10_Interview/Other/oop_guide.md
     - Game DevOP:
-        - 10_Interview/Game_DevOP/README.md
-        - Coding Questions: 10_Interview/Game_DevOP/Coding_questions.md
-        - C++ Questions: 10_Interview/Game_DevOP/C++_questions.md
-        - CG Questions: 10_Interview/Game_DevOP/CG_questions.md
-        - Math Questions: 10_Interview/Game_DevOP/Math_questions.md
+      - 10_Interview/Game_DevOP/README.md
+      - Coding Questions: 10_Interview/Game_DevOP/Coding_questions.md
+      - C++ Questions: 10_Interview/Game_DevOP/C++_questions.md
+      - CG Questions: 10_Interview/Game_DevOP/CG_questions.md
+      - Math Questions: 10_Interview/Game_DevOP/Math_questions.md
     - Database Management: 10_Interview/Other/sql_guide.md
     - Operating System: 10_Interview/Operating_system/README.md
     - Kernel: 10_Interview/Kernel/README.md
     - Networking: 10_Interview/Networking/README.md
-
   - 🔢Math:
     - 6_Math/README.md
     - Concepts: 6_Math/Concepts/Math_questions.md
-    - Optimization: 
-          - 6_Math/Optimization/Optimization.md
-          - Methods Classification: 6_Math/Optimization/Methods_classification/Methods_classification.md
+    - Optimization:
+      - 6_Math/Optimization/Optimization.md
+      - Methods Classification: 6_Math/Optimization/Methods_classification/Methods_classification.md
     - Numercial Methods: 6_Math/Numerical/README.md
-
-  - 🏓By-time:
-    - Dunhuang Wall Painting: 7_Casual_Literary_Notes/Dunhuang.md
-  - 🎏日本語:
-    - 8_Japanese_Learning/README.md
-    - 五十音図: 8_Japanese_Learning/五十音図/README.md
-  - 🎸Guitar Sheets:
-    - 9_Guitar_Garage/README.md
-    - 每天多爱你一些: 9_Guitar_Garage/Sheet/每天多爱你一些.md
-
+  - 🎨Art:
+    - Art/README.md
+    - 🎏日本語:
+      - Art/8_Japanese_Learning/README.md
+      - 五十音図: Art/8_Japanese_Learning/japanese/japanese.md
+    - 🪽Dunhuang Wall Painting: Art/7_Casual_Literary_Notes/Dunhuang.md
+    - 🎸Guitar Sheets:
+      - Art/9_Guitar_Garage/README.md
+      - 每天多爱你一些: Art/9_Guitar_Garage/GuitarSheets/每天多爱你一些.md
 edit_uri: ytianle.github.io/edit/main/docs/
