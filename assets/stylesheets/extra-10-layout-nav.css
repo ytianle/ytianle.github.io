@@ -46,6 +46,24 @@
     :root {
         --md-sidebar-width: 14.5rem;
     }
+
+    .md-sidebar--primary,
+    .md-sidebar--secondary {
+        transition: transform 200ms ease, opacity 200ms ease !important;
+    }
+
+    .sidebar-collapsed .md-sidebar--primary {
+        transform: translateX(-110%) !important;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .sidebar-secondary-collapsed .md-sidebar--secondary {
+        transform: translateX(110%) !important;
+        opacity: 0;
+        pointer-events: none;
+    }
+
     .md-header__button[for=__drawer] {
         display: none;
     }

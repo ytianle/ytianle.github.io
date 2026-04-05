@@ -78,15 +78,14 @@
         // Update the URL bar without triggering any navigation.
         history.pushState(null, "", hash);
 
-        // Jump instantly — the IO sees the final scroll position in one shot,
-        // so the TOC highlight updates immediately without lag.
+        var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         var rawTop = target.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
             top: Math.max(0, rawTop - getStickyOffset()),
-            behavior: "instant"
+            behavior: prefersReducedMotion ? "auto" : "smooth"
         });
 
-        // Material's IO updates active state immediately after instant scroll.
+        // Material's IO updates the active state as the smooth scroll progresses.
 
     }, true /* capture phase */);
 
