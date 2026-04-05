@@ -1829,23 +1829,29 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="macro-rendering-error"><a class="toclink" href="../../2026/04/05/private-source-repo--public-site-repo/"><em>Macro Rendering Error</em></a></h2>
-<p><em>File</em>: <code>blog/posts/private_to_public_github_page.md</code></p>
-<p><em>UndefinedError</em>: 'secrets' is undefined</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a>Traceback (most recent call last):
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a>  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/mkdocs_macros/plugin.py", line 703, in render
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>    return md_template.render(**page_variables)
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a>    self.environment.handle_exception()
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a>  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>    raise rewrite_traceback_stack(source=source)
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a>  File "&lt;template&gt;", line 131, in top-level template code
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>  File "/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><a href="#__codelineno-3-11"><span class="linenos" data-linenos="11 "></span></a>    return getattr(obj, attribute)
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><a href="#__codelineno-3-12"><span class="linenos" data-linenos="12 "></span></a>           ^^^^^^^^^^^^^^^^^^^^^^^
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><a href="#__codelineno-3-13"><span class="linenos" data-linenos="13 "></span></a>jinja2.exceptions.UndefinedError: 'secrets' is undefined
-</code></pre></div>
+    <h2 id="private-source-repo--public-site-repo"><a class="toclink" href="../../2026/04/05/private-source-repo--public-site-repo/">PRIVATE source repo → PUBLIC site repo</a></h2>
+<blockquote>
+<p>More secure way to deploy GitHub Page with repo in resource-public.</p>
+</blockquote>
+<p>With the security concerns of exposing source Markdown files and Git history, I recently switched my previous public GitHub Pages repository to a private source repository, which will only be responsible for building and deploying to a separate public repository.</p>
+<p>Let's check the best practices for this private-to-public deployment setup!</p>
+<h3 id="practice-background"><a class="toclink" href="../../2026/04/05/private-source-repo--public-site-repo/#practice-background">Practice Background</a></h3>
+<p>Let's take my old mkdown blog repo <code>ytianle.github.io</code> as an example, which was public and contained both the MkDocs source files and the generated static site. This meant that anyone could view the Markdown sources, commit history, and author information directly on GitHub.</p>
+<ul>
+<li><strong>Public repo (old):</strong> <code>ytianle.github.io</code> (public, contains both source and generated files)</li>
+</ul>
+<h3 id="migration-target"><a class="toclink" href="../../2026/04/05/private-source-repo--public-site-repo/#migration-target">Migration Target</a></h3>
+<ul>
+<li><strong>Private repo (old):</strong> <code>ytianle.github.io</code> → <code>ytianle.github.io_private</code> (MkDocs source, scripts, images, raw notes, build tooling)</li>
+<li><strong>Public repo (new):</strong> <code>ytianle.github.io</code> (public, contains generated static files only)</li>
+</ul>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/04/05/private-source-repo--public-site-repo/">
+          Continue reading
+        </a>
+      </nav>
     
     
   </div>
