@@ -1,0 +1,193 @@
+/* Cards, media, and UI odds and ends */
+
+/* Denser cards layout for indices */
+.md-typeset .grid.cards {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+}
+
+.md-typeset .grid.cards.cards-quarter {
+    gap: 0.4rem;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+
+.md-typeset .grid.cards.cards-quarter iframe {
+    height: 140px;
+}
+
+.md-typeset .grid.cards.cards-quarter > ul > li {
+    padding: 0.4rem;
+}
+
+.md-typeset .grid.cards.cards-quarter {
+    font-size: 0.72rem;
+}
+
+.md-typeset .grid.cards > * {
+    border-radius: 10px;
+}
+
+.md-typeset .grid.cards > ul > li {
+    border: 1px solid rgba(12, 15, 22, 0.22);
+    border-radius: 10px;
+}
+
+.md-typeset .grid.cards .book-cover {
+    aspect-ratio: 8.5 / 11;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 0.6rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+.md-typeset .grid.cards .book-cover-link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.md-typeset .grid.cards .book-cover-link .book-cover {
+    margin-bottom: 0;
+}
+
+.md-typeset .grid.cards .book-cover-blurb {
+    align-items: center;
+    background: rgba(12, 15, 22, 0.72);
+    border-radius: 8px;
+    bottom: 0;
+    color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    font-size: 0.7rem;
+    inset: 0;
+    line-height: 1.3;
+    opacity: 0;
+    padding: 0.4rem;
+    position: absolute;
+    transition: opacity 120ms ease-in;
+}
+
+.md-typeset .grid.cards .book-cover-link:hover .book-cover-blurb {
+    opacity: 1;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards .book-cover-blurb {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.md-typeset .grid.cards .book-cover-placeholder {
+    aspect-ratio: 8.5 / 11;
+    background: rgba(12, 15, 22, 0.06);
+    border: 1px dashed rgba(12, 15, 22, 0.2);
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 0.6rem;
+    width: 100%;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards .book-cover-placeholder {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-md-color-scheme="default"] .md-typeset .grid.cards > ul > li {
+    background-color: rgba(12, 15, 22, 0.04);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+@media screen and (min-width: 60em) {
+    .md-tabs__list > li {
+        position: relative;
+    }
+
+    .md-tabs__link svg {
+        margin-right: 0.2rem !important;
+    }
+
+    .md-tabs__list > li:nth-child(2),
+    .md-tabs__list > li:nth-child(8) {
+        padding-right: 1.6rem;
+    }
+
+    .md-tabs__list > li:nth-child(2)::after,
+    .md-tabs__list > li:nth-child(8)::after {
+        content: "|";
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(12, 15, 22, 0.4);
+    }
+
+    [data-md-color-scheme="slate"] .md-tabs__list > li:nth-child(2)::after,
+    [data-md-color-scheme="slate"] .md-tabs__list > li:nth-child(8)::after {
+        color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Sidebar toggle icon color in dark mode */
+[data-md-color-scheme="slate"] .sidebar-toggle svg {
+    fill: #e6e6f0;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.md-nav__item .md-nav__link--active {
+    color: #0c0f16;
+    background-color: rgba(12, 15, 22, 0.06);
+    border-radius: 3%;
+    font-weight: 600;
+}
+
+.md-nav__link>* {
+      font-weight: 600;
+}
+
+.e_docker {
+    color: #1DA1F2;
+  }
+.e_github {
+    color: #7C007C;
+  }
+.e_vscode {
+    color: #1d8ff2;
+  }
+.e_cpp {
+    color: #f4ce65;
+  }
+.e_swift {
+    color: #F6692F;
+  }
+.e_aws {
+    color: #FD9827;
+  }  
+.e_terminal {
+    color: #02cb16;
+  }
+.e_csharp {
+    color: #795dd9;
+  }
+.e_dotnet {
+    color: #512BD4;
+  }
+
+.git_triangle{
+    color: #00FFFF;
+}
+.git_square{
+    color: #FF5555;
+}
+.git_circle{
+    color: #99FF55;
+}
+
+
+.md-typeset .admonition, .md-typeset details {
+    font-size: .80rem;
+}
+

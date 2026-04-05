@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://cheatsheets.zip/unity-shader-graph.html#1-attributes -->
+<html class="scrollbar dark" translate="no"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Unity Shader Graph Cheat Sheet &amp; Quick Reference</title><meta name="keywords" content="cheat,sheet,cheatsheets,reference,programming,code table,snippets,linux,command,shortcuts,developers,unity,shader,computer graphics,visual effects"><meta name="description" content="This is a visual cheat-sheet for the Unity Shader Graph. This tool is used to create custom shaders material i"><meta property="og:url" content="https://cheatsheets.zip/unity-shader-graph.html"><meta property="og:title" content="Unity Shader Graph Cheat Sheet &amp; Quick Reference"><meta property="og:site_name" content="CheatSheets.zip"><meta property="og:description" content="This is a visual cheat-sheet for the Unity Shader Graph. This tool is used to create custom shaders material i"><meta property="og:image" content="https://cheatsheets.zip/assets/image/preview.png?v=azrt9"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Unity Shader Graph Cheat Sheet &amp; Quick Reference"><meta name="twitter:site" content="@CheatSheets.zip"><meta name="twitter:creator" content="@CheatSheets.zip"><meta name="twitter:description" content="This is a visual cheat-sheet for the Unity Shader Graph. This tool is used to create custom shaders material i"><meta name="twitter:image" content="https://cheatsheets.zip/assets/image/preview.png?v=lf0dyi"><link rel="icon" href="https://cheatsheets.zip/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="https://cheatsheets.zip/images/favicon.png?v=1"><link rel="canonical" href="https://cheatsheets.zip/unity-shader-graph.html"><link rel="prefetch" href="https://cheatsheets.zip/"><link rel="prerender" href="https://cheatsheets.zip/"><link rel="alternate" href="https://cheatsheets.zip/atom.xml" title="CheatSheets.zip" type="application/atom+xml"><link rel="stylesheet" href="./Unity Shader Graph Cheat Sheet &amp; Quick Reference_files/style.css"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script><input type="hidden" id="_o_dbjbempljhcmhlfpfacalomonjpalpko" data-inspect-config="3"><script type="text/javascript" src="chrome-extension://dbjbempljhcmhlfpfacalomonjpalpko/scripts/inspector.js"></script><script type="text/javascript" src="./Unity Shader Graph Cheat Sheet &amp; Quick Reference_files/fuse_6.4.6.js.下载" async="true"></script><script type="text/javascript" src="./Unity Shader Graph Cheat Sheet &amp; Quick Reference_files/js" async="true"></script><script type="text/javascript" src="./Unity Shader Graph Cheat Sheet &amp; Quick Reference_files/monetization.custom.js.下载"></script><script type="text/javascript" src="./Unity Shader Graph Cheat Sheet &amp; Quick Reference_files/f.txt" crossorigin="anonymous" async="true"></script><div id="_bsa_srv-CW7DVK3M_0"></div></head><body class="bg-slate-100 dark:bg-slate-900" data-new-gr-c-s-check-loaded="14.1204.0" data-gr-ext-installed=""><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="https://cheatsheets.zip/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center text-white mr-2 text-3xl md:text-4xl"><div class="self-center"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M234.624 932.864a43.52 43.52 0 0 1-58.688-17.024 46.528 46.528 0 0 1-5.248-21.248V584.896c0 30.72 17.28 49.664 62.848 70.912l278.08 138.688-276.992 138.368z" fill="#6ad09d" opacity=".4"></path><path d="M642.944 85.312c115.584 0 209.28 45.504 210.368 161.92v647.36a44.992 44.992 0 0 1-5.248 20.864 43.328 43.328 0 0 1-59.84 17.408L511.616 794.496l-278.08-138.688c-45.568-21.248-62.848-40.192-62.848-70.912V247.168c0-116.352 93.696-161.856 208.832-161.856zm28.992 257.792H350.912a33.6 33.6 0 0 0-33.472 33.728c0 18.56 14.976 33.728 33.472 33.728H672a33.6 33.6 0 0 0 33.472-33.728A33.6 33.6 0 0 0 672 343.104z" fill="#6ad09d"></path></svg></div></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">cheatsheets<span class="text-emerald-400">.zip</span></span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><div class="md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M942.14826666 878.7968l-200.56746667-229.92213333C795.37493333 583.8848 827.73333333 500.5312 827.73333333 409.6 827.73333333 202.27413333 659.59253333 34.13333333 452.26666666 34.13333333 244.87253333 34.13333333 76.79999999 202.27413333 76.79999999 409.6S244.87253333 785.06666667 452.26666666 785.06666667c77.14133333 0 148.82133333-23.3472 208.41813333-63.21493334l199.33866667 228.5568c19.72906667 22.7328 54.272 24.91733333 76.8 5.25653334C959.62453333 935.86773333 961.87733333 901.46133333 942.14826666 878.7968zM179.19999999 409.6c0-150.59626667 122.4704-273.06666667 273.06666667-273.06666667 150.59626667 0 273.06666667 122.4704 273.06666667 273.06666667s-122.4704 273.06666667-273.06666667 273.06666667C301.67039999 682.66666667 179.19999999 560.19626667 179.19999999 409.6z"></path></svg></div> <span class="hidden md:inline dark:text-slate-300">Search for cheatsheet</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/Fechin/reference/blob/main/source/_posts/unity-shader-graph.md" rel="external nofollow noreferrer" target="_blank"><img alt="GitHub Repo stars" style="height:26px;opacity:.8" src="./Unity Shader Graph Cheat Sheet &amp; Quick Reference_files/reference"></a> <a href="https://twitter.com/FechinLi" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-[#4d9feb] text-slate-100 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:opacity-80"><div class="md:mr-2"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></div> <span class="hidden md:inline text-sm">Follow Me</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"> <i class="text-gray-600 dark:text-gray-300 dark:hover:text-white icon-light"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M512 31.40266667c14.19946667 0 26.935296 8.14830933 31.93787733 20.447232l29.40381867 72.50466133c12.713984 31.30436267-4.456448 66.21320533-38.33856 77.96599467A70.34197333 70.34197333 0 0 1 512 206.16533333c-36.19771733 0-65.536-27.11005867-65.536-60.555264 0-7.25265067 1.41994667-14.46161067 4.17245867-21.25550933l29.425664-72.50466133C485.04285867 39.550976 497.75684267 31.40266667 512 31.40266667zm0 961.19466666c-14.221312 0-26.95714133-8.14830933-31.93787733-20.447232l-29.425664-72.50466133a56.492032 56.492032 0 0 1-4.17245867-21.25550933C446.464 844.96657067 475.80228267 817.83466667 512 817.83466667c7.86432 0 15.64125867 1.31072 23.003136 3.84477866 33.882112 11.75278933 51.052544 46.661632 38.33856 77.98784l-29.40381867 72.482816c-5.00258133 12.29892267-17.73841067 20.447232-31.93787733 20.447232zm480.59733333-480.59733333c0 14.19946667-8.14830933 26.935296-20.447232 31.93787733l-72.50466133 29.40381867c-31.30436267 12.713984-66.21320533-4.456448-77.96599467-38.33856A70.34197333 70.34197333 0 0 1 817.83466667 512c0-36.19771733 27.11005867-65.536 60.555264-65.536 7.25265067 0 14.46161067 1.41994667 21.25550933 4.17245867l72.50466133 29.425664c12.29892267 4.980736 20.447232 17.69472 20.447232 31.93787733zM31.40266667 512c0-14.221312 8.14830933-26.95714133 20.447232-31.93787733l72.50466133-29.425664c6.77205333-2.752512 13.98101333-4.17245867 21.25550933-4.17245867C179.03342933 446.464 206.16533333 475.80228267 206.16533333 512c0 7.86432-1.31072 15.64125867-3.84477866 23.003136-11.75278933 33.882112-46.661632 51.052544-77.98784 38.33856l-72.482816-29.40381867C39.550976 538.935296 31.40266667 526.19946667 31.40266667 512zM172.15214933 172.17399467c10.04885333-10.04885333 24.81629867-13.28196267 37.04968534-8.126464l72.06775466 30.45239466c31.1296 13.172736 43.66882133 49.98212267 28.00571734 82.24768a70.34197333 70.34197333 0 0 1-13.54410667 19.00544c-25.58088533 25.58088533-65.49230933 27.15374933-89.12896 3.49525334a56.492032 56.492032 0 0 1-12.10231467-17.97870934L164.04753067 209.22368c-5.177344-12.23338667-1.94423467-27.000832 8.10461866-37.04968533zm679.673856 679.673856c-10.04885333 10.04885333-24.81629867 13.28196267-37.04968533 8.10461866l-72.04590933-30.45239466a56.492032 56.492032 0 0 1-18.00055467-12.08046934c-23.63665067-23.658496-22.06378667-63.56992 3.51709867-89.15080533a70.34197333 70.34197333 0 0 1 19.00544-13.54410667c32.26555733-15.663104 69.074944-3.12388267 82.24768 28.00571734l30.45239466 72.06775466c5.15549867 12.23338667 1.92238933 26.97898667-8.126464 37.04968534zm0-679.69570134c10.04885333 10.04885333 13.28196267 24.81629867 8.126464 37.04968534l-30.45239466 72.06775466c-13.172736 31.1296-49.98212267 43.66882133-82.24768 28.00571734a70.34197333 70.34197333 0 0 1-19.00544-13.54410667c-25.58088533-25.58088533-27.15374933-65.49230933-3.49525334-89.12896 5.111808-5.15549867 11.206656-9.240576 17.97870934-12.10231467l72.04590933-30.45239466c12.23338667-5.177344 27.000832-1.94423467 37.04968533 8.10461866zM172.15214933 851.82600533c-10.04885333-10.04885333-13.28196267-24.81629867-8.10461866-37.04968533l30.45239466-72.04590933c2.83989333-6.77205333 6.946816-12.86690133 12.08046934-18.00055467 23.658496-23.63665067 63.56992-22.06378667 89.15080533 3.51709867 5.57056 5.57056 10.15808 12.01493333 13.54410667 19.00544 15.663104 32.26555733 3.12388267 69.074944-28.00571734 82.24768l-72.06775466 30.45239466c-12.23338667 5.15549867-26.97898667 1.92238933-37.04968534-8.126464zM512 752.29866667c-132.7104 0-240.29866667-107.58826667-240.29866667-240.29866667s107.58826667-240.29866667 240.29866667-240.29866667 240.29866667 107.58826667 240.29866667 240.29866667-107.58826667 240.29866667-240.29866667 240.29866667z"></path></svg></i></button> <a href="https://facebook.com/sharer/sharer.php?u=https://cheatsheets.zip/unity-shader-graph.html" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 w-8 justify-center items-center rounded-full bg-[#4a66ad] text-slate-100 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:opacity-80"> <span class="text-md"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M594.74346667 51.53066667c-28.95893333 0-56.30826667 3.2192-88.48533334 16.0896-65.9616 27.34826667-98.13653333 88.48533333-98.13653333 186.6208v94.91946666h-91.70026667v157.66186667h91.70026667v455.28853333h186.6208v-455.28853333h127.09546667l17.696-157.66186667h-144.7936v-70.7872c0-22.52266667 1.60853333-38.61013333 8.04266666-46.65706666 8.04266667-14.47786667 24.13226667-20.91413333 49.872-20.91413334h85.26613334v-157.66186666h-143.184z"></path></svg></span> <span class="hidden">Facebook</span></button></a> <a href="https://twitter.com/intent/tweet/?text=This%20is%20a%20visual%20cheat-sheet%20for%20the%20Unity%20Shader%20Graph.%20This%20tool%20is%20used%20to%20create%20custom%20shaders%20material%20i&amp;url=https://cheatsheets.zip/unity-shader-graph.html" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 w-8 justify-center items-center rounded-full bg-[#4d9feb] text-slate-100 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:opacity-80"> <span class="text-md"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></span> <span class="hidden">Twitter</span></button></a></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto items-center text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">Unity Shader Graph</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>This is a visual cheat-sheet for the Unity Shader Graph. This tool is used to create custom shaders material in Unity, a popular game engine.</p></div><div class="pt-5" id="carbon_container"></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap cols-2">
+<h2 id="shader-graph-nodes"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#shader-graph-nodes">#</a>Shader Graph Nodes</h2>
+<div class="h3-wrap-list">
+<p class="col-span-2"><code>We are using <yel><strong>SAIT</strong></yel> to indicate the output type is "same as the input type".</code></p>
+</div>
+</div>
+<div class="h2-wrap cols-2 boxed">
+<h2 id="1-attributes"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#1-attributes">#</a>1. Attributes</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-2">
+<h3 id="positioning"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#positioning">#</a>Positioning</h3>
+<div class="section">
+<p><yel><strong>Position</strong></yel> - provides vertex position</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>No inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>Provides vertex position</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Normal</strong></yel> - supplies surface normal direction</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>No inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>Provides surface normal</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>World Position</strong></yel> - returns the object's world space position</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>No inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>World space position</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Object Position</strong></yel> - returns the object's local space position</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>No inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>Local space position</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Screen Position</strong></yel> - returns the object's screen space position</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>No inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Screen space position</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Camera Position</strong></yel> - returns the camera's world space position</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>No inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>Camera world space position</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="timing"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#timing">#</a>Timing</h3>
+<div class="section">
+<p><yel><strong>Time</strong></yel> - outputs various time-related values</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>No inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Time (T) - The total elapsed time since the start of the shader</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Sin Time (T/8π) - A sine wave based on time</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Cos Time (T/8π) - A cosine wave based on time</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Delta Time - Time passed between the previous frame and the current frame</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="2-math-operations"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#2-math-operations">#</a>2. Math Operations</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="basic-math"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#basic-math">#</a>Basic Math</h3>
+<div class="section">
+<p><yel><strong>Add</strong></yel> - adds two values</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>First value</td>
+</tr>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>Second value</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAIT</td>
+<td>Sum of the two inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Subtract</strong></yel> - subtracts one value from another</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>Minuend</td>
+</tr>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>Subtrahend</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAIT</td>
+<td>Difference of the two inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Multiply</strong></yel> - multiplies two values</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code> <br> <code>Matrix</code></td>
+<td>First value</td>
+</tr>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code> <br> <code>Matrix</code></td>
+<td>Second value</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAIT</td>
+<td>The product of the two inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="advanced-math"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#advanced-math">#</a>Advanced Math</h3>
+<div class="section">
+<p><yel><strong>Power</strong></yel> - raises input to a power</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Base</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Exponent</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Result of base raised to the power of the exponent</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Sqrt</strong></yel> - square root of input</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Input value</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Square root of the input</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Abs</strong></yel> - outputs absolute value</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>Input value</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAIT</td>
+<td>Absolute value of the input</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Dot Product</strong></yel> - calculates dot product between two vectors</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code> <br> <code>Vector4</code></td>
+<td>First vector</td>
+</tr>
+<tr>
+<td><code>Vector3</code> <br> <code>Vector4</code></td>
+<td>Second vector</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Dot product result</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Cross Product</strong></yel> - calculates cross product between two vectors</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>First vector</td>
+</tr>
+<tr>
+<td><code>Vector3</code></td>
+<td>Second vector</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>Cross product result</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="trigonometry"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#trigonometry">#</a>Trigonometry</h3>
+<div class="section">
+<p><yel><strong>Sin</strong></yel> - outputs sine of input</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Input in radians</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Sine of the input</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Cos</strong></yel> - outputs cosine of input</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Input in radians</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Cosine of the input</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="interpolation"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#interpolation">#</a>Interpolation</h3>
+<div class="section">
+<p><yel><strong>Lerp</strong></yel> - linear interpolation between two values</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>Start value</td>
+</tr>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>End value</td>
+</tr>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>Interpolation factor (T)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAIT</td>
+<td>Interpolated result</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Step</strong></yel> - creates a step between two thresholds</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>Threshold</td>
+</tr>
+<tr>
+<td><code>Float</code> <br> <code>Vector</code></td>
+<td>Input</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAIT</td>
+<td>Step result</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="3-color-processing"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#3-color-processing">#</a>3. Color Processing</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="basic-color-manipulation"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#basic-color-manipulation">#</a>Basic Color Manipulation</h3>
+<div class="section">
+<p><yel><strong>Color</strong></yel> - provides a constant color value</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>No inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>RGBA color value</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Add Color</strong></yel> - adds two color values</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>First color</td>
+</tr>
+<tr>
+<td><code>Vector4</code></td>
+<td>Second color</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Sum of the two colors</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Multiply Color</strong></yel> - multiplies two color values</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>First color</td>
+</tr>
+<tr>
+<td><code>Vector4</code></td>
+<td>Second color</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Product of the two colors</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Lerp Color</strong></yel> - interpolates between two colors</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Start color</td>
+</tr>
+<tr>
+<td><code>Vector4</code></td>
+<td>End color</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Interpolation factor (T)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Interpolated color</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="color-adjustment"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#color-adjustment">#</a>Color Adjustment</h3>
+<div class="section">
+<p><yel><strong>Saturation</strong></yel> - adjusts the saturation of input color</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Input color</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Saturation factor</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Adjusted color</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Contrast</strong></yel> - adjusts contrast of input color</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Input color</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Contrast factor</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Adjusted color</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Hue</strong></yel> - shifts the hue of the input color</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Input color</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Hue shift amount</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Color with shifted hue</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Invert Colors</strong></yel> - inverts the input color</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Input color</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Inverted color</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Replace Color</strong></yel> - replaces a specific color in the input with a new color</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Input color</td>
+</tr>
+<tr>
+<td><code>Vector4</code></td>
+<td>Target color</td>
+</tr>
+<tr>
+<td><code>Vector4</code></td>
+<td>Replacement color</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Color with replaced values</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>White Balance</strong></yel> - adjusts the white balance of input color</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Input color</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Temperature value</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Tint value</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Adjusted color</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="channel-operations"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#channel-operations">#</a>Channel Operations</h3>
+<div class="section">
+<p><yel><strong>Channel Mixer</strong></yel> - modifies color channels independently</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Input color</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Red channel multiplier</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Green channel multiplier</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Blue channel multiplier</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Modified color</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="4-texture-processing"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#4-texture-processing">#</a>4. Texture Processing</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="sampling"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#sampling">#</a>Sampling</h3>
+<div class="section">
+<p><yel><strong>Sample Texture</strong></yel> - retrieves color data from texture</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Texture (sampler)</code></td>
+<td>Texture input</td>
+</tr>
+<tr>
+<td><code>Vector2</code></td>
+<td>UV coordinates</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Color data from the texture</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>UV</strong></yel> - provides UV coordinates for texture mapping</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>No inputs</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector2</code></td>
+<td>UV coordinates</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="manipulation"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#manipulation">#</a>Manipulation</h3>
+<div class="section">
+<p><yel><strong>Tiling Offset</strong></yel> - adjusts tiling and offset of texture</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector2</code></td>
+<td>Tiling values</td>
+</tr>
+<tr>
+<td><code>Vector2</code></td>
+<td>Offset values</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector2</code></td>
+<td>Modified UV coordinates</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Distortion</strong></yel> - warps the surface of the object</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Distortion strength</td>
+</tr>
+<tr>
+<td><code>Vector2</code></td>
+<td>UV coordinates</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector2</code></td>
+<td>Warped UV coordinates</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Parallax</strong></yel> - simulates depth using parallax mapping</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Texture (sampler)</td>
+<td>Input texture</td>
+</tr>
+<tr>
+<td><code>Vector2</code></td>
+<td>UV coordinates</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Depth value</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector2</code></td>
+<td>Adjusted UV coordinates</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-2">
+<h2 id="5-effects"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#5-effects">#</a>5. Effects</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap row-span-2">
+<h3 id="visual-effects"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#visual-effects">#</a>Visual Effects</h3>
+<div class="section">
+<p><yel><strong>Fresnel Effect</strong></yel> - creates a glow effect on object edges</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>View direction</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Power of the effect</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Float</code></td>
+<td>Fresnel effect value</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><yel><strong>Dissolve</strong></yel> - generates a dissolve transition effect</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Texture (sampler)</code></td>
+<td>Input texture</td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td>Dissolve threshold</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector4</code></td>
+<td>Dissolve effect output</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap row-span-2">
+<h3 id="reflection"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#reflection">#</a>Reflection</h3>
+<div class="section">
+<p><yel><strong>Reflection</strong></yel> - reflects based on surface normal direction</p>
+<ul class="shortcuts marker-round cols-2">
+<li style="border-bottom: none;">
+<p><strong>Inputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>Incident direction</td>
+</tr>
+<tr>
+<td><code>Vector3</code></td>
+<td>Surface normal</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li style="border-bottom: none;">
+<p><strong>Outputs</strong></p>
+<table class="left-text">
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vector3</code></td>
+<td>Reflected direction</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="custom-function-node"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#custom-function-node">#</a>Custom Function Node</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="steps-to-create-a-custom-function-node"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#steps-to-create-a-custom-function-node">#</a>Steps to Create a Custom Function Node</h3>
+<div class="section">
+<ul class="marker-timeline shortcuts">
+<li>
+<p><strong>Step 1: Add Custom Function Node in Shader Graph</strong></p>
+<ul>
+<li>Right-click in Shader Graph and choose <strong>"Create Node"</strong> &gt; <strong>"Custom Function"</strong>.</li>
+<li style="border-bottom: none;">Choose between <strong>"String"</strong> (for inline HLSL code) or <strong>"File"</strong> (for an external HLSL file).</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 2: Configure the Node in Shader Graph</strong></p>
+<ul>
+<li>
+<p>Set the name of the node.</p>
+</li>
+<li style="border-bottom: none;">
+<p>If using <strong>"File"</strong>, ensure the external HLSL file name exactly matches the function name defined in the HLSL file. This ensures the function is correctly referenced in the Shader Graph pipeline.</p>
+<p><yel><strong>Example</strong></yel>: If the file is named <code>CustomFunction.hlsl</code>, the function inside it should also be named <code>CustomFunction</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 3: Add Inputs/Outputs in Shader Graph</strong></p>
+<ul>
+<li style="border-bottom: none;">
+<p>Define the required <code>Inputs</code> and <code>Outputs</code> for the custom function in Shader Graph. These will automatically generate ports for you to connect other nodes.</p>
+<p><yel><strong>Example</strong></yel>:</p>
+<ul>
+<li><strong>Inputs</strong>: <code>Float</code> (time), <code>Vector3</code> (position)</li>
+<li style="border-bottom: none;"><strong>Outputs</strong>: <code>Vector3</code> (new position)</li>
+</ul>
+<p>In the custom HLSL code, the <code>in</code> and <code>out</code> parameters correspond to these inputs and outputs:</p>
+<ul>
+<li><code>in</code> represents the data coming into the function (e.g., <code>time</code>, <code>position</code>).</li>
+<li style="border-bottom: none;"><code>out</code> defines the return value (e.g., modified <code>position</code>).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 4: Write HLSL Code</strong></p>
+<ul>
+<li>
+<p>If using the <strong>"String"</strong> option:</p>
+<ul>
+<li>
+<p>Directly write the HLSL code inside the custom function node editor in Shader Graph.</p>
+</li>
+<li>
+<p>Ensure that the <code>in</code> and <code>out</code> parameters match the inputs and outputs you defined in Shader Graph.</p>
+</li>
+<li style="border-bottom: none;">
+<p><yel><strong>Example of inline code</strong></yel> (using <strong>"String"</strong> mode):</p>
+<pre><code class="hljs language-cpp"><span class="hljs-function">float3 <span class="hljs-title">CustomPosition</span><span class="hljs-params">(in <span class="hljs-type">float</span> time, in float3 position, out float3 newPosition)</span> </span>{
+  newPosition = position + <span class="hljs-built_in">float3</span>(<span class="hljs-built_in">sin</span>(time), <span class="hljs-built_in">cos</span>(time), <span class="hljs-number">0.0</span>);
+  <span class="hljs-keyword">return</span> newPosition;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>If using the <strong>"File"</strong> option:</p>
+<ul>
+<li>
+<p>Write the HLSL code in an external <code>.hlsl</code> file and reference the file in Shader Graph.</p>
+</li>
+<li style="border-bottom: none;">
+<p><yel><strong>Example of an external HLSL file</strong></yel> (using <strong>"File"</strong> mode):</p>
+<ol>
+<li>
+<p><strong>1. Create an HLSL file</strong> named <code>CustomPosition.hlsl</code>.</p>
+</li>
+<li>
+<p><strong>2. Write the custom function</strong> inside the file. The <code>in</code> and <code>out</code> parameters should match the Shader Graph inputs and outputs.</p>
+</li>
+</ol>
+<pre><code class="hljs language-cpp"><span class="hljs-function">float3 <span class="hljs-title">CustomPosition</span><span class="hljs-params">(in <span class="hljs-type">float</span> time, in float3 position, out float3 newPosition)</span> </span>{
+  newPosition = position + <span class="hljs-built_in">float3</span>(<span class="hljs-built_in">sin</span>(time), <span class="hljs-built_in">cos</span>(time), <span class="hljs-number">0.0</span>);
+  <span class="hljs-keyword">return</span> newPosition;
+}
+</code></pre>
+<ol start="3">
+<li>
+<p><strong>3. Save the file</strong> in your project directory, for example, <code>Assets/Shaders/CustomPosition.hlsl</code>.</p>
+</li>
+<li>
+<p><strong>4. Link the file</strong> in Shader Graph:</p>
+</li>
+</ol>
+<ul>
+<li style="border-bottom: none;">In the Custom Function Node, switch to <strong>"File"</strong> mode and reference <code>CustomPosition.hlsl</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Step 5: Use the Node in Shader Graph</strong></p>
+<ul>
+<li>
+<p>Connect the custom function node’s input ports to other nodes, such as <code>Time</code> and <code>Position</code>, to feed data into the custom function.</p>
+</li>
+<li>
+<p>Connect the output port to apply the function result in the Shader Graph pipeline.</p>
+</li>
+<li style="border-bottom: none;">
+<p><yel><strong>Example Pipeline</strong></yel>:</p>
+<ul>
+<li><strong>Inputs</strong>: <code>Time</code> (as a float) and <code>Position</code> (as a vector)</li>
+<li style="border-bottom: none;"><strong>Outputs</strong>: <code>Modified Position</code> (vector with new position)</li>
+</ul>
+<p>This would make the custom node update an object's position based on time in the shader.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-1">
+<h2 id="also-see"><a class="h-anchor" href="https://cheatsheets.zip/unity-shader-graph.html#also-see">#</a>Also see</h2>
+<div class="h3-wrap-list">
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://docs.unity3d.com/Manual/shader-graph-overview.html">Unity Shader Graph documentation</a>  <em>(docs.unity3d.com)</em></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://yuantianle.github.io/11_Game_Development/Unity/">Tianle Yuan's Unity Visual Effect notes</a>
+<em>(yuantianle.com)</em></li>
+</ul>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><div class="text-2xl text-emerald-500"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M942.14826666 878.7968l-200.56746667-229.92213333C795.37493333 583.8848 827.73333333 500.5312 827.73333333 409.6 827.73333333 202.27413333 659.59253333 34.13333333 452.26666666 34.13333333 244.87253333 34.13333333 76.79999999 202.27413333 76.79999999 409.6S244.87253333 785.06666667 452.26666666 785.06666667c77.14133333 0 148.82133333-23.3472 208.41813333-63.21493334l199.33866667 228.5568c19.72906667 22.7328 54.272 24.91733333 76.8 5.25653334C959.62453333 935.86773333 961.87733333 901.46133333 942.14826666 878.7968zM179.19999999 409.6c0-150.59626667 122.4704-273.06666667 273.06666667-273.06666667 150.59626667 0 273.06666667 122.4704 273.06666667 273.06666667s-122.4704 273.06666667-273.06666667 273.06666667C301.67039999 682.66666667 179.19999999 560.19626667 179.19999999 409.6z"></path></svg></div></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search for cheatsheet" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> Cancel</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Top <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="https://cheatsheets.zip/python" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Python <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="https://cheatsheets.zip/vim" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Vim <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="https://cheatsheets.zip/javascript" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">JavaScript <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="https://cheatsheets.zip/bash" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Recent <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="https://cheatsheets.zip/unreal-engine" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Unreal Engine <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="https://cheatsheets.zip/ocaml" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">OCaml <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="https://cheatsheets.zip/unity-shader-graph" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Unity Shader Graph <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="https://cheatsheets.zip/pandas" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Pandas <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"><a href="https://cheatsheets.zip/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center text-white mr-2 text-3xl md:text-4xl"><div class="self-center"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M234.624 932.864a43.52 43.52 0 0 1-58.688-17.024 46.528 46.528 0 0 1-5.248-21.248V584.896c0 30.72 17.28 49.664 62.848 70.912l278.08 138.688-276.992 138.368z" fill="#6ad09d" opacity=".4"></path><path d="M642.944 85.312c115.584 0 209.28 45.504 210.368 161.92v647.36a44.992 44.992 0 0 1-5.248 20.864 43.328 43.328 0 0 1-59.84 17.408L511.616 794.496l-278.08-138.688c-45.568-21.248-62.848-40.192-62.848-70.912V247.168c0-116.352 93.696-161.856 208.832-161.856zm28.992 257.792H350.912a33.6 33.6 0 0 0-33.472 33.728c0 18.56 14.976 33.728 33.472 33.728H672a33.6 33.6 0 0 0 33.472-33.728A33.6 33.6 0 0 0 672 343.104z" fill="#6ad09d"></path></svg></div></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">cheatsheets<span class="text-emerald-400">.zip</span></span></a><h4 class="mt-5 text-sm text-slate-500">Share quick reference and cheat sheet for developers.</h4><div class="share mt-4"> <a href="https://cheatsheets.zip/zh-CN/">中文版</a> <a href="https://cheatsheets.zip/notes/">#Notes</a></div><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"> <a class="mr-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://facebook.com/sharer/sharer.php?u=https://cheatsheets.zip/unity-shader-graph.html" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M594.74346667 51.53066667c-28.95893333 0-56.30826667 3.2192-88.48533334 16.0896-65.9616 27.34826667-98.13653333 88.48533333-98.13653333 186.6208v94.91946666h-91.70026667v157.66186667h91.70026667v455.28853333h186.6208v-455.28853333h127.09546667l17.696-157.66186667h-144.7936v-70.7872c0-22.52266667 1.60853333-38.61013333 8.04266666-46.65706666 8.04266667-14.47786667 24.13226667-20.91413333 49.872-20.91413334h85.26613334v-157.66186666h-143.184z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://twitter.com/intent/tweet/?text=This%20is%20a%20visual%20cheat-sheet%20for%20the%20Unity%20Shader%20Graph.%20This%20tool%20is%20used%20to%20create%20custom%20shaders%20material%20i&amp;url=https://cheatsheets.zip/unity-shader-graph.html" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://reddit.com/submit/?url=https://cheatsheets.zip/unity-shader-graph.html&amp;resubmit=true&amp;title=This%20is%20a%20visual%20cheat-sheet%20for%20the%20Unity%20Shader%20Graph.%20This%20tool%20is%20used%20to%20create%20custom%20shaders%20material%20i" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M830.73813333 279.88586667c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152c-29.1712 0-54.9152 24.02453333-54.9152 54.9152 0 29.1712 24.02453333 54.9152 54.9152 54.9152zM518.416 741.504c-97.81333333 0-154.44693333-41.184-154.44693333-41.184-5.1488-3.4336-10.29653333-1.71626667-12.01386667 3.4336l-10.29653333 18.87573333c-1.71626667 5.1488-1.71626667 12.01386667 3.4336 15.4432 0 0 48.048 49.76746667 173.32266666 49.76746667s169.888-53.1968 169.888-53.1968c3.4336-3.4336 3.4336-10.29653333 1.71626667-13.728l-12.01386667-17.16266667c-3.4336-3.4336-8.5792-5.1488-13.728-1.71626666 0-1.71626667-48.048 39.46986667-145.8656 39.46986666zM341.66506667 609.3696c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152c-29.1712 0-54.9152 24.02453333-54.9152 54.9152 1.71626667 30.8896 25.7408 54.9152 54.9152 54.9152zM667.71413333 609.3696c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152-54.9152 24.02453333-54.9152 54.9152c0 30.8896 24.02453333 54.9152 54.9152 54.9152zM722.6272 216.39466667c-8.5792-3.4336-101.24693333-34.31893333-140.7168-6.86293334-41.184 29.1712-39.46986667 125.2704-36.0384 125.2704 90.9504 6.86293333 175.0368 34.31893333 238.53013333 77.2224 5.1488 3.4336 60.06186667-44.61653333 120.1248-34.31893333 60.06186667 10.29653333 101.24693333 66.9248 82.37013334 130.4192-18.87573333 61.77813333-77.2224 80.656-75.50613334 99.5296v15.4432c0 159.5936-181.9008 288.29653333-406.704 288.29653333s-406.704-128.70293333-406.704-288.29653333c0-8.5792 0-15.4432 1.71626667-24.02453333 0-1.71626667-41.184-24.02453333-56.62933333-61.77813334-15.4432-36.0384-8.5792-78.9376 6.86293333-104.67946666 25.7408-39.46986667 56.62933333-54.9152 99.5296-54.9152s89.2352 25.7408 90.9504 25.7408c68.6432-41.184 157.87626667-66.9248 253.97333333-68.6432 3.4336 0-6.86293333-116.6912 58.34666667-159.5936 66.9248-42.90133333 176.752 0 178.46933333 0v3.4336c17.16266667-37.7536 54.9152-63.49333333 97.81333334-63.49333334 60.06186667 0 108.11306667 49.76746667 108.11306666 109.82613334 0 60.06186667-48.048 109.82613333-108.11306666 109.82613333s-108.11306667-49.76746667-108.11306667-109.82613333c0-3.4336 0-6.86293333 1.71626667-8.5792z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://pinterest.com/pin/create/button/?url=https://cheatsheets.zip/unity-shader-graph.html&amp;description=This%20is%20a%20visual%20cheat-sheet%20for%20the%20Unity%20Shader%20Graph.%20This%20tool%20is%20used%20to%20create%20custom%20shaders%20material%20i" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M977 512c0 256.875-208.125 465-465 465-48 0-94.125-7.3125-137.625-20.8125 18.9375-30.9375 47.25-81.5625 57.75-121.875 5.625-21.75 28.875-110.625 28.875-110.625 15.1875 28.875 59.4375 53.4375 106.5 53.4375 140.25 0 241.3125-129 241.3125-289.3125 0-153.5625-125.4375-268.5-286.6875-268.5-200.625 0-307.3125 134.625-307.3125 281.4375 0 68.25 36.375 153.1875 94.3125 180.1875 8.8125 4.125 13.5 2.25 15.5625-6.1875 1.5-6.375 9.375-38.0625 12.9375-52.6875 1.125-4.6875.5625-8.8125-3.1875-13.3125-18.9375-23.4375-34.3125-66.1875-34.3125-106.125 0-102.5625 77.625-201.75 210-201.75 114.1875 0 194.25 77.8125 194.25 189.1875 0 125.8125-63.5625 213-146.25 213-45.5625 0-79.875-37.6875-68.8125-84 13.125-55.3125 38.4375-114.9375 38.4375-154.875 0-35.625-19.125-65.4375-58.875-65.4375-46.6875 0-84.1875 48.1875-84.1875 112.875 0 41.25 13.875 69 13.875 69s-45.9375 194.625-54.375 231c-9.375 40.125-5.625 96.75-1.6875 133.5C169.625 877.4375 47 709.0625 47 512 47 255.125 255.125 47 512 47s465 208.125 465 465z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://www.linkedin.com/shareArticle?url=https://cheatsheets.zip/unity-shader-graph.html&amp;title=Unity%20Shader%20Graph%20Cheat%20Sheet%20&amp;%20Quick%20Reference&amp;summary=This%20is%20a%20visual%20cheat-sheet%20for%20the%20Unity%20Shader%20Graph.%20This%20tool%20is%20used%20to%20create%20custom%20shaders%20material%20i" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M387.20790124 931.03893333h183.53386665v-355.35146666c0-17.5712 1.952-37.0976 7.80906668-48.81173334 11.7152-35.1456 42.95573333-72.24106667 93.7184-72.24106665 66.38613333 0 93.7184 54.66773333 93.7184 132.76799999v341.68426666h183.53386667v-365.11466665c0-181.58293333-89.8144-265.53706667-210.86826667-265.53706668-97.62559999 0-158.14933333 58.576-181.58293333 97.6256h-3.90720001l-7.80906666-83.95626667h-160.10453333c1.952 54.66773333 3.9072 119.10186667 3.9072 197.20320001v421.73759999zM149.00310124 46.56213332c-58.576 0-97.62559999 41.00373333-95.67146668 97.62560001-1.952 52.7168 37.0976 95.67146668 95.67146668 95.67146668 60.52586667 0 99.5776-42.95573333 99.5776-95.67146668-3.9072-56.624-41.00373333-97.62559999-99.5776-97.62559999zM240.7705679 931.03893333v-616.98346666h-183.53386666v616.98346666h183.53386666z"></path></svg></a><a class="ml-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://social-plugins.line.me/lineit/share?url=https://cheatsheets.zip/unity-shader-graph.html" rel="external nofollow noreferrer" target="_blank"><!--?xml version="1.0" standalone="no"?--><svg t="1672903354277" class="icon" viewBox="0 0 1107 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11220" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em"><path d="M551.3440625 32C264.509375 32 32 215.0290625 32 440.7875c0 209.7046875 200.7028125 382.425 459.1471875 405.9534375a31.60125001 31.60125001 0 0 1 21.105 13.7859375c11.4721875 18.8859375 3.320625 59.1271875-5.5875 104.2471875s39.5334375 21.7021875 50.25 16.4775c8.53125001-4.1390625 228.103125-127.91625001 358.820625-249.3009375 95.5903125-74.15625001 154.921875-177.20625001 154.921875-291.148125C1070.688125 215.0290625 838.16375001 32 551.3440625 32zM378.2290625 547.7721875a27.6984375 27.6984375 0 0 1-27.91875 27.44625H255.3659375c-16.760625 0-39.091875-5.791875-39.091875-32.9390625v-203.01562499a27.6825 27.6825 0 0 1 27.91875-27.44718751h5.5865625a27.6825 27.6825 0 0 1 27.91875 27.44625v175.5703125h72.59812499a27.6984375 27.6984375 0 0 1 27.93375001 27.44625v5.4928125zm78.264375-5.46093749a27.886875 27.886875 0 0 1-55.77468751 0V345.085625a27.886875 27.886875 0 0 1 55.77468751 0v197.22562499zm245.634375 0a30.8625 30.8625 0 0 1-27.91875 27.44624999 31.60125001 31.60125001 0 0 1-32.908125-15.7378125l-89.956875-126.16875v114.4284375a27.91875001 27.91875001 0 0 1-55.8215625 0V344.7396875a27.6665625 27.6665625 0 0 1 27.9028125-27.43125 35.315625 35.315625 0 0 1 31.6490625 20.0971875c8.655 12.7790625 91.27875001 127.9790625 91.27875 127.9790625V344.740625a27.9346875 27.9346875 0 0 1 55.8525 0v197.5396875zm167.5275-126.20062501a27.44624999 27.44624999 0 1 1 0 54.8925H797.05625001v43.8928125h72.59812499a27.44624999 27.44624999 0 1 1 0 54.8775H760.765625a24.8971875 24.8971875 0 0 1-25.1803125-24.676875V342.033125a24.8971875 24.8971875 0 0 1 25.18125-24.6928125h108.88875a27.44624999 27.44624999 0 1 1 0 54.8775H797.05625001v43.9078125h72.59812499z" fill="currentColor" p-id="11221"></path></svg></a></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2024 cheatsheets.zip, All rights reserved.</p></div></footer><script src="./Unity Shader Graph Cheat Sheet &amp; Quick Reference_files/main.js.下载"></script><script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://quickref.me",
+      "logo": "https://quickref.me/images/favicon.png",
+      "description": "Quick Reference CheatSheet - share quick reference and cheat sheet for developers",
+      "name": "QuickRef.ME",
+      "contactPoint": {
+        "contactType": "customer support",
+        "email": "support@quickref.me"
+      }
+    }</script><script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://quickref.me/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unity Shader Graph Cheat Sheet & Quick Reference",
+          "item": "https://quickref.me/unity-shader-graph"
+        }
+      ]
+    }</script><ins class="adsbygoogle" id="carbonads" style="display:inline-block;width:303px;height:100px" data-ad-client="ca-pub-2901188880424850" data-ad-slot="3737832040"></ins><div class="sticky-js" id="sticky-js"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

@@ -1,0 +1,204 @@
+/* Base theme and scheme overrides */
+
+[data-md-color-scheme="slate"] {
+    --md-code-fg-color: #E3B4A7;
+    --md-code-bg-color: #2A1E1B;
+    --md-code-hl-name-color: #D5D7E2;
+    --md-code-hl-comment-color: #50A64A;
+    --md-code-hl-string-color: #b9381b;
+    --md-code-hl-number-color: #B5CEA8;
+
+    --md-mermaid-edge-color: #495ED3;
+    --md-mermaid-node-bg-color: #39405c79;
+    --md-mermaid-node-fg-color: #495ED3;
+    --md-mermaid-label-fg-color: #a2e3ff;
+    
+}
+[data-md-color-scheme="default"] {
+    --md-default-bg-color: /*#f6e9e7;#f9fef3;*/ #e8eeff;/*background filter*/
+    --md-code-fg-color: #8B3F2E;
+    --md-code-bg-color: #F6EEE9;
+    --md-code-hl-name-color: #2e3c43;
+    --md-code-hl-comment-color: #3e9516;
+    --md-code-hl-string-color: #c41919;
+    --md-code-hl-number-color: #be8901;
+
+    --md-mermaid-edge-color: #455cdf;
+    --md-mermaid-node-bg-color: #d3daff70;
+    --md-mermaid-node-fg-color: #455cdf;
+    --md-mermaid-label-fg-color: #263339;
+    
+}
+
+/* Code blocks: neutral background to avoid admonition confusion */
+[data-md-color-scheme="default"] .md-typeset pre,
+[data-md-color-scheme="default"] .md-typeset .highlight {
+    background-color: #f9fbff !important;
+}
+[data-md-color-scheme="slate"] .md-typeset pre,
+[data-md-color-scheme="slate"] .md-typeset .highlight {
+    background-color: #1c2129 !important;
+}
+
+/* Inline code keeps warm tone */
+[data-md-color-scheme="default"] .md-typeset code {
+    background-color: #F6EEE9;
+    color: #8B3F2E;
+}
+[data-md-color-scheme="slate"] .md-typeset code {
+    background-color: #2A1E1B;
+    color: #E3B4A7;
+}
+[data-md-color-scheme="default"] .md-typeset pre code,
+[data-md-color-scheme="slate"] .md-typeset pre code {
+    background-color: transparent;
+}
+
+/*For normal*/
+
+[data-md-color-scheme="default"]{
+    background-color: #f6f7fb;
+}
+
+[data-md-color-scheme="slate"]{
+    background-color: #0f1115;
+}
+
+:root {
+    zoom: 0.95;
+}
+
+[data-md-color-scheme="default"] .md-content{
+    background: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .md-content{
+    background: #141821;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__scrollwrap{
+    background: transparent;
+}
+
+[data-md-color-scheme="default"] .md-sidebar--primary .md-sidebar__scrollwrap{
+    background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-md-color-scheme="default"],
+    [data-md-color-scheme="slate"] {
+        background-attachment: scroll;
+    }
+
+    [data-md-color-scheme="default"] .md-content,
+    [data-md-color-scheme="slate"] .md-content,
+    [data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__scrollwrap,
+    [data-md-color-scheme="default"] .md-sidebar--primary .md-sidebar__scrollwrap {
+        backdrop-filter: none;
+    }
+}
+/*For normal*/
+
+/*For christmas
+[data-md-color-scheme="default"] .md-header{
+    background-image: url("xmas13.png");
+    background-size:contain;
+    text-shadow: #FC0 1px 0 20px;
+}
+[data-md-color-scheme="default"] .md-tabs{
+    background-image: url("xmas22.png");
+    background-size:contain;
+    text-shadow: #FC0 1px 0 20px;
+}
+[data-md-color-scheme="default"]{
+    background-image: url("man.png");
+    background-size:contain;
+    background-position: center center;
+    background-repeat: repeat repeat;
+    background-blend-mode: multiply;
+}
+    */
+
+[data-md-color-scheme="slate"] .md-header{
+    background: rgba(15, 17, 21, 0.94);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+[data-md-color-scheme="slate"] .md-tabs{
+    background: rgba(15, 17, 21, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Night scheme footer: match navbar glass style */
+[data-md-color-scheme="slate"] .md-footer,
+[data-md-color-scheme="slate"] .md-footer-meta{
+    background: rgba(15, 17, 21, 0.94);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+[data-md-color-scheme="slate"] .md-footer a,
+[data-md-color-scheme="slate"] .md-footer .md-icon,
+[data-md-color-scheme="slate"] .md-footer .md-icon svg,
+[data-md-color-scheme="slate"] .md-footer-meta__inner,
+[data-md-color-scheme="slate"] .md-footer-meta__inner *,
+[data-md-color-scheme="slate"] .md-footer__inner,
+[data-md-color-scheme="slate"] .md-footer__inner *,
+[data-md-color-scheme="slate"] .md-footer__link,
+[data-md-color-scheme="slate"] .md-footer__title,
+[data-md-color-scheme="slate"] .md-footer__direction,
+[data-md-color-scheme="slate"] .md-social__link,
+[data-md-color-scheme="slate"] .md-social__link svg{
+    color: #e6e6f0;
+    fill: currentColor;
+}
+
+[data-md-color-scheme="default"] .md-header{
+    background: rgba(246, 247, 251, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+[data-md-color-scheme="default"] .md-tabs{
+    background: rgba(246, 247, 251, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Day scheme navbar/tabs: force dark text/icons */
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs{
+    color: #0c0f16;
+}
+[data-md-color-scheme="default"] .md-header a,
+[data-md-color-scheme="default"] .md-tabs a,
+[data-md-color-scheme="default"] .md-header .md-search__input,
+[data-md-color-scheme="default"] .md-header .md-search__input::placeholder,
+[data-md-color-scheme="default"] .md-header .md-search__icon,
+[data-md-color-scheme="default"] .md-header .md-search__icon svg,
+[data-md-color-scheme="default"] .md-header .md-icon,
+[data-md-color-scheme="default"] .md-header .md-icon svg,
+[data-md-color-scheme="default"] .md-tabs .md-icon,
+[data-md-color-scheme="default"] .md-tabs .md-icon svg,
+[data-md-color-scheme="default"] .md-tabs .md-tabs__link,
+[data-md-color-scheme="default"] .md-tabs .md-tabs__link .md-ellipsis{
+    color: #0c0f16;
+    fill: currentColor;
+}
+
+/* Page title icon from front matter */
+.md-page-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.4em;
+    vertical-align: middle;
+}
+.md-page-icon--ghost {
+    display: none;
+}
+.md-page-icon svg {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+/* Extra separation when the header gets elevated */
+.md-header.md-header--shadow{
+    box-shadow: none;
+}
+.md-tabs{
+    box-shadow: none;
+}

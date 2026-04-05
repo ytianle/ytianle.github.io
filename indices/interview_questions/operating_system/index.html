@@ -1,0 +1,3154 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ytianle.github.io/indices/interview_questions/operating_system/">
+      
+      
+        <link rel="prev" href="../database_management/">
+      
+      
+        <link rel="next" href="../os_extra_questions/">
+      
+      
+        
+          <link rel="alternate" href="../../.." hreflang="en">
+        
+          <link rel="alternate" href="https://ytianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/self.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Operating System - Tianle's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-00-base.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-10-layout-nav.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-20-cards-media.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-30-admonitions.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-40-typography.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+  
+  </noscript><script type="text/javascript">
+    (function () {
+      var load = function () {
+        if (document.getElementById("yuantianle-github-io-7f7j3xbyx")) {
+          return
+        }
+        var s = document.createElement("script")
+        s.src = "https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js"
+        s.id = "yuantianle-github-io-7f7j3xbyx"
+        s.defer = true
+        document.head.appendChild(s)
+      }
+
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(load, { timeout: 2500 })
+      } else {
+        window.setTimeout(load, 1200)
+      }
+    })()
+  </script>
+  <script>
+    (function () {
+      var key = "sidebarCollapsed"
+      var secondaryKey = "sidebarSecondaryCollapsed"
+      var root = document.documentElement
+      var stored = localStorage.getItem(key)
+      if (stored === "1") {
+        root.classList.add("sidebar-collapsed")
+      }
+      var secondaryStored = localStorage.getItem(secondaryKey)
+      if (secondaryStored === "1") {
+        root.classList.add("sidebar-secondary-collapsed")
+      }
+
+      function setSidebarWidth() {
+        var sidebar = document.querySelector(".md-sidebar--primary")
+        var width = sidebar ? sidebar.getBoundingClientRect().width : 0
+        root.style.setProperty("--md-sidebar-width", width + "px")
+      }
+
+      function mountToggle() {
+        var header = document.querySelector(".md-header__inner")
+        if (!header) return
+
+        document.querySelectorAll(".sidebar-toggle").forEach(function (el) {
+          el.remove()
+        })
+
+        if (!window.matchMedia("(min-width: 52em)").matches) return
+
+        var btn = document.createElement("button")
+        btn.id = "sidebar-toggle-primary"
+        btn.className = "md-header__button md-icon sidebar-toggle"
+        btn.type = "button"
+        btn.setAttribute("aria-label", "Toggle sidebar")
+        var iconOpen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h13v2H3zm0 5h18v2H3z"/></svg>'
+        var iconClosed = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3zm12 7h6v4h-6zm0 7h6v4h-6zm-2-4H7v5h6v2H5V9h2v2h6z"/></svg>'
+        function syncIcon() {
+          btn.innerHTML = root.classList.contains("sidebar-collapsed") ? iconClosed : iconOpen
+        }
+        syncIcon()
+        btn.addEventListener("click", function () {
+          var collapsed = root.classList.toggle("sidebar-collapsed")
+          localStorage.setItem(key, collapsed ? "1" : "0")
+          syncIcon()
+        })
+
+        var btnSecondary = document.createElement("button")
+        btnSecondary.id = "sidebar-toggle-secondary"
+        btnSecondary.className = "md-header__button md-icon sidebar-toggle sidebar-toggle--secondary"
+        btnSecondary.type = "button"
+        btnSecondary.setAttribute("aria-label", "Toggle right sidebar")
+        var iconOpenSecondary = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm8 5h10v2H11zm0 5h10v2H11z"/></svg>'
+        var iconClosedSecondary = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 3h6v4h-6zM3 10h6v4H3zm0 7h6v4H3zm8-4h6v5h-6v2h8V9h-2v2h-6z"/></svg>'
+        function syncSecondaryIcon() {
+          btnSecondary.innerHTML = root.classList.contains("sidebar-secondary-collapsed")
+            ? iconClosedSecondary
+            : iconOpenSecondary
+        }
+        syncSecondaryIcon()
+        btnSecondary.addEventListener("click", function () {
+          var collapsed = root.classList.toggle("sidebar-secondary-collapsed")
+          localStorage.setItem(secondaryKey, collapsed ? "1" : "0")
+          syncSecondaryIcon()
+        })
+
+        var paletteForm = header.querySelector('[data-md-component="palette"]')
+        if (paletteForm && paletteForm.parentNode) {
+          paletteForm.parentNode.insertBefore(btnSecondary, paletteForm)
+          paletteForm.parentNode.insertBefore(btn, btnSecondary)
+        } else {
+          header.appendChild(btn)
+          header.appendChild(btnSecondary)
+        }
+      }
+
+      function onShortcut(e) {
+        if (!(e.ctrlKey || e.metaKey) || e.code !== "KeyB") {
+          return
+        }
+        var target = e.target
+        if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) {
+          return
+        }
+        if (!window.matchMedia("(min-width: 52em)").matches) return
+        e.preventDefault()
+        var collapsed = root.classList.toggle("sidebar-collapsed")
+        localStorage.setItem(key, collapsed ? "1" : "0")
+        var btn = document.getElementById("sidebar-toggle-primary")
+        if (btn) {
+          var iconOpen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h13v2H3zm0 5h18v2H3z"/></svg>'
+          var iconClosed = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3zm12 7h6v4h-6zm0 7h6v4h-6zm-2-4H7v5h6v2H5V9h2v2h6z"/></svg>'
+          btn.innerHTML = root.classList.contains("sidebar-collapsed") ? iconClosed : iconOpen
+        }
+      }
+
+      setSidebarWidth()
+      window.addEventListener("resize", function () {
+        setSidebarWidth()
+        mountToggle()
+      })
+      window.addEventListener("keydown", onShortcut)
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", mountToggle)
+      } else {
+        mountToggle()
+      }
+    })()
+  </script>
+
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-operating-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Tianle's Blog" class="md-header__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tianle's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operating System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="green" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../.." hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="https://ytianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN" class="md-select__link">
+              中文(谷歌)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ytianle/ytianle.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ytianle.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"></path></svg>
+    
+  
+  JOURNAL
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../foundations/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 6H8.83l6 6-6 6H18v2H6v-2l6-6-6-6V4h12z"></path></svg>
+    
+  
+  FOUNDATIONS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../programming/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 3h2v2H5v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5h2v2H5c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0-2-2H0v-2h1a2 2 0 0 0 2-2V5a2 2 0 0 1 2-2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3zm-7 12a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m8 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"></path></svg>
+    
+  
+  PROGRAMMING
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../systems/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16v-3c0-1.11-.89-2-2-2h-6V8h2V2H9v6h2v3H5c-1.11 0-2 .89-2 2v3H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6zM11 4h2v2h-2zM5 20H3v-2h2zm8 0h-2v-2h2zm8 0h-2v-2h2z"></path></svg>
+    
+  
+  SYSTEMS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../vision/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H3V5h18m0-2H3c-1.1 0-2 .9-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5c1.11 0 2-.89 2-2V5a2 2 0 0 0-2-2m-6 3.5-.62 1.37L13 8.5l1.38.63.62 1.37.63-1.37L17 8.5l-1.37-.63zm-4.5 2-1.09 2.41L7 12l2.41 1.09 1.09 2.41 1.1-2.41L14 12l-2.4-1.09z"></path></svg>
+    
+  
+  VISION
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../interactive/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 9H2v6h5.5l3-3zM6 13H4v-2h2zm9-5.5V2H9v5.5l3 3zM11 4h2v2h-2zM9 16.5V22h6v-5.5l-3-3zm4 3.5h-2v-2h2zm3.5-11-3 3 3 3H22V9zm3.5 4h-2v-2h2z"></path></svg>
+    
+  
+  INTERACTIVE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../humanities/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.74 3.74 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574M8.755 4.75l-.004 7.322a3.75 3.75 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25"></path></svg>
+    
+  
+  HUMANITIES
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  INDICES
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Tianle's Blog" class="md-nav__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Tianle's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ytianle/ytianle.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ytianle.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JOURNAL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../foundations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FOUNDATIONS
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../programming/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PROGRAMMING
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../systems/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SYSTEMS
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../vision/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VISION
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../interactive/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTERACTIVE
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../humanities/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HUMANITIES
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INDICES
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INDICES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech_materials/tech_materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m8.19 3.5c-.89 0-1.6.18-2.14.54-.55.36-.83.96-.78 1.65h1.97c0-.28.1-.49.26-.63.2-.14.42-.21.69-.21.31 0 .58.08.76.26.18.17.27.39.27.69 0 .28-.08.53-.22.74-.17.22-.38.4-.64.54-.52.32-.86.6-1.07.84-.19.24-.29.58-.29 1.08h2c0-.28.05-.5.14-.68.09-.17.26-.32.52-.47.46-.21.84-.49 1.13-.85.29-.37.44-.76.44-1.2q0-1.05-.81-1.68c-.54-.41-1.29-.62-2.23-.62M11 12v2h2v-2z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    👨🏻‍💼 Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    👨🏻‍💼 Interview Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../game_devop/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game DevOP
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating System
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classifications-of-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classifications of OS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-and-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process and thread
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-states-of-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Different states of processes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters-for-process-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters for process scheduling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#necessity-of-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Necessity of process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-process-scheduling-algorithms-psa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Different process scheduling algorithms (PSA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives-of-psa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives of PSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-section-problem--solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical section problem &amp; solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchronization-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronization Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deadlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deadlock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management Techniques
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paging--segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paging &amp; Segmentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-memory--virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic memory &amp; Virtual memory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-fault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Page Fault
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Directories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disk-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buffer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disk-scheduling-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk Scheduling Algorithms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os_extra_questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OS Extra Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kernel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../coding_practice/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Practice
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../cpp_versions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Versions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../computer_graphics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Graphics
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../full_stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full-stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs561_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS561 Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../note_seeds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Note Seeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classifications-of-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classifications of OS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-and-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process and thread
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-states-of-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Different states of processes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters-for-process-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters for process scheduling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#necessity-of-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Necessity of process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-process-scheduling-algorithms-psa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Different process scheduling algorithms (PSA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives-of-psa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives of PSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-section-problem--solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical section problem &amp; solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchronization-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronization Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deadlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deadlock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-management-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management Techniques
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paging--segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paging &amp; Segmentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-memory--virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic memory &amp; Virtual memory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-fault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Page Fault
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Directories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disk-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk time
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buffer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disk-scheduling-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disk Scheduling Algorithms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    HOME
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    INDICES
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    👨🏻‍💼 Interview Questions
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+    <div class="md-source-date" style="text-align: right; font-weight: bold;">
+      <small>
+          Author: <span class="git-page-authors git-authors"><a href="mailto:61530469+ytianle@users.noreply.github.com">ytianle</a></span>
+      </small>
+    </div>
+
+  
+  
+                  
+
+
+  
+  
+
+
+
+<h1 id="-operating-system"><strong>👨‍💻 Operating System</strong><a class="headerlink" href="#-operating-system" title="Anchor link to this section for reference">⚓︎</a></h1>
+<blockquote>
+<p>Interview Questions for Operating System</p>
+</blockquote>
+<details class="note" open="open">
+<summary>Table of Content</summary>
+<ul>
+<li><a href="#operating-system"><strong>Operating System</strong></a></li>
+<li><a href="#classifications-of-os"><strong>Classifications of OS</strong></a></li>
+<li><a href="#os-components"><strong>OS components</strong></a></li>
+<li><a href="#process-and-thread"><strong>Process and thread</strong></a></li>
+<li><a href="#different-states-of-processes"><strong>Different states of processes</strong></a></li>
+<li><a href="#parameters-for-process-scheduling"><strong>Parameters for process scheduling</strong></a></li>
+<li><a href="#necessity-of-process"><strong>Necessity of process</strong></a></li>
+<li><a href="#different-process-scheduling-algorithms-psa"><strong>Different process scheduling algorithms (PSA)</strong></a></li>
+<li><a href="#objectives-of-psa"><strong>Objectives of PSA</strong></a></li>
+<li><a href="#critical-section-problem--solution"><strong>Critical section problem \&amp; solution</strong></a></li>
+<li><a href="#synchronization-tools"><strong>Synchronization Tools</strong></a></li>
+<li><a href="#deadlock"><strong>Deadlock</strong></a></li>
+<li><a href="#memory-management"><strong>Memory Management</strong></a></li>
+<li><a href="#memory-management-techniques"><strong>Memory Management Techniques</strong></a></li>
+<li><a href="#paging--segmentation"><strong>Paging \&amp; Segmentation</strong></a></li>
+<li><a href="#logic-memory--virtual-memory"><strong>Logic memory \&amp; Virtual memory</strong></a></li>
+<li><a href="#page-fault"><strong>Page Fault</strong></a></li>
+<li><a href="#file-system"><strong>File System</strong></a></li>
+<li><a href="#file-directories"><strong>File Directories</strong></a></li>
+<li><a href="#disk-time"><strong>Disk time</strong></a></li>
+<li><a href="#buffer"><strong>Buffer</strong></a></li>
+<li><a href="#disk-scheduling-algorithms"><strong>Disk Scheduling Algorithms</strong></a></li>
+</ul>
+</details>
+<h3 id="operating-system"><strong>Operating System</strong><a class="headerlink" href="#operating-system" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>The <strong>system software</strong> that controls computer <u>hardware</u> and <u>software</u> resources. </p>
+<ul>
+<li>Its main <mark class="critic"><strong>functions</strong></mark> include:<ol>
+<li><u>Managing resources</u> such as processes, memory, files, and devices;</li>
+<li>Providing an <u>interface</u> for user programs;</li>
+<li>Ensuring the normal <u>operation</u> of computer systems. </li>
+</ol>
+</li>
+</ul>
+<p></p><p align="center">
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images/monolithic_kernel.png" data-desc-position="bottom"><img alt="picture 1" src="../Images/monolithic_kernel.png" width="32.7%"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images/micro_kernel.png" data-desc-position="bottom"><img alt="picture 2" src="../Images/micro_kernel.png" width="35%"></a><br>
+</p><p></p>
+<ul>
+<li>The <mark class="critic"><strong>purpose</strong></mark> of an operating system is to:<ol>
+<li>Provide a <u>good user experience</u>;</li>
+<li>Enable computer to excute programs <u>efficiently and reliably</u>.</li>
+</ol>
+</li>
+</ul>
+</details>
+<h3 id="classifications-of-os"><strong>Classifications of OS</strong><a class="headerlink" href="#classifications-of-os" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<ul>
+<li>
+<p><strong>Time-sharing OS:</strong> allows <u>multiple users to share</u> the resources of the single computer system <u>simultaneously</u>.</p>
+</li>
+<li>
+<p><strong>Batch processing OS:</strong> loads a <u>batchprograms</u>from the user into the computer system to run according to certain rules until all programs are completed.</p>
+</li>
+<li>
+<p><strong>General purpose OS:</strong> has both the functions of <u>Time-sharing</u> and <u>Batch processing</u>. <em>E.g</em> Windows, Linux, MacOS.</p>
+</li>
+<li>
+<p><strong>Real-time OS:</strong> has <u>high requirements for the response time</u> of the computer system and can complete tasks within a specified time.</p>
+</li>
+<li>
+<p><strong>Distributed OS:</strong> </p>
+<ul>
+<li><u>distributes</u> the resources of the computer system <u>across multiple computer nodes</u>;</li>
+<li><u>cooperates through a network</u> to improve the reliability and performance of the computer system.</li>
+</ul>
+</li>
+<li>
+<p><strong>Embedded OS:</strong> an operating system designed for <u>devices with small sizes, low power consumption, and high reliability</u>.</p>
+</li>
+</ul>
+</details>
+<h3 id="os-components"><strong>OS components</strong><a class="headerlink" href="#os-components" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<ul>
+<li>
+<p><strong><code>Kernel</code>:</strong> the core part of the operating system, responsible for <u>managing computer hardware</u> and <u>providing basic functions</u>, such as system calls.</p>
+</li>
+<li>
+<p><strong><code>Process manager</code>:</strong> responsible for the <u>efficient operation</u> of the computer system, including:</p>
+<ul>
+<li>creating, deleting, scheduling, and managing processes.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Storage manager</code>:</strong> responsible for <u>managing computer memory</u> resources, including:</p>
+<ul>
+<li>memory allocation, recovery, and protection.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>File system</code>:</strong> responsible for <u>managing files and directories</u> in the computer system, including:</p>
+<ul>
+<li>file reading, writing, creation, deletion, and protection.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Input/output manager</code>:</strong> responsible for managing <u>data transfer</u> between the computer system and external devices, including: </p>
+<ul>
+<li>input/output buffering, device drivers, and interrupt handling.</li>
+</ul>
+</li>
+</ul>
+</details>
+<h3 id="process-and-thread"><strong>Process and thread</strong><a class="headerlink" href="#process-and-thread" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<div class="admonition note">
+<p class="admonition-title">Definition with comparison</p>
+<ul>
+<li>
+<p><strong>Definition:</strong> </p>
+<ul>
+<li><code>Process</code> is an <mark class="critic">instance of a running program</mark> with its own independent <u>instruction address space</u> and <u>system resources</u> (<em>program code</em>, <em>data</em>, <em>stack</em>, and <em>process control blocks</em>). </li>
+<li><code>Thread</code> is an <mark class="critic">execution unit in a process</mark>, sharing resources of the process including <u>address space</u>, <u>file descriptors</u>, <u>signal handlers</u>, and <u>process ID</u>. </li>
+</ul>
+</li>
+<li>
+<p><strong>Scheduling:</strong> </p>
+<ul>
+<li><code>Process</code> is the <u>basic scheduling unit</u> in an operating system, and the operating system manages processes through process <u>control blocks</u>. </li>
+<li><code>Threads</code> are <u>scheduling units</u> within a process, and the operating system schedules threads.</li>
+</ul>
+</li>
+<li>
+<p><strong>Concurrency:</strong> </p>
+<ul>
+<li><code>Processes</code> are <u>independent</u> of each other. Different processes run <u>concurrently</u>, with each process having its own independent address space and resources. </li>
+<li><code>Threads</code> within the same process <u>share resources and data</u>. Threads executed on the same CPU are executed <em>concurrently</em>, whereas threads executed on different CPUs are executed in <em>parallel</em>.</li>
+</ul>
+</li>
+<li>
+<p><strong>System overhead:</strong> </p>
+<ul>
+<li><code>Process</code> switching requires saving and restoring <u>all process states</u>, so process switching incurs a <u>larger system overhead</u>. </li>
+<li><code>Thread</code> switching only requires saving and restoring <u>part of the thread state</u>, so thread switching incurs a <u>smaller system overhead</u>.</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<h3 id="different-states-of-processes"><strong>Different states of processes</strong><a class="headerlink" href="#different-states-of-processes" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>Three states: running, ready, or waiting:</p>
+<ul>
+<li><strong>Running:</strong> the process has <u>all the resources</u> it needs for execution, and it has been given permission by the OS to use the processor.</li>
+<li><strong>Ready:</strong> the process is waiting for <u>permission</u> to use the processor.</li>
+<li><strong>Waiting:</strong> the process is waiting for some <u>external event</u> to occur, such as user input or disk access.</li>
+</ul>
+<div class="admonition warning">
+<ul>
+<li><u>Only one</u> process can be in the <u>running state</u> at any given time. </li>
+<li>The remaining processes are either in a <u>waiting state</u> or a <u>ready state</u>. </li>
+<li>In a real operating system, the <u>waiting and ready states</u> are implemented as <em>queues</em> that hold the processes in these states.</li>
+</ul>
+</div>
+</details>
+<h3 id="parameters-for-process-scheduling"><strong>Parameters for process scheduling</strong><a class="headerlink" href="#parameters-for-process-scheduling" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<div class="admonition note">
+<p class="admonition-title">Definition with comparison</p>
+<ul>
+<li>Moment：<ul>
+<li><strong><code>Arrival Time (AT)</code>:</strong> Time at which the process <u>arrives in the ready queue</u>.</li>
+<li><strong><code>Completion Time (CT)</code>:</strong> Time at which the process completes its execution.</li>
+</ul>
+</li>
+<li>Period:  <ul>
+<li><strong><code>Burst Time (BT)</code>:</strong> Time required by a process for CPU execution.</li>
+<li><strong><code>Turn Around Time (TAT)</code>:</strong> Completion Time - Arrival Time </li>
+<li><strong><code>Waiting Time (WT)</code>:</strong> Turn around time -Burst time.</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<h3 id="necessity-of-process"><strong>Necessity of process</strong><a class="headerlink" href="#necessity-of-process" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>A typical process involves both I/O time and CPU time. </p>
+<p>In a uniprogramming system like MS-DOS, time spent waiting for I/O is wasted and CPU is free during this time. </p>
+<p>In multiprogramming systems, one process can use CPU while another is waiting for I/O. This is possible only with process scheduling. </p>
+</details>
+<h3 id="different-process-scheduling-algorithms-psa"><strong>Different process scheduling algorithms (PSA)</strong><a class="headerlink" href="#different-process-scheduling-algorithms-psa" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<ul>
+<li><strong>First Come First Serve (FCFS):</strong> processes are scheduled according to their arrival times.</li>
+<li><strong>Shortest Job First (SJF):</strong> processes with the shortest burst time are scheduled first.</li>
+<li><strong>Shortest Remaining Time First (SRTF):</strong> processes are scheduled with the shortest remaining time -- amount of time left for a process to complete its execution (preemptive mode of SJF algorithm)</li>
+<li><strong>Round Robin (RR) Scheduling:</strong> each process is assigned a fixed time; in a cyclic way.</li>
+<li><strong>Priority Based scheduling (Non Preemptive):</strong> processes are scheduled according to their priorities. If priorities of two processes match, then scheduling is according to the arrival time.</li>
+<li><strong>Highest Response Ratio Next (HRRN):</strong> processes with highest <strong>response ratio</strong>(Turn around time / Burst time) is scheduled. This algorithm avoids <em>starvation</em> (Consider a situation when a long process is there in the ready queue and shorter processes keep coming.).</li>
+<li><strong>Multilevel Queue Scheduling (MLQ):</strong> According to the priority of process, processes are placed in the different queues. Generally high priority process are placed in the top level queue. Only after completion of processes from top level queue, lower level queued processes are scheduled.</li>
+<li><strong>Multilevel Feedback Queue (MLFQ) Scheduling:</strong> It allows the process to move in between queues. The idea is to separate processes according to the characteristics of their CPU bursts. If a process uses too much CPU time, it is moved to a lower-priority queue.</li>
+</ul>
+<div class="admonition warning">
+<ul>
+<li>FCFS can cause long waiting times, especially when the first job takes too much CPU time.</li>
+<li>Both SJF and SRTF algorithms may cause starvation. HRRN can solve it.</li>
+<li>If time quantum for RRS is very large, then it behaves same as FCFS scheduling.</li>
+<li>SJF is optimal in terms of average waiting time for a given set of processes. SJF gives minimum average waiting time, but problems with SJF is how to know/predict the time of next job.</li>
+</ul>
+</div>
+</details>
+<h3 id="objectives-of-psa"><strong>Objectives of PSA</strong><a class="headerlink" href="#objectives-of-psa" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<ul>
+<li>Max CPU utilization (Keep CPU as busy as possible)</li>
+<li>Fair allocation of CPU.</li>
+<li>Max throughput (Number of processes that complete their execution per time unit)</li>
+<li>Min turnaround time (Time taken by a process to finish execution)</li>
+<li>Min waiting time (Time for which a process waits in ready queue)</li>
+<li>Min response time (Time when a process produces first response)</li>
+</ul>
+</details>
+<h3 id="critical-section-problem--solution"><strong>Critical section problem &amp; solution</strong><a class="headerlink" href="#critical-section-problem--solution" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>The <code>critical section problem</code> arises when <u>multiple processes or threads</u> need to access <u>shared resources simultaneously</u>, such as data structures or hardware devices. Without proper synchronization mechanisms in place, this can lead to unexpected results or unintended behavior, known as race conditions. Here are some concepts you need to know:</p>
+<ul>
+<li><strong>Critical Section </strong>– The portion of the code in the program where shared variables are accessed and/or updated.</li>
+<li><strong>Remainder Section</strong> – The remaining portion of the program excluding the Critical Section.</li>
+<li><strong>Race around Condition</strong> – The final output of the code depends on the order in which the variables are accessed.</li>
+</ul>
+<p>A solution for the critical section problem must satisfy the following <u>three conditions</u>:</p>
+<ul>
+<li><strong>Mutual Exclusion:</strong> If a process is executing in its critical section, then <u>do not allow</u> other processes to enter into the critical section.</li>
+<li><strong>Progress:</strong> If no process is executing in the critical section, then the <u>decision of a process</u> to enter a <em>critical section</em> <u>cannot</u> be made by any other process that is executing in its remainder section. The selection of the process cannot be postponed indefinitely.</li>
+<li><strong>Bounded Waiting:</strong> There exists a bound on the <u>number of times</u> other processes can enter into the critical section after a process has made request to access the critical section and before the requested is granted.</li>
+</ul>
+</details>
+<h3 id="synchronization-tools"><strong>Synchronization Tools</strong><a class="headerlink" href="#synchronization-tools" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>A <code>Semaphore</code> is an <strong>integer variable</strong> that is accessed only through two <em>atomic operations</em>, <code>wait()</code> and <code>signal()</code>. An atomic operation is executed in a single CPU time slice without any pre-emption. </p>
+<p><code>Semaphores</code> are of two types:</p>
+<ul>
+<li>
+<p><strong>Binary Semaphore:</strong> It has two states, 0 and 1. It is used for mutual exclusion, where only one process can access the critical section at a time.</p>
+</li>
+<li>
+<p><strong>Counting Semaphore:</strong> It has a positive integer value that can be incremented or decremented. It is used to control access to a shared resource where multiple processes can access the critical section simultaneously, but the maximum number of processes that can access it at any given time is limited by the value of the semaphore.</p>
+</li>
+</ul>
+</details>
+<h3 id="deadlock"><strong>Deadlock</strong><a class="headerlink" href="#deadlock" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>A <strong>situation</strong> where a set of <u>processes are blocked</u> because each process is holding a resource and waiting for another resource acquired by some other process. </p>
+<p>Deadlock can arise with four necessary Conditions hold simultaneously:</p>
+<ul>
+<li>Mutual Exclusion – One or more than one resource are non-sharable (Only one process can use at a time).</li>
+<li>Hold and Wait – A process is holding at least one resource and waiting for resources.</li>
+<li>No Preemption – A resource cannot be taken from a process unless the process releases the resource.</li>
+<li>Circular Wait – A set of processes are waiting for each other in circular form.</li>
+</ul>
+<p>There are three ways to handle deadlock:</p>
+<ul>
+<li><strong>Deadlock prevention or avoidance:</strong> The idea is to not let the system into deadlock state.</li>
+<li><strong>Deadlock detection and recovery:</strong> Let deadlock occur, then do preemption to handle it once occurred.</li>
+<li><strong>Ignore the problem all together:</strong> If deadlock is very rare, then let it happen and reboot the system. This is the approach that both Windows and UNIX take.</li>
+</ul>
+</details>
+<h3 id="memory-management"><strong>Memory Management</strong><a class="headerlink" href="#memory-management" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>The techniques allow multiple processes to share the same memory.</p>
+<p>Here are two techniques:</p>
+<ul>
+<li><strong>Overlays:</strong> The memory should contain only those instructions and data that are required at a given time.</li>
+<li><strong>Swapping:</strong> In multiprogramming, the instructions that have used the time slice are swapped out from the memory.</li>
+</ul>
+</details>
+<h3 id="memory-management-techniques"><strong>Memory Management Techniques</strong><a class="headerlink" href="#memory-management-techniques" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>(a) <code>Single Partition Allocation Schemes</code> – The memory is divided into two parts. One part is kept to be used <u>by the OS</u>, and the other is kept to be used <u>by the users</u>. </p>
+<p>(b) <code>Multiple Partition Schemes</code>: </p>
+<ul>
+<li>Fixed Partition – The memory is divided into <u>fixed size</u> partitions.</li>
+<li>Variable Partition – The memory is divided into <u>variable sized</u> partitions. Variable partition allocation schemes:<ul>
+<li>First Fit – The arriving process is allotted the first hole of memory in which it fits completely.</li>
+<li>Best Fit – The arriving process is allotted the hole of memory in which it fits the best by leaving the minimum memory empty.</li>
+<li>Worst Fit – The arriving process is allotted the hole of memory in which it leaves the maximum gap.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<ul>
+<li>Best fit does not necessarily give the best results for memory allocation.</li>
+<li>The cause of external fragmentation is the condition in Fixed partitioning and Variable partitioning saying that entire process should be allocated in a contiguous memory location. Therefore <em>Paging</em> is used.</li>
+</ul>
+</div>
+</details>
+<h3 id="paging--segmentation"><strong>Paging &amp; Segmentation</strong><a class="headerlink" href="#paging--segmentation" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>Two techniques used by OS to manage the allocation of memory.</p>
+<p><code>Paging</code>: divides memory into logical units called <strong>pages</strong>. Each page represents a fixed-size chunk of memory, often 4KB in size.</p>
+<ul>
+<li>When a program needs to access a memory location, the operating system maps the virtual address used by the program to a physical address in memory using a <u>page table</u>. This allows programs to access memory without knowing its physical location, and it also allows the operating system to manage physical memory more efficiently by loading pages into memory only when needed.</li>
+</ul>
+<p><code>Segmentation</code>: divides memory into logical units called <strong>segments</strong>. Each segment represents a specific part of the program, such as the code, data, or stack. Each segment has a unique size and is assigned a base address and a limit. </p>
+<ul>
+<li>When a program needs to access a memory location, the operating system maps the logical address used by the program to a physical address in memory using a <u>segment table</u>. This allows programs to access memory more efficiently, as they only need to know the logical location of the data they need to access.</li>
+</ul>
+</details>
+<h3 id="logic-memory--virtual-memory"><strong>Logic memory &amp; Virtual memory</strong><a class="headerlink" href="#logic-memory--virtual-memory" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<ul>
+<li>
+<p><code>Logical memory</code> is the memory space that a process sees as its own, and it consists of several segments, such as the code segment, data segment, and stack segment. Each segment contains a different type of data that the process needs to execute.</p>
+</li>
+<li>
+<p><code>Virtual memory</code> on the other hand, is a technique used by operating systems to allow processes to use more memory than is physically available in the computer. It uses a combination of hardware and software to <u>map</u> a process's logical memory to physical memory or to a temporary storage area on disk called the swap file.</p>
+</li>
+</ul>
+</details>
+<h3 id="page-fault"><strong>Page Fault</strong><a class="headerlink" href="#page-fault" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>A <code>page fault</code> is a type of interrupt, raised by the hardware when a running program accesses a memory page that is mapped into the virtual address space, but <u>not loaded in physical memory</u>. </p>
+</details>
+<h3 id="file-system"><strong>File System</strong><a class="headerlink" href="#file-system" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p><code>File System</code>: A file is a collection of related information that is recorded on secondary storage. Or file is a collection of logically related entities. </p>
+</details>
+<h3 id="file-directories"><strong>File Directories</strong><a class="headerlink" href="#file-directories" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p><code>File Directories</code>: Collection of files is a file directory. The directory contains information about the files, including attributes, location and ownership. Here are several directory types:</p>
+<ul>
+<li>
+<p><strong>SINGLE-LEVEL DIRECTORY:</strong> In this a single directory is maintained for all the users</p>
+</li>
+<li>
+<p><strong>TWO-LEVEL DIRECTORY:</strong> Due to two levels there is a <u>path name</u> for every file to locate that file.</p>
+</li>
+<li>
+<p><strong>TREE-STRUCTURED DIRECTORY:</strong> Directory is maintained in the <u>form of a tree</u>. Searching is efficient and also there is grouping capability. </p>
+</li>
+</ul>
+<p>Here are some file allocation ways:</p>
+<ul>
+<li>
+<p><strong>Continuous Allocation:</strong> A single <u>continuous set of blocks is allocated</u> to a file at the time of file creation.</p>
+</li>
+<li>
+<p><strong>Linked Allocation(Non-contiguous allocation):</strong> Allocation is on an individual block basis. <u>Each block contains a pointer to the next block</u> in the chain. </p>
+</li>
+<li>
+<p><strong>Indexed Allocation:</strong> It addresses many of the problems of contiguous and chained allocation. In this case, the file allocation table contains a <u>separate one-level index</u> for each file</p>
+</li>
+</ul>
+</details>
+<h3 id="disk-time"><strong>Disk time</strong><a class="headerlink" href="#disk-time" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<ul>
+<li>
+<p><code>Seek time</code> is the <strong>time</strong> taken to locate the <u>disk arm</u> to a <u>specified track</u> where the data is to be read or write.</p>
+</li>
+<li>
+<p><code>Rotational Latency</code> is the <strong>time</strong> taken by the <u>desired sector of the disk to rotate</u> into a position so that it can access the read/write heads.</p>
+</li>
+<li>
+<p><code>Transfer time</code> is the time to transfer the data. It depends on the rotating speed of the disk and number of bytes to be transferred. </p>
+</li>
+<li>
+<p><code>Disk Access Time</code> = Seek Time + Rotational Latency + Transfer Time </p>
+</li>
+<li>
+<p><code>Response Time</code> is the average of time spent by a request waiting to perform its I/O operation. Average Response time is the response time of the all requests. </p>
+</li>
+</ul>
+</details>
+<h3 id="buffer"><strong>Buffer</strong><a class="headerlink" href="#buffer" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<p>A <code>buffer</code> is a memory area that stores data being transferred between <u>two devices</u> or between <u>a device and an application</u>.</p>
+</details>
+<h3 id="disk-scheduling-algorithms"><strong>Disk Scheduling Algorithms</strong><a class="headerlink" href="#disk-scheduling-algorithms" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<ul>
+<li><strong>FCFS:</strong> FCFS is the simplest of all the Disk Scheduling Algorithms. In FCFS, the requests are addressed in the order they arrive in the disk queue.</li>
+<li><strong>SSTF:</strong> In SSTF (Shortest Seek Time First), requests having shortest seek time are executed first. So, the seek time of every request is calculated in advance in a queue and then they are scheduled according to their calculated seek time. As a result, the request near the disk arm will get executed first.</li>
+<li><strong>SCAN:</strong> In SCAN algorithm the disk arm moves into a particular direction and services the requests coming in its path and after reaching the end of the disk, it reverses its direction and again services the request arriving in its path. So, this algorithm works like an elevator and hence also known as elevator algorithm.</li>
+<li><strong>CSCAN:</strong> In SCAN algorithm, the disk arm again scans the path that has been scanned, after reversing its direction. So, it may be possible that too many requests are waiting at the other end or there may be zero or few requests pending at the scanned area. </li>
+<li><strong>LOOK:</strong> It is similar to the SCAN disk scheduling algorithm except for the difference that the disk arm in spite of going to the end of the disk goes only to the last request to be serviced in front of the head and then reverses its direction from there only. Thus it prevents the extra delay which occurred due to unnecessary traversal to the end of the disk. </li>
+<li><strong>CLOOK:</strong> As LOOK is similar to SCAN algorithm, in a similar way, CLOOK is similar to CSCAN disk scheduling algorithm. In CLOOK, the disk arm in spite of going to the end goes only to the last request to be serviced in front of the head and then from there goes to the other end’s last request. Thus, it also prevents the extra delay which occurred due to unnecessary traversal to the end of the disk. </li>
+</ul>
+</details>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/commonly-asked-operating-systems-interview-questions/?ref=lbp">SQL Tutorial</a></li>
+<li><a href="https://www.geeksforgeeks.org/last-minute-notes-operating-systems/?ref=lbp">Last Minute Notes – Operating Systems</a></li>
+<li><a href="https://jenkov.com/tutorials/java-concurrency/concurrency-vs-parallelism.html#:~:text=Thus%2C%20the%20threads%20executed%20on,CPUs%20are%20executed%20in%20parallel.">Concurrency vs. Parallelism</a></li>
+<li><a href="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.learncomputerscienceonline.com%2Foperating-system%2F&amp;psig=AOvVaw3VcjEWrCoDpv64FY_LqyrY&amp;ust=1681838404932000&amp;source=images&amp;cd=vfe&amp;ved=0CBAQjRxqFwoTCJCM3ru2sf4CFQAAAAAdAAAAABAb">Image Resource 1</a></li>
+<li><a href="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.learncomputerscienceonline.com%2Foperating-system%2F&amp;psig=AOvVaw3VcjEWrCoDpv64FY_LqyrY&amp;ust=1681838404932000&amp;source=images&amp;cd=vfe&amp;ved=0CBAQjRxqFwoTCJCM3ru2sf4CFQAAAAAdAAAAABBM">Image Resource 2</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="February 1, 2026 05:26:40 UTC">February 1, 2026 05:26:40</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="April 1, 2023 05:07:26 UTC">April 1, 2023 05:07:26</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"></path></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:61530469+ytianle@users.noreply.github.com">ytianle</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+  <!-- Insert generated snippet here -->
+    <script src="https://giscus.app/client.js" data-repo="ytianle/ytianle.github.io" data-repo-id="R_kgDOITXaGg" data-category-id="DIC_kwDOITXaGs4CSWJD" =""="" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" data-loading="lazy" crossorigin="anonymous" async="">
+    </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2020 - 2026 Tianle Yuan
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/yuantianle/" target="_blank" rel="noopener" title="Tianle Yuan on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/ytianle" target="_blank" rel="noopener" title="Tianle Yuan on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://yuantianle.com" target="_blank" rel="noopener" title="Go back to Tianle's Main Page" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272h16v176c0 35.3 28.7 64 64 64h288c35.3 0 64-28.7 64-64V272h16c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1zM224 248c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v40h40c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-40v40c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-40h-40c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h40z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.path", "navigation.prune", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.follow", "content.code.annotate", "content.code.copy", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/javascripts/toc-anchor-fix.js"></script>
+      
+        <script src="../../../assets/javascripts/mermaid.mjs" type="module"></script>
+      
+        <script src="../../../assets/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../../assets/javascripts/tablesort.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+      
+        <script src="../../../assets/javascripts/extra-internet-markdown-ref.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

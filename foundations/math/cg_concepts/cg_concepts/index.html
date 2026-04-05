@@ -1,0 +1,2187 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<link href="https://ytianle.github.io/foundations/math/cg_concepts/cg_concepts/" rel="canonical">
+<link href="../" rel="prev">
+<link href="../../../conceptual_modeling/" rel="next">
+<link href="../../../.." hreflang="en" rel="alternate">
+<link href="https://ytianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN" rel="alternate">
+<link href="../../../../assets/images/self.ico" rel="icon">
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator">
+<title>CG Concepts - Tianle's Blog</title>
+<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet">
+<link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet">
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../assets/stylesheets/extra-00-base.css" rel="stylesheet">
+<link href="../../../../assets/stylesheets/extra-10-layout-nav.css" rel="stylesheet">
+<link href="../../../../assets/stylesheets/extra-20-cards-media.css" rel="stylesheet">
+<link href="../../../../assets/stylesheets/extra-30-admonitions.css" rel="stylesheet">
+<link href="../../../../assets/stylesheets/extra-40-typography.css" rel="stylesheet">
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet">
+<noscript>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+</noscript><script type="text/javascript">
+    (function () {
+      var load = function () {
+        if (document.getElementById("yuantianle-github-io-7f7j3xbyx")) {
+          return
+        }
+        var s = document.createElement("script")
+        s.src = "https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js"
+        s.id = "yuantianle-github-io-7f7j3xbyx"
+        s.defer = true
+        document.head.appendChild(s)
+      }
+
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(load, { timeout: 2500 })
+      } else {
+        window.setTimeout(load, 1200)
+      }
+    })()
+  </script>
+<script>
+    (function () {
+      var key = "sidebarCollapsed"
+      var secondaryKey = "sidebarSecondaryCollapsed"
+      var root = document.documentElement
+      var stored = localStorage.getItem(key)
+      if (stored === "1") {
+        root.classList.add("sidebar-collapsed")
+      }
+      var secondaryStored = localStorage.getItem(secondaryKey)
+      if (secondaryStored === "1") {
+        root.classList.add("sidebar-secondary-collapsed")
+      }
+
+      function setSidebarWidth() {
+        var sidebar = document.querySelector(".md-sidebar--primary")
+        var width = sidebar ? sidebar.getBoundingClientRect().width : 0
+        root.style.setProperty("--md-sidebar-width", width + "px")
+      }
+
+      function mountToggle() {
+        var header = document.querySelector(".md-header__inner")
+        if (!header) return
+
+        document.querySelectorAll(".sidebar-toggle").forEach(function (el) {
+          el.remove()
+        })
+
+        if (!window.matchMedia("(min-width: 52em)").matches) return
+
+        var btn = document.createElement("button")
+        btn.id = "sidebar-toggle-primary"
+        btn.className = "md-header__button md-icon sidebar-toggle"
+        btn.type = "button"
+        btn.setAttribute("aria-label", "Toggle sidebar")
+        var iconOpen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h13v2H3zm0 5h18v2H3z"/></svg>'
+        var iconClosed = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3zm12 7h6v4h-6zm0 7h6v4h-6zm-2-4H7v5h6v2H5V9h2v2h6z"/></svg>'
+        function syncIcon() {
+          btn.innerHTML = root.classList.contains("sidebar-collapsed") ? iconClosed : iconOpen
+        }
+        syncIcon()
+        btn.addEventListener("click", function () {
+          var collapsed = root.classList.toggle("sidebar-collapsed")
+          localStorage.setItem(key, collapsed ? "1" : "0")
+          syncIcon()
+        })
+
+        var btnSecondary = document.createElement("button")
+        btnSecondary.id = "sidebar-toggle-secondary"
+        btnSecondary.className = "md-header__button md-icon sidebar-toggle sidebar-toggle--secondary"
+        btnSecondary.type = "button"
+        btnSecondary.setAttribute("aria-label", "Toggle right sidebar")
+        var iconOpenSecondary = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm8 5h10v2H11zm0 5h10v2H11z"/></svg>'
+        var iconClosedSecondary = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 3h6v4h-6zM3 10h6v4H3zm0 7h6v4H3zm8-4h6v5h-6v2h8V9h-2v2h-6z"/></svg>'
+        function syncSecondaryIcon() {
+          btnSecondary.innerHTML = root.classList.contains("sidebar-secondary-collapsed")
+            ? iconClosedSecondary
+            : iconOpenSecondary
+        }
+        syncSecondaryIcon()
+        btnSecondary.addEventListener("click", function () {
+          var collapsed = root.classList.toggle("sidebar-secondary-collapsed")
+          localStorage.setItem(secondaryKey, collapsed ? "1" : "0")
+          syncSecondaryIcon()
+        })
+
+        var paletteForm = header.querySelector('[data-md-component="palette"]')
+        if (paletteForm && paletteForm.parentNode) {
+          paletteForm.parentNode.insertBefore(btnSecondary, paletteForm)
+          paletteForm.parentNode.insertBefore(btn, btnSecondary)
+        } else {
+          header.appendChild(btn)
+          header.appendChild(btnSecondary)
+        }
+      }
+
+      function onShortcut(e) {
+        if (!(e.ctrlKey || e.metaKey) || e.code !== "KeyB") {
+          return
+        }
+        var target = e.target
+        if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) {
+          return
+        }
+        if (!window.matchMedia("(min-width: 52em)").matches) return
+        e.preventDefault()
+        var collapsed = root.classList.toggle("sidebar-collapsed")
+        localStorage.setItem(key, collapsed ? "1" : "0")
+        var btn = document.getElementById("sidebar-toggle-primary")
+        if (btn) {
+          var iconOpen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h13v2H3zm0 5h18v2H3z"/></svg>'
+          var iconClosed = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3zm12 7h6v4h-6zm0 7h6v4h-6zm-2-4H7v5h6v2H5V9h2v2h6z"/></svg>'
+          btn.innerHTML = root.classList.contains("sidebar-collapsed") ? iconClosed : iconOpen
+        }
+      }
+
+      setSidebarWidth()
+      window.addEventListener("resize", function () {
+        setSidebarWidth()
+        mountToggle()
+      })
+      window.addEventListener("keydown", onShortcut)
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", mountToggle)
+      } else {
+        mountToggle()
+      }
+    })()
+  </script>
+<script src="../../../../js/unpkg.com/d3@7.js" type="text/javascript"></script><script src="../../../../js/unpkg.com/markmap-lib@0.18.js" type="text/javascript"></script><script src="../../../../js/unpkg.com/markmap-view@0.18.js" type="text/javascript"></script><style type="text/css">div.mkdocs-markmap {
+    width: 100%;
+    min-height: 1em;
+    border: 1px solid grey;
+}
+.mkdocs-markmap > svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+</style><link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+<body data-md-color-accent="deep-orange" data-md-color-primary="black" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox">
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#-math-questions">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Tianle's Blog" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Tianle's Blog">
+<img alt="logo" src="../../../../assets/images/logo.png">
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Tianle's Blog
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              CG Concepts
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="black" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio">
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio">
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="Select language" class="md-header__button md-icon">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="../../../.." hreflang="en">
+              English
+            </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://ytianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN">
+              中文(谷歌)
+            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text">
+<label class="md-search__icon md-icon" for="__search">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ytianle/ytianle.github.io" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    ytianle.github.io
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../..">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../blog/">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"></path></svg>
+    
+  
+  JOURNAL
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../../">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 6H8.83l6 6-6 6H18v2H6v-2l6-6-6-6V4h12z"></path></svg>
+    
+  
+  FOUNDATIONS
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../programming/">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h2v2H5v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5h2v2H5c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0-2-2H0v-2h1a2 2 0 0 0 2-2V5a2 2 0 0 1 2-2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3zm-7 12a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m8 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"></path></svg>
+    
+  
+  PROGRAMMING
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../systems/">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16v-3c0-1.11-.89-2-2-2h-6V8h2V2H9v6h2v3H5c-1.11 0-2 .89-2 2v3H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6zM11 4h2v2h-2zM5 20H3v-2h2zm8 0h-2v-2h2zm8 0h-2v-2h2z"></path></svg>
+    
+  
+  SYSTEMS
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../vision/">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 17H3V5h18m0-2H3c-1.1 0-2 .9-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5c1.11 0 2-.89 2-2V5a2 2 0 0 0-2-2m-6 3.5-.62 1.37L13 8.5l1.38.63.62 1.37.63-1.37L17 8.5l-1.37-.63zm-4.5 2-1.09 2.41L7 12l2.41 1.09 1.09 2.41 1.1-2.41L14 12l-2.4-1.09z"></path></svg>
+    
+  
+  VISION
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../interactive/">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 9H2v6h5.5l3-3zM6 13H4v-2h2zm9-5.5V2H9v5.5l3 3zM11 4h2v2h-2zM9 16.5V22h6v-5.5l-3-3zm4 3.5h-2v-2h2zm3.5-11-3 3 3 3H22V9zm3.5 4h-2v-2h2z"></path></svg>
+    
+  
+  INTERACTIVE
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../humanities/">
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.74 3.74 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574M8.755 4.75l-.004 7.322a3.75 3.75 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25"></path></svg>
+    
+  
+  HUMANITIES
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../../indices/">
+          
+  
+  
+    
+  
+  INDICES
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Tianle's Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Tianle's Blog">
+<img alt="logo" src="../../../../assets/images/logo.png">
+</a>
+    Tianle's Blog
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/ytianle/ytianle.github.io" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    ytianle.github.io
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    
+  
+    HOME
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../../blog/">
+<span class="md-ellipsis">
+    
+  
+    JOURNAL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 6H8.83l6 6-6 6H18v2H6v-2l6-6-6-6V4h12z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    FOUNDATIONS
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    FOUNDATIONS
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../algorithms/">
+<span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 19.88V22l-1.8-1.17-4.79-9c.66-.21 1.26-.55 1.78-1zM15 7a3 3 0 0 1-3 3h-.44L5.8 20.83 4 22v-2.12L9.79 9c-1.1-1.23-1-3.13.24-4.24C10.57 4.28 11.27 4 12 4V2a1 1 0 0 1 1 1v1.18c1.2.42 2 1.55 2 2.82m-2 0a1 1 0 0 0-1-1 1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    Math
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Math
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../optimization/">
+<span class="md-ellipsis">
+    
+  
+    Optimization
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3_3" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"></path></svg>
+<span class="md-ellipsis">
+    
+  
+    CG Concepts
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    CG Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    CG Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    CG Concepts
+  
+
+    
+  </span>
+</a>
+<nav aria-label="On this page" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#convex-hull">
+<span class="md-ellipsis">
+      
+        Convex hull
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dot-and-cross-products">
+<span class="md-ellipsis">
+      
+        Dot and Cross products
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#point-in-tri">
+<span class="md-ellipsis">
+      
+        Point in Tri
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#convex-polygon">
+<span class="md-ellipsis">
+      
+        Convex polygon
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reflection-vector">
+<span class="md-ellipsis">
+      
+        Reflection vector
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#polygon-area">
+<span class="md-ellipsis">
+      
+        Polygon area
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3d-two-lines-distance">
+<span class="md-ellipsis">
+      
+        3D two lines' distance
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zero-determinant">
+<span class="md-ellipsis">
+      
+        Zero determinant
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#homogeneous-coordinates">
+<span class="md-ellipsis">
+      
+        Homogeneous coordinates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#benifits-of-homogeneous-coordinates">
+<span class="md-ellipsis">
+      
+        Benifits of homogeneous coordinates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#posit-homo-vs-direct-homo">
+<span class="md-ellipsis">
+      
+        Posit homo v.s. Direct homo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ray-sphere-intersection">
+<span class="md-ellipsis">
+      
+        Ray-sphere intersection
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#normal-matrix">
+<span class="md-ellipsis">
+      
+        Normal matrix
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clipping-space-transformation">
+<span class="md-ellipsis">
+      
+        Clipping space transformation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#viewing-frustum">
+<span class="md-ellipsis">
+      
+        Viewing frustum
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dimensions-of-vectorsmatrices">
+<span class="md-ellipsis">
+      
+        Dimensions of vectors/matrices
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#m-matrix">
+<span class="md-ellipsis">
+      
+        M matrix
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#m-matrix-decomposation">
+<span class="md-ellipsis">
+      
+        M matrix decomposation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#order-of-matrix-concatenation">
+<span class="md-ellipsis">
+      
+        Order of matrix concatenation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orthogonal-matrices">
+<span class="md-ellipsis">
+      
+        Orthogonal matrices
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eigenvalues-and-eigenvectors">
+<span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rotation-matrix-eigenvalues">
+<span class="md-ellipsis">
+      
+        Rotation matrix eigenvalues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#least-squares-method">
+<span class="md-ellipsis">
+      
+        Least squares method
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#euler-angles">
+<span class="md-ellipsis">
+      
+        Euler angles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gimbal-lock">
+<span class="md-ellipsis">
+      
+        Gimbal lock
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quaternions">
+<span class="md-ellipsis">
+      
+        Quaternions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monte-carlo-integration">
+<span class="md-ellipsis">
+      
+        Monte Carlo integration
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nonlinear-to-linear">
+<span class="md-ellipsis">
+      
+        Nonlinear to linear
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reference">
+<span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../conceptual_modeling/">
+<span class="md-ellipsis">
+    
+  
+    Conceptual Modeling
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../computation_theory/">
+<span class="md-ellipsis">
+    
+  
+    Computation Theory
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../computing_fundamentals/">
+<span class="md-ellipsis">
+    
+  
+    Computing Fundamentals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../networking/">
+<span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../../programming/">
+<span class="md-ellipsis">
+    
+  
+    PROGRAMMING
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../../systems/">
+<span class="md-ellipsis">
+    
+  
+    SYSTEMS
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../../vision/">
+<span class="md-ellipsis">
+    
+  
+    VISION
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../../interactive/">
+<span class="md-ellipsis">
+    
+  
+    INTERACTIVE
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../../humanities/">
+<span class="md-ellipsis">
+    
+  
+    HUMANITIES
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+<a class="md-nav__link" href="../../../../indices/">
+<span class="md-ellipsis">
+    
+  
+    INDICES
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="On this page" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#convex-hull">
+<span class="md-ellipsis">
+      
+        Convex hull
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dot-and-cross-products">
+<span class="md-ellipsis">
+      
+        Dot and Cross products
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#point-in-tri">
+<span class="md-ellipsis">
+      
+        Point in Tri
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#convex-polygon">
+<span class="md-ellipsis">
+      
+        Convex polygon
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reflection-vector">
+<span class="md-ellipsis">
+      
+        Reflection vector
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#polygon-area">
+<span class="md-ellipsis">
+      
+        Polygon area
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3d-two-lines-distance">
+<span class="md-ellipsis">
+      
+        3D two lines' distance
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#zero-determinant">
+<span class="md-ellipsis">
+      
+        Zero determinant
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#homogeneous-coordinates">
+<span class="md-ellipsis">
+      
+        Homogeneous coordinates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#benifits-of-homogeneous-coordinates">
+<span class="md-ellipsis">
+      
+        Benifits of homogeneous coordinates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#posit-homo-vs-direct-homo">
+<span class="md-ellipsis">
+      
+        Posit homo v.s. Direct homo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ray-sphere-intersection">
+<span class="md-ellipsis">
+      
+        Ray-sphere intersection
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#normal-matrix">
+<span class="md-ellipsis">
+      
+        Normal matrix
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clipping-space-transformation">
+<span class="md-ellipsis">
+      
+        Clipping space transformation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#viewing-frustum">
+<span class="md-ellipsis">
+      
+        Viewing frustum
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dimensions-of-vectorsmatrices">
+<span class="md-ellipsis">
+      
+        Dimensions of vectors/matrices
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#m-matrix">
+<span class="md-ellipsis">
+      
+        M matrix
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#m-matrix-decomposation">
+<span class="md-ellipsis">
+      
+        M matrix decomposation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#order-of-matrix-concatenation">
+<span class="md-ellipsis">
+      
+        Order of matrix concatenation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#orthogonal-matrices">
+<span class="md-ellipsis">
+      
+        Orthogonal matrices
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eigenvalues-and-eigenvectors">
+<span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rotation-matrix-eigenvalues">
+<span class="md-ellipsis">
+      
+        Rotation matrix eigenvalues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#least-squares-method">
+<span class="md-ellipsis">
+      
+        Least squares method
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#euler-angles">
+<span class="md-ellipsis">
+      
+        Euler angles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gimbal-lock">
+<span class="md-ellipsis">
+      
+        Gimbal lock
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quaternions">
+<span class="md-ellipsis">
+      
+        Quaternions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monte-carlo-integration">
+<span class="md-ellipsis">
+      
+        Monte Carlo integration
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nonlinear-to-linear">
+<span class="md-ellipsis">
+      
+        Nonlinear to linear
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reference">
+<span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<nav aria-label="Navigation" class="md-path">
+<ol class="md-path__list">
+<li class="md-path__item">
+<a class="md-path__link" href="../../../..">
+<span class="md-ellipsis">
+    HOME
+  </span>
+</a>
+</li>
+<li class="md-path__item">
+<a class="md-path__link" href="../../../">
+<span class="md-ellipsis">
+    FOUNDATIONS
+  </span>
+</a>
+</li>
+<li class="md-path__item">
+<a class="md-path__link" href="../../">
+<span class="md-ellipsis">
+    Math
+  </span>
+</a>
+</li>
+<li class="md-path__item">
+<a class="md-path__link" href="../">
+<span class="md-ellipsis">
+    CG Concepts
+  </span>
+</a>
+</li>
+</ol>
+</nav>
+<article class="md-content__inner md-typeset">
+<div class="md-source-date" style="text-align: right; font-weight: bold;">
+<small>
+          Author: <span class="git-page-authors git-authors"><a href="mailto:61530469+ytianle@users.noreply.github.com">ytianle</a></span>
+</small>
+</div>
+<h1 id="-math-questions"><strong>🎮 Math Questions</strong><a class="headerlink" href="#-math-questions" title="Anchor link to this section for reference">⚓︎</a></h1>
+<blockquote>
+<p>This material is for related questions:</p>
+</blockquote>
+<div class="language-markmap mkdocs-markmap"><markmap-data encoding="base64" hidden="true">LSBbKipDb252ZXggaHVsbCoqXSgjY29udmV4LWh1bGwpCi0gWyoqRG90IGFuZCBDcm9zcyBwcm9kdWN0cyoqXSgjZG90LWFuZC1jcm9zcy1wcm9kdWN0cykKLSBbKipQb2ludCBpbiBUcmkqKl0oI3BvaW50LWluLXRyaSkKLSBbKipDb252ZXggcG9seWdvbioqXSgjY29udmV4LXBvbHlnb24pCi0gWyoqUmVmbGVjdGlvbiB2ZWN0b3IqKl0oI3JlZmxlY3Rpb24tdmVjdG9yKQotIFsqKlBvbHlnb24gYXJlYSoqXSgjcG9seWdvbi1hcmVhKQotIFsqKjNEIHR3byBsaW5lcycgZGlzdGFuY2UqKl0oIzNkLXR3by1saW5lcy1kaXN0YW5jZSkKLSBbKipaZXJvIGRldGVybWluYW50KipdKCN6ZXJvLWRldGVybWluYW50KQotIFsqKkhvbW9nZW5lb3VzIGNvb3JkaW5hdGVzKipdKCNob21vZ2VuZW91cy1jb29yZGluYXRlcykKLSBbKipQb3NpdCBob21vIHYucy4gRGlyZWN0IGhvbW8qKl0oI3Bvc2l0LWhvbW8tdnMtZGlyZWN0LWhvbW8pCi0gWyoqQmVuaWZpdHMgb2YgaG9tbyoqXSgjYmVuaWZpdHMtb2YtaG9tbykKLSBbKipSYXktc3BoZXJlIGludGVyc2VjdGlvbioqXSgjcmF5LXNwaGVyZS1pbnRlcnNlY3Rpb24pCi0gWyoqTm9ybWFsIG1hdHJpeCoqXSgjbm9ybWFsLW1hdHJpeCkKLSBbKipDbGlwcGluZyBzcGFjZSB0cmFuc2Zvcm1hdGlvbioqXSgjY2xpcHBpbmctc3BhY2UtdHJhbnNmb3JtYXRpb24pCi0gWyoqVmlld2luZyBmcnVzdHVtKipdKCN2aWV3aW5nLWZydXN0dW0pCi0gWyoqRGltZW5zaW9ucyBvZiB2ZWN0b3JzL21hdHJpY2VzKipdKCNkaW1lbnNpb25zLW9mLXZlY3RvcnNtYXRyaWNlcykKLSBbKipNIG1hdHJpeCoqXSgjbS1tYXRyaXgpCi0gWyoqTSBtYXRyaXggZGVjb21wb3NhdGlvbioqXSgjbS1tYXRyaXgtZGVjb21wb3NhdGlvbikKLSBbKipPcmRlciBvZiBtYXRyaXggY29uY2F0ZW5hdGlvbioqXSgjb3JkZXItb2YtbWF0cml4LWNvbmNhdGVuYXRpb24pCi0gWyoqT3J0aG9nb25hbCBtYXRyaWNlcyoqXSgjb3J0aG9nb25hbC1tYXRyaWNlcykKLSBbKipFaWdlbnZhbHVlcyBhbmQgRWlnZW52ZWN0b3JzKipdKCNlaWdlbnZhbHVlcy1hbmQtZWlnZW52ZWN0b3JzKQotIFsqKlJvdGF0aW9uIG1hdHJpeCBlaWdlbnZhbHVlcyoqXSgjcm90YXRpb24tbWF0cml4LWVpZ2VudmFsdWVzKQotIFsqKkxlYXN0IHNxdWFyZXMgbWV0aG9kKipdKCNsZWFzdC1zcXVhcmVzLW1ldGhvZCkKLSBbKipFdWxlciBhbmdsZXMqKl0oI2V1bGVyLWFuZ2xlcykKLSBbKipHaW1iYWwgbG9jayoqXSgjZ2ltYmFsLWxvY2spCi0gWyoqUXVhdGVybmlvbnMqKl0oI3F1YXRlcm5pb25zKQotIFsqKk1vbnRlIENhcmxvIGludGVncmF0aW9uKipdKCNtb250ZS1jYXJsby1pbnRlZ3JhdGlvbikKLSBbKipOb25saW5lYXIgdG8gbGluZWFyKipdKCNub25saW5lYXItdG8tbGluZWFyKQ==</markmap-data></div>
+<h2 id="convex-hull"><strong>Convex hull</strong><a class="headerlink" href="#convex-hull" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How to compute the convex hull of a given set of points?</summary>
+<p><strong>Answer:</strong> We can solve this problem by using <a href="https://www.youtube.com/watch?v=B2AJoQSZf4M">Graham Scan alrorithm</a>.</p>
+</details>
+<h2 id="dot-and-cross-products"><strong>Dot and Cross products</strong><a class="headerlink" href="#dot-and-cross-products" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Geometric interpretations of dot and cross products.</summary>
+<p><strong>Answer:</strong> </p>
+<ul>
+<li><code>Dot product</code> is like light projection:</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/dot_product.png"><img :=":" _="," alt="picture 0" class="center" src="../Images/dot_product.png" width="40%"></a> </p>
+<ul>
+<li><code>Cross product</code> is for getting the orthogonal vector of the provided vectors. Its symbol also shows the clockwise from one parent vector to another parent verctor:</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/cross_product.png"><img :=":" _="," alt="picture 2" class="center" src="../Images/cross_product.png" width="40%"></a> </p>
+</details>
+<h2 id="point-in-tri"><strong>Point in Tri</strong><a class="headerlink" href="#point-in-tri" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How to determine if a point is inside a triangle?</summary>
+<p><strong>Answer:</strong> Various methods can be used, including:</p>
+<ul>
+<li>Barycentric coordinates (<a href="https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/">Link</a>)</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/barycentric_coordinate.png"><img :=":" _="," alt="picture 3" class="center" src="../Images/barycentric_coordinate.png" width="40%"></a> </p>
+<ul>
+<li>Angle summation (<a href="https://www.researchgate.net/publication/321421519_OPTIMUM_TOOLS_FOR_FINISHING_SCULPTURED_SURFACES_DEFINED_BY_3D_IRREGULAR_CLOUD_OF_POINTS#pf2">Link</a>): <ul>
+<li>If the point is inside the triangle, the sum of the angles between the point and each pair of vertices should be 360 degrees. </li>
+<li>If the point is outside, the corresponding sum will be 0.</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/interial_angle.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/interial_angle.png" width="40%"></a></p>
+<ul>
+<li>Ray intersection (<a href="https://www.baeldung.com/cs/check-if-point-is-in-2d-triangle#1-mathematical-idea-1">Link</a>):<ul>
+<li>If a ray cast from the point intersects the triangle 1 time, the point is inside the triangle.</li>
+<li>If the ray intersects 2 times, the point is outside.</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/interial_ray.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/interial_ray.png" width="40%"></a></p>
+<ul>
+<li>Area comparison. (<a href="https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/">Link</a>): A should be equal to the sum of A1 + A2 + A3.<ul>
+<li>
+<div class="arithmatex">\[S_{pol}=1/2\cdot\sum_{i=0}^{n-1}(x_i\cdot y_{i+1}-y_i\cdot x_{i+1})\]</div>
+</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/interial_area.jpg"><img :=":" _="," alt="Alt text" class="center" src="../Images/interial_area.jpg" width="40%"></a></p>
+</details>
+<h2 id="convex-polygon"><strong>Convex polygon</strong><a class="headerlink" href="#convex-polygon" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How to determine if a polygon is convex?</summary>
+<p><strong>Answer:</strong> A polygon is convex if all its interior angles are less than 180 degrees. (<a href="https://www.learnalberta.ca/content/memg/division03/Polygon%20%28Convex%29/index.html">Link</a>)
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/Polygon_convex.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/Polygon_convex.png" width="60%"></a></p>
+</details>
+<h2 id="reflection-vector"><strong>Reflection vector</strong><a class="headerlink" href="#reflection-vector" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Given a normal vector and an incident vector, how to compute the reflection vector?</summary>
+<p><strong>Answer:</strong> Here below is the formula (<a href="https://www.contemporarycalculus.com/dh/Calculus_all/CC11_7_VectorReflections.pdf">Link</a>):</p>
+<div class="arithmatex">\[ \vec{R} = \vec{I} - 2 \vec{I}\cdot\vec{N}\]</div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/reflection.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/reflection.png" width="20%"></a></p>
+</details>
+<h2 id="polygon-area"><strong>Polygon area</strong><a class="headerlink" href="#polygon-area" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Use cross product to calculate the area of a polygon.</summary>
+<p><strong>Answer:</strong> Refer the <a href="https://www.baeldung.com/cs/2d-polygon-area">Link</a> Imagine we have three points A, B, and C. The area of the single triangle can be calculated as:</p>
+<div class="arithmatex">\[S_{tri}=1/2\cdot\|\vec{AB}\times\vec{AC}|\]</div>
+<p>The area of any polygon can be claculated by:</p>
+<div class="arithmatex">\[S_{pol}=1/2\cdot\sum_{i=0}^{n-1}(x_i\cdot y_{i+1}-y_i\cdot x_{i+1})\]</div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/polygon_area.jpg"><img :=":" _="," alt="Alt text" class="center" src="../Images/polygon_area.jpg" width="30%"></a></p>
+</details>
+<h2 id="3d-two-lines-distance"><strong>3D two lines' distance</strong><a class="headerlink" href="#3d-two-lines-distance" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Finding the distance between two lines in 3D space.</summary>
+<p><strong>Answer:</strong> The distance between two lines can be calculated using vector projection and vector subtraction. (<a href="https://www.youtube.com/watch?app=desktop&amp;v=HC5YikQxwZA">Link</a>)</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/twoline_distance.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/twoline_distance.png" width="60%"></a></p>
+</details>
+<h2 id="zero-determinant"><strong>Zero determinant</strong><a class="headerlink" href="#zero-determinant" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Significance of a <code>determinant</code> being equal to zero?</summary>
+<p><strong>Answer:</strong> A determinant of zero indicates linear dependence of the matrix columns or rows.</p>
+<ul>
+<li>
+<p><strong>Linear Dependence:</strong> If the determinant of a square matrix is zero, it means that the <u>rows (or columns) of the matrix are linearly dependent</u>. In simpler terms, one of the rows (or columns) can be expressed as a linear combination of the other rows (or columns).</p>
+</li>
+<li>
+<p><strong>Singular Matrix:</strong> A matrix with a determinant of zero is called a singular matrix. Singular matrices <u>do not have an inverse</u>, <u>meaning they are non-invertible</u>. Non-singular matrices, on the other hand, have a non-zero determinant and possess an inverse.</p>
+</li>
+<li>
+<p><strong>Area Interpretation:</strong> For a 2x2 matrix, the determinant gives the area of the parallelogram spanned by its row or column vectors. If the <u>determinant is zero, it means that the area is zero, implying that the vectors are collinear</u>.</p>
+</li>
+<li>
+<p><strong>Volume Interpretation:</strong> For a 3x3 matrix, the determinant gives <u>the volume of the parallelepiped spanned by its row or column vectors</u>. A determinant of zero implies that <u>the volume is zero</u>, which means that the three vectors lie in the same plane.</p>
+</li>
+<li>
+<p><strong>No Unique Solution:</strong> If you're trying to solve a system of linear equations using the matrix form <span class="arithmatex">\(AX=B\)</span>, and matrix <span class="arithmatex">\(A\)</span> has a determinant of zero, it means that the <u>system either has infinitely many solutions or no solutions</u> (depending on the system). In the context of linear systems, the determinant can help determine the nature of the solutions.</p>
+</li>
+<li>
+<p><strong>Eigenvalues:</strong> For a square matrix, the determinant of the matrix minus a scalar multiple of the identity matrix gives the characteristic polynomial. The roots of this polynomial are the eigenvalues of the matrix. <u>If the determinant of the matrix itself is zero, then one of the eigenvalues is zero.</u></p>
+</li>
+<li>
+<p><strong>Stability in Differential Equations:</strong> In the study of differential equations, particularly systems of linear differential equations, the determinant of the coefficient matrix can play <u>a role in determining the stability and behavior of solutions</u>.</p>
+</li>
+<li>
+<p><strong>Change of Variables in Multivariable Calculus:</strong> The determinant of the <u>Jacobian matrix</u> in a change of variables for multiple integrals <u>gives a scaling factor for integration</u>. A zero determinant can indicate <u>problems in the transformation</u>.</p>
+</li>
+</ul>
+</details>
+<h2 id="homogeneous-coordinates"><strong>Homogeneous coordinates</strong><a class="headerlink" href="#homogeneous-coordinates" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What are <code>homogeneous coordinates</code>?</summary>
+<p><strong>Answer:</strong> <code>Homogeneous coordinates</code> represent points in higher-dimensional space and allow for <u>convenient transformations</u>.</p>
+<ul>
+<li>
+<p>Here are some matrix for two-dimensional transformation in homogeneous coordinate:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/homogeneous-coordinates.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/homogeneous-coordinates.png" width="60%"></a></p>
+</li>
+</ul>
+</details>
+<h2 id="benifits-of-homogeneous-coordinates"><strong>Benifits of homogeneous coordinates</strong><a class="headerlink" href="#benifits-of-homogeneous-coordinates" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Why use homogeneous coordinates? What are the advantages?</summary>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>
+<p><strong>Unified Transformation Matrices:</strong> Homogeneous coordinates allow for a <u>unified matrix representation for multiple transformations</u> (translation, rotation, scaling, and shearing). This makes it possible to concatenate various transformations into a single matrix.</p>
+</li>
+<li>
+<p><strong>Easier Translations:</strong> In standard Cartesian coordinates, translations are not representable as linear transformations. With homogeneous coordinates, translations become linear, and hence, can be expressed as matrix multiplications.</p>
+</li>
+<li>
+<p><strong>Perspective Projections:</strong> Homogeneous coordinates make it easy to handle projective transformations, like perspective projection in graphics, which would be more complex in Cartesian coordinates.</p>
+</li>
+<li>
+<p><strong>Representation of Points at Infinity:</strong> They can represent points at infinity, allowing for the modeling of parallel lines meeting at a "vanishing point" in projective geometry.</p>
+</li>
+<li>
+<p><strong>Interpolation and Clipping:</strong> In computer graphics, tasks like interpolation and clipping can be performed more efficiently and robustly using homogeneous coordinates.</p>
+</li>
+<li>
+<p><strong>Compactness:</strong> Using homogeneous coordinates, a sequence of transformations can be represented compactly with a single matrix, simplifying the computation.</p>
+</li>
+<li>
+<p><strong>Flexibility:</strong> They can seamlessly toggle between representing positions and directions using the same coordinate system.</p>
+</li>
+<li>
+<p><strong>Robustness in Computer Vision:</strong> Homogeneous coordinates provide a robust framework for dealing with points and transformations in computer vision tasks, such as camera calibration and 3D reconstruction.</p>
+</li>
+</ul>
+</details>
+<h2 id="posit-homo-vs-direct-homo"><strong>Posit homo v.s. Direct homo</strong><a class="headerlink" href="#posit-homo-vs-direct-homo" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How to differentiate between a <u>position</u> and a <u>direction</u> using homogeneous coordinates?</summary>
+<p><strong>Answer:</strong> In homogeneous coordinates, the distinction between a <u>position</u> (or point) and a <u>direction</u> (or vector) can be made using the <u>additional coordinate</u>, often referred to as the "w-coordinate."</p>
+<ul>
+<li>
+<p><strong>Position (or Point):</strong> Represented as <span class="arithmatex">\((x',y',w)\)</span> in 2D or <span class="arithmatex">\((x',y',z',w)\)</span> in 3D. <u>The w-coordinate for a position is usually 1 (or non-zero in a more general sense)</u>. When you convert from homogeneous to Cartesian coordinates, <u>you'd divide by w</u> to get the actual point: <span class="arithmatex">\(x=x'/w,y=y'/w\)</span>and in 3D, <span class="arithmatex">\(z=z'/w\)</span>.</p>
+</li>
+<li>
+<p><strong>Direction (or Vector):</strong> Represented similarly as <span class="arithmatex">\((x',y',w)\)</span> in 2D or <span class="arithmatex">\((x',y',z',w)\)</span> in 3D. <u>The w-coordinate for a direction vector is 0</u>. This denotes that vectors, being directions, <u>do not have a specific position in space and aren't affected by translations</u>. If you were to convert a direction from homogeneous to Cartesian coordinates (though you typically wouldn't need to), the division by w would lead to a division by zero, which further underscores that the concept of a specific "position" doesn't apply to directions.</p>
+</li>
+</ul>
+<p><br><strong>E.g.</strong> Here's a practical interpretation. Imagine you're working in 3D graphics:</p>
+<ul>
+<li>
+<p>If you have the homogeneous coordinate <span class="arithmatex">\((2,3,4,1)\)</span>, it represents the point <span class="arithmatex">\((2,3,4)\)</span> in Cartesian coordinates.</p>
+</li>
+<li>
+<p>If you have the homogeneous coordinate <span class="arithmatex">\((2,3,4,0)\)</span>, it represents a direction, not a specific point. It might describe, for instance, the direction of a light ray or a vector in space.</p>
+</li>
+</ul>
+</details>
+<h2 id="ray-sphere-intersection"><strong>Ray-sphere intersection</strong><a class="headerlink" href="#ray-sphere-intersection" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How to determine ray-sphere intersection? Optimization strategies?</summary>
+<p><strong>Answer:</strong> Intersection can be found by solving a quadratic equation. Optimization includes early rejection using bounding spheres.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/line-sphere-intersection.jpg"><img :=":" _="," alt="Alt text" class="center" src="../Images/line-sphere-intersection.jpg" width="40%"></a></p>
+</details>
+<h2 id="normal-matrix"><strong>Normal matrix</strong><a class="headerlink" href="#normal-matrix" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What is a normal matrix?</summary>
+<p><strong>Answer:</strong> </p>
+<ul>
+<li>Definition: <ul>
+<li>A complex square matrix <span class="arithmatex">\(A\)</span> is normal if it commutes with its adjoint (conjugate transpose). </li>
+<li>For real matrices, the adjoint is the same as the transpose. So for a real matrix, a square matrix <span class="arithmatex">\(A\)</span> is normal if it commutes with its transpose.</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/Normal_Matrix.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/Normal_Matrix.png" width="50%"></a></p>
+<ul>
+<li>Application:<ul>
+<li>A matrix is normal if and only if it can be diagonalized by a unitary (or orthogonal, in the real case) matrix.</li>
+<li>If <span class="arithmatex">\(\overline{A}\)</span> is normal, then its eigenvalues lie in the complex plane and its eigenvectors can be chosen to be orthonormal.</li>
+<li>All Hermitian, skew-Hermitian, and unitary matrices are normal.</li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="clipping-space-transformation"><strong>Clipping space transformation</strong><a class="headerlink" href="#clipping-space-transformation" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What does the clipping space transformation do?</summary>
+<p><strong>Answer:</strong> Clipping space transformation maps the view frustum to a normalized cube for further perspective projection. </p>
+<p>In CG, The calculations involved in transforming our vertex positioned in model space into clip space happen in the vertex shader. In fact, the position we set as output, is the position in clip space (<a href="https://carmencincotti.com/2022-05-02/homogeneous-coordinates-clip-space-ndc/">Link</a>):</p>
+<div class="arithmatex">\[out_{position} = projectionMatrix \times viewMatrix \times modelMatrix \times input_{ModelSpacePosition}\]</div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/ClipMatrix.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/ClipMatrix.png" width="30%"></a></p>
+</details>
+<h2 id="viewing-frustum"><strong>Viewing frustum</strong><a class="headerlink" href="#viewing-frustum" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How is a viewing frustum defined?</summary>
+<p><strong>Answer:</strong> The viewing frustum is defined as the volume in world space that is visible through the camera lens.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/Graphics3D_CameraPerspective.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/Graphics3D_CameraPerspective.png" width="40%"></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/Projection_matrix.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/Projection_matrix.png" width="50%"></a></p>
+</details>
+<h2 id="dimensions-of-vectorsmatrices"><strong>Dimensions of vectors/matrices</strong><a class="headerlink" href="#dimensions-of-vectorsmatrices" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How many dimensions are typical vectors? And matrices? Why is it 3D for vectors and 4D for matrices?</summary>
+<p><strong>Answer:</strong> Vectors are typically 3D for spatial representations, while matrices are 4D for transformations due to homogenous coordinates.</p>
+</details>
+<h2 id="m-matrix"><strong>M matrix</strong><a class="headerlink" href="#m-matrix" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How is the M matrix derived?</summary>
+<p>Answer: The M matrix combines translation, rotation, and scaling transformations into a single matrix.</p>
+<p>Given a 4x4 transformation matrix <span class="arithmatex">\(M\)</span> in 3D graphics, the matrix can be represented as:</p>
+<div class="arithmatex">\[
+M=\begin{bmatrix}
+RS &amp; T\\
+0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(R\)</span> is a 3x3 matrix representing rotation and possibly scaling.</li>
+<li><span class="arithmatex">\(T\)</span> is a 3x1 matrix (or column vector) representing translation.</li>
+</ul>
+</details>
+<h2 id="m-matrix-decomposation"><strong>M matrix decomposation</strong><a class="headerlink" href="#m-matrix-decomposation" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Given an M matrix, can it be decomposed into various transformation matrices?</summary>
+<p><strong>Answer:</strong> Yes, an M matrix can be decomposed into translation, rotation, and scaling matrices. The hard point is the Scaling and Rotation Decomposition:</p>
+<p>First, compute the scale factors along each axis as the magnitude of the rows of the 3x3 matrix:</p>
+<div class="arithmatex">\[S_x = ||M_{1,:3}||, S_y = ||M_{2,:3}||,S_z = ||M_{3,:3}||,\]</div>
+<p>The scaling matrix <span class="arithmatex">\(S\)</span> is then:</p>
+<div class="arithmatex">\[
+S=\begin{bmatrix}
+S_x &amp; 0 &amp; 0\\
+0 &amp; S_y &amp; 0\\
+0 &amp; 0 &amp; S_z
+\end{bmatrix}
+\]</div>
+<p>To get the pure rotation matrix <span class="arithmatex">\(R\)</span>, you would normalize the rows of the 3x3 matrix in <span class="arithmatex">\(M\)</span> using the scaling factors:</p>
+<div class="arithmatex">\[
+R=\begin{bmatrix}
+\frac{M_{1,:3}}{S_x} \\
+\frac{M_{2,:3}}{S_y}\\
+\frac{M_{3,:3}}{S_z}
+\end{bmatrix}
+\]</div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/M_matrix_decompose.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/M_matrix_decompose.png" width="40%"></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/3D_rotation.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/3D_rotation.png" width="40%"></a></p>
+</details>
+<h2 id="order-of-matrix-concatenation"><strong>Order of matrix concatenation</strong><a class="headerlink" href="#order-of-matrix-concatenation" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How to determine the order of matrix concatenation?</summary>
+<p><strong>Answer:</strong> Matrix multiplication is non-commutative, so the order of matrix multiplication matters. </p>
+<p>Let's use some notation:</p>
+<ul>
+<li>Let <span class="arithmatex">\(( M_o )\)</span> be the object's matrix.</li>
+<li>Let <span class="arithmatex">\(( M_r )\)</span> be the rotation matrix.</li>
+<li>Let <span class="arithmatex">\(( M_t )\)</span> be the translation matrix.</li>
+</ul>
+<p>For the above scenario, the result <span class="arithmatex">\(M_{result}\)</span> after rotating and then translating is:</p>
+<div class="arithmatex">\[ M_{result} = M_t \times (M_r \times M_o) \]</div>
+<p>If you instead wanted to first translate and then rotate the object, you would do:</p>
+<div class="arithmatex">\[ M_{result} = M_r \times (M_t \times M_o) \]</div>
+</details>
+<h2 id="orthogonal-matrices"><strong>Orthogonal matrices</strong><a class="headerlink" href="#orthogonal-matrices" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Definition and characteristics of orthogonal matrices.</summary>
+<p><strong>Answer:</strong> </p>
+<ul>
+<li>
+<p><strong>Definition:</strong> A square matrix <span class="arithmatex">\(A\)</span> is said to be orthogonal if its transpose is equal to its inverse. That is, </p>
+<div class="arithmatex">\[ A^T = A^{-1} \]</div>
+<p>or equivalently, </p>
+<div class="arithmatex">\[ A^T A = AA^T = I \]</div>
+<p>where <span class="arithmatex">\(I\)</span> is the identity matrix of appropriate size.</p>
+</li>
+<li>
+<p><strong>Characteristics of Orthogonal Matrices:</strong></p>
+<ol>
+<li>
+<p>Preservation of Dot Product: For an orthogonal matrix <span class="arithmatex">\(A\)</span> and any vectors <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> in <span class="arithmatex">\(\mathbb{R}^n\)</span>, the dot product of the transformed vectors remains unchanged, i.e., </p>
+<div class="arithmatex">\[ 
+(Ax) \cdot (Ay) = x \cdot y 
+\]</div>
+<p>This means that orthogonal matrices preserve angles between vectors.</p>
+</li>
+<li>
+<p>Preservation of Norm: For an orthogonal matrix <span class="arithmatex">\(A\)</span> and any vector <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(\mathbb{R}^n\)</span>, the length (or norm) of the transformed vector remains unchanged. That is, </p>
+<div class="arithmatex">\[ 
+||Ax|| = ||x|| 
+\]</div>
+</li>
+<li>
+<p>Determinant: The determinant of an orthogonal matrix is either 1 or -1.</p>
+</li>
+<li>
+<p>Eigenvalues: The eigenvalues of an orthogonal matrix have an absolute value of 1.</p>
+</li>
+<li>
+<p>Inverse: As per the definition, the inverse of an orthogonal matrix is its transpose.</p>
+</li>
+<li>
+<p>Rotation and Reflection: Orthogonal matrices in <span class="arithmatex">\(\mathbb{R}^2\)</span> and <span class="arithmatex">\(\mathbb{R}^3\)</span> can represent rotations (if the determinant is 1) or  reflections (if the determinant is -1).</p>
+</li>
+</ol>
+</li>
+</ul>
+</details>
+<h2 id="eigenvalues-and-eigenvectors"><strong>Eigenvalues and Eigenvectors</strong><a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Understanding eigenvalues and eigenvectors, along with related equations.</summary>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>
+<p><strong>Definitions</strong></p>
+<ol>
+<li>
+<p><strong>Eigenvector</strong>: A non-zero vector <span class="arithmatex">\( v \)</span> such that when a matrix <span class="arithmatex">\( A \)</span> multiplies it, the vector <span class="arithmatex">\( v \)</span> only gets scaled (its direction may or may not change). </p>
+</li>
+<li>
+<p><strong>Eigenvalue</strong>: The scalar <span class="arithmatex">\( \lambda \)</span> associated with its corresponding eigenvector. </p>
+<div class="arithmatex">\[
+Av = \lambda v
+\]</div>
+<p>where <span class="arithmatex">\( A \)</span> is a matrix, <span class="arithmatex">\( v \)</span> is the eigenvector, and <span class="arithmatex">\( \lambda \)</span> is the eigenvalue.</p>
+<p>Eigenvalues indicate the factor by which the eigenvector is stretched or compressed. </p>
+<ul>
+<li>If <span class="arithmatex">\( \lambda = 1 \)</span>, vectors along the direction of the associated eigenvector remain unchanged.</li>
+<li>If <span class="arithmatex">\( \lambda &gt; 1 \)</span>, vectors are stretched.</li>
+<li>If <span class="arithmatex">\( 0 &lt; \lambda &lt; 1 \)</span>, vectors are compressed.</li>
+<li>If <span class="arithmatex">\( \lambda &lt; 0 \)</span>, vectors are inverted and may also be stretched or compressed.</li>
+</ul>
+</li>
+<li>
+<p><strong>Geometric Perspective on linear transformation.</strong></p>
+</li>
+</ol>
+<p>The number of independent eigenvectors gives information about the dimensionality of the space preserved by the linear transformation.</p>
+<p>Imagine a rubber sheet laid out on a grid. A linear transformation could stretch, compress, skew, or rotate this sheet. The eigenvectors of this transformation would be the directions where the rubber sheet is merely <u>stretched or compressed</u> (no skewing or rotation), and the eigenvalues would tell you by how much.</p>
+<p>For a 2x2 matrix, think of it as two main actions:</p>
+<ul>
+<li>Stretching or compressing along one direction (first eigenvector).</li>
+<li>Stretching or compressing along a perpendicular direction (second eigenvector).</li>
+</ul>
+</li>
+<li>
+<p><strong>Determining Eigenvalues and Eigenvectors</strong></p>
+<p>To find the eigenvalues of a matrix, you need to solve the characteristic equation:</p>
+<div class="arithmatex">\[
+\text{det}(A - \lambda I) = 0
+\]</div>
+<p>Here, <span class="arithmatex">\( I \)</span> is the identity matrix of the same size as <span class="arithmatex">\( A \)</span>, and "det" represents the determinant of a matrix.</p>
+<p>Once the eigenvalues <span class="arithmatex">\( \lambda \)</span> are found, you can plug them back into the equation </p>
+<div class="arithmatex">\[
+(A - \lambda I)v = 0
+\]</div>
+<p>to determine the eigenvectors <span class="arithmatex">\( v \)</span>.</p>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<p>Let's take a simple 2x2 matrix to illustrate the process:</p>
+<div class="arithmatex">\[
+A = \begin{bmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{bmatrix}
+\]</div>
+<p>To find its eigenvalues:</p>
+<ol>
+<li>Subtract <span class="arithmatex">\( \lambda \)</span> from the diagonal of <span class="arithmatex">\( A \)</span>:</li>
+</ol>
+<div class="arithmatex">\[
+A - \lambda I = \begin{bmatrix} 2-\lambda &amp; 1 \\ 1 &amp; 3-\lambda \end{bmatrix}
+\]</div>
+<ol>
+<li>
+<p>Set the determinant of this matrix to zero and solve for <span class="arithmatex">\( \lambda \)</span>:</p>
+<div class="arithmatex">\[
+\text{det}(A - \lambda I) = (2-\lambda)(3-\lambda) - 1(1) = 0
+\]</div>
+<p>Solving this equation will yield the eigenvalues <span class="arithmatex">\( \lambda \)</span>.</p>
+<p>Once you have the eigenvalues, plug them back into the equation </p>
+<div class="arithmatex">\[
+(A - \lambda I)v = 0
+\]</div>
+<p>to get the respective eigenvectors.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Properties</strong></p>
+<ol>
+<li>
+<p>For a diagonal matrix, the eigenvalues are simply the diagonal entries.</p>
+</li>
+<li>
+<p>The sum of the eigenvalues is equal to the trace of the matrix (the sum of its diagonal elements).</p>
+</li>
+<li>
+<p>The product of the eigenvalues is equal to the determinant of the matrix.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\( A \)</span> is an <span class="arithmatex">\( n \times n \)</span> matrix and <span class="arithmatex">\( \lambda \)</span> is an eigenvalue of <span class="arithmatex">\( A \)</span> with multiplicity <span class="arithmatex">\( k \)</span>, then the algebraic multiplicity (how many times <span class="arithmatex">\( \lambda \)</span> appears as a root) is always greater than or equal to the geometric multiplicity (the number of independent eigenvectors associated with <span class="arithmatex">\( \lambda \)</span>).</p>
+</li>
+</ol>
+</li>
+</ul>
+</details>
+<h2 id="rotation-matrix-eigenvalues"><strong>Rotation matrix eigenvalues</strong><a class="headerlink" href="#rotation-matrix-eigenvalues" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What are the eigenvalues of a rotation matrix?</summary>
+<p><strong>Answer:</strong> The eigenvalues of a rotation matrix are complex numbers with magnitude 1.</p>
+<p>Given a 2x2 rotation matrix <span class="arithmatex">\( R \)</span> that represents a rotation of <span class="arithmatex">\( \theta \)</span> degrees (or radians) counter-clockwise around the origin, the matrix is given by:</p>
+<div class="arithmatex">\[
+R = \begin{bmatrix}
+\cos(\theta) &amp; -\sin(\theta) \\
+\sin(\theta) &amp; \cos(\theta) \\
+\end{bmatrix}
+\]</div>
+<p>To find its eigenvalues, we need to solve the characteristic polynomial given by:</p>
+<div class="arithmatex">\[
+\text{det}(R - \lambda I) = 0
+\]</div>
+<p>where <span class="arithmatex">\( I \)</span> is the 2x2 identity matrix.</p>
+<p>Expanding out, we have:</p>
+<div class="arithmatex">\[
+\text{det}\left( \begin{bmatrix}
+\cos(\theta) - \lambda &amp; -\sin(\theta) \\
+\sin(\theta) &amp; \cos(\theta) - \lambda \\
+\end{bmatrix} \right) = 0
+\]</div>
+<p>This simplifies to:</p>
+<div class="arithmatex">\[
+(\cos(\theta) - \lambda)^2 + \sin^2(\theta) = 0
+\]</div>
+<p>The above equation has complex solutions for all <span class="arithmatex">\( \theta \)</span> except for <span class="arithmatex">\( \theta = 0 \)</span> and <span class="arithmatex">\( \theta = \pi \)</span> (or 0 and 180 degrees). In other words, for a genuine rotation (not identity or a reflection), the eigenvalues are complex.</p>
+<p>The eigenvalues are:</p>
+<div class="arithmatex">\[
+\lambda_1, \lambda_2 = \cos(\theta) \pm i\sin(\theta)
+\]</div>
+<p>This is a representation of Euler's formula:</p>
+<div class="arithmatex">\[
+e^{i\theta} = \cos(\theta) + i\sin(\theta)
+\]</div>
+<p>So, the eigenvalues for a 2D rotation matrix are complex conjugates lying on the unit circle in the complex plane. The rotation doesn't have any real vectors that only get stretched or compressed, which is consistent with our geometric understanding that all vectors change direction except for those on the axis of rotation.</p>
+</details>
+<h2 id="least-squares-method"><strong>Least squares method</strong><a class="headerlink" href="#least-squares-method" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Are you familiar with the least squares method?</summary>
+<p><strong>Answer:</strong> The least squares method minimizes the sum of squared differences between data points and a fitted model.</p>
+<ul>
+<li>
+<p><strong>Mathematical Background</strong></p>
+<p>Given a set of <span class="arithmatex">\( n \)</span> data points <span class="arithmatex">\( (x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n) \)</span> and a function <span class="arithmatex">\( f \)</span> that is linear in its parameters, the goal is to find the parameters that minimize the sum of the squared residuals:</p>
+<div class="arithmatex">\[
+S = \sum_{i=1}^{n} r_i^2
+\]</div>
+<p>where <span class="arithmatex">\( r_i = y_i - f(x_i) \)</span> is the residual.</p>
+<p>In matrix notation, this can be formulated as:</p>
+<div class="arithmatex">\[
+\mathbf{A} \mathbf{x} = \mathbf{b}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\( \mathbf{A} \)</span> is the design matrix.</li>
+<li><span class="arithmatex">\( \mathbf{x} \)</span> is the column vector of the parameters we wish to determine.</li>
+<li><span class="arithmatex">\( \mathbf{b} \)</span> is the column vector of the observed values.</li>
+</ul>
+<p>The solution, when <span class="arithmatex">\( \mathbf{A} \)</span> is overdetermined, is typically given by:</p>
+<div class="arithmatex">\[
+\mathbf{x} = (\mathbf{A}^T \mathbf{A})^{-1} \mathbf{A}^T \mathbf{b}
+\]</div>
+</li>
+<li>
+<p><strong>Application: Linear Regression</strong></p>
+<p>A common application of the least squares method is linear regression. In this context, the goal is to find the best-fitting straight line <span class="arithmatex">\( y = mx + c \)</span> to a set of data points.</p>
+<p>For linear regression:</p>
+<ul>
+<li><span class="arithmatex">\( f(x) = mx + c \)</span></li>
+<li>The parameters to be determined are the slope <span class="arithmatex">\( m \)</span> and the y-intercept <span class="arithmatex">\( c \)</span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Benefits and Limitations</strong></p>
+<ul>
+<li>
+<p>Benefits:</p>
+<ol>
+<li>Provides a best-fitting curve or line to a dataset.</li>
+<li>Has a clear mathematical formulation and is computationally efficient for many problems.</li>
+</ol>
+</li>
+<li>
+<p>Limitations:</p>
+<ol>
+<li>Sensitive to outliers, as squaring the residuals gives more weight to large deviations.</li>
+<li>Assumes a specific form for the underlying model (e.g., linearity for simple linear regression).</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="euler-angles"><strong>Euler angles</strong><a class="headerlink" href="#euler-angles" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Do you know about Euler angles? What are they used for? What are their pros and cons?</summary>
+<p><strong>Answer:</strong> Euler angles represent rotations in 3D space and have issues like gimbal lock.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/Eulerangles.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/Eulerangles.png" width="30%"></a></p>
+<p>There are multiple conventions for defining Euler angles, but one common sequence is:</p>
+<ol>
+<li><strong>Roll (<span class="arithmatex">\( \phi \)</span>)</strong>: Rotation about the body's X-axis.</li>
+<li><strong>Pitch (<span class="arithmatex">\( \theta \)</span>)</strong>: Rotation about the body's Y-axis.</li>
+<li><strong>Yaw (<span class="arithmatex">\( \psi \)</span>)</strong>: Rotation about the body's Z-axis.</li>
+</ol>
+<p>The specific order and axes of rotation can vary, leading to different conventions like Yaw-Pitch-Roll, Pitch-Yaw-Roll, etc (total 12 types).</p>
+<ul>
+<li>
+<p><strong>Applications:</strong></p>
+<ol>
+<li><strong>Aerospace &amp; Robotics</strong>: Used extensively to describe the orientation of aircraft, spacecraft, and robots.</li>
+<li><strong>Computer Graphics</strong>: Used in 3D modeling and animation to set the orientation of objects.</li>
+<li><strong>Physics</strong>: Useful in describing rotations in three-dimensional systems.</li>
+</ol>
+</li>
+<li>
+<p><strong>Pros:</strong></p>
+<ol>
+<li><strong>Intuitive Understanding</strong>: Each angle has a clear physical interpretation, making it relatively easy to visualize and understand.</li>
+<li><strong>Compact Representation</strong>: Only three angles are required to describe any orientation.</li>
+</ol>
+</li>
+<li>
+<p><strong>Cons:</strong></p>
+<ol>
+<li><strong>Gimbal Lock</strong>: This is a situation where you lose one degree of freedom, and it becomes impossible to represent certain rotations. It happens when the second rotation in a sequence aligns two of the rotational axes.</li>
+<li><strong>Not Unique</strong>: Multiple sets of Euler angles can represent the same orientation.</li>
+<li><strong>Not Always Suitable for Interpolation</strong>: Directly interpolating between two sets of Euler angles might not produce the shortest or most    intuitive rotation.</li>
+<li><strong>Numerical Stability</strong>: Repeated conversions between rotation matrices or quaternions and Euler angles can introduce numerical inaccuracies.</li>
+</ol>
+</li>
+</ul>
+</details>
+<h2 id="gimbal-lock"><strong>Gimbal lock</strong><a class="headerlink" href="#gimbal-lock" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Have you encountered gimbal lock? Why does it occur? How to solve it?</summary>
+<p><strong>Answer:</strong> Gimbal lock occurs when a three-axis rotation representation loses a degree of freedom. It can be solved using other representations.</p>
+<ul>
+<li>
+<p><strong>Why Does It Occur?</strong></p>
+<p>To visualize this, imagine three rings representing the three rotational axes, each nested inside the other. </p>
+<ul>
+<li>The <strong>outer ring</strong> represents the first rotation (e.g., yaw).</li>
+<li>The <strong>middle ring</strong> represents the second rotation (e.g., pitch).</li>
+<li>The <strong>inner ring</strong> represents the third rotation (e.g., roll).</li>
+</ul>
+<p>When the middle ring (pitch) is rotated by <span class="arithmatex">\( \pm 90^\circ \)</span>, the outer and inner rings become coplanar. This causes the loss of one rotational degree of freedom, as two of the rotational axes align. Now, any rotation about one axis is indistinguishable from a rotation about the other axis.</p>
+</li>
+<li>
+<p><strong>How to Solve Gimbal Lock?</strong></p>
+<ol>
+<li>
+<p><strong>Avoid <span class="arithmatex">\( \pm 90^\circ \)</span> Pitch</strong>: One approach, which might not be feasible in all situations, is to avoid reaching the critical pitch angles where gimbal lock occurs. This, however, limits the range of motion.</p>
+</li>
+<li>
+<p><strong>Use Quaternions</strong>: Quaternions are a four-dimensional number system that can represent 3D orientations and rotations without suffering from gimbal lock. In many applications, especially in computer graphics and aerospace, quaternions are preferred over Euler angles for this reason. </p>
+</li>
+<li>
+<p><strong>Use Additional or Redundant Sensors</strong>: In applications like spacecraft attitude control, additional sensors can be used to determine orientation when gimbal lock is encountered.</p>
+</li>
+<li>
+<p><strong>Switch Rotation Order</strong>: Temporarily switch to a different sequence of rotations when approaching gimbal lock. However, this can be complex to implement and may not be suitable for all applications.</p>
+</li>
+<li>
+<p><strong>Use Rotation Matrices or Axis-Angle Representation</strong>: While they have their own sets of challenges, in some cases, they might offer ways to maneuver around the gimbal lock problem.</p>
+</li>
+</ol>
+</li>
+</ul>
+</details>
+<h2 id="quaternions"><strong>Quaternions</strong><a class="headerlink" href="#quaternions" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Are you familiar with quaternions? What are their roles? How can interpolation be performed?</summary>
+<p><strong>Answer:</strong> Quaternions are used to represent rotations. Spherical linear interpolation (slerp) can be used for interpolation.</p>
+<ul>
+<li>
+<p><strong>Role in 3D Rotations:</strong></p>
+<ul>
+<li>
+<p>Compact Representation: Quaternions provide a compact way to represent 3D orientations and rotations without the <code>gimbal lock</code> issue that can arise with Euler angles.</p>
+</li>
+<li>
+<p>Efficient Computation: Quaternion operations can be more computationally efficient than their matrix counterparts.</p>
+</li>
+<li>
+<p>Smooth Interpolations: Slerp (spherical linear interpolation) with quaternions can provide smooth transitions between orientations.</p>
+</li>
+<li>
+<p>Numerical Stability: Quaternions can be renormalized easily to combat numerical drift, ensuring they represent a valid rotation.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Interpolation:</strong></p>
+<p>Slerp (Spherical Linear Interpolation): This is the most common method of quaternion interpolation. Given two quaternions <span class="arithmatex">\( q_1 \)</span> and <span class="arithmatex">\( q_2 \)</span>, the interpolated quaternion <span class="arithmatex">\( q(t) \)</span> at a fraction <span class="arithmatex">\( t \)</span> between 0 and 1 is given by:</p>
+<div class="arithmatex">\[
+q(t) = \frac{\sin((1-t)\theta)}{\sin(\theta)}q_1 + \frac{\sin(t\theta)}{\sin(\theta)}q_2
+\]</div>
+<p>where <span class="arithmatex">\( \theta \)</span> is the angle between <span class="arithmatex">\( q_1 \)</span> and <span class="arithmatex">\( q_2 \)</span>.</p>
+</li>
+</ul>
+</details>
+<h2 id="monte-carlo-integration"><strong>Monte Carlo integration</strong><a class="headerlink" href="#monte-carlo-integration" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What is Monte Carlo integration?</summary>
+<p><strong>Answer:</strong> Monte Carlo integration is a technique used to estimate the value of a definite integral using random sampling. It is particularly useful when dealing with high-dimensional integrals.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../Images/MonteCarloIntegrationCircle.png"><img :=":" _="," alt="Alt text" class="center" src="../Images/MonteCarloIntegrationCircle.png" width="30%"></a></p>
+<ul>
+<li>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>
+<p><strong>Random Sampling</strong>: Generate <span class="arithmatex">\( N \)</span> random points <span class="arithmatex">\( x_i \)</span> within the domain <span class="arithmatex">\( D \)</span>.</p>
+</li>
+<li>
+<p><strong>Evaluate Function</strong>: Evaluate <span class="arithmatex">\( f(x_i) \)</span> at each of the <span class="arithmatex">\( N \)</span> points.</p>
+</li>
+<li>
+<p><strong>Compute Average</strong>: Calculate the average value of the function over these points:</p>
+</li>
+</ol>
+<div class="arithmatex">\[ \bar{f} = \frac{1}{N} \sum_{i=1}^{N} f(x_i) \]</div>
+<ol>
+<li><strong>Estimate Integral</strong>: The integral of <span class="arithmatex">\( f(x) \)</span> over <span class="arithmatex">\( D \)</span> is approximated as:</li>
+</ol>
+<div class="arithmatex">\[ \int_D f(x) \, dx \approx \text{volume}(D) \times \bar{f} \]</div>
+</li>
+<li>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li><strong>Flexibility</strong>: Can handle complex and high-dimensional integrals.</li>
+<li><strong>Simplicity</strong>: The algorithm is straightforward.</li>
+<li><strong>Parallelism</strong>: Easily parallelizable.</li>
+</ul>
+</li>
+<li>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li><strong>Convergence</strong>: The error decreases as <span class="arithmatex">\( O(N^{-1/2}) \)</span>.</li>
+<li><strong>Inefficiency</strong>: Many samples might be "wasted" in regions where the function varies little.</li>
+</ul>
+</li>
+<li>
+<p><strong>Variance Reduction:</strong></p>
+<p>To improve efficiency, various techniques can be employed:</p>
+<ul>
+<li><strong>Importance Sampling</strong>: Sampling more from regions where the function has higher values.</li>
+<li><strong>Stratified Sampling</strong>: Dividing the domain and sampling uniformly from each.</li>
+<li><strong>Antithetic Variates</strong>: Using dependent random variables to reduce variance.</li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="nonlinear-to-linear"><strong>Nonlinear to linear</strong><a class="headerlink" href="#nonlinear-to-linear" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How can a nonlinear problem be represented as a linear problem?</summary>
+<p>Answer: Nonlinear problems can be linearized using tangent planes or linear approximations.</p>
+<p>One common method for linearization is using a <code>Taylor series expansion</code>. </p>
+<ul>
+<li>
+<p><strong>1. One Dimension (Tangent Line)</strong></p>
+<p>For a single-variable function <span class="arithmatex">\( f(x) \)</span>, the tangent line at a point <span class="arithmatex">\( x_0 \)</span> provides a linear approximation:</p>
+<div class="arithmatex">\[
+f(x) \approx f(x_0) + f'(x_0) (x - x_0)
+\]</div>
+<p>This equation represents the linearization of <span class="arithmatex">\( f(x) \)</span> about the point <span class="arithmatex">\( x_0 \)</span>. The term <span class="arithmatex">\( f'(x_0) \)</span> is the derivative of the function at the point, which gives the slope of the tangent line.</p>
+</li>
+<li>
+<p><strong>2. Multiple Dimensions (Tangent Plane)</strong></p>
+<p>For functions of multiple variables, such as <span class="arithmatex">\( f(x, y) \)</span>, the tangent plane at a point <span class="arithmatex">\( (x_0, y_0) \)</span> provides the linear approximation:</p>
+<div class="arithmatex">\[
+f(x, y) \approx f(x_0, y_0) + f_x(x_0, y_0) (x - x_0) + f_y(x_0, y_0) (y - y_0)
+\]</div>
+<p>Here, <span class="arithmatex">\( f_x \)</span> and <span class="arithmatex">\( f_y \)</span> are the partial derivatives with respect to <span class="arithmatex">\( x \)</span> and <span class="arithmatex">\( y \)</span> respectively. The tangent plane captures the variations in the function as you move in the <span class="arithmatex">\( x \)</span> and <span class="arithmatex">\( y \)</span> directions.</p>
+</li>
+</ul>
+</details>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ul>
+<li><a href="https://cdn.kastatic.org/ka-perseus-images/62a0493b8bb7f29f2655190b718be3d029e6750e.png">Picture resource 1</a></li>
+<li><a href="https://mathinsight.org/media/image/image/dot_product_projection.png">Picture resource 2</a></li>
+<li><a href="https://media.cheggcdn.com/media/0fd/0fd5663e-13c8-4c34-accf-ba8b4787ca90/php94XjUH">Picture resource 3</a></li>
+<li><a href="https://cs184.eecs.berkeley.edu/public/sp19/lectures/lec-9-raytracing/slides/slide-23.jpg">Picture resource 4</a></li>
+<li><a href="https://www.math.ucdavis.edu/~daddel/MATH22AL/MATH_22AL_New_Website/image/lab10/section_10_14.png">Picture resource 5</a></li>
+<li><a href="https://www3.ntu.edu.sg/home/ehchua/programming/opengl/images/Graphics3D_CameraPerspective.png">Picture resource 6</a></li>
+<li><a href="http://15462.courses.cs.cmu.edu/fall2015/lecture/texture/slide_011">Picture resource 7</a></li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Eulerangles.svg/300px-Eulerangles.svg.png">Picture resource 8</a></li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="February 1, 2026 05:26:40 UTC">February 1, 2026 05:26:40</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="Created">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="December 20, 2022 23:35:41 UTC">December 20, 2022 23:35:41</span>
+</span>
+<span class="md-source-file__fact">
+<span class="md-icon" title="Contributors">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"></path></svg>
+</span>
+<nav>
+<a href="mailto:61530469+ytianle@users.noreply.github.com">ytianle</a>
+</nav>
+</span>
+</aside>
+<!-- Insert generated snippet here -->
+<script =""="" async="" crossorigin="anonymous" data-category-id="DIC_kwDOITXaGs4CSWJD" data-emit-metadata="0" data-input-position="top" data-lang="en" data-loading="lazy" data-mapping="pathname" data-reactions-enabled="1" data-repo="ytianle/ytianle.github.io" data-repo-id="R_kgDOITXaGg" data-strict="0" data-theme="light" src="https://giscus.app/client.js">
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2020 - 2026 Tianle Yuan
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/yuantianle/" rel="noopener" target="_blank" title="Tianle Yuan on Twitter">
+<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/ytianle" rel="noopener" target="_blank" title="Tianle Yuan on GitHub">
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+<a class="md-social__link" href="https://yuantianle.com" rel="noopener" target="_blank" title="Go back to Tianle's Main Page">
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272h16v176c0 35.3 28.7 64 64 64h288c35.3 0 64-28.7 64-64V272h16c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1zM224 248c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v40h40c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-40v40c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-40h-40c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h40z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.path", "navigation.prune", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.follow", "content.code.annotate", "content.code.copy", "content.footnote.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/toc-anchor-fix.js"></script>
+<script src="../../../../assets/javascripts/mermaid.mjs" type="module"></script>
+<script src="../../../../assets/javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="../../../../assets/javascripts/tablesort.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="../../../../assets/javascripts/extra-internet-markdown-ref.js"></script>
+<script type="text/javascript">(function initializeMarkmap() {
+    const transformer = new markmap.Transformer();
+    const preloadScripts = transformer.plugins
+        .flatMap((plugin) => plugin.config?.preloadScripts || [])
+        .map((item) => transformer.resolveJS(item));
+    const assets = transformer.getAssets();
+    const loading = Promise.all([
+        assets.styles && markmap.loadCSS(assets.styles),
+        markmap.loadJS([...preloadScripts, ...assets.scripts]),
+    ]);
+
+    function parseData(content) {
+        const { root, frontmatter } = transformer.transform(content);
+        let options = markmap.deriveOptions(frontmatter?.markmap);
+        options = Object.assign(
+            {
+                fitRatio: 0.85,
+            },
+            options
+        );
+        return { root, options };
+    }
+
+    function resetMarkmap(m, el) {
+        if (!m.state.rect) return;
+        const { x1, y1, x2, y2 } = m.state.rect;
+        const height = (el.offsetWidth / (x2 - x1)) * (y2 - y1);
+        el.style.height = height + "px";
+        m.fit();
+    }
+
+    function decodeBase64(encoded) {
+        const binary = atob(encoded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < bytes.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return new TextDecoder().decode(bytes);
+    }
+
+    function renderMarkmap(el) {
+        const dataEl = el.querySelector("markmap-data");
+        if (!dataEl) return;
+        let content = el.textContent;
+        if (dataEl.getAttribute("encoding") === "base64") {
+            content = decodeBase64(content);
+        }
+        el.innerHTML = "<svg>";
+        svg = el.firstChild;
+        const { root, options } = parseData(content);
+        const m = markmap.Markmap.create(svg, options);
+        m.setData(root);
+        requestAnimationFrame(() => {
+            resetMarkmap(m, el);
+        });
+    }
+
+    function updateMarkmaps(node) {
+        for (const el of node.querySelectorAll(".mkdocs-markmap")) {
+            renderMarkmap(el);
+        }
+    }
+
+    loading.then(() => {
+        const observer = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                if (mutation.type === "childList") {
+                    for (const node of mutation.addedNodes) {
+                        updateMarkmaps(node);
+                    }
+                }
+            }
+        });
+
+        observer.observe(document.body, { childList: true });
+
+        updateMarkmaps(document);
+    });
+})();
+</script>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

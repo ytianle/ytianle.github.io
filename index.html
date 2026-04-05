@@ -1,0 +1,1637 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ytianle.github.io/">
+      
+      
+      
+        <link rel="next" href="blog/">
+      
+      
+        
+          <link rel="alternate" href="." hreflang="en">
+        
+          <link rel="alternate" href="https://ytianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN">
+        
+      
+      
+      <link rel="icon" href="assets/images/self.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Intro - Tianle's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra-00-base.css">
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra-10-layout-nav.css">
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra-20-cards-media.css">
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra-30-admonitions.css">
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra-40-typography.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+  
+  </noscript><script type="text/javascript">
+    (function () {
+      var load = function () {
+        if (document.getElementById("yuantianle-github-io-7f7j3xbyx")) {
+          return
+        }
+        var s = document.createElement("script")
+        s.src = "https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js"
+        s.id = "yuantianle-github-io-7f7j3xbyx"
+        s.defer = true
+        document.head.appendChild(s)
+      }
+
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(load, { timeout: 2500 })
+      } else {
+        window.setTimeout(load, 1200)
+      }
+    })()
+  </script>
+  <script>
+    (function () {
+      var key = "sidebarCollapsed"
+      var secondaryKey = "sidebarSecondaryCollapsed"
+      var root = document.documentElement
+      var stored = localStorage.getItem(key)
+      if (stored === "1") {
+        root.classList.add("sidebar-collapsed")
+      }
+      var secondaryStored = localStorage.getItem(secondaryKey)
+      if (secondaryStored === "1") {
+        root.classList.add("sidebar-secondary-collapsed")
+      }
+
+      function setSidebarWidth() {
+        var sidebar = document.querySelector(".md-sidebar--primary")
+        var width = sidebar ? sidebar.getBoundingClientRect().width : 0
+        root.style.setProperty("--md-sidebar-width", width + "px")
+      }
+
+      function mountToggle() {
+        var header = document.querySelector(".md-header__inner")
+        if (!header) return
+
+        document.querySelectorAll(".sidebar-toggle").forEach(function (el) {
+          el.remove()
+        })
+
+        if (!window.matchMedia("(min-width: 52em)").matches) return
+
+        var btn = document.createElement("button")
+        btn.id = "sidebar-toggle-primary"
+        btn.className = "md-header__button md-icon sidebar-toggle"
+        btn.type = "button"
+        btn.setAttribute("aria-label", "Toggle sidebar")
+        var iconOpen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h13v2H3zm0 5h18v2H3z"/></svg>'
+        var iconClosed = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3zm12 7h6v4h-6zm0 7h6v4h-6zm-2-4H7v5h6v2H5V9h2v2h6z"/></svg>'
+        function syncIcon() {
+          btn.innerHTML = root.classList.contains("sidebar-collapsed") ? iconClosed : iconOpen
+        }
+        syncIcon()
+        btn.addEventListener("click", function () {
+          var collapsed = root.classList.toggle("sidebar-collapsed")
+          localStorage.setItem(key, collapsed ? "1" : "0")
+          syncIcon()
+        })
+
+        var btnSecondary = document.createElement("button")
+        btnSecondary.id = "sidebar-toggle-secondary"
+        btnSecondary.className = "md-header__button md-icon sidebar-toggle sidebar-toggle--secondary"
+        btnSecondary.type = "button"
+        btnSecondary.setAttribute("aria-label", "Toggle right sidebar")
+        var iconOpenSecondary = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm8 5h10v2H11zm0 5h10v2H11z"/></svg>'
+        var iconClosedSecondary = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 3h6v4h-6zM3 10h6v4H3zm0 7h6v4H3zm8-4h6v5h-6v2h8V9h-2v2h-6z"/></svg>'
+        function syncSecondaryIcon() {
+          btnSecondary.innerHTML = root.classList.contains("sidebar-secondary-collapsed")
+            ? iconClosedSecondary
+            : iconOpenSecondary
+        }
+        syncSecondaryIcon()
+        btnSecondary.addEventListener("click", function () {
+          var collapsed = root.classList.toggle("sidebar-secondary-collapsed")
+          localStorage.setItem(secondaryKey, collapsed ? "1" : "0")
+          syncSecondaryIcon()
+        })
+
+        var paletteForm = header.querySelector('[data-md-component="palette"]')
+        if (paletteForm && paletteForm.parentNode) {
+          paletteForm.parentNode.insertBefore(btnSecondary, paletteForm)
+          paletteForm.parentNode.insertBefore(btn, btnSecondary)
+        } else {
+          header.appendChild(btn)
+          header.appendChild(btnSecondary)
+        }
+      }
+
+      function onShortcut(e) {
+        if (!(e.ctrlKey || e.metaKey) || e.code !== "KeyB") {
+          return
+        }
+        var target = e.target
+        if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) {
+          return
+        }
+        if (!window.matchMedia("(min-width: 52em)").matches) return
+        e.preventDefault()
+        var collapsed = root.classList.toggle("sidebar-collapsed")
+        localStorage.setItem(key, collapsed ? "1" : "0")
+        var btn = document.getElementById("sidebar-toggle-primary")
+        if (btn) {
+          var iconOpen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h13v2H3zm0 5h18v2H3z"/></svg>'
+          var iconClosed = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3zm12 7h6v4h-6zm0 7h6v4h-6zm-2-4H7v5h6v2H5V9h2v2h6z"/></svg>'
+          btn.innerHTML = root.classList.contains("sidebar-collapsed") ? iconClosed : iconOpen
+        }
+      }
+
+      setSidebarWidth()
+      window.addEventListener("resize", function () {
+        setSidebarWidth()
+        mountToggle()
+      })
+      window.addEventListener("keydown", onShortcut)
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", mountToggle)
+      } else {
+        mountToggle()
+      }
+    })()
+  </script>
+
+  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Tianle's Blog" class="md-header__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
+      
+  <img src="assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tianle's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Intro
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="green" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="." hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="https://ytianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN" class="md-select__link">
+              中文(谷歌)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ytianle/ytianle.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ytianle.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="blog/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"></path></svg>
+    
+  
+  JOURNAL
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="foundations/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 6H8.83l6 6-6 6H18v2H6v-2l6-6-6-6V4h12z"></path></svg>
+    
+  
+  FOUNDATIONS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="programming/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 3h2v2H5v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5h2v2H5c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0-2-2H0v-2h1a2 2 0 0 0 2-2V5a2 2 0 0 1 2-2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3zm-7 12a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m8 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"></path></svg>
+    
+  
+  PROGRAMMING
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="systems/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16v-3c0-1.11-.89-2-2-2h-6V8h2V2H9v6h2v3H5c-1.11 0-2 .89-2 2v3H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6zM11 4h2v2h-2zM5 20H3v-2h2zm8 0h-2v-2h2zm8 0h-2v-2h2z"></path></svg>
+    
+  
+  SYSTEMS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="vision/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H3V5h18m0-2H3c-1.1 0-2 .9-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5c1.11 0 2-.89 2-2V5a2 2 0 0 0-2-2m-6 3.5-.62 1.37L13 8.5l1.38.63.62 1.37.63-1.37L17 8.5l-1.37-.63zm-4.5 2-1.09 2.41L7 12l2.41 1.09 1.09 2.41 1.1-2.41L14 12l-2.4-1.09z"></path></svg>
+    
+  
+  VISION
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="interactive/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 9H2v6h5.5l3-3zM6 13H4v-2h2zm9-5.5V2H9v5.5l3 3zM11 4h2v2h-2zM9 16.5V22h6v-5.5l-3-3zm4 3.5h-2v-2h2zm3.5-11-3 3 3 3H22V9zm3.5 4h-2v-2h2z"></path></svg>
+    
+  
+  INTERACTIVE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="humanities/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.74 3.74 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574M8.755 4.75l-.004 7.322a3.75 3.75 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25"></path></svg>
+    
+  
+  HUMANITIES
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="indices/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  INDICES
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+<style>
+    :root {
+        /* Intro background (default/day) */
+        --intro-base: #f6f7fb;
+        --intro-glow: rgba(120, 160, 255, 0.12);
+        --intro-top: rgba(246, 247, 251, 0.9);
+        --intro-bottom: rgba(236, 240, 247, 1);
+        --intro-fade-mid: rgba(240, 243, 249, 0.95);
+    }
+
+    [data-md-color-scheme="slate"] {
+        /* Intro background (night) */
+        --intro-base: #0f1115;
+        --intro-glow: rgba(140, 110, 255, 0.05);
+        --intro-top: rgba(15, 17, 21, 0.4);
+        --intro-bottom: rgba(15, 17, 21, 1);
+        --intro-fade-mid: rgba(15, 17, 21, 0.95);
+    }
+
+    .md-header {
+        position: initial
+    }
+
+    .md-main__inner {
+        margin: 0
+    }
+
+    .md-content {
+        display: none
+    }
+
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+    }
+
+
+    .mdx-container,
+    .mdx-container * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .mdx-container {
+        background: var(--intro-base);
+        min-height: 150vh;
+    }
+
+    .mdx-hero__content {
+        margin-bottom: 5%;
+    }
+
+    section {
+        position: relative;
+        width: 100%;
+        height: 140vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--intro-base);
+    }
+
+    /* Ensure the background never shows through transparent PNG areas */
+    #parallax {
+        background:
+            linear-gradient(to bottom, var(--intro-top), var(--intro-bottom));
+    }
+
+    section img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        will-change: transform;
+    }
+
+    section::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 220px;
+        background: linear-gradient(to top, var(--intro-base) 0%, var(--intro-fade-mid) 35%, transparent 100%);
+        z-index: 10000;
+    }
+
+    .mdx-hero {
+        padding: 3.5rem 0 2.5rem;
+    }
+
+    .mdx-hero__content {
+        max-width: 52rem;
+        padding: 1.4rem 1.6rem;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+    }
+
+    .mdx-hero__content h1 {
+        margin: 0 0 1rem 0;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        color: #000000;
+    }
+
+    .mdx-hero__content .md-button--primary {
+        border-radius: 10px;
+        padding: 0.6rem 1rem;
+        background: #2c3b57;
+        color: #ffffff;
+        border: 1px solid #2c3b57;
+        box-shadow: none;
+    }
+
+    #text_name,
+    #text_welcome {
+        font-family: 'Space Grotesk', 'Poppins', 'Nunito Sans', 'Arial', sans-serif !important;
+        letter-spacing: 0.01em;
+    }
+
+    [data-md-color-scheme="slate"] .mdx-hero__content {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    [data-md-color-scheme="slate"] .mdx-hero__content h1 {
+        color: #e7edf7;
+    }
+
+    [data-md-color-scheme="slate"] .mdx-hero__content .md-button--primary {
+        background: #c7d7ff;
+        color: #1a2130;
+        border: 1px solid #c7d7ff;
+    }
+
+    @media (max-width: 720px) {
+        :root {
+            --home-nav-offset: 6.2rem;
+        }
+
+        .md-tabs {
+            top: 3rem;
+        }
+
+        #text_name {
+            font-size: clamp(2.4rem, 10vw, 4.2rem) !important;
+            margin-left: 12% !important;
+            margin-Top: -30% !important;
+        }
+
+        #text_welcome {
+            font-size: clamp(2.6rem, 12vw, 4.6rem) !important;
+            margin-left: 18% !important;
+        }
+
+        .mdx-hero__content {
+            padding: 1.2rem 1.2rem;
+            margin: 0 0.8rem;
+        }
+    }
+
+    /*section::after {
+            content: '';
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #a3c0d4;
+            z-index: 10000;
+            mix-blend-mode: color; /*soft-light;
+        }*/
+</style>
+
+<div class="mdx-container">
+
+    <section id="parallax" style="">
+        <img src="assets/images/layer_sky_blue.png" id="layer_sk" fetchpriority="high" decoding="async" style=" height: 50%; width: auto; margin-left:-90%; margin-Top:35%;">
+        <h2 id="text_name" style=" margin-left:90%; margin-Top:-35%; color: rgb(0, 0, 0); position: relative; font-size: 9.5em;">
+            Tianle's Blog</h2>
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="assets/images/03.gif">
+            <img src="assets/images/02.gif" id="pumpking" decoding="async" style=" height: 25%; width: auto; margin-left:37%; margin-top:3%;">
+        </picture>
+        <img src="assets/images/layer_bg2_blue.png" id="layer_bg2" style=" height: 55%; width: auto; margin-left:0%; margin-top:15%;">
+        <img src="assets/images/layer_bg1.png" id="layer_bg1" style=" height: 55%; width: auto; margin-left:0%; margin-top:25%;">
+        <h2 id="text_welcome" style=" margin-left:110%; margin-Top: 5%; color: rgb(255, 255, 255); position: relative; font-size: 10em;">
+            Welcome!</h2>
+        <img src="assets/images/layer_main.png" id="layer_main" fetchpriority="high" decoding="async" style=" height: 45%; width: auto; margin-left:0%; margin-top: 40%;">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="assets/images/alice.png">
+            <img src="assets/images/empire.png" id="alice" decoding="async" style=" height: 55%; width: auto; margin-left:100%; margin-top: 42%;">
+        </picture>
+
+    </section>
+
+    <div class="md-grid md-typeset">
+        <div class="mdx-hero">
+            <div class="mdx-hero__content">
+                <h1>When all else pales, the pursuit of knowledge soars.</h1>
+                <a href="blog/" title="Journal" class="md-button md-button--primary">
+                    Go to my blog.
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    let layer_sk = document.getElementById("layer_sk");
+    let text_name = document.getElementById("text_name");
+    let pumpking = document.getElementById("pumpking");
+    let layer_bg2 = document.getElementById("layer_bg2");
+    let layer_bg1 = document.getElementById("layer_bg1");
+    let text_welcome = document.getElementById("text_welcome");
+    let layer_main = document.getElementById("layer_main");
+    let alice = document.getElementById("alice");
+
+    function resolveScheme() {
+        const schemeTargets = [document.body, document.documentElement].filter(Boolean);
+        for (const element of schemeTargets) {
+            const value = element.getAttribute("data-md-color-scheme");
+            if (value) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    function ensureHeroAssetsMatchScheme() {
+        const scheme = resolveScheme();
+        const isNight = scheme === "slate";
+
+        // Keep element size/position unchanged: only swap src.
+        if (pumpking) {
+            const targetPumpkin = isNight ? "assets/images/03.gif" : "assets/images/02.gif";
+            if (pumpking.getAttribute("src") !== targetPumpkin) {
+                pumpking.src = targetPumpkin;
+            }
+        }
+
+        if (alice) {
+            const targetCity = isNight ? "assets/images/alice.png" : "assets/images/empire.png";
+            if (alice.getAttribute("src") !== targetCity) {
+                alice.src = targetCity;
+            }
+        }
+    }
+
+    // Switch homepage assets (Alice / Pumpkin) with Material palette.
+    (function () {
+        const schemeTargets = [document.body, document.documentElement].filter(Boolean);
+
+        const applySchemeAssets = () => {
+            ensureHeroAssetsMatchScheme();
+        };
+
+        applySchemeAssets();
+
+        if (typeof MutationObserver !== "function" || !schemeTargets.length) {
+            return;
+        }
+
+        const observer = new MutationObserver((mutations) => {
+            for (const mutation of mutations) {
+                if (mutation.type === "attributes" && mutation.attributeName === "data-md-color-scheme") {
+                    applySchemeAssets();
+                    break;
+                }
+            }
+        });
+
+        schemeTargets.forEach((element) => {
+            observer.observe(element, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
+        });
+    })();
+
+    (function () {
+        let ticking = false;
+
+        function setTransform(el, x, y) {
+            if (!el) return;
+            el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        }
+
+        function update() {
+            ticking = false;
+            const value = window.scrollY || 0;
+
+            setTransform(layer_sk, value * 1.5, 0);
+            setTransform(text_name, -value * 1, 0);
+            setTransform(pumpking, -value * 1.5, value * 0.5);
+            setTransform(layer_bg2, -value * 0.16, 0);
+            setTransform(layer_bg1, -value * 0.32, 0);
+            setTransform(layer_main, -value * 2.2, 0);
+            setTransform(text_welcome, -value * 3.1, 0);
+            setTransform(alice, -value * 0.48, -value * 0.15);
+        }
+
+        function onScroll() {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(update);
+        }
+
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+    })();
+
+
+</script>
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Tianle's Blog" class="md-nav__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
+      
+  <img src="assets/images/logo.png" alt="logo">
+
+    </a>
+    Tianle's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ytianle/ytianle.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ytianle.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JOURNAL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="foundations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FOUNDATIONS
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="programming/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PROGRAMMING
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="systems/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SYSTEMS
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="vision/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VISION
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="interactive/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTERACTIVE
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="humanities/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HUMANITIES
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="indices/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INDICES
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.indexes", "navigation.path", "navigation.prune", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.follow", "content.code.annotate", "content.code.copy", "content.footnote.tooltips"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="assets/javascripts/toc-anchor-fix.js"></script>
+      
+        <script src="assets/javascripts/mermaid.mjs" type="module"></script>
+      
+        <script src="assets/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="assets/javascripts/tablesort.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+      
+        <script src="assets/javascripts/extra-internet-markdown-ref.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

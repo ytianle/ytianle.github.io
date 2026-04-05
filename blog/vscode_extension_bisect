@@ -1,0 +1,23 @@
+---
+date: 2026-04-05
+readtime: 5
+categories:
+  - Programming
+  - VS Code
+  - Tips & Tricks
+authors:
+  - tianle
+comments: true
+---
+
+# VS Code Extension Bisect
+
+> A powerful tool to identify which extension is causing issues in your VS Code setup.
+
+Found an interesting VS Code feature: [Extension Bisect](https://code.visualstudio.com/blogs/2021/02/16/extension-bisect). It helps you find out which extension is causing problems in your VS Code environment using binary search. This is especially useful when you have many extensions installed and are experiencing performance issues, crashes, or other unexpected behavior.
+
+![Extension Bisect](https://code.visualstudio.com/assets/blogs/2021/02/16/bisect.gif)
+
+<!-- more -->
+
+The idea refers to the concept of `git bisect`, which is a tool used in version control to find the specific commit that introduced a bug.

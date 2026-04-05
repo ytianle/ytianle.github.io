@@ -1,0 +1,3154 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://ytianle.github.io/indices/interview_questions/game_devop/cg_questions/">
+      
+      
+        <link rel="prev" href="../cpp_questions/">
+      
+      
+        <link rel="next" href="../math_questions/">
+      
+      
+        
+          <link rel="alternate" href="../../../.." hreflang="en">
+        
+          <link rel="alternate" href="https://ytianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/self.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>CG Questions - Tianle's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-00-base.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-10-layout-nav.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-20-cards-media.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-30-admonitions.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-40-typography.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+  
+  </noscript><script type="text/javascript">
+    (function () {
+      var load = function () {
+        if (document.getElementById("yuantianle-github-io-7f7j3xbyx")) {
+          return
+        }
+        var s = document.createElement("script")
+        s.src = "https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@latest/index.min.js"
+        s.id = "yuantianle-github-io-7f7j3xbyx"
+        s.defer = true
+        document.head.appendChild(s)
+      }
+
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(load, { timeout: 2500 })
+      } else {
+        window.setTimeout(load, 1200)
+      }
+    })()
+  </script>
+  <script>
+    (function () {
+      var key = "sidebarCollapsed"
+      var secondaryKey = "sidebarSecondaryCollapsed"
+      var root = document.documentElement
+      var stored = localStorage.getItem(key)
+      if (stored === "1") {
+        root.classList.add("sidebar-collapsed")
+      }
+      var secondaryStored = localStorage.getItem(secondaryKey)
+      if (secondaryStored === "1") {
+        root.classList.add("sidebar-secondary-collapsed")
+      }
+
+      function setSidebarWidth() {
+        var sidebar = document.querySelector(".md-sidebar--primary")
+        var width = sidebar ? sidebar.getBoundingClientRect().width : 0
+        root.style.setProperty("--md-sidebar-width", width + "px")
+      }
+
+      function mountToggle() {
+        var header = document.querySelector(".md-header__inner")
+        if (!header) return
+
+        document.querySelectorAll(".sidebar-toggle").forEach(function (el) {
+          el.remove()
+        })
+
+        if (!window.matchMedia("(min-width: 52em)").matches) return
+
+        var btn = document.createElement("button")
+        btn.id = "sidebar-toggle-primary"
+        btn.className = "md-header__button md-icon sidebar-toggle"
+        btn.type = "button"
+        btn.setAttribute("aria-label", "Toggle sidebar")
+        var iconOpen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h13v2H3zm0 5h18v2H3z"/></svg>'
+        var iconClosed = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3zm12 7h6v4h-6zm0 7h6v4h-6zm-2-4H7v5h6v2H5V9h2v2h6z"/></svg>'
+        function syncIcon() {
+          btn.innerHTML = root.classList.contains("sidebar-collapsed") ? iconClosed : iconOpen
+        }
+        syncIcon()
+        btn.addEventListener("click", function () {
+          var collapsed = root.classList.toggle("sidebar-collapsed")
+          localStorage.setItem(key, collapsed ? "1" : "0")
+          syncIcon()
+        })
+
+        var btnSecondary = document.createElement("button")
+        btnSecondary.id = "sidebar-toggle-secondary"
+        btnSecondary.className = "md-header__button md-icon sidebar-toggle sidebar-toggle--secondary"
+        btnSecondary.type = "button"
+        btnSecondary.setAttribute("aria-label", "Toggle right sidebar")
+        var iconOpenSecondary = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm8 5h10v2H11zm0 5h10v2H11z"/></svg>'
+        var iconClosedSecondary = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 3h6v4h-6zM3 10h6v4H3zm0 7h6v4H3zm8-4h6v5h-6v2h8V9h-2v2h-6z"/></svg>'
+        function syncSecondaryIcon() {
+          btnSecondary.innerHTML = root.classList.contains("sidebar-secondary-collapsed")
+            ? iconClosedSecondary
+            : iconOpenSecondary
+        }
+        syncSecondaryIcon()
+        btnSecondary.addEventListener("click", function () {
+          var collapsed = root.classList.toggle("sidebar-secondary-collapsed")
+          localStorage.setItem(secondaryKey, collapsed ? "1" : "0")
+          syncSecondaryIcon()
+        })
+
+        var paletteForm = header.querySelector('[data-md-component="palette"]')
+        if (paletteForm && paletteForm.parentNode) {
+          paletteForm.parentNode.insertBefore(btnSecondary, paletteForm)
+          paletteForm.parentNode.insertBefore(btn, btnSecondary)
+        } else {
+          header.appendChild(btn)
+          header.appendChild(btnSecondary)
+        }
+      }
+
+      function onShortcut(e) {
+        if (!(e.ctrlKey || e.metaKey) || e.code !== "KeyB") {
+          return
+        }
+        var target = e.target
+        if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) {
+          return
+        }
+        if (!window.matchMedia("(min-width: 52em)").matches) return
+        e.preventDefault()
+        var collapsed = root.classList.toggle("sidebar-collapsed")
+        localStorage.setItem(key, collapsed ? "1" : "0")
+        var btn = document.getElementById("sidebar-toggle-primary")
+        if (btn) {
+          var iconOpen = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h13v2H3zm0 5h18v2H3z"/></svg>'
+          var iconClosed = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3h6v4H3zm12 7h6v4h-6zm0 7h6v4h-6zm-2-4H7v5h6v2H5V9h2v2h6z"/></svg>'
+          btn.innerHTML = root.classList.contains("sidebar-collapsed") ? iconClosed : iconOpen
+        }
+      }
+
+      setSidebarWidth()
+      window.addEventListener("resize", function () {
+        setSidebarWidth()
+        mountToggle()
+      })
+      window.addEventListener("keydown", onShortcut)
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", mountToggle)
+      } else {
+        mountToggle()
+      }
+    })()
+  </script>
+
+  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-computer-graphics-questions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Tianle's Blog" class="md-header__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tianle's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CG Questions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="green" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../.." hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="https://ytianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN" class="md-select__link">
+              中文(谷歌)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ytianle/ytianle.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ytianle.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HOME
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"></path></svg>
+    
+  
+  JOURNAL
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../foundations/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 6H8.83l6 6-6 6H18v2H6v-2l6-6-6-6V4h12z"></path></svg>
+    
+  
+  FOUNDATIONS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../programming/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 3h2v2H5v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5h2v2H5c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0-2-2H0v-2h1a2 2 0 0 0 2-2V5a2 2 0 0 1 2-2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3zm-7 12a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m8 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1"></path></svg>
+    
+  
+  PROGRAMMING
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../systems/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16v-3c0-1.11-.89-2-2-2h-6V8h2V2H9v6h2v3H5c-1.11 0-2 .89-2 2v3H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6zM11 4h2v2h-2zM5 20H3v-2h2zm8 0h-2v-2h2zm8 0h-2v-2h2z"></path></svg>
+    
+  
+  SYSTEMS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../vision/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H3V5h18m0-2H3c-1.1 0-2 .9-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5c1.11 0 2-.89 2-2V5a2 2 0 0 0-2-2m-6 3.5-.62 1.37L13 8.5l1.38.63.62 1.37.63-1.37L17 8.5l-1.37-.63zm-4.5 2-1.09 2.41L7 12l2.41 1.09 1.09 2.41 1.1-2.41L14 12l-2.4-1.09z"></path></svg>
+    
+  
+  VISION
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../interactive/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 9H2v6h5.5l3-3zM6 13H4v-2h2zm9-5.5V2H9v5.5l3 3zM11 4h2v2h-2zM9 16.5V22h6v-5.5l-3-3zm4 3.5h-2v-2h2zm3.5-11-3 3 3 3H22V9zm3.5 4h-2v-2h2z"></path></svg>
+    
+  
+  INTERACTIVE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../humanities/" class="md-tabs__link">
+          
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.74 3.74 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574M8.755 4.75l-.004 7.322a3.75 3.75 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25"></path></svg>
+    
+  
+  HUMANITIES
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  INDICES
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Tianle's Blog" class="md-nav__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Tianle's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ytianle/ytianle.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    ytianle.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JOURNAL
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../foundations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FOUNDATIONS
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../programming/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PROGRAMMING
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../systems/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SYSTEMS
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../vision/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VISION
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../interactive/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INTERACTIVE
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../humanities/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HUMANITIES
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INDICES
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INDICES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tech_materials/tech_materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Materials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m8.19 3.5c-.89 0-1.6.18-2.14.54-.55.36-.83.96-.78 1.65h1.97c0-.28.1-.49.26-.63.2-.14.42-.21.69-.21.31 0 .58.08.76.26.18.17.27.39.27.69 0 .28-.08.53-.22.74-.17.22-.38.4-.64.54-.52.32-.86.6-1.07.84-.19.24-.29.58-.29 1.08h2c0-.28.05-.5.14-.68.09-.17.26-.32.52-.47.46-.21.84-.49 1.13-.85.29-.37.44-.76.44-1.2q0-1.05-.81-1.68c-.54-.41-1.29-.62-2.23-.62M11 12v2h2v-2z"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    👨🏻‍💼 Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_3" id="__nav_9_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    👨🏻‍💼 Interview Questions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_3_3" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 6h10a6 6 0 0 1 6 6 6 6 0 0 1-6 6c-1.78 0-3.37-.77-4.47-2h-1.06c-1.1 1.23-2.69 2-4.47 2a6 6 0 0 1-6-6 6 6 0 0 1 6-6M6 9v2H4v2h2v2h2v-2h2v-2H8V9zm9.5 3a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5 1.5 1.5 0 0 0-1.5-1.5m3-3a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5A1.5 1.5 0 0 0 18.5 9"></path></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Game DevOP
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_3_3" id="__nav_9_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Game DevOP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coding_questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp_questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CG Questions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CG Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#m-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "M" matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "V" matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ortho-vs-pers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ortho V.S. Pers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-frustum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing frustum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clipping-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clipping space
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectors-and-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vectors and matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leftright-hand-coord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Left/Right-hand Coord
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewport-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewport transformation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-in-viewport-trans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth in Viewport trans
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ndc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NDC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rasterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rasterization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vertexfragment-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vertex/Fragment shader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math_questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operating_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os_extra_questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OS Extra Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kernel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kernel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../coding_practice/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Practice
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../cpp_versions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ Versions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../computer_graphics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Graphics
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../full_stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full-stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cs561_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS561 Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../note_seeds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Note Seeds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#m-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "M" matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "V" matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ortho-vs-pers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ortho V.S. Pers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-frustum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewing frustum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clipping-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clipping space
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectors-and-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vectors and matrices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leftright-hand-coord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Left/Right-hand Coord
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewport-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewport transformation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-in-viewport-trans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth in Viewport trans
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ndc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NDC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rasterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rasterization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vertexfragment-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vertex/Fragment shader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    HOME
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    INDICES
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    👨🏻‍💼 Interview Questions
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Game DevOP
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+    <div class="md-source-date" style="text-align: right; font-weight: bold;">
+      <small>
+          Author: <span class="git-page-authors git-authors"><a href="mailto:61530469+ytianle@users.noreply.github.com">ytianle</a></span>
+      </small>
+    </div>
+
+  
+  
+                  
+
+
+  
+  
+
+
+
+<h1 id="-computer-graphics-questions"><strong>🎮 Computer Graphics Questions</strong><a class="headerlink" href="#-computer-graphics-questions" title="Anchor link to this section for reference">⚓︎</a></h1>
+<blockquote>
+<p>This material is for related questions:</p>
+</blockquote>
+<ul>
+<li><a href="../coding_questions/">Raytracing</a></li>
+</ul>
+<h2 id="m-matrix"><strong>"M" matrix</strong><a class="headerlink" href="#m-matrix" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How is the "M" matrix derived?</summary>
+<p><strong>Answer:</strong> The "M" matrix typically refers to the Model Matrix in computer graphics. The Model Matrix is used to transform vertices from object space (local coordinates of the object) to world space (global coordinates in the scene). It encompasses translation, rotation, and scaling operations to position and orient the object within the scene.</p>
+<p>The Model Matrix is derived by <u>combining individual transformation&lt;\u&gt; (translation, rotation, scaling) matrices through mutiplication. The order of transformations is important, and the multiplication order matters. If you want to first scale, then rotate, and finally translate, the transformations should be applied in reverse order when multiplying the matrices.</u></p>
+<p>In OpenGL, you typically apply the transformations in the following order:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>- Scaling: Apply any scaling transformations first.
+<span class="linenos" data-linenos="2 "></span>- Rotation: Apply rotation transformations next.
+<span class="linenos" data-linenos="3 "></span>- Translation: Apply translation transformations last.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="n">myModelMatrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myTranslationMatrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myRotationMatrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myScaleMatrix</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">vec4</span><span class="w"> </span><span class="n">myTransformedVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myModelMatrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">myOriginalVector</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<h2 id="v-matrix"><strong>"V" matrix</strong><a class="headerlink" href="#v-matrix" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What is the purpose of the "V" matrix, and how is it derived?</summary>
+<p><strong>Answer:</strong> The "V" matrix, also known as the View Matrix, is used in computer graphics to transform vertices from world space (global coordinates in the scene) to camera space (view coordinates from the perspective of the camera). The View Matrix effectively represents the position and orientation of the camera within the scene.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/CameraSpace.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/CameraSpace.png" width="30%"></a></p>
+<ul>
+<li>
+<p>Computing the Camera Coordinates</p>
+<p>From <span class="arithmatex">\(EYE\)</span>, <span class="arithmatex">\(AT\)</span> and <span class="arithmatex">\(UP\)</span>, we first form the coordinate <span class="arithmatex">\((x_c, y_c, z_c)\)</span> for the camera, relative to the world space. We fix <span class="arithmatex">\(z_c\)</span> to be the opposite of <span class="arithmatex">\(AT\)</span>, i.e., <span class="arithmatex">\(AT\)</span> is pointing at the <span class="arithmatex">\(-zc\)</span>. We can obtain the direction of <span class="arithmatex">\(xc\)</span> by taking the cross-product of <span class="arithmatex">\(AT\)</span> and <span class="arithmatex">\(UP\)</span>. Finally, we get the direction of <span class="arithmatex">\(yc\)</span> by taking the cross-product of <span class="arithmatex">\(xc\)</span> and <span class="arithmatex">\(zc\)</span>. Take note that <span class="arithmatex">\(UP\)</span> is roughly, but not necessarily, orthogonal to <span class="arithmatex">\(AT\)</span>.(<a href="https://www3.ntu.edu.sg/home/ehchua/programming/opengl/CG_BasicsTheory.html">Link</a>)</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/Graphics3D_CameraCoord.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/Graphics3D_CameraCoord.png" width="30%"></a></p>
+</li>
+<li>
+<p>Transforming from World Space to Camera Space</p>
+<p>Now, the world space is represented by standard orthonormal bases (e1, e2, e3), where e1=(1, 0, 0), e2=(0, 1, 0) and e3=(0, 0, 1), with origin at O=(0, 0, 0). The camera space has orthonormal bases (xc, yc, zc) with origin at EYE=(ex, ey, ez).</p>
+<p>It is much more convenience to express all the coordinates in the camera space. This is done via view transform.</p>
+<p>The view transform consists of two operations: a translation (for moving EYE to the origin), followed by a rotation (to axis the axes):</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/Graphics3D_ViewTranslationRotation.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/Graphics3D_ViewTranslationRotation.png" width="30%"></a></p>
+</li>
+<li>
+<p>The View Matrix</p>
+<p>We can combine the two operations into one single View Matrix:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/Graphics3D_ViewMatrix.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/Graphics3D_ViewMatrix.png" width="30%"></a></p>
+</li>
+</ul>
+<p>In OpenGL, you typically set up the View Matrix using the camera's position, target (the point the camera is looking at), and up vector (the camera's up direction). The glm::lookAt function can be used to construct the View Matrix:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">Copy</span><span class="w"> </span><span class="n">code</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="n">viewMatrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">lookAt</span><span class="p">(</span><span class="n">cameraPosition</span><span class="p">,</span><span class="w"> </span><span class="n">cameraTarget</span><span class="p">,</span><span class="w"> </span><span class="n">cameraUp</span><span class="p">);</span>
+</code></pre></div>
+<p>Here's a breakdown of the parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>- cameraPosition: The position of the camera in world space.
+<span class="linenos" data-linenos="2 "></span>- cameraTarget: The point the camera is looking at in world space.
+<span class="linenos" data-linenos="3 "></span>- cameraUp: The up direction of the camera.
+</code></pre></div>
+</details>
+<h2 id="ortho-vs-pers"><strong>Ortho V.S. Pers</strong><a class="headerlink" href="#ortho-vs-pers" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What's the difference between orthographic and perspective projection?</summary>
+<p><strong>Answer:</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/projection.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/projection.png" width="30%"></a></p>
+<ul>
+<li>
+<p>In orthographic projection, objects maintain their relative sizes regardless of their distance from the camera. This projection type is often used in technical drawings, architectural plans, and some 2D games where maintaining accurate measurements is crucial. In an orthographic projection, parallel lines in the 3D scene remain parallel in the projected 2D image.</p>
+</li>
+<li>
+<p>Perspective projection emulates how objects appear smaller as they move farther away from the camera, creating a sense of depth and realism. This is how the human eye perceives the world. In perspective projection, objects that are closer to the camera appear larger than objects that are farther away.</p>
+</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/ORTH_PROJECT.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/ORTH_PROJECT.png" width="30%"></a></p>
+</details>
+<h2 id="viewing-frustum"><strong>Viewing frustum</strong><a class="headerlink" href="#viewing-frustum" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How is the viewing frustum defined?</summary>
+<p><strong>Answer:</strong> The camera has a limited field of view, which exhibits a view frustum (truncated pyramid), and is specified by four parameters: fovy, aspect, zNear and zFar.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>- Fovy: specify the total vertical angle of view in degrees.
+<span class="linenos" data-linenos="2 "></span>- Aspect: the ratio of width vs. height. For a particular z, we can get the height from the fovy, and then get the width from the aspect.
+<span class="linenos" data-linenos="3 "></span>- zNear; the near plane.
+<span class="linenos" data-linenos="4 "></span>- zFar: the far plane.
+</code></pre></div>
+<p>The camera space <span class="arithmatex">\((x_c, y_c, z_c)\)</span> is renamed to the familiar <span class="arithmatex">\((x, y, z)\)</span> for convenience.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/CameraPerspective.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/CameraPerspective.png" width="30%"></a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;glm/glm.hpp&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;glm/gtc/matrix_transform.hpp&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="c1">// ...</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="c1">// Define camera parameters</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="w"> </span><span class="n">cameraPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0f</span><span class="p">);</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="w"> </span><span class="n">cameraTarget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">);</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="w"> </span><span class="n">cameraUp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">);</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a><span class="c1">// Create the view matrix</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="n">viewMatrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">lookAt</span><span class="p">(</span><span class="n">cameraPosition</span><span class="p">,</span><span class="w"> </span><span class="n">cameraTarget</span><span class="p">,</span><span class="w"> </span><span class="n">cameraUp</span><span class="p">);</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a><span class="c1">// Define projection parameters</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><a href="#__codelineno-2-15"><span class="linenos" data-linenos="15 "></span></a><span class="kt">float</span><span class="w"> </span><span class="n">FOV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">radians</span><span class="p">(</span><span class="mf">45.0f</span><span class="p">);</span><span class="w"> </span><span class="c1">// Field of view in radians</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><a href="#__codelineno-2-16"><span class="linenos" data-linenos="16 "></span></a><span class="kt">float</span><span class="w"> </span><span class="n">aspectRatio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">800.0f</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">600.0f</span><span class="p">;</span><span class="w"> </span><span class="c1">// Aspect ratio of the viewport</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><a href="#__codelineno-2-17"><span class="linenos" data-linenos="17 "></span></a><span class="kt">float</span><span class="w"> </span><span class="n">nearClip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">;</span><span class="w"> </span><span class="c1">// Near clipping plane</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><a href="#__codelineno-2-18"><span class="linenos" data-linenos="18 "></span></a><span class="kt">float</span><span class="w"> </span><span class="n">farClip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100.0f</span><span class="p">;</span><span class="w"> </span><span class="c1">// Far clipping plane</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><a href="#__codelineno-2-19"><span class="linenos" data-linenos="19 "></span></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><a href="#__codelineno-2-20"><span class="linenos" data-linenos="20 "></span></a><span class="c1">// Create the projection matrix</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><a href="#__codelineno-2-21"><span class="linenos" data-linenos="21 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="n">projectionMatrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">perspective</span><span class="p">(</span><span class="n">FOV</span><span class="p">,</span><span class="w"> </span><span class="n">aspectRatio</span><span class="p">,</span><span class="w"> </span><span class="n">nearClip</span><span class="p">,</span><span class="w"> </span><span class="n">farClip</span><span class="p">);</span>
+</code></pre></div>
+</details>
+<h2 id="clipping-space"><strong>Clipping space</strong><a class="headerlink" href="#clipping-space" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What does the clipping space do?</summary>
+<p><strong>Answer:</strong> <code>Clipping space</code> is a crucial concept in computer graphics that defines a volume in which geometry is transformed and clipped before being projected onto the screen. It's an intermediate space between the <code>normalized device coordinates (NDC)</code> and the <code>view frustum</code>. The primary purpose of <code>clipping space</code> is to ensure that only the visible parts of a 3D scene are rendered, improving rendering efficiency and avoiding unnecessary computation for parts of the geometry that won't contribute to the final image.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/ProjectionMatrix.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/ProjectionMatrix.png" width="40%"></a> </p>
+<p>When vertices of 3D objects are transformed by the projection matrix, they are transformed to clipping space.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/ClipSpace1.jpg" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/ClipSpace1.jpg" width="40%"></a></p>
+<p>Mathematically, clipping space can be represented as follows:</p>
+<div class="arithmatex">\[-1 ≤ x, y, z ≤ 1\]</div>
+<p>Here, <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, and <span class="arithmatex">\(z\)</span> are the coordinates of a vertex in clipping space. Vertices that fall outside this range are clipped. The transformed vertices are then further normalized to NDC, where they can be mapped to the screen space pixel coordinates.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/clip.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/clip.png" width="30%"></a></p>
+<p>In OpenGL, the transformation from world coordinates to clipping space is achieved by the combined model-view-projection (MVP) matrix. The vertices' coordinates are multiplied by this matrix to transform them from their original coordinates to clipping space.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1">// Example OpenGL code for transforming vertices to clipping space</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="n">modelMatrix</span><span class="p">;</span><span class="w"> </span><span class="c1">// Model transformation</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="n">viewMatrix</span><span class="p">;</span><span class="w">  </span><span class="c1">// Camera view transformation</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="n">projectionMatrix</span><span class="p">;</span><span class="w"> </span><span class="c1">// Perspective or orthographic projection</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="n">mvpMatrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">projectionMatrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">viewMatrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">modelMatrix</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos="7 "></span></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos="8 "></span></a><span class="c1">// Transform vertices to clipping space</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos="9 "></span></a><span class="n">glm</span><span class="o">::</span><span class="n">vec4</span><span class="w"> </span><span class="n">clipSpacePosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mvpMatrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec4</span><span class="p">(</span><span class="n">worldPosition</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span>
+</code></pre></div>
+<p>Here is the conclusion pipeline:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/MVP.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/MVP.png" width="30%"></a></p>
+</details>
+<h2 id="vectors-and-matrices"><strong>Vectors and matrices</strong><a class="headerlink" href="#vectors-and-matrices" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What are the dimensions of commonly used vectors and matrices?</summary>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>
+<p>Vectors:</p>
+<ul>
+<li>2D Vectors: Used for representing points, directions, and displacements in a 2D space.</li>
+<li>3D Vectors: Represent positions, directions, and displacements in a 3D space.</li>
+<li>4D Vectors (Homogeneous Coordinates): Often used for transformations and perspective projections.</li>
+</ul>
+</li>
+<li>
+<p>Matrices:</p>
+<ul>
+<li>2x2 Matrices: Used for 2D transformations such as scaling, rotation, and shearing.</li>
+<li>3x3 Matrices: Used for 2D transformations, especially in cases where you want to apply transformations that don't affect the z-coordinate.</li>
+<li>4x4 Matrices: Used for 3D transformations, including translation, rotation, scaling, and perspective projection.</li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="leftright-hand-coord"><strong>Left/Right-hand Coord</strong><a class="headerlink" href="#leftright-hand-coord" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What are left-handed and right-handed coordinate systems in different spaces, and why is there a change?</summary>
+<p><strong>Answer:</strong></p>
+<p>Left-handed and right-handed coordinate systems refer to the direction of axes. Different spaces may use different handedness due to historical conventions and mathematical convenience.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/left_right_coord.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/left_right_coord.png" width="30%"></a></p>
+<p>Object Space (or Local Space): This is the coordinate system of an individual object. An object's geometry is usually defined in its own local space.</p>
+<ul>
+<li>
+<p><strong>Difference in Spaces:</strong></p>
+<ul>
+<li>World Space: Once an object is placed in a scene, it is transformed into world space coordinates. Here, the position, rotation, and scale of an object with respect to the world are represented.</li>
+<li>View Space (or Camera Space): This is the coordinate system relative to the camera. When we move or rotate the camera, objects move and rotate in the opposite direction in view space.</li>
+<li>Clip Space: After the view transformation, a projection (often perspective or orthogonal) is applied to transform objects into clip space. Objects outside of a certain range (the view frustum) get "clipped" out.</li>
+<li>Screen Space: The transformation from clip space to screen space involves mapping x, y, z coordinates to pixel locations on the screen and depth values for z-buffering.</li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="viewport-transformation"><strong>Viewport transformation</strong><a class="headerlink" href="#viewport-transformation" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What's the purpose of viewport transformation, and how does it change dimensions?</summary>
+<p><strong>Answer:</strong>Viewport transformation is a crucial step in the rendering pipeline that maps points from the clip space (or normalized device coordinates, NDC) to screen space. It changes the dimensions from [-1, 1] to [0, width] and [0, height].</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/Graphics3D_Viewport.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/Graphics3D_Viewport.png" width="30%"></a></p>
+<p>Viewport transform is made up of a series of reflection (of y-axis), scaling (of x, y and z axes), and translation (of the origin from the center of the near plane of clipping volume to the top-left corner of the 3D viewport). The viewport transform matrix is given by:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/Graphics3D_ViewportMatrix.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/Graphics3D_ViewportMatrix.png" width="30%"></a></p>
+<p>If the viewport cover the entire screen, <span class="arithmatex">\(minX=minY=minZ=0\)</span>, <span class="arithmatex">\(w=screenWidth\)</span> and <span class="arithmatex">\(h=screenHeight\)</span>.</p>
+</details>
+<h2 id="depth-in-viewport-trans"><strong>Depth in Viewport trans</strong><a class="headerlink" href="#depth-in-viewport-trans" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>How are depth values handled during viewport transformation? (Storing in the depth buffer)</summary>
+<p><strong>Answer:</strong> Depth values, often represented by the <code>z</code> value in 3D graphics, are crucial for determining the visibility of surfaces in a scene. Depth values are linearly mapped from the range [near, far] to [0, 1] and stored in the depth buffer (or z-buffer) to resolve which surface is "in front" at any given pixel.</p>
+<p>During the viewport transformation, the depth values also undergo a transformation similar to the x and y coordinates, but with a distinct purpose.</p>
+<ol>
+<li>
+<p><strong>Normalization</strong>: Before the viewport transformation, the perspective division (division by the homogeneous coordinate <code>w</code> after the projection transformation) brings depth values into a normalized range, typically between -1 and 1 for clip space.</p>
+</li>
+<li>
+<p><strong>Depth Scaling and Translation</strong>: During the viewport transformation, depth values are transformed to fit into the depth range used by the depth buffer. This range is often represented as [0, 1] for many graphics APIs, but it's important to note that the specific range can depend on the system. The transformation can be described by:</p>
+<div class="arithmatex">\[
+z' = \frac{z_{far} - z_{near}}{2} \times z + \frac{z_{far} + z_{near}}{2}
+\]</div>
+<p>Where:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>- \( z' \) is the transformed depth value.
+<span class="linenos" data-linenos="2 "></span>- \( z \) is the original depth value from clip space.
+<span class="linenos" data-linenos="3 "></span>- \( z_{near} \) and \( z_{far} \) represent the near and far clipping planes, respectively.
+</code></pre></div>
+</li>
+<li>
+<p><strong>Depth Buffer Storage</strong>: After transformation, the resulting depth values are stored in the depth buffer. During rasterization, for each pixel, the GPU checks the depth value of the incoming fragment against the value stored in the depth buffer. If the new fragment's depth value is closer (usually a lesser value, but this depends on depth function settings) to the camera than the stored value, the fragment's color replaces the current color at that pixel, and the depth buffer is updated with the new depth value. If not, the fragment is discarded.</p>
+</li>
+</ol>
+</details>
+<h2 id="ndc"><strong>NDC</strong><a class="headerlink" href="#ndc" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>What is NDC (Normalized Device Coordinates)?</summary>
+<p><strong>Answer:</strong> </p>
+<ol>
+<li>
+<p><strong>Definition</strong>: <code>NDC(Normalized Device Coordinates)</code> is the coordinate system that vertices are in after the perspective division (or homogeneous divide) by the w component in clip space. It's the stage immediately after clip space.</p>
+</li>
+<li>
+<p><strong>Purpose</strong>: The conversion to NDC serves to normalize the coordinates such that they lie within a standard cube, typically ranging from -1 to 1 along each axis. This ensures a consistent and device-agnostic representation of the scene.</p>
+</li>
+<li>
+<p><strong>Coordinate Range</strong>: In NDC, the x, y, and z coordinates typically range from -1 to 1. Anything outside this range would have been clipped out in the previous clip space stage.</p>
+</li>
+<li>
+<p><strong>Conversion from Clip Space</strong>: To get coordinates in NDC from clip space, you perform the perspective division:</p>
+</li>
+</ol>
+<p>$$
+   x_{ndc} = \frac{x}{w}
+   $$</p>
+<p>$$
+   y_{ndc} = \frac{y}{w}
+   $$</p>
+<p>$$
+   z_{ndc} = \frac{z}{w}
+   $$</p>
+<ol>
+<li><strong>Depth Values in NDC:</strong> Depth values in NDC are crucial for visibility determination and depth testing. After the perspective divide, z values are also in the normalized range, which will then be transformed to the depth range used by the depth buffer during the viewport transformation.</li>
+</ol>
+<details class="warning" open="open">
+<summary>Compared with <code>Clip space</code>!</summary>
+<ul>
+<li>
+<p>Definition: <code>Clip space</code> is the coordinate system in which vertices are positioned after undergoing the projection transformation but before the perspective division. In this space, the coordinates are in a homogeneous form.</p>
+</li>
+<li>
+<p>Purpose: The main purpose of clip space is to allow for the clipping of geometry that lies outside the viewing frustum. Any vertex that has a coordinate outside the range of [-w, w] for its x, y, or z values after the projection transformation is considered to be outside the viewing frustum and can be clipped.</p>
+</li>
+<li>
+<p>Coordinate Range: The coordinates in clip space don't have a strictly defined range like in NDC. However, the clipping operation checks the vertices against their homogeneous coordinate w. Vertices with x, y, or z components outside the [-w, w] range are outside the viewing frustum.</p>
+</li>
+</ul>
+</details>
+</details>
+<h2 id="rasterization"><strong>Rasterization</strong><a class="headerlink" href="#rasterization" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Definition and purpose of rasterization.</summary>
+<p><strong>Answer:</strong> Rasterization is the process of converting vector primitives (like polygons in 3D models) into a raster format (pixels on a screen). It determines which pixels on the screen should be illuminated and with what color based on the geometry and its attributes (like color, texture, and shading).</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/rasterization.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/rasterization.png" width="30%"></a></p>
+<ul>
+<li>
+<p><strong>Color:</strong></p>
+<ol>
+<li>
+<p><strong>Vertex Colors</strong>: The simplest form of coloring in rasterization involves interpolating vertex colors. Each vertex of a polygon can be assigned a color, and during rasterization, the color of a pixel inside the polygon is interpolated based on the colors of its vertices. This interpolation usually happens in a linear fashion across the surface of the polygon.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/ColorInterpolation.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/ColorInterpolation.png" width="30%"></a></p>
+</li>
+<li>
+<p><strong>Fragment Shaders</strong>: Modern graphics pipelines allow for the use of fragment shaders (or pixel shaders). These shaders determine the color of each pixel (fragment) during rasterization. They can use various inputs, including textures, lights, and other per-vertex data, to dynamically compute pixel colors.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Texture:</strong></p>
+<ol>
+<li>
+<p><strong>Texture Mapping</strong>: One of the primary roles of rasterization in the context of textures is texture mapping, where 2D images (textures) are mapped onto the 3D surfaces of polygons. Each vertex of a polygon can be assigned texture coordinates (often denoted as <span class="arithmatex">\( u, v \)</span>). During rasterization, the texture coordinates for a pixel inside the polygon are interpolated from its vertices. These coordinates are then used to sample a color from the texture image.</p>
+</li>
+<li>
+<p><strong>Mipmapping</strong>: To efficiently sample textures and avoid aliasing artifacts, especially for distant or minified objects, rasterization can use mipmaps. Mipmaps are a sequence of precomputed textures, each one being a downscaled version of the previous one. The appropriate level of detail is chosen based on the distance and angle of the surface to the camera.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Images_CG/Aliasing.png" data-desc-position="bottom"><img :=":" _="," alt="Alt text" class="center" src="../Images_CG/Aliasing.png" width="30%"></a></p>
+</li>
+<li>
+<p><strong>Texture Filtering</strong>: During rasterization, there might be a need to interpolate between multiple texture samples to get the final color for a pixel. Common methods include bilinear and trilinear filtering.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Shading:</strong></p>
+<ol>
+<li>
+<p><strong>Flat Shading</strong>: This is one of the simplest shading methods. In flat shading, each polygon gets a single color, usually computed based on a single normal for the entire polygon and the lighting equation. The result can be a faceted appearance, where each polygon's surface looks flat.</p>
+</li>
+<li>
+<p><strong>Gouraud Shading</strong>: In Gouraud shading, lighting calculations are done per vertex, and colors are interpolated across the polygon during rasterization. This results in smoother color transitions compared to flat shading but can miss sharp lighting effects or specular highlights.</p>
+</li>
+<li>
+<p><strong>Phong Shading</strong>: Not to be confused with the Phong reflection model, Phong shading involves interpolating the normals from the vertices and then computing the lighting per pixel. This method captures specular highlights more accurately than Gouraud shading.</p>
+</li>
+<li>
+<p><strong>Pixel Shaders and Advanced Lighting</strong>: Modern rasterization pipelines use pixel or fragment shaders to achieve advanced shading effects. These shaders can implement complex lighting models, incorporate multiple light sources, and even simulate some global illumination effects. </p>
+</li>
+</ol>
+</li>
+</ul>
+</details>
+<h2 id="vertexfragment-shader"><strong>Vertex/Fragment shader</strong><a class="headerlink" href="#vertexfragment-shader" title="Anchor link to this section for reference">⚓︎</a></h2>
+<details class="note" open="open">
+<summary>Role of the vertex/fragment shader.</summary>
+<p><strong>Answer:</strong></p>
+<ul>
+<li>
+<p><strong>Vertex Shader:</strong></p>
+<ol>
+<li>
+<p><strong>Vertex Transformation</strong>: One of the primary responsibilities of the vertex shader is to transform vertex positions from object space (local coordinates) to clip space. This typically involves multiplying the vertex position with a series of transformation matrices such as the model, view, and projection matrices.</p>
+</li>
+<li>
+<p><strong>Normal Transformation</strong>: For lighting calculations, normals associated with vertices are transformed to ensure they are in the appropriate space, typically camera or world space.</p>
+</li>
+<li>
+<p><strong>Texture Coordinates</strong>: While texture coordinates are usually provided as part of the vertex data, a vertex shader can manipulate them, for instance, to implement certain effects or animations.</p>
+</li>
+<li>
+<p><strong>Per-Vertex Lighting</strong>: Lighting calculations can be performed at the vertex level in the vertex shader. This approach is seen in Gouraud shading.</p>
+</li>
+<li>
+<p><strong>Tessellation and Geometry Shaders</strong>: Vertex shaders can work in tandem with tessellation and geometry shaders to dynamically create geometry on the GPU.</p>
+</li>
+<li>
+<p><strong>Passing Varying Data</strong>: Vertex shaders can output data that is interpolated across fragments and then consumed by the fragment shader. This data might include things like color, texture coordinates, transformed normals, or any custom data required for the fragment shader's operations.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Fragment Shader (Pixel Shader):</strong></p>
+<ol>
+<li>
+<p><strong>Pixel Color Calculation</strong>: The primary role of the fragment shader is to determine the final color of each pixel that will be drawn to the screen. </p>
+</li>
+<li>
+<p><strong>Texture Sampling</strong>: The fragment shader samples colors from textures using texture coordinates. This is where texture mapping, including techniques like bilinear and trilinear filtering, and mipmapping, occur.</p>
+</li>
+<li>
+<p><strong>Per-Pixel Lighting</strong>: More accurate lighting models, like Phong shading, can be implemented in the fragment shader, where lighting calculations are performed per pixel.</p>
+</li>
+<li>
+<p><strong>Special Effects</strong>: Advanced visual effects, such as specular highlights, bump mapping, normal mapping, and shadow mapping, are typically handled in the fragment shader.</p>
+</li>
+<li>
+<p><strong>Post-Processing</strong>: While certain post-processing effects might be implemented in other stages or using multiple passes, the fragment shader can be used to apply various screen-space effects like color grading, blurring, or edge detection.</p>
+</li>
+<li>
+<p><strong>Conditional Rendering</strong>: The fragment shader can conditionally discard fragments, preventing them from being written to the final framebuffer. This can be used for effects like stippling, transparency, or custom clipping.</p>
+</li>
+</ol>
+</li>
+</ul>
+</details>
+<p>When is lighting typically calculated in the vertex shader versus the fragment shader?</p>
+<p>Lighting calculations are often done in the vertex shader for efficiency, while finer lighting details are computed in the fragment shader for each pixel.
+Purpose of rasterization and knowledge of lighting models.</p>
+<p>Rasterization converts primitives to pixels for display. Lighting models simulate how light interacts with surfaces (e.g., Phong, Blinn-Phong).</p>
+<p>Components of the Phong lighting model and their roles.</p>
+<p>The Phong lighting model consists of ambient, diffuse, and specular components. Ambient contributes to base lighting, diffuse simulates direct light reflection, and specular represents highlights.
+Differences between Blinn-Phong and Phong shading.</p>
+<p>Blinn-Phong uses the halfway vector between the light and view directions for specular reflection, resulting in more accurate highlights compared to the Phong model.
+Principles and benefits of MIPMAPs, determining which level to use.</p>
+<p>MIPMAPs are precomputed texture levels to improve rendering quality and performance by reducing aliasing and texture shimmering. The level is chosen based on the pixel size relative to the texture's size.
+How are normal maps stored, and what are their pros and cons?</p>
+<p>Normal maps store perturbed surface normals in RGB channels, allowing for intricate surface details. Pros include enhanced realism, while cons involve increased memory usage and complexity.
+Considerations when storing normal maps.</p>
+<p>Normal maps should be stored in tangent space and normalized. The blue channel might encode surface information for optimization.
+What is gamma correction and why is it important?</p>
+<p>Gamma correction compensates for the nonlinear way monitors display colors, ensuring consistent and accurate color representation.
+What is HDR (High Dynamic Range), and why is it used?</p>
+<p>HDR allows for a wider range of color and brightness values, simulating real-world lighting conditions and enhancing visual realism.
+Explanation of tone mapping and familiarity with different algorithms.</p>
+<p>Tone mapping scales HDR values to the limited range of a display, preventing overexposure. Algorithms include Reinhard, ACES, and more.
+Implementation of shadow mapping, drawbacks, and improvements.</p>
+<p>Shadow mapping involves rendering the scene from the light's perspective to create a depth map. Drawbacks include aliasing and self-shadowing. Improvements involve PCF and PCSS for soft shadows.
+Principles of anti-aliasing methods (MSAA, FSAA, SSAA, DLSS).</p>
+<p>MSAA (Multisample), FSAA (Full-Screen), SSAA (Super-Sample), and DLSS (Deep Learning Super Sampling) are methods to reduce aliasing artifacts by sampling multiple positions or using AI.
+Types and purposes of various buffers in graphics, e.g., color, depth, stencil.</p>
+<p>Color buffers store pixel colors, depth buffers store depth values, and stencil buffers control rendering operations like masking and masking.
+What is stencil testing, and what are its applications beyond shadows?</p>
+<p>Stencil testing masks pixels based on their stencil value, useful for various effects like decals, outlining, and post-processing.
+Understanding of alpha blending.</p>
+<p>Alpha blending combines the colors of overlapping fragments using their alpha values, allowing for transparency effects.
+Rendering semi-transparent objects and considerations.</p>
+<p>Semi-transparent objects require sorting based on depth and proper blending to correctly render overlapping parts.
+Depth testing process and rendering order of transparent and opaque objects.</p>
+<p>Opaque objects are rendered first, and then transparent objects are rendered back-to-front to ensure proper blending.
+Shader writing experience.</p>
+<p>Provide details about any shaders you have written, such as vertex, fragment, geometry, or compute shaders.
+Familiarity with compute shaders.</p>
+<p>Compute shaders are used for general-purpose parallel computing tasks, often used for simulations, data processing, and some graphics tasks.
+Conditions where the fragment shader executes fewer times than the vertex shader.</p>
+<p>In cases where vertex shader operations generate geometry with fewer visible fragments (due to occlusion), the fragment shader executes fewer times.
+Introduction to the rendering equation.</p>
+<p>The rendering equation describes the light transport in a scene and is used as a foundation for various lighting models.
+Brief introduction to BRDF (Bidirectional Reflectance Distribution Function).</p>
+<p>BRDF describes how light is reflected from a surface in different directions, and it's an essential part of lighting models.
+Meaning of F0 in the Fresnel equation.</p>
+<p>F0 represents the reflectance of a surface at normal incidence, indicating how much light is reflected off the surface rather than refracted.
+Principles and implementation parameters of PBR (Physically Based Rendering).</p>
+<p>PBR aims for realistic rendering by using physically accurate material properties and light interactions.
+Knowledge of ray tracing and path tracing.</p>
+<p>Ray tracing simulates light paths to generate realistic images, while path tracing is a specific type of ray tracing that simulates light paths through a scene.
+Introduction to deferred rendering, purpose, and benefits.</p>
+<p>Deferred rendering separates geometry and shading calculations, allowing for efficient handling of multiple light sources and post-processing effects.
+Methods to improve rendering efficiency.</p>
+<p>Improving rendering efficiency involves techniques like level-of-detail (LOD), occlusion culling, frustum culling, and batching.
+Ensuring stable frame rates.</p>
+<p>Stable frame rates can be maintained through optimization, LOD, culling, and adaptive quality settings.
+Shader code optimization techniques.</p>
+<p>Shader code can be optimized by reducing redundant calculations, minimizing branching, using texture atlases, and avoiding unnecessary computations.
+Knowledge of GPU architectures.</p>
+<p>Familiarity with GPU architectures like NVIDIA's CUDA cores or AMD's Compute Units.
+Familiarity with graphics APIs.</p>
+<p>Knowledge of graphics APIs like DirectX, Vulkan, OpenGL, and Metal.
+Differences between DirectX and OpenGL.</p>
+<p>DirectX and OpenGL are graphics APIs with differences in design, implementation, and platform support.
+Purpose of GLFW.</p>
+<p>GLFW is a library for creating windows, contexts, and handling user input in OpenGL applications.
+Texture sampling in GLSL shaders.</p>
+<p>Texture sampling in GLSL shaders is done using the texture function, providing a texture and UV coordinates.
+Applying lighting with a scaling model matrix along the X-axis.</p>
+<p>To apply lighting after a non-uniform scaling along the X-axis, you would transform the normals using the inverse transpose of the model matrix.</p>
+<p>Calculating a rotation matrix for an object's Y-axis rotation in world coordinates.
+The rotation matrix for rotating around an object's Y-axis by an angle θ is typically represented as:
+scss
+Copy code
+| cos(θ)  0  sin(θ)  0 |
+|   0     1    0     0 |
+| -sin(θ) 0  cos(θ)  0 |
+|   0     0    0     1 |
+Identifying the most performance-intensive shader between vertex and fragment shaders for a given algorithm.
+Profiling the application's performance will reveal which shader has the most impact on efficiency. Factors include the number of vertices and pixels processed and shader complexity.
+Rendering a subset of objects from a scene based on user selection.
+Objects can be rendered selectively by implementing an object visibility flag or managing a render queue based on user selection.
+Familiarity with post-processing techniques.
+Post-processing techniques include effects like depth of field, bloom, motion blur, and color correction applied after rendering.
+Implementation of Gaussian blur.
+Gaussian blur is implemented by convolving the image with a Gaussian kernel to create a smooth effect.
+Implementing bloom.
+Bloom involves blurring bright areas and adding them back to the scene for a glowing effect.
+Knowledge of Non-Photorealistic Rendering (NPR).
+NPR is a style of rendering that aims to emulate artistic and hand-drawn techniques.
+Techniques for achieving a cartoon-like rendering style.
+Cartoon rendering is achieved by using cel shading, edge detection, and flat shading to create a non-realistic, stylized appearance.
+Understanding and comparing different edge detection methods.
+Edge detection methods include Sobel, Canny, and Prewitt, each with varying sensitivity to different types of edges.
+Intersection of two line segments.
+The intersection of two line segments can be determined by checking if the endpoints of each segment are on opposite sides of the other segment.
+Ray-triangle intersection.
+Ray-triangle intersection can be determined by testing if the ray intersects the plane of the triangle and then checking if the intersection point lies within the triangle.
+Ray-AABB intersection.
+Ray-AABB intersection can be determined using slabs method or axis-aligned bounding box (AABB) intersection checks along each dimension.
+Calculating the arc length between two points on a sphere given in polar coordinates.
+The arc length can be calculated using the formula: s = r * θ, where r is the sphere's radius and θ is the angle between the two points in radians.
+Determining the intersection between a circle and a matrix.
+Intersection between a circle and a matrix is determined by checking if the circle's center lies within the matrix's boundaries and calculating the distance between them.
+Testing convex polygon intersection.
+Convex polygon intersection can be determined by checking if any edge of one polygon intersects with any edge of the other polygon.
+Accelerating ray-triangle intersection with spatial data structures.
+Acceleration structures like BVH (Bounding Volume Hierarchy) or KD-tree can be used to efficiently determine ray-triangle intersections.
+SVD decomposition of a matrix.
+Singular Value Decomposition (SVD) decomposes a matrix into three matrices, U, Σ, and V, where Σ contains the singular values of the original matrix.
+Converting a nonlinear problem into a linear problem.
+Nonlinear problems can be linearized by approximating them with linear equations using techniques like Taylor series expansion.
+Estimating world coordinates from 2D screen coordinates with depth information.
+Using the depth value and a perspective transformation, the 2D screen coordinates can be transformed back into 3D world coordinates.
+Precision issues in deferred rendering and the use of depth versus direct world position.
+Deferred rendering stores position in view space, which loses precision. Depth is preferred for position reconstruction due to its better depth distribution.
+Storage space of normals in deferred rendering.
+Normals in deferred rendering are stored in view space, as view space normals don't suffer from interpolation issues.
+Incorporating Ambient Occlusion (AO) in deferred rendering.
+AO can be implemented by sampling the depth buffer and testing occlusion against nearby points to estimate shadowing.
+Performance comparison between deferred rendering and forward rendering when sampling depth maps.
+Deferred rendering performs better when sampling depth maps for shadowing, as it avoids redundant shading calculations.
+G-buffer components and formats.
+G-buffer typically consists of position, normal, color, and material information, stored in textures with various formats.
+Difference between depth and color texture samplers.
+Depth texture samplers use depth comparison for sampling, while color texture samplers perform linear filtering for color data.
+Unity's different rendering pipelines and their distinctions.
+Unity has pipelines like Built-in Render Pipeline, Universal Render Pipeline (URP), and High Definition Render Pipeline (HDRP), each catering to different needs.
+Detecting graphical glitches like screen tearing, artifacts, and black screens.
+Screen tearing occurs when frames aren't synchronized with the display. Artifacts can result from various rendering issues, and black screens can be caused by improper rendering or synchronization.
+Knowledge of various graphics APIs and their usage.
+Familiarity with DirectX, Vulkan, OpenGL, and Metal, including the version you've used.
+Overview of OpenGL's rendering pipeline.
+The OpenGL pipeline consists of stages like vertex shading, tessellation, geometry shading, fragment shading, and rasterization.
+Purpose of GLFW and its context.
+GLFW is a library for creating windows and OpenGL contexts. A context manages OpenGL's state and resources for rendering.
+Differences between OpenGL and OpenGL ES.
+OpenGL is a desktop graphics API, while OpenGL ES is a version optimized for embedded systems like mobile devices and game consoles.
+Types and purposes of frame buffers.
+Frame buffers store rendering results before they're displayed. They include color, depth, and stencil attachments.
+Role of the BufferData function in OpenGL.
+BufferData is used to allocate memory and initialize the contents of a buffer object in OpenGL.
+Differences between glFinish() and glFlush() in OpenGL.
+glFinish() blocks the CPU until all queued OpenGL commands are executed, while glFlush() only ensures that commands are sent to the GPU and may not wait for completion.</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ul>
+<li><a href="https://developer.download.nvidia.com/CgTutorial/elementLinks/fig4_4.jpg">Picture resource 1</a></li>
+<li><a href="https://www3.ntu.edu.sg/home/ehchua/programming/opengl/images/Graphics3D_ProjectionMatrix.png">Picture resource 2</a></li>
+<li><a href="https://res.cloudinary.com/dx1kpewvo/image/upload/v1651065795/2022-05-02/Screenshot_2022-04-27_092223_wjz58k.png">Picture resource 3</a></li>
+<li><a href="https://www3.ntu.edu.sg/home/ehchua/programming/opengl/images/Graphics3D_CameraPerspective.png">Picture resource 4</a></li>
+<li><a href="https://metashapes.com/wp-content/uploads/2016/07/Screen-Shot-2016-03-27-at-14.44.05.png">Picture resource 5</a></li>
+<li><a href="https://glumpy.readthedocs.io/en/latest/_images/projection.png">Picture resource 6</a></li>
+<li><a href="https://developer.tizen.org/forums/native-application-development/what-rasterisation-opengl-graphic-pipeline">Picture resource 7</a></li>
+<li><a href="https://cdn-images-1.medium.com/max/640/1*QrtR82JDYIQijcfEJT5SpA.png">Picture resource 8</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li><a href="">Picture resource 1</a></li>
+<li></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="February 1, 2026 05:26:40 UTC">February 1, 2026 05:26:40</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="December 20, 2022 23:35:41 UTC">December 20, 2022 23:35:41</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"></path></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:61530469+ytianle@users.noreply.github.com">ytianle</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2020 - 2026 Tianle Yuan
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/yuantianle/" target="_blank" rel="noopener" title="Tianle Yuan on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/ytianle" target="_blank" rel="noopener" title="Tianle Yuan on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://yuantianle.com" target="_blank" rel="noopener" title="Go back to Tianle's Main Page" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272h16v176c0 35.3 28.7 64 64 64h288c35.3 0 64-28.7 64-64V272h16c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1zM224 248c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v40h40c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-40v40c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-40h-40c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16h40z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.path", "navigation.prune", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.follow", "content.code.annotate", "content.code.copy", "content.footnote.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/toc-anchor-fix.js"></script>
+      
+        <script src="../../../../assets/javascripts/mermaid.mjs" type="module"></script>
+      
+        <script src="../../../../assets/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/tablesort.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/extra-internet-markdown-ref.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
