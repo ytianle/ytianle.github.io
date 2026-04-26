@@ -1392,6 +1392,100 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#code-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-breaker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circuit Breaker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hedging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hedging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limiter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate Limiter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combined-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1996,6 +2090,100 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#code-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-breaker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circuit Breaker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hedging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hedging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limiter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate Limiter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combined-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2127,9 +2315,205 @@
 <h2 id="types-of-resilience-strategies">Types of Resilience Strategies<a class="headerlink" href="#types-of-resilience-strategies" title="Anchor link to this section for reference">⚓︎</a></h2>
 <p>We follow <a href="https://www.pollydocs.org/strategies/index.html">Polly's classification</a> to categorize resilience strategies into two main types:</p>
 <ul>
-<li><strong>Reactive</strong>: These strategies handle specific exceptions that are thrown, or results that are returned, by the callbacks executed through the strategy.</li>
-<li><strong>Proactive</strong>: Unlike reactive strategies, proactive strategies do not focus on handling errors by the callbacks might throw or return. They can make proactive decisions to cancel or reject the execution of callbacks (e.g., using a rate limiter or a timeout resilience strategy).</li>
+<li><strong>Reactive</strong>: These strategies focus on handling errors that the callbacks might throw or return. </li>
+<li><ins>Retry</ins>: Automatically retry a failed operation a certain number of times with a delay between attempts.</li>
+<li><ins>Circuit Breaker</ins>: When system struggles to handle requests, instead of waiting, it allows the system to fail fast and return an error immediately, preventing further strain on the system.</li>
+<li><ins>Fallback</ins>: Provides an alternative response or action when a primary operation fails.</li>
+<li><ins>Hedging</ins>: Send multiple requests to different endpoints and use the first successful response, improving latency and reliability.</li>
+<li><strong>Proactive</strong>: These strategies make proactive decisions to cancel or reject the execution of callbacks:</li>
+<li><ins>Timeout</ins>: Cancel the execution of a callback if it takes too long.</li>
+<li><ins>Rate Limiter</ins>: Limit the number of times a callback can be executed within a certain time frame.</li>
 </ul>
+<h2 id="code-examples">Code Examples<a class="headerlink" href="#code-examples" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>These examples use <strong>Polly v8</strong>.</p>
+<ul>
+<li>For general-purpose resilience pipelines, using <code>Polly</code> directly is a good choice.</li>
+<li>For ASP.NET Core <code>HttpClient</code>, prefer <code>Microsoft.Extensions.Http.Resilience</code>, which is built on top of Polly and integrates better with DI and named clients.</li>
+<li>For <code>Rate Limiter</code>, you usually also need <code>Polly.RateLimiting</code> and <code>System.Threading.RateLimiting</code>.</li>
+<li>Assume <code>HttpClient httpClient</code> and <code>CancellationToken cancellationToken</code> already exist in the surrounding code.</li>
+<li>In the examples below, highlighted lines show the core resilience configuration.</li>
+</ul>
+<h3 id="retry"><strong>Retry</strong><a class="headerlink" href="#retry" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Use retry for <ins>transient failures</ins> such as temporary network glitches or short-lived <code>5xx</code> responses.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly.Retry</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="kt">var</span><span class="w"> </span><span class="n">retryPipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResiliencePipelineBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="hll"><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">AddRetry</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RetryStrategyOptions</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span>
+</span><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="hll"><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="n">ShouldHandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PredicateBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+</span><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">Handle</span><span class="o">&lt;</span><span class="n">HttpRequestException</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">HandleResult</span><span class="p">(</span><span class="n">response</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">response</span><span class="p">.</span><span class="n">StatusCode</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">500</span><span class="p">),</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">    </span><span class="n">MaxRetryAttempts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">    </span><span class="n">Delay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span><span class="n">BackoffType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DelayBackoffType</span><span class="p">.</span><span class="n">Exponential</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">    </span><span class="n">UseJitter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">  </span><span class="p">})</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><a href="#__codelineno-0-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><a href="#__codelineno-0-16"><span class="linenos" data-linenos="16 "></span></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><a href="#__codelineno-0-17"><span class="linenos" data-linenos="17 "></span></a><span class="n">HttpResponseMessage</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">retryPipeline</span><span class="p">.</span><span class="n">ExecuteAsync</span><span class="p">(</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><a href="#__codelineno-0-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="n">ct</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="s">"https://api.example.com/orders"</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">),</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><a href="#__codelineno-0-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">  </span><span class="n">cancellationToken</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="circuit-breaker"><strong>Circuit Breaker</strong><a class="headerlink" href="#circuit-breaker" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Use circuit breaker when a downstream dependency is already unhealthy and you want to <ins>fail fast</ins> instead of repeatedly hammering it.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly.CircuitBreaker</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="kt">var</span><span class="w"> </span><span class="n">circuitBreakerPipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResiliencePipelineBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="hll"><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">AddCircuitBreaker</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CircuitBreakerStrategyOptions</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span>
+</span><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="hll"><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="n">ShouldHandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PredicateBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+</span><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">Handle</span><span class="o">&lt;</span><span class="n">HttpRequestException</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">HandleResult</span><span class="p">(</span><span class="n">response</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">response</span><span class="p">.</span><span class="n">StatusCode</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">500</span><span class="p">),</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">    </span><span class="n">FailureRatio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">    </span><span class="n">SamplingDuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span><span class="n">MinimumThroughput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">    </span><span class="n">BreakDuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">  </span><span class="p">})</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><a href="#__codelineno-1-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><a href="#__codelineno-1-16"><span class="linenos" data-linenos="16 "></span></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><a href="#__codelineno-1-17"><span class="linenos" data-linenos="17 "></span></a><span class="n">HttpResponseMessage</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">circuitBreakerPipeline</span><span class="p">.</span><span class="n">ExecuteAsync</span><span class="p">(</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><a href="#__codelineno-1-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="n">ct</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="s">"https://inventory.example.com/stock"</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">),</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><a href="#__codelineno-1-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">  </span><span class="n">cancellationToken</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="fallback"><strong>Fallback</strong><a class="headerlink" href="#fallback" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Use fallback when the primary action fails and you can still return a <ins>safe substitute</ins>, such as cached data or a default response.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Net</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly.Fallback</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="kt">var</span><span class="w"> </span><span class="n">fallbackPipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResiliencePipelineBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="hll"><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">AddFallback</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FallbackStrategyOptions</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span>
+</span><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="hll"><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">    </span><span class="n">ShouldHandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PredicateBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+</span><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">Handle</span><span class="o">&lt;</span><span class="n">HttpRequestException</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">HandleResult</span><span class="p">(</span><span class="n">response</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">response</span><span class="p">.</span><span class="n">StatusCode</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">500</span><span class="p">),</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">    </span><span class="n">FallbackAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Outcome</span><span class="p">.</span><span class="n">FromResultAsValueTask</span><span class="p">(</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="nf">HttpResponseMessage</span><span class="p">(</span><span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">OK</span><span class="p">)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">        </span><span class="n">Content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringContent</span><span class="p">(</span><span class="s">"{\"source\":\"fallback-cache\"}"</span><span class="p">)</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><a href="#__codelineno-2-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">      </span><span class="p">})</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><a href="#__codelineno-2-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">  </span><span class="p">})</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><a href="#__codelineno-2-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><a href="#__codelineno-2-18"><span class="linenos" data-linenos="18 "></span></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><a href="#__codelineno-2-19"><span class="linenos" data-linenos="19 "></span></a><span class="n">HttpResponseMessage</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">fallbackPipeline</span><span class="p">.</span><span class="n">ExecuteAsync</span><span class="p">(</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><a href="#__codelineno-2-20"><span class="linenos" data-linenos="20 "></span></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="n">ct</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="s">"https://pricing.example.com/catalog"</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">),</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><a href="#__codelineno-2-21"><span class="linenos" data-linenos="21 "></span></a><span class="w">  </span><span class="n">cancellationToken</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="hedging"><strong>Hedging</strong><a class="headerlink" href="#hedging" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Use hedging when <ins>latency matters</ins> and sending another attempt to an alternate endpoint can reduce tail latency.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly.Hedging</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="kt">var</span><span class="w"> </span><span class="n">hedgingPipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResiliencePipelineBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="hll"><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">AddHedging</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">HedgingStrategyOptions</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span>
+</span><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="hll"><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="n">ShouldHandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PredicateBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+</span><a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">Handle</span><span class="o">&lt;</span><span class="n">HttpRequestException</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">HandleResult</span><span class="p">(</span><span class="n">response</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">response</span><span class="p">.</span><span class="n">StatusCode</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">500</span><span class="p">),</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">    </span><span class="n">MaxHedgedAttempts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><a href="#__codelineno-3-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">    </span><span class="n">Delay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMilliseconds</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><a href="#__codelineno-3-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span><span class="n">ActionGenerator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=&gt;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><a href="#__codelineno-3-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><a href="#__codelineno-3-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">      </span><span class="kt">var</span><span class="w"> </span><span class="n">endpoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><a href="#__codelineno-3-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><a href="#__codelineno-3-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">        </span><span class="s">"https://api-east.example.com/search"</span><span class="p">,</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><a href="#__codelineno-3-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">        </span><span class="s">"https://api-west.example.com/search"</span><span class="p">,</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><a href="#__codelineno-3-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">        </span><span class="s">"https://api-central.example.com/search"</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><a href="#__codelineno-3-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">      </span><span class="p">};</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><a href="#__codelineno-3-20"><span class="linenos" data-linenos="20 "></span></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><a href="#__codelineno-3-21"><span class="linenos" data-linenos="21 "></span></a><span class="w">      </span><span class="kt">var</span><span class="w"> </span><span class="n">endpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">endpoints</span><span class="p">[</span><span class="n">Math</span><span class="p">.</span><span class="n">Min</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">AttemptNumber</span><span class="p">,</span><span class="w"> </span><span class="n">endpoints</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)];</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><a href="#__codelineno-3-22"><span class="linenos" data-linenos="22 "></span></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><a href="#__codelineno-3-23"><span class="linenos" data-linenos="23 "></span></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nf">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><a href="#__codelineno-3-24"><span class="linenos" data-linenos="24 "></span></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><a href="#__codelineno-3-25"><span class="linenos" data-linenos="25 "></span></a><span class="w">        </span><span class="k">try</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><a href="#__codelineno-3-26"><span class="linenos" data-linenos="26 "></span></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><a href="#__codelineno-3-27"><span class="linenos" data-linenos="27 "></span></a><span class="w">          </span><span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">.</span><span class="n">ActionContext</span><span class="p">.</span><span class="n">CancellationToken</span><span class="p">);</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><a href="#__codelineno-3-28"><span class="linenos" data-linenos="28 "></span></a><span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">Outcome</span><span class="p">.</span><span class="n">FromResult</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><a href="#__codelineno-3-29"><span class="linenos" data-linenos="29 "></span></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><a href="#__codelineno-3-30"><span class="linenos" data-linenos="30 "></span></a><span class="w">        </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a><a href="#__codelineno-3-31"><span class="linenos" data-linenos="31 "></span></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a><a href="#__codelineno-3-32"><span class="linenos" data-linenos="32 "></span></a><span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">Outcome</span><span class="p">.</span><span class="n">FromException</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ex</span><span class="p">);</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><a href="#__codelineno-3-33"><span class="linenos" data-linenos="33 "></span></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a><a href="#__codelineno-3-34"><span class="linenos" data-linenos="34 "></span></a><span class="w">      </span><span class="p">};</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a><a href="#__codelineno-3-35"><span class="linenos" data-linenos="35 "></span></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a><a href="#__codelineno-3-36"><span class="linenos" data-linenos="36 "></span></a><span class="w">  </span><span class="p">})</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a><a href="#__codelineno-3-37"><span class="linenos" data-linenos="37 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><a href="#__codelineno-3-38"><span class="linenos" data-linenos="38 "></span></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a><a href="#__codelineno-3-39"><span class="linenos" data-linenos="39 "></span></a><span class="n">HttpResponseMessage</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">hedgingPipeline</span><span class="p">.</span><span class="n">ExecuteAsync</span><span class="p">(</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a><a href="#__codelineno-3-40"><span class="linenos" data-linenos="40 "></span></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="n">ct</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="s">"https://api-east.example.com/search"</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">),</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><a href="#__codelineno-3-41"><span class="linenos" data-linenos="41 "></span></a><span class="w">  </span><span class="n">cancellationToken</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="timeout"><strong>Timeout</strong><a class="headerlink" href="#timeout" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Use timeout when an operation should not be allowed to <ins>wait forever</ins>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly.Timeout</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="kt">var</span><span class="w"> </span><span class="n">timeoutPipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResiliencePipelineBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="hll"><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">AddTimeout</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</span><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="n">HttpResponseMessage</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">timeoutPipeline</span><span class="p">.</span><span class="n">ExecuteAsync</span><span class="p">(</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="n">ct</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="s">"https://reporting.example.com/summary"</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">),</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">  </span><span class="n">cancellationToken</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="rate-limiter"><strong>Rate Limiter</strong><a class="headerlink" href="#rate-limiter" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Use rate limiting to <ins>protect a shared dependency</ins> from excessive load.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly.RateLimiting</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.RateLimiting</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><a href="#__codelineno-5-4"><span class="linenos" data-linenos=" 4 "></span></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><a href="#__codelineno-5-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="kt">var</span><span class="w"> </span><span class="n">limiter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SlidingWindowRateLimiter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SlidingWindowRateLimiterOptions</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><a href="#__codelineno-5-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><a href="#__codelineno-5-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">  </span><span class="n">PermitLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><a href="#__codelineno-5-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">  </span><span class="n">Window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMinutes</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><a href="#__codelineno-5-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">  </span><span class="n">SegmentsPerWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><a href="#__codelineno-5-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">  </span><span class="n">QueueLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><a href="#__codelineno-5-11"><span class="linenos" data-linenos="11 "></span></a><span class="p">});</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><a href="#__codelineno-5-12"><span class="linenos" data-linenos="12 "></span></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><a href="#__codelineno-5-13"><span class="linenos" data-linenos="13 "></span></a><span class="kt">var</span><span class="w"> </span><span class="n">rateLimiterPipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResiliencePipelineBuilder</span><span class="p">()</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="hll"><a href="#__codelineno-5-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">AddRateLimiter</span><span class="p">(</span><span class="n">limiter</span><span class="p">)</span>
+</span><a id="__codelineno-5-15" name="__codelineno-5-15"></a><a href="#__codelineno-5-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><a href="#__codelineno-5-16"><span class="linenos" data-linenos="16 "></span></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><a href="#__codelineno-5-17"><span class="linenos" data-linenos="17 "></span></a><span class="k">await</span><span class="w"> </span><span class="n">rateLimiterPipeline</span><span class="p">.</span><span class="n">ExecuteAsync</span><span class="p">(</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><a href="#__codelineno-5-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="n">ct</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">SendMessageToDownstreamAsync</span><span class="p">(</span><span class="n">ct</span><span class="p">),</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a><a href="#__codelineno-5-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">  </span><span class="n">cancellationToken</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="combined-example"><strong>Combined Example</strong><a class="headerlink" href="#combined-example" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>In real systems, you often <ins>compose</ins> several strategies together instead of using only one.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly.Fallback</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly.Retry</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="k">using</span><span class="w"> </span><span class="nn">Polly.Timeout</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><a href="#__codelineno-6-5"><span class="linenos" data-linenos=" 5 "></span></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><a href="#__codelineno-6-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="kt">var</span><span class="w"> </span><span class="n">pipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResiliencePipelineBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="hll"><a href="#__codelineno-6-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">AddFallback</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FallbackStrategyOptions</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span>
+</span><a id="__codelineno-6-8" name="__codelineno-6-8"></a><a href="#__codelineno-6-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><a href="#__codelineno-6-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">    </span><span class="n">ShouldHandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PredicateBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><a href="#__codelineno-6-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">Handle</span><span class="o">&lt;</span><span class="n">HttpRequestException</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><a href="#__codelineno-6-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">HandleResult</span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">r</span><span class="p">.</span><span class="n">StatusCode</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">500</span><span class="p">),</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><a href="#__codelineno-6-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span><span class="n">FallbackAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Outcome</span><span class="p">.</span><span class="n">FromResultAsValueTask</span><span class="p">(</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><a href="#__codelineno-6-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="nf">HttpResponseMessage</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">OK</span><span class="p">)</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><a href="#__codelineno-6-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><a href="#__codelineno-6-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">        </span><span class="n">Content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringContent</span><span class="p">(</span><span class="s">"fallback response"</span><span class="p">)</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><a href="#__codelineno-6-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">      </span><span class="p">})</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><a href="#__codelineno-6-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">  </span><span class="p">})</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><a href="#__codelineno-6-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">AddRetry</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RetryStrategyOptions</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><a href="#__codelineno-6-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><a href="#__codelineno-6-20"><span class="linenos" data-linenos="20 "></span></a><span class="w">    </span><span class="n">ShouldHandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PredicateBuilder</span><span class="o">&lt;</span><span class="n">HttpResponseMessage</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><a href="#__codelineno-6-21"><span class="linenos" data-linenos="21 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">Handle</span><span class="o">&lt;</span><span class="n">HttpRequestException</span><span class="o">&gt;</span><span class="p">()</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a><a href="#__codelineno-6-22"><span class="linenos" data-linenos="22 "></span></a><span class="w">      </span><span class="p">.</span><span class="n">HandleResult</span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">r</span><span class="p">.</span><span class="n">StatusCode</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">500</span><span class="p">),</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a><a href="#__codelineno-6-23"><span class="linenos" data-linenos="23 "></span></a><span class="w">    </span><span class="n">MaxRetryAttempts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="hll"><a href="#__codelineno-6-24"><span class="linenos" data-linenos="24 "></span></a><span class="w">    </span><span class="n">Delay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMilliseconds</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+</span><a id="__codelineno-6-25" name="__codelineno-6-25"></a><a href="#__codelineno-6-25"><span class="linenos" data-linenos="25 "></span></a><span class="w">  </span><span class="p">})</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a><a href="#__codelineno-6-26"><span class="linenos" data-linenos="26 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">AddTimeout</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27"></a><a href="#__codelineno-6-27"><span class="linenos" data-linenos="27 "></span></a><span class="w">  </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a><a href="#__codelineno-6-28"><span class="linenos" data-linenos="28 "></span></a>
+<a id="__codelineno-6-29" name="__codelineno-6-29"></a><a href="#__codelineno-6-29"><span class="linenos" data-linenos="29 "></span></a><span class="n">HttpResponseMessage</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">pipeline</span><span class="p">.</span><span class="n">ExecuteAsync</span><span class="p">(</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a><a href="#__codelineno-6-30"><span class="linenos" data-linenos="30 "></span></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="n">ct</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="s">"https://api.example.com/data"</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">),</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a><a href="#__codelineno-6-31"><span class="linenos" data-linenos="31 "></span></a><span class="w">  </span><span class="n">cancellationToken</span><span class="p">);</span>
+</code></pre></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Anchor link to this section for reference">⚓︎</a></h2>
 <ul>
 <li><a href="https://www.pollydocs.org/strategies/index.html">Polly Docs: Resilience Strategies</a></li>
@@ -2159,7 +2543,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="April 5, 2026 15:16:26 UTC">April 5, 2026 15:16:26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="April 26, 2026 22:27:19 UTC">April 26, 2026 22:27:19</span>
   </span>
 
     
