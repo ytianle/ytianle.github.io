@@ -5,35 +5,35 @@
       
       
       
-        <link rel="canonical" href="https://ytianle.github.io/programming/cpp/type_system/auto_decltype/">
+        <link rel="canonical" href="https://ytianle.github.io/programming/csharp/class_modifier_internal/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../class_modifier_private_sealed/">
       
       
-        <link rel="next" href="../../stl/">
+        <link rel="next" href="../extension_methods/">
       
       
         
-          <link rel="alternate" href="../../../.." hreflang="en">
+          <link rel="alternate" href="../../.." hreflang="en">
         
           <link rel="alternate" href="https://ytianle-github-io.translate.goog/?_x_tr_sl=en&amp;_x_tr_tl=zh-CN&amp;_x_tr_hl=en&amp;_x_tr_pto=wapp" hreflang="zh-CN">
         
       
       
-      <link rel="icon" href="../../../../assets/images/self.ico">
+      <link rel="icon" href="../../../assets/images/self.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>auto &amp; decltype - Tianle's Blog</title>
+        <title>Class Modifier: Internal - Tianle's Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -52,17 +52,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-00-base.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-00-base.css">
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-10-layout-nav.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-10-layout-nav.css">
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-20-cards-media.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-20-cards-media.css">
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-30-admonitions.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-30-admonitions.css">
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra-40-typography.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra-40-typography.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -206,7 +206,7 @@
     })()
   </script>
 
-  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -235,7 +235,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#auto--decltype" class="md-skip">
+        <a href="#internal-classes" class="md-skip">
           Skip to content
         </a>
       
@@ -249,9 +249,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Tianle's Blog" class="md-header__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
+    <a href="../../.." title="Tianle's Blog" class="md-header__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
       
-  <img src="../../../../assets/images/logo.png" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -268,7 +268,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              auto &amp; decltype
+              Class Modifier: Internal
             
           </span>
         </div>
@@ -315,7 +315,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../.." hreflang="en" class="md-select__link">
+            <a href="../../.." hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -407,7 +407,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -428,7 +428,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../blog/" class="md-tabs__link">
+        <a href="../../../blog/" class="md-tabs__link">
           
   
   
@@ -452,7 +452,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../foundations/" class="md-tabs__link">
+        <a href="../../../foundations/" class="md-tabs__link">
           
   
   
@@ -478,7 +478,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -502,7 +502,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../systems/" class="md-tabs__link">
+        <a href="../../../systems/" class="md-tabs__link">
           
   
   
@@ -526,7 +526,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../vision/" class="md-tabs__link">
+        <a href="../../../vision/" class="md-tabs__link">
           
   
   
@@ -550,7 +550,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../interactive/" class="md-tabs__link">
+        <a href="../../../interactive/" class="md-tabs__link">
           
   
   
@@ -574,7 +574,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../humanities/" class="md-tabs__link">
+        <a href="../../../humanities/" class="md-tabs__link">
           
   
   
@@ -598,7 +598,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../indices/" class="md-tabs__link">
+        <a href="../../../indices/" class="md-tabs__link">
           
   
   
@@ -634,9 +634,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Tianle's Blog" class="md-nav__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
+    <a href="../../.." title="Tianle's Blog" class="md-nav__button md-logo" aria-label="Tianle's Blog" data-md-component="logo">
       
-  <img src="../../../../assets/images/logo.png" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     Tianle's Blog
@@ -663,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -718,7 +718,7 @@
   
   
   
-    <a href="../../../../blog/" class="md-nav__link">
+    <a href="../../../blog/" class="md-nav__link">
       
   
   
@@ -787,7 +787,7 @@
   
   
   
-    <a href="../../../../foundations/" class="md-nav__link">
+    <a href="../../../foundations/" class="md-nav__link">
       
   
   
@@ -864,7 +864,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -942,7 +942,7 @@
   
   
   
-    <a href="../../../net/" class="md-nav__link">
+    <a href="../../net/" class="md-nav__link">
       
   
   
@@ -973,6 +973,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1002,19 +1004,20 @@
     
     
       
-        
-        
-      
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked="">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
-  
-    <a href="../../../csharp/" class="md-nav__link">
-      
-  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.5 15.97.41 2.44c-.26.14-.68.27-1.24.39-.57.13-1.24.2-2.01.2-2.21-.04-3.87-.7-4.98-1.96Q2 15.135 2 12.21c.05-2.31.72-4.08 2-5.32C5.32 5.64 6.96 5 8.94 5c.75 0 1.4.07 1.94.19s.94.25 1.2.4l-.58 2.49-1.06-.34c-.4-.1-.86-.15-1.39-.15-1.16-.01-2.12.36-2.87 1.1-.76.73-1.15 1.85-1.18 3.34 0 1.36.37 2.42 1.08 3.2.71.77 1.71 1.17 2.99 1.18l1.33-.12c.43-.08.79-.19 1.1-.32M13.89 19l.61-4H13l.34-2h1.5l.32-2h-1.5L14 9h1.5l.61-4h2l-.61 4h1l.61-4h2l-.61 4H22l-.34 2h-1.5l-.32 2h1.5L21 15h-1.5l-.61 4h-2l.61-4h-1l-.61 4zm2.95-6h1l.32-2h-1z"></path></svg>
   
   <span class="md-ellipsis">
     
@@ -1027,12 +1030,258 @@
   
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C#
   
 
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../field_modifier_const_vs_static_readonly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Modifier: Const vs Static Readonly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_modifier_private_sealed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class Modifier: Private Sealed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class Modifier: Internal
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class Modifier: Internal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#internal-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension_methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extension Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../method_modifier_private_static.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Method Modifier: Private Static
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1078,7 +1327,7 @@
   
   
   
-    <a href="../../../sql/" class="md-nav__link">
+    <a href="../../sql/" class="md-nav__link">
       
   
   
@@ -1138,7 +1387,7 @@
   
   
   
-    <a href="../../../coding_principles/" class="md-nav__link">
+    <a href="../../coding_principles/" class="md-nav__link">
       
   
   
@@ -1200,7 +1449,7 @@
   
   
   
-    <a href="../../../swift/" class="md-nav__link">
+    <a href="../../swift/" class="md-nav__link">
       
   
   
@@ -1231,8 +1480,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1260,20 +1507,19 @@
     
     
       
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked="">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
-              
   
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10.5 15.97.41 2.44c-.26.14-.68.27-1.24.39-.57.13-1.24.2-2.01.2-2.21-.04-3.87-.7-4.98-1.96Q1 15.135 1 12.21c.05-2.31.72-4.08 2-5.32C4.32 5.64 5.96 5 7.94 5c.75 0 1.4.07 1.94.19s.94.25 1.2.4l-.58 2.49-1.06-.34c-.4-.1-.86-.15-1.39-.15-1.16-.01-2.12.36-2.87 1.1-.76.73-1.15 1.85-1.18 3.34 0 1.36.37 2.42 1.08 3.2.71.77 1.71 1.17 2.99 1.18l1.33-.12c.43-.08.79-.19 1.1-.32M11 11h2V9h2v2h2v2h-2v2h-2v-2h-2zm7 0h2V9h2v2h2v2h-2v2h-2v-2h-2z"></path></svg>
+  
+    <a href="../../cpp/" class="md-nav__link">
+      
+  
   
   <span class="md-ellipsis">
     
@@ -1286,78 +1532,6 @@
   
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    C++
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../memory/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Memory
-  
-
-    
-  </span>
-  
-  
-
       
         <span class="md-nav__icon md-icon"></span>
       
@@ -1383,8 +1557,6 @@
           
         
       
-        
-      
     
     
     
@@ -1403,397 +1575,7 @@
   
   
   
-    <a href="../../abstraction/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Abstraction
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../templates/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Templates
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_5" checked="">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v2h2v8h2V9h2V7zM5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2"></path></svg>
-  
-  <span class="md-ellipsis">
-    
-  
-    Type System
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_7_5" id="__nav_4_7_5_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_7_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Type System
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    auto &amp; decltype
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    auto &amp; decltype
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#auto-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        auto type
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decltypeexp-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        decltype(exp) type
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decltypeexp-type-advance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        decltype(exp) type [advance]
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../stl/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STL
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../../glsl/" class="md-nav__link">
+    <a href="../../glsl/" class="md-nav__link">
       
   
   
@@ -1857,7 +1639,7 @@
   
   
   
-    <a href="../../../javascript/" class="md-nav__link">
+    <a href="../../javascript/" class="md-nav__link">
       
   
   
@@ -1934,7 +1716,7 @@
   
   
   
-    <a href="../../../../systems/" class="md-nav__link">
+    <a href="../../../systems/" class="md-nav__link">
       
   
   
@@ -1997,7 +1779,7 @@
   
   
   
-    <a href="../../../../vision/" class="md-nav__link">
+    <a href="../../../vision/" class="md-nav__link">
       
   
   
@@ -2058,7 +1840,7 @@
   
   
   
-    <a href="../../../../interactive/" class="md-nav__link">
+    <a href="../../../interactive/" class="md-nav__link">
       
   
   
@@ -2121,7 +1903,7 @@
   
   
   
-    <a href="../../../../humanities/" class="md-nav__link">
+    <a href="../../../humanities/" class="md-nav__link">
       
   
   
@@ -2194,7 +1976,7 @@
   
   
   
-    <a href="../../../../indices/" class="md-nav__link">
+    <a href="../../../indices/" class="md-nav__link">
       
   
   
@@ -2249,43 +2031,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#auto-type" class="md-nav__link">
+  <a href="#internal-class" class="md-nav__link">
     <span class="md-ellipsis">
       
-        auto type
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decltypeexp-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        decltype(exp) type
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decltypeexp-type-advance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        decltype(exp) type [advance]
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reference
+        Internal Class
       
     </span>
   </a>
@@ -2317,7 +2066,7 @@
   
   
     <li class="md-path__item">
-      <a href="../../../.." class="md-path__link">
+      <a href="../../.." class="md-path__link">
         
   <span class="md-ellipsis">
     HOME
@@ -2335,7 +2084,7 @@
     
     
       <li class="md-path__item">
-        <a href="../../../" class="md-path__link">
+        <a href="../../" class="md-path__link">
           
   <span class="md-ellipsis">
     PROGRAMMING
@@ -2353,28 +2102,10 @@
     
     
       <li class="md-path__item">
-        <a href="../../" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    C++
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
         <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    Type System
+    C#
   </span>
 
         </a>
@@ -2406,131 +2137,32 @@
 
 
 
-<h1 id="auto--decltype"><strong><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91s.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69s.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91M12 19.11c-3.92 0-7.109-3.19-7.109-7.11s3.19-7.11 7.11-7.11a7.13 7.13 0 0 1 6.156 3.553l-3.076 1.78a3.57 3.57 0 0 0-3.08-1.78A3.56 3.56 0 0 0 8.444 12 3.56 3.56 0 0 0 12 15.555a3.57 3.57 0 0 0 3.08-1.778l3.078 1.78A7.14 7.14 0 0 1 12 19.11m7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"></path></svg></span> auto &amp; decltype</strong><a class="headerlink" href="#auto--decltype" title="Anchor link to this section for reference">⚓︎</a></h1>
-<h2 id="auto-type"><strong>auto type</strong><a class="headerlink" href="#auto-type" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p><code>auto</code> type can help the compiler to derivate the type of a variable <u>from the right side of</u> <code>=</code> when it is <strong>in the compiling stage</strong>.</p>
-<div class="highlight"><span class="filename">auto.cpp</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">auto</span><span class="w"> </span><span class="n">m_int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// since 10 is int type, the type of `m_int` has been automatially derivated as `int`</span>
-</code></pre></div>
-<h2 id="decltypeexp-type"><strong>decltype(exp) type</strong><a class="headerlink" href="#decltypeexp-type" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p><code>decltype(exp)</code> can be understood as: "declare type" from expression. <code>decltype</code> can derivate the type of the variable from the expression <code>exp</code>. It does not care about what is showing on the right side of <code>=</code>.</p>
-<div class="highlight"><span class="filename">decltype.cpp</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="kt">int</span><span class="w"> </span><span class="n">m_variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">decltype</span><span class="p">(</span><span class="n">m_variable</span><span class="p">)</span><span class="w"> </span><span class="n">m_test1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//`m_test1` has been derivated to `int`</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a><span class="k">decltype</span><span class="p">(</span><span class="mf">10.8</span><span class="p">)</span><span class="w"> </span><span class="n">m_test2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.5</span><span class="p">;</span><span class="w">      </span><span class="c1">//`m_test2` has been derivated to `double`</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a><span class="k">decltype</span><span class="p">(</span><span class="n">m_test2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="n">m_test3</span><span class="p">;</span><span class="w">   </span><span class="c1">//`m_test3` has been derivated to `double`</span>
-</code></pre></div>
-<details class="warning" open="open">
-<summary>Watch out!</summary>
+<h1 id="internal-classes">Internal Classes<a class="headerlink" href="#internal-classes" title="Anchor link to this section for reference">⚓︎</a></h1>
+<h2 id="internal-class">Internal Class<a class="headerlink" href="#internal-class" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>In C#, a class with the <code>internal</code> access modifier:</p>
 <ul>
-<li>
-<p><code>auto</code> requires the initialization of the variable. <code>decltype</code> do not.</p>
-</li>
-<li>
-<p><code>decltype</code> can process any complex expression. But! the result of the <code>exp</code> should not be <code>void</code>.</p>
-</li>
-</ul>
-</details>
-<h2 id="decltypeexp-type-advance"><strong>decltype(exp) type [advance]</strong><a class="headerlink" href="#decltypeexp-type-advance" title="Anchor link to this section for reference">⚓︎</a></h2>
-<p>Before we go in advance, let's figure out <code>lvalue</code> and <code>rvalue</code>:</p>
-<div class="arithmatex">\[lvalue = rvalue\]</div>
-<ul>
-<li><code>lvalue</code>: data that persists after the expression is executed, that is, <strong>persistent data</strong>. We can retrieve the data by referring to its address.</li>
-<li><code>rvalue</code>: data that no longer exists at the end of the expression execution, that is, <strong>temporary data</strong>.</li>
+<li>can be referenced from anywhere in the <ins>same assembly</ins>.</li>
+<li>cannot be referenced directly from a different assembly.</li>
 </ul>
 <details class="note" open="open">
-<summary><u>Three principles</u> for compiler processing the <code>decltype(exp)</code>:</summary>
-<ol>
-<li>If <code>exp</code> is any of the cases below, the type of <code>decltype(exp)</code> is the same as <code>exp</code>.<ul>
-<li>an expression not surrounded by parentheses <code>()</code>;</li>
-<li>an expression to access a <strong>class member</strong>;</li>
-<li>a single variable.</li>
-</ul>
-</li>
-<li>If <code>exp</code> is any of the cases below, the type of <code>decltype(exp)</code> is the same as <code>exp</code>'s reference (i.e if <code>T exp</code>, then <code>T&amp; decltype(exp)</code>).<ul>
-<li>an lvalue;</li>
-<li>an expression surrounded by parentheses <code>()</code>.</li>
-</ul>
-</li>
-<li>If <code>exp</code> is a <strong>function call</strong>, then the type of <code>decltype(exp)</code> is the same as the type of the value returned by the function.</li>
-</ol>
+<summary>Assembly?</summary>
+<p>An <code>assembly</code> is a compiled code library used for deployment, versioning, and security in .NET. Different <code>assemblies</code> can be thought of as different <strong>projects</strong> or <strong>modules</strong> in a larger application. </p>
+<p><strong>Solutions</strong> usually contain multiple projects, and each project compiles into its own assembly.</p>
 </details>
-<details class="example" open="open">
-<summary>Case 1</summary>
-<div class="highlight"><span class="filename">case1.cpp</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">{</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m_ID</span><span class="p">;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">m_name</span><span class="p">;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="p">};</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a><span class="kt">int</span><span class="w"> </span><span class="n">Student</span><span class="o">::</span><span class="n">m_ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a><span class="kt">int</span><span class="w">  </span><span class="nf">main</span><span class="p">(){</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">    </span><span class="n">Student</span><span class="w"> </span><span class="n">Daming</span><span class="p">;</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n_int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><a href="#__codelineno-2-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n_refint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n_int</span><span class="p">;</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><a href="#__codelineno-2-16"><span class="linenos" data-linenos="16 "></span></a>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a><a href="#__codelineno-2-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">n_int</span><span class="p">)</span><span class="w"> </span><span class="n">test1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n_int</span><span class="p">;</span><span class="w">             </span><span class="c1">//`n_int` is of type `int`, and `test1` is derived as type `int`</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><a href="#__codelineno-2-18"><span class="linenos" data-linenos="18 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">n_refint</span><span class="p">)</span><span class="w"> </span><span class="n">test2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">test1</span><span class="p">;</span><span class="w">          </span><span class="c1">//`n_refint` is of type `const int&amp;`, and `test2` is derived as type `const int&amp;`</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><a href="#__codelineno-2-19"><span class="linenos" data-linenos="19 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">Student</span><span class="o">::</span><span class="n">m_ID</span><span class="p">)</span><span class="w"> </span><span class="n">test3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">         </span><span class="c1">//`total` is a member variable of type `int` of class `Student`, and `test3` is derived from typing `int`</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><a href="#__codelineno-2-20"><span class="linenos" data-linenos="20 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">Daming</span><span class="p">.</span><span class="n">m_name</span><span class="p">)</span><span class="w"> </span><span class="n">test4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Daming"</span><span class="p">;</span><span class="w">  </span><span class="c1">//`total` is a string member variable of class `Student`, and `test4` is derived as a `string`</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a><a href="#__codelineno-2-21"><span class="linenos" data-linenos="21 "></span></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a><a href="#__codelineno-2-22"><span class="linenos" data-linenos="22 "></span></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">internal</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ReportFormatter</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Format</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">$"Report: {title}"</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="p">}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ReportService</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">BuildTitle</span><span class="p">()</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">formatter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ReportFormatter</span><span class="p">();</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">formatter</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">"Annual Summary"</span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a><span class="p">}</span>
 </code></pre></div>
-</details>
-<details class="example" open="open">
-<summary>Case 2</summary>
-<div class="highlight"><span class="filename">case2.cpp</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="kt">int</span><span class="w">  </span><span class="nf">main</span><span class="p">(){</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">    </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">func_int_r</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="p">);</span><span class="w">  </span><span class="c1">//the type of return is: int&amp;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">    </span><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">func_int_rr</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w">     </span><span class="c1">//the type of return is: int&amp;&amp;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">func_int</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span><span class="w">        </span><span class="c1">//the type of return is: int</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">fun_cint_r</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w">  </span><span class="c1">//the type of return is: const int&amp;</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">func_cint_rr</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span><span class="w">        </span><span class="c1">//the type of return is: const int&amp;&amp;</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><a href="#__codelineno-3-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><a href="#__codelineno-3-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">func_int_r</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="sc">'A'</span><span class="p">))</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w">  </span><span class="c1">//a's type is `int&amp;`</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><a href="#__codelineno-3-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">func_int_rr</span><span class="p">())</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">         </span><span class="c1">//b's type `int&amp;&amp;`</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><a href="#__codelineno-3-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">func_int</span><span class="p">(</span><span class="mf">10.5</span><span class="p">))</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">        </span><span class="c1">//c's type `int`</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><a href="#__codelineno-3-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">fun_cint_r</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w">    </span><span class="c1">//x's type const `int&amp;`</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><a href="#__codelineno-3-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">func_cint_rr</span><span class="p">())</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">        </span><span class="c1">//y's type const `int&amp;&amp;`   </span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><a href="#__codelineno-3-17"><span class="linenos" data-linenos="17 "></span></a><span class="p">}</span>
-</code></pre></div>
-</details>
-<details class="example" open="open">
-<summary>Case 3</summary>
-<div class="highlight"><span class="filename">case3.cpp</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">{</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_x</span><span class="p">;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="p">};</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><a href="#__codelineno-4-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">m_x</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">//`obj.m_x` is an access expression for a class member, which follows principle 1. The type of `a` is `int`</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><a href="#__codelineno-4-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">((</span><span class="n">obj</span><span class="p">.</span><span class="n">m_x</span><span class="p">))</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">  </span><span class="c1">//`obj.m_x` includes `()`, which follows principle 3. The type of `b` is `int&amp;`</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><a href="#__codelineno-4-13"><span class="linenos" data-linenos="13 "></span></a>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><a href="#__codelineno-4-14"><span class="linenos" data-linenos="14 "></span></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a><a href="#__codelineno-4-15"><span class="linenos" data-linenos="15 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">      </span><span class="c1">//`n+m` get a rvalue, which follows principle 1, thus type is `int`</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><a href="#__codelineno-4-16"><span class="linenos" data-linenos="16 "></span></a><span class="w">    </span><span class="k">decltype</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">  </span><span class="c1">//`n=n+m` get a lvalue, , which follows principle 3, thus type is `int&amp;`</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a><a href="#__codelineno-4-17"><span class="linenos" data-linenos="17 "></span></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a><a href="#__codelineno-4-18"><span class="linenos" data-linenos="18 "></span></a><span class="p">}</span>
-</code></pre></div>
-</details>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Anchor link to this section for reference">⚓︎</a></h2>
-<ul>
-<li>
-<p><a href="https://cloud.tencent.com/developer/article/1745592">Tencent Cloud</a></p>
-</li>
-<li>
-<p><a href="http://c.biancheng.net/view/7151.html">C++11</a></p>
-</li>
-</ul>
 
 
 
@@ -2556,7 +2188,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="February 1, 2026 05:26:40 UTC">February 1, 2026 05:26:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="April 27, 2026 04:12:22 UTC">April 27, 2026 04:12:22</span>
   </span>
 
     
@@ -2566,7 +2198,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="November 27, 2022 07:24:55 UTC">November 27, 2022 07:24:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="April 27, 2026 04:12:22 UTC">April 27, 2026 04:12:22</span>
   </span>
 
     
@@ -2699,16 +2331,16 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.path", "navigation.prune", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.follow", "content.code.annotate", "content.code.copy", "content.footnote.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.indexes", "navigation.path", "navigation.prune", "search.suggest", "search.highlight", "navigation.tabs", "navigation.top", "toc.follow", "content.code.annotate", "content.code.copy", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../../assets/javascripts/toc-anchor-fix.js"></script>
+        <script src="../../../assets/javascripts/toc-anchor-fix.js"></script>
       
-        <script src="../../../../assets/javascripts/mermaid.mjs" type="module"></script>
+        <script src="../../../assets/javascripts/mermaid.mjs" type="module"></script>
       
-        <script src="../../../../assets/javascripts/mathjax.js"></script>
+        <script src="../../../assets/javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
@@ -2716,11 +2348,11 @@
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
-        <script src="../../../../assets/javascripts/tablesort.js"></script>
+        <script src="../../../assets/javascripts/tablesort.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
       
-        <script src="../../../../assets/javascripts/extra-internet-markdown-ref.js"></script>
+        <script src="../../../assets/javascripts/extra-internet-markdown-ref.js"></script>
       
     
   
