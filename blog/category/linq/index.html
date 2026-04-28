@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://ytianle.github.io/blog/category/cicd/">
+        <link rel="canonical" href="https://ytianle.github.io/blog/category/linq/">
       
       
-        <link rel="prev" href="../cg-tech/">
+        <link rel="prev" href="../github-actions/">
       
       
-        <link rel="next" href="../deployment/">
+        <link rel="next" href="../programming/">
       
       
         
@@ -26,7 +26,7 @@
     
     
       
-        <title>CI/CD - Tianle's Blog</title>
+        <title>LINQ - Tianle's Blog</title>
       
     
     
@@ -235,7 +235,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cicd" class="md-skip">
+        <a href="#linq" class="md-skip">
           Skip to content
         </a>
       
@@ -268,7 +268,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CI/CD
+              LINQ
             
           </span>
         </div>
@@ -935,23 +935,12 @@
                 
   
   
-    
-  
   
     
-      
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cicd/" class="md-nav__link">
         
   
   
@@ -967,7 +956,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1067,12 +1055,23 @@
                 
   
   
-  
     
   
   
-    <li class="md-nav__item">
-      <a href="../linq/" class="md-nav__link">
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1088,6 +1087,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1821,7 +1821,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="cicd">CI/CD<a class="headerlink" href="#cicd" title="Anchor link to this section for reference">⚓︎</a></h1>
+        <h1 id="linq">LINQ<a class="headerlink" href="#linq" title="Anchor link to this section for reference">⚓︎</a></h1>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -1838,20 +1838,18 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-04-05 00:00:00+00:00">April 5, 2026</time></li>
+          <time datetime="2026-03-15 00:00:00+00:00">March 15, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="./" class="md-meta__link">CI/CD</a>, 
-              <a href="../github-actions/" class="md-meta__link">GitHub Actions</a>, 
-              <a href="../deployment/" class="md-meta__link">Deployment</a></li>
+              <a href="./" class="md-meta__link">LINQ</a></li>
         
         
           
           <li class="md-meta__item">
             
-              20 min read
+              10 min read
             
           </li>
         
@@ -1861,29 +1859,39 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="private-source-repo--public-site-repo"><a class="toclink" href="../../2026/04/05/private-source-repo--public-site-repo/">PRIVATE source repo → PUBLIC site repo</a></h2>
-<blockquote>
-<p>More secure way to deploy GitHub Page with repo in resource-public.</p>
-</blockquote>
-<p>With the security concerns of exposing source Markdown files and Git history, I recently switched my previous public GitHub Pages repository to a private source repository, which will only be responsible for building and deploying to a separate public repository.</p>
-<p>Let's check the best practices for this private-to-public deployment setup!</p>
-<h3 id="practice-background"><a class="toclink" href="../../2026/04/05/private-source-repo--public-site-repo/#practice-background">Practice Background</a></h3>
-<p>Let's take my old mkdown blog repo <code>ytianle.github.io</code> as an example, which was public and contained both the MkDocs source files and the generated static site. This meant that anyone could view the Markdown sources, commit history, and author information directly on GitHub.</p>
+    <h2 id="look-back-on-linq"><a class="toclink" href="../../2026/03/15/look-back-on-linq/">Look back on linq</a></h2>
+<p>Long times ago, when I touched keywords like <code>map</code>/<code>filter</code>/<code>reduce</code> in Swift. </p>
+<p>At that time, I generally called it <a href="https://en.wikipedia.org/wiki/Syntactic_sugar#:~:text=%5B4%5D-,Notable%20examples,-%5Bedit%5D">Syntax Sugar</a>. Today, I got a chance to continue digging into this concept as I am touching LINQ in C#.</p>
+<h4 id="story-begin"><a class="toclink" href="../../2026/03/15/look-back-on-linq/#story-begin">Story begin</a></h4>
+<p>My learning started from this fun pic:</p>
+<p><img :=":" alt="image" class="center" src="https://user-images.githubusercontent.com/61530469/200788862-2a87ba4d-b357-44dc-ae0b-813f490e8d93.png" width:30_="width:30%,">
+<a href="https://twitter.com/steveluscher/status/741089564329054208">Steven Luscher on Twitter</a></p>
+<p>After some investigation, I got this mapping from Swift to C#:
+- map -&gt; Select -&gt; projection -&gt; SELECT (SQL)
+- filter -&gt; Where -&gt; selection -&gt; WHERE
+- reduce -&gt; Aggregate -&gt;
+Ordering (ORDER BY)Grouping (GROUP BY)?</p>
+<h4 id="demurely"><a class="toclink" href="../../2026/03/15/look-back-on-linq/#demurely">Demurely</a></h4>
+<p>Generally, this group of primitives (which means <a href="https://stackoverflow.com/questions/68710486/could-anyone-help-explain-what-primitive-mean-in-programming-languages#:~:text=the%20most%20basic%20building%20blocks%20in%20a%20programing%20language">"the most basic building blocks in a programing language"</a>) come from <a href="https://blog.launchcode.org/functional-programming-languages?utm_term=&amp;utm_campaign=LC+-+Algorithm&amp;utm_source=adwords&amp;utm_medium=ppc&amp;hsa_acc=4368208516&amp;hsa_cam=17572421468&amp;hsa_grp=141741425967&amp;hsa_ad=605875422920&amp;hsa_src=g&amp;hsa_tgt=dsa-19959388920&amp;hsa_kw=&amp;hsa_mt=&amp;hsa_net=adwords&amp;hsa_ver=3&amp;gad_source=1&amp;gad_campaignid=17572421468&amp;gbraid=0AAAAADo0NYpFPHXdrqVCs-KffhBuj7Lr_&amp;gclid=CjwKCAjwtcHPBhADEiwAWo3sJtimCbOth8Gmy5fBXfCHN2XUji8E5T-NPnPZULOU-5edXDEHHq8cKxoCpcwQAvD_BwE"><code>Functional Programming</code></a>. Being simple, functions are the blocks for the Functional Programming (FP) language. </p>
+<h4 id="functional-programming-primitives"><a class="toclink" href="../../2026/03/15/look-back-on-linq/#functional-programming-primitives">Functional Programming Primitives</a></h4>
+<p>This <a href="https://underscorejs.org/">Underscore.js</a> provides a general list for normal function primitives we can see in FPL. Of course, <code>map</code>/<code>filter</code>/<code>reduce</code> are part of it. Language like C# not only supports OOP (Object-Oriented Programming) features but also some FP syntax. This is where LINQ from.</p>
+<h4 id="to-be-or-not-to-be"><a class="toclink" href="../../2026/03/15/look-back-on-linq/#to-be-or-not-to-be">To be or not to be</a></h4>
+<p>When should we use LINQ and when shouldn't we?</p>
+<p>The answer can go back to FL. Taking video game as an example, when we need to manage thousand of states (player health, obstacles, character progression, etc.), it is easier to model this using objects, which hold state, instead of pure functions which can not hold information.</p>
+<p>So the conclusion is:</p>
+<p><strong>LINQ is better</strong> for data transformations:</p>
 <ul>
-<li><strong>Public repo (old):</strong> <code>ytianle.github.io</code> (public, contains both source and generated files)</li>
+<li>Stateless, symmetric collection transformations (filter / map / sort / aggregate)</li>
 </ul>
-<h3 id="migration-target"><a class="toclink" href="../../2026/04/05/private-source-repo--public-site-repo/#migration-target">Migration Target</a></h3>
+<p><strong>LINQ starts to break down</strong> (in this case, traditional for loop with if-else works safer and clear)<strong>:</strong></p>
 <ul>
-<li><strong>Private repo (old):</strong> <code>ytianle.github.io</code> → <code>ytianle.github.io_private</code> (MkDocs source, scripts, images, raw notes, build tooling)</li>
-<li><strong>Public repo (new):</strong> <code>ytianle.github.io</code> (public, contains generated static files only)</li>
+<li>Branching logic</li>
+<li>Special cases</li>
+<li>Order‑dependent behavior</li>
+<li>Early decisions</li>
+<li>Intermediate state that needs to be understood</li>
+<li>Side effects</li>
 </ul>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/04/05/private-source-repo--public-site-repo/">
-          Continue reading
-        </a>
-      </nav>
     
     
   </div>
