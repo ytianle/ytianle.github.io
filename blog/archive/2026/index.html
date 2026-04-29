@@ -1537,8 +1537,7 @@
 <p>At that time, I generally called it <a href="https://en.wikipedia.org/wiki/Syntactic_sugar#:~:text=%5B4%5D-,Notable%20examples,-%5Bedit%5D">Syntax Sugar</a>. Today, I got a chance to continue digging into this concept as I am touching LINQ in C#.</p>
 <h4 id="story-begins"><a class="toclink" href="../../2026/04/28/look-back-on-linq/#story-begins">Story begins</a></h4>
 <p>My learning started from this fun pic:</p>
-<p><img :=":" alt="image" class="center" src="https://user-images.githubusercontent.com/61530469/200788862-2a87ba4d-b357-44dc-ae0b-813f490e8d93.png" width:10_="width:10%,">
-<a href="https://twitter.com/steveluscher/status/741089564329054208">Steven Luscher on Twitter</a></p>
+<p><img :=":" _="," alt="image" class="center" src="https://user-images.githubusercontent.com/61530469/200788862-2a87ba4d-b357-44dc-ae0b-813f490e8d93.png" width="30%"></p>
 <p>After some investigation, I got this mapping from Swift to C#:</p>
 <ul>
 <li>map -&gt; Select -&gt; projection -&gt; SELECT (SQL)</li>
@@ -1547,27 +1546,13 @@
 <li>Ordering (ORDER BY)?</li>
 <li>Grouping (GROUP BY)?</li>
 </ul>
-<h4 id="demurely"><a class="toclink" href="../../2026/04/28/look-back-on-linq/#demurely">Demurely</a></h4>
-<p>Generally, this group of primitives (which means <a href="https://stackoverflow.com/questions/68710486/could-anyone-help-explain-what-primitive-mean-in-programming-languages#:~:text=the%20most%20basic%20building%20blocks%20in%20a%20programing%20language">"the most basic building blocks in a programing language"</a>) come from <a href="https://blog.launchcode.org/functional-programming-languages?utm_term=&amp;utm_campaign=LC+-+Algorithm&amp;utm_source=adwords&amp;utm_medium=ppc&amp;hsa_acc=4368208516&amp;hsa_cam=17572421468&amp;hsa_grp=141741425967&amp;hsa_ad=605875422920&amp;hsa_src=g&amp;hsa_tgt=dsa-19959388920&amp;hsa_kw=&amp;hsa_mt=&amp;hsa_net=adwords&amp;hsa_ver=3&amp;gad_source=1&amp;gad_campaignid=17572421468&amp;gbraid=0AAAAADo0NYpFPHXdrqVCs-KffhBuj7Lr_&amp;gclid=CjwKCAjwtcHPBhADEiwAWo3sJtimCbOth8Gmy5fBXfCHN2XUji8E5T-NPnPZULOU-5edXDEHHq8cKxoCpcwQAvD_BwE"><code>Functional Programming</code></a>. Being simple, functions are the blocks for the Functional Programming (FP) language. </p>
-<h4 id="functional-programming-primitives"><a class="toclink" href="../../2026/04/28/look-back-on-linq/#functional-programming-primitives">Functional Programming Primitives</a></h4>
-<p>This <a href="https://underscorejs.org/">Underscore.js</a> provides a general list of normal function primitives we can see in FPL. Of course, <code>map</code>/<code>filter</code>/<code>reduce</code> are part of it. Language like C# not only supports OOP (Object-Oriented Programming) features but also some FP syntax. This is where LINQ comes from.</p>
-<h4 id="to-be-or-not-to-be"><a class="toclink" href="../../2026/04/28/look-back-on-linq/#to-be-or-not-to-be">To be or not to be</a></h4>
-<p>When should we use LINQ, and when shouldn't we?</p>
-<p>The answer can go back to FL. Taking video games as an example, when we need to manage thousands of states (player health, obstacles, character progression, etc.), it is easier to model this using objects, which hold state, instead of pure functions, which can not hold information.</p>
-<p>So the conclusion is:</p>
-<p><strong>LINQ is better</strong> for data transformations:</p>
-<ul>
-<li>Stateless, symmetric collection transformations (filter / map / sort / aggregate)</li>
-</ul>
-<p><strong>LINQ starts to break down</strong> (in this case, traditional for loop with if-else works safer and clearer)<strong>:</strong></p>
-<ul>
-<li>Branching logic</li>
-<li>Special cases</li>
-<li>Order‑dependent behavior</li>
-<li>Early decisions</li>
-<li>Intermediate state that needs to be understood</li>
-<li>Side effects</li>
-</ul>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/04/28/look-back-on-linq/">
+          Continue reading
+        </a>
+      </nav>
     
     
   </div>
