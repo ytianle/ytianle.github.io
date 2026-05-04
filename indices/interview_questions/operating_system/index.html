@@ -74,8 +74,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&amp;family=Poppins:wght@400;600;700&amp;family=Pixelify+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
-  
-  </noscript><script type="text/javascript">
+  </noscript>
+  <script type="text/javascript">
     (function () {
       var load = function () {
         if (document.getElementById("yuantianle-github-io-7f7j3xbyx")) {
@@ -1578,6 +1578,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#different-states-of-processes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2233,6 +2244,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#different-states-of-processes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2690,6 +2712,55 @@
 </ul>
 </div>
 </details>
+<h3 id="context"><strong>Context</strong><a class="headerlink" href="#context" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>Click for answers 👇</summary>
+<div class="admonition note">
+<p class="admonition-title">OS Context (Execution Context)</p>
+<p>In operating systems, a <code>context</code> is the <strong>complete execution state</strong> required for the <u>CPU to pause and later resume a running entity (a process or a thread)</u>.
+It typically includes:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>- CPU registers (general‑purpose, flags, SIMD/FPU)
+<span class="linenos" data-linenos="2 "></span>- Program Counter (instruction pointer)
+<span class="linenos" data-linenos="3 "></span>- Stack Pointer
+<span class="linenos" data-linenos="4 "></span>- Kernel scheduling state (thread state, priority, time slice)
+<span class="linenos" data-linenos="5 "></span>- Process only: virtual memory state (page tables, address space)
+</code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Context Switch</p>
+<p>A <code>context switch</code> is the OS operation of <strong>saving</strong> the current execution context of one process or thread and <strong>restoring</strong> another, allowing multiple tasks to share the CPU.
+Context switches occur when:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>- A thread is preempted by the scheduler
+<span class="linenos" data-linenos="2 "></span>- A thread blocks on I/O or synchronization
+<span class="linenos" data-linenos="3 "></span>- An interrupt occurs
+<span class="linenos" data-linenos="4 "></span>- The OS switches between runnable entities
+</code></pre></div>
+<p>Context switches have measurable cost due to saving/restoring state and cache/TLB effects.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Thread Context vs. Process Context</p>
+<ul>
+<li>
+<p><strong>Process Context Switch</strong></p>
+<ul>
+<li>Switches between different processes</li>
+<li>Changes virtual address space</li>
+<li>Requires page table switch and typically TLB flush</li>
+<li>Significantly more expensive</li>
+</ul>
+</li>
+<li>
+<p><strong>Thread Context Switch</strong></p>
+<ul>
+<li>Switches between threads (often within the same process)</li>
+<li>Does not change the address space</li>
+<li>Saves/restores CPU registers, stack, program counter</li>
+<li>Relatively lightweight</li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
 <h3 id="different-states-of-processes"><strong>Different states of processes</strong><a class="headerlink" href="#different-states-of-processes" title="Anchor link to this section for reference">⚓︎</a></h3>
 <details class="question">
 <summary>Click for answers 👇</summary>
@@ -2981,7 +3052,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="February 1, 2026 05:26:40 UTC">February 1, 2026 05:26:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="May 4, 2026 20:08:54 UTC">May 4, 2026 20:08:54</span>
   </span>
 
     
