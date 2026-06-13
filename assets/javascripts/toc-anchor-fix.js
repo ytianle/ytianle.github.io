@@ -30,6 +30,7 @@
         try {
             var url = new URL(href, location.href);
             if (
+                url.origin   === location.origin &&
                 url.pathname === location.pathname &&
                 url.search   === location.search   &&
                 url.hash.length > 1
@@ -59,6 +60,19 @@
         return Math.max(0, offset - 4); // 4px above sticky bar → crosses IO threshold
     }
 
+    function getHashTarget(hash) {
+        if (!hash || hash.length <= 1) return null;
+
+        var rawId = hash.slice(1);
+        var decodedId = rawId;
+
+        try {
+            decodedId = decodeURIComponent(rawId);
+        } catch (_) {}
+
+        return document.getElementById(decodedId) || document.getElementById(rawId);
+    }
+
     document.addEventListener("click", function (e) {
         if (e.button || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
 
@@ -68,7 +82,7 @@
         var hash = getSamePageHash(anchor.getAttribute("href"));
         if (!hash) return;
 
-        var target = document.getElementById(hash.slice(1));
+        var target = getHashTarget(hash);
         if (!target) return;
 
         // Stop Material's bubble-phase instant-navigation handler from firing.
