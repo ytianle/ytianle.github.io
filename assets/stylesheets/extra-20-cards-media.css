@@ -10,6 +10,25 @@
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
 }
 
+@media screen and (max-width: 51.5625em) {
+    .md-typeset .grid.cards,
+    .md-typeset .grid.cards.cards-quarter {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media screen and (max-width: 34em) {
+    .md-typeset .grid.cards,
+    .md-typeset .grid.cards.cards-quarter {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .md-typeset .grid.cards.cards-quarter iframe {
+        height: auto;
+        min-height: 12rem;
+    }
+}
+
 .md-typeset .grid.cards.cards-quarter iframe {
     height: 140px;
 }
@@ -190,4 +209,3 @@
 .md-typeset .admonition, .md-typeset details {
     font-size: .80rem;
 }
-

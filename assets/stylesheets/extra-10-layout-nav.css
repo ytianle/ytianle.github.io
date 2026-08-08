@@ -1,5 +1,114 @@
 /* Layout and navigation behavior */
 
+/* Narrow layout: align the custom theme with Material's mobile breakpoint. */
+@media screen and (max-width: 51.5625em) {
+    html,
+    body {
+        overflow-x: clip;
+    }
+
+    .md-header__inner {
+        gap: 0.1rem;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+    }
+
+    .md-header__button {
+        margin: 0;
+        padding: 0.55rem;
+    }
+
+    .md-header__title {
+        margin-left: 0.2rem;
+        min-width: 0;
+    }
+
+    .md-header__topic,
+    .md-header__topic span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .md-main__inner {
+        margin-top: 0.7rem;
+    }
+
+    .md-content__inner {
+        margin: 0 0.75rem 1.2rem;
+        padding-top: 0.6rem;
+    }
+
+    .md-typeset {
+        overflow-wrap: anywhere;
+    }
+
+    .md-typeset img,
+    .md-typeset video,
+    .md-typeset iframe {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .md-typeset pre,
+    .md-typeset .highlight,
+    .md-typeset__table {
+        max-width: 100%;
+    }
+
+    .md-footer-meta__inner {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+    }
+
+    /* Mobile drawer header: retain readable contrast in both palettes. */
+    [data-md-color-scheme="default"] .md-nav--primary .md-nav__title[for=__drawer] {
+        background: #f6f7fb;
+        box-shadow: 0 1px 0 rgba(12, 15, 22, 0.08);
+        color: #0c0f16;
+    }
+
+    [data-md-color-scheme="default"] .md-nav--primary .md-nav__title[for=__drawer] .md-logo img {
+        filter: none;
+    }
+
+    [data-md-color-scheme="slate"] .md-nav--primary .md-nav__title[for=__drawer] {
+        background: #141821;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+        color: #edf2ff;
+    }
+
+    [data-md-color-scheme="slate"] .md-nav--primary .md-nav__title[for=__drawer] .md-logo img {
+        filter: invert(1) brightness(1.15);
+    }
+
+    [data-md-color-scheme="default"] .md-nav--primary .md-nav__source {
+        background: #e8eeff;
+        color: #243654;
+    }
+
+    [data-md-color-scheme="slate"] .md-nav--primary .md-nav__source {
+        background: #202634;
+        color: #edf2ff;
+    }
+}
+
+@media screen and (max-width: 30em) {
+    .md-header__button {
+        padding-left: 0.42rem;
+        padding-right: 0.42rem;
+    }
+
+    .md-header__title {
+        font-size: 0.82rem;
+    }
+
+    .md-content__inner {
+        margin-left: 0.55rem;
+        margin-right: 0.55rem;
+    }
+}
+
 /* Sidebar collapse toggle (desktop and up) */
 @media (min-width: 52em) {
     .sidebar-collapsed .md-sidebar--primary {
@@ -503,6 +612,41 @@
 
     .md-sidebar--primary .md-nav--secondary {
         display: block !important;
+    }
+}
+
+/* Small laptops and landscape tablets: one compact navigation rail is enough.
+   Keeping both rails at this width leaves the article too narrow to read. */
+@media screen and (min-width: 52em) and (max-width: 68.75em) {
+    :root {
+        --md-sidebar-width: 12rem;
+    }
+
+    .md-sidebar--primary {
+        width: 12rem !important;
+    }
+
+    .md-sidebar--primary .md-sidebar__scrollwrap {
+        margin-right: 1rem;
+    }
+
+    .md-sidebar--secondary,
+    .md-sidebar--secondary:not([hidden]) {
+        display: none !important;
+    }
+
+    [dir=ltr] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
+        margin-left: 0.8rem;
+        margin-right: 0 !important;
+    }
+
+    [dir=rtl] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
+        margin-left: 0 !important;
+        margin-right: 0.8rem;
+    }
+
+    .md-header__source {
+        display: none;
     }
 }
 

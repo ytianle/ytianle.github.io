@@ -24,7 +24,7 @@
     
     
       
-        <title>Intro - Tianle's Blog</title>
+        <title>Tianle's Blog</title>
       
     
     
@@ -261,7 +261,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intro
+              HOME
             
           </span>
         </div>
@@ -643,6 +643,21 @@
         display: none
     }
 
+    /* The homepage uses the top tabs on desktop and the drawer on narrow
+       screens. Do not let the desktop sidebar enter the hero document flow. */
+    @media screen and (min-width: 52em) {
+        .md-sidebar--primary,
+        .md-sidebar--secondary {
+            display: none !important;
+        }
+    }
+
+    @media screen and (max-width: 51.5625em) {
+        .md-sidebar--secondary {
+            display: none !important;
+        }
+    }
+
     @media screen and (min-width:60em) {
         .md-sidebar--secondary {
             display: none
@@ -761,29 +776,123 @@
         border: 1px solid #c7d7ff;
     }
 
-    @media (max-width: 720px) {
+    /* Compact homepage composition for phones, tablets and small laptops. */
+    @media (max-width: 68.75em) {
         :root {
-            --home-nav-offset: 6.2rem;
+            --home-nav-offset: 3rem;
         }
 
-        .md-tabs {
-            top: 3rem;
+        html,
+        body,
+        .mdx-container {
+            overflow-x: clip;
+        }
+
+        .mdx-container {
+            min-height: auto;
+        }
+
+        section {
+            height: clamp(36rem, 100svh, 50rem);
+            min-height: 36rem;
+        }
+
+        section::before {
+            height: 9rem;
+        }
+
+        section img {
+            margin: 0 !important;
+            max-width: none;
+            object-fit: contain;
+        }
+
+        #layer_sk {
+            height: auto !important;
+            left: -105% !important;
+            top: 23% !important;
+            width: 320% !important;
+        }
+
+        #layer_bg2 {
+            bottom: 20% !important;
+            height: auto !important;
+            left: -48% !important;
+            top: auto !important;
+            width: 205% !important;
+        }
+
+        #layer_bg1 {
+            bottom: 10% !important;
+            height: auto !important;
+            left: -52% !important;
+            top: auto !important;
+            width: 215% !important;
+        }
+
+        #layer_main {
+            bottom: -1% !important;
+            height: auto !important;
+            left: -86% !important;
+            top: auto !important;
+            width: 290% !important;
+        }
+
+        #pumpking {
+            height: auto !important;
+            left: 56% !important;
+            top: 17% !important;
+            width: clamp(6rem, 24vw, 9rem) !important;
+        }
+
+        #alice {
+            bottom: -2% !important;
+            height: auto !important;
+            left: auto !important;
+            right: -2% !important;
+            top: auto !important;
+            width: clamp(8rem, 31vw, 12rem) !important;
         }
 
         #text_name {
-            font-size: clamp(2.4rem, 10vw, 4.2rem) !important;
-            margin-left: 12% !important;
-            margin-Top: -30% !important;
+            font-size: clamp(2.35rem, 9vw, 4rem) !important;
+            left: 5%;
+            line-height: 1;
+            margin: 0 !important;
+            max-width: 90%;
+            position: absolute !important;
+            top: 6%;
+            z-index: 20;
         }
 
         #text_welcome {
-            font-size: clamp(2.6rem, 12vw, 4.6rem) !important;
-            margin-left: 18% !important;
+            color: #fff !important;
+            font-size: clamp(2.7rem, 11vw, 4.8rem) !important;
+            left: 7%;
+            line-height: 1;
+            margin: 0 !important;
+            position: absolute !important;
+            text-shadow: 0 2px 12px rgba(20, 28, 50, 0.45);
+            top: 43%;
+            z-index: 20;
+        }
+
+        .mdx-hero {
+            padding: 2.25rem 0 3rem;
         }
 
         .mdx-hero__content {
-            padding: 1.2rem 1.2rem;
-            margin: 0 0.8rem;
+            margin: 0;
+            padding: 1rem 1.25rem;
+        }
+
+        .mdx-hero__content h1 {
+            font-size: clamp(1.65rem, 6vw, 2.35rem);
+        }
+
+        .mdx-hero__content .md-button--primary {
+            min-height: 2.75rem;
+            padding: 0.7rem 1rem;
         }
     }
 
@@ -912,8 +1021,23 @@
             el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
         }
 
-        function update() {
+    function update() {
             ticking = false;
+            if (window.matchMedia("(max-width: 68.75em)").matches) {
+                const value = window.scrollY || 0;
+
+                // A restrained vertical parallax keeps the layered scene alive
+                // without pushing text or artwork outside the narrow viewport.
+                setTransform(layer_sk, 0, value * 0.04);
+                setTransform(text_name, 0, value * 0.025);
+                setTransform(pumpking, 0, value * 0.12);
+                setTransform(layer_bg2, 0, value * 0.035);
+                setTransform(layer_bg1, 0, value * 0.07);
+                setTransform(layer_main, 0, value * 0.11);
+                setTransform(text_welcome, 0, value * 0.055);
+                setTransform(alice, 0, value * 0.14);
+                return;
+            }
             const value = window.scrollY || 0;
 
             setTransform(layer_sk, value * 1.5, 0);
@@ -934,6 +1058,7 @@
 
         update();
         window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll, { passive: true });
     })();
 
 
