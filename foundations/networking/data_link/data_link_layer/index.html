@@ -2767,7 +2767,7 @@
 <h2 id="definition"><strong>Definition</strong><a class="headerlink" href="#definition" title="Anchor link to this section for reference">⚓︎</a></h2>
 <details class="question" open="open">
 <summary>Demand?</summary>
-<p>The <code>bitstream</code> can cause <strong>errors</strong> (see <a href="./physical_layer.md#cons">physical layer's cons</a>) when it is transmitted on a medium. We need a <strong>new layer</strong> that provides <mark class="critic">high-quality (error free)</mark> data transfer services to topper layers (such as <a href="./network_layer.md">network layer</a>).</p>
+<p>The <code>bitstream</code> can cause <strong>errors</strong> (see <a href="../../pysical/physical_layer/#cons">physical layer's cons</a>) when it is transmitted on a medium. We need a <strong>new layer</strong> that provides <mark class="critic">high-quality (error free)</mark> data transfer services to topper layers (such as <a href="../../network/network_layer/">network layer</a>).</p>
 <pre class="mermaid"><code>graph LR
     A[Network Layer] -- packets --- B[Data Link Layer]
     B -- "frames (bit-by-bit)" --- C[Physical Layer]</code></pre>
@@ -2787,7 +2787,7 @@
 <h2 id="abstracting"><strong>Abstracting</strong><a class="headerlink" href="#abstracting" title="Anchor link to this section for reference">⚓︎</a></h2>
 <details class="note" open="open">
 <summary>From <code>physical layer</code> to <code>data link layer</code></summary>
-<p>We know that in the <a href="./physical_layer.md"><code>physical layer</code></a>, information is communicated with bit stream through <u>cable or WIFI</u>. </p>
+<p>We know that in the <a href="../../pysical/physical_layer/"><code>physical layer</code></a>, information is communicated with bit stream through <u>cable or WIFI</u>.</p>
 <p>To abstract the <code>data link Layer</code>, we classify the <u>"communication channel"</u> in this layer into two types:</p>
 <ol>
 <li><strong>Point-to-point</strong> communication channel (use <a href="https://www.geeksforgeeks.org/p2ppeer-to-peer-file-sharing/">P2P</a> protocol).</li>
@@ -2913,7 +2913,7 @@
 </ul>
 </li>
 <li>
-<p>The <strong>Type/Lenth</strong> area identifies the type of data that follows the header. It is for <a href="./network_layer.md">layer three</a> using <a href="./">layer two</a> frames. It indicates which layer three's protocol is used. Popular values used with <code>TCP/IP</code> networks include:</p>
+<p>The <strong>Type/Lenth</strong> area identifies the type of data that follows the header. It is for <a href="../../network/network_layer/">layer three</a> using layer two frames. It indicates which layer three's protocol is used. Popular values used with <code>TCP/IP</code> networks include:</p>
 <ul>
 <li>IPv4 (0x0800)</li>
 <li>IPv6 (0x86DD)</li>
@@ -2924,7 +2924,7 @@
 <p>The <strong>DST</strong>, <strong>SRC</strong>, and <strong>Type/Lenth</strong> are composed as the <code>MAC header</code>.</p>
 </li>
 <li>
-<p>In the <strong>MAC Client Data</strong> field, we ignore the optional parts and only focus on <u>the <strong>Payload</strong> area, which is the data the frame carries from source to destination. The Payload data is <code>encapsulated</code> by the <a href="./network_layer.md">layer three</a>.</u></p>
+<p>In the <strong>MAC Client Data</strong> field, we ignore the optional parts and only focus on <u>the <strong>Payload</strong> area, which is the data the frame carries from source to destination. The Payload data is <code>encapsulated</code> by the <a href="../../network/network_layer/">layer three</a>.</u></p>
 </li>
 <li>
 <p>The <strong>FCS (frame check sequence)</strong> is used to identify any <strong>errors</strong> in the frame.</p>
@@ -3089,7 +3089,7 @@
 </details>
 <details class="note" open="open">
 <summary>Router</summary>
-<p><code>Router</code> is the <strong>most intelligent</strong> and <strong>complex</strong> of the three network connection devices. <code>Router</code> is the device in the <a href="./network_layer.md"><code>network layer</code></a>.</p>
+<p><code>Router</code> is the <strong>most intelligent</strong> and <strong>complex</strong> of the three network connection devices. <code>Router</code> is the device in the <a href="../../network/network_layer/"><code>network layer</code></a>.</p>
 <ul>
 <li>
 <p>Rather than just forwarding data packets to other devices in a single network, routers are designed to forward data packets between <strong>two or more networks</strong>. It also <strong>directs traffic</strong> between those networks.</p>
@@ -3147,7 +3147,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="February 1, 2026 05:26:40 UTC">February 1, 2026 05:26:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="August 8, 2026 17:27:04 UTC">August 8, 2026 17:27:04</span>
   </span>
 
     

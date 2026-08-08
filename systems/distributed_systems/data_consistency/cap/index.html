@@ -2240,15 +2240,15 @@
 <p><strong>Partition Tolerance</strong> (P): The system <u>continues to operate even if there is a communication breakdown</u> between some parts of the system (network partitions).</p>
 </li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="image.png" data-desc-position="bottom"><img :=":" _="," alt="alt text" class="center" src="image.png" width="50%"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../cap/image.png" data-desc-position="bottom"><img :=":" _="," alt="alt text" class="center" src="../../cap/image.png" width="50%"></a></p>
 <h2 id="applications-of-cap">Applications of CAP<a class="headerlink" href="#applications-of-cap" title="Anchor link to this section for reference">⚓︎</a></h2>
 <h3 id="trade-offs-in-distributed-systems"><strong>Trade-offs in Distributed Systems</strong><a class="headerlink" href="#trade-offs-in-distributed-systems" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p>Since networks aren't completely reliable, you <ins>must tolerate partitions</ins> in a distributed system (0-partition tolerance), thus you have to choose between:</p>
 <ul>
 <li>Maintain <strong>Consistency</strong>: Ensure that all nodes see the same data at the same time, but some requests may fail (returns an error/timed-out error). We choose CP when the business requirements dictate atomic reads and writes.
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="image-1.png" data-desc-position="bottom"><img :=":" _="," alt="alt text" class="center" src="image-1.png" width="30%"></a></li>
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../cap/image-1.png" data-desc-position="bottom"><img :=":" _="," alt="alt text" class="center" src="../../cap/image-1.png" width="30%"></a></li>
 <li>Maintain <strong>Availability</strong>: Ensure that every request receives a response, but some nodes may return stale or inconsistent data. We choose AP when the business requirements can tolerate synchronization delays.
-    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="image-2.png" data-desc-position="bottom"><img :=":" _="," alt="alt text" class="center" src="image-2.png" width="30%"></a></li>
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../cap/image-2.png" data-desc-position="bottom"><img :=":" _="," alt="alt text" class="center" src="../../cap/image-2.png" width="30%"></a></li>
 </ul>
 <h3 id="real-world-examples"><strong>Real-world Examples</strong><a class="headerlink" href="#real-world-examples" title="Anchor link to this section for reference">⚓︎</a></h3>
 <p>In essence, the <code>CAP</code> theorem helps designing distributed systems based on the trade-offs between these properties. In practice, many well-known systems exhibit <strong>dominant design tendencies</strong> under partition scenarios:</p>
@@ -2263,7 +2263,7 @@
 <p><strong>C + A under no partition assumption (CA*)</strong>: Traditional RDBMS such as <u>MySQL</u>, <u>PostgreSQL</u>, <u>SQL Server</u></p>
 </li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="./cap-theorem-venn-diagram-nosql-sql-databases.png" data-desc-position="bottom"><img :=":" _="," alt="picture 1" class="center" src="./cap-theorem-venn-diagram-nosql-sql-databases.png" width="50%"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../cap/cap-theorem-venn-diagram-nosql-sql-databases.png" data-desc-position="bottom"><img :=":" _="," alt="picture 1" class="center" src="../../cap/cap-theorem-venn-diagram-nosql-sql-databases.png" width="50%"></a></p>
 <details class="warning" open="open">
 <summary>More resources for learning!</summary>
 <p>The <code>CAP</code> theorem does NOT classify systems into rigid categories. Instead, it highlights the <strong>tendencies</strong> of systems to prioritize certain properties over others during network partitions. Many distributed systems can be configured to favor different properties based on specific use cases and requirements.</p>
@@ -2298,7 +2298,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="February 1, 2026 05:26:40 UTC">February 1, 2026 05:26:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="August 8, 2026 17:27:04 UTC">August 8, 2026 17:27:04</span>
   </span>
 
     
