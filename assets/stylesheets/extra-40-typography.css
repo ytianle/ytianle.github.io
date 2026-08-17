@@ -14,12 +14,12 @@
  * scroll-padding-top: tells the scroll container to reserve space at the top.
  *
  * Critical constraint: this value must be LESS than Material's IO rootMargin
- * (= actual header height, ~48px after zoom:0.95 ≈ ~46px measured).
+ * (= actual header height, ~48px measured at the browser's native scale).
  * If the heading stops BELOW the threshold the IO sees it as still intersecting
  * ("next"), and the previous heading becomes active — causing the 1-item lag.
  *
- * 2.8rem ≈ 44.8px CSS px → visually ~42px after zoom.  Safely above the
- * ~46px IO threshold, so the heading exits the observation zone upward and
+ * 2.8rem ≈ 44.8px CSS px, just below the ~48px IO threshold, so the heading
+ * exits the observation zone upward and
  * enters Material's `prev` list → correct active highlight.
  * Trade-off: top ~3px of heading may be behind the header — barely noticeable.
  */

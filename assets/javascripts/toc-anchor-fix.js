@@ -73,6 +73,29 @@
         return document.getElementById(decodedId) || document.getElementById(rawId);
     }
 
+    /**
+     * Material exposes each tab through a fragment such as #__tabbed_1_3.
+     * A full page load restores that tab from the fragment, but pushState()
+     * (used below for normal anchors) deliberately doesn't emit hashchange.
+     * Select the matching radio input ourselves so in-page tab links update
+     * immediately as well.
+     */
+    function activateTabbedHash(hash) {
+        var tab = getHashTarget(hash);
+        if (!tab ||
+            tab.tagName !== "INPUT" ||
+            tab.type !== "radio" ||
+            !tab.id.startsWith("__tabbed_")) {
+            return false;
+        }
+
+        if (!tab.checked) {
+            tab.checked = true;
+            tab.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+        return true;
+    }
+
     document.addEventListener("click", function (e) {
         if (e.button || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
 
@@ -84,6 +107,15 @@
 
         var target = getHashTarget(hash);
         if (!target) return;
+
+        // Tab fragments are state, not scroll targets. Handle them before the
+        // generic anchor code, which otherwise only makes them work on reload.
+        if (activateTabbedHash(hash)) {
+            e.preventDefault();
+            e.stopPropagation();
+            history.pushState(null, "", hash);
+            return;
+        }
 
         // Stop Material's bubble-phase instant-navigation handler from firing.
         e.preventDefault();
@@ -102,6 +134,15 @@
         // Material's IO updates the active state as the smooth scroll progresses.
 
     }, true /* capture phase */);
+
+    // Also support pasted URLs plus Back/Forward navigation between tabs.
+    function syncTabbedHash() {
+        activateTabbedHash(location.hash);
+    }
+
+    window.addEventListener("hashchange", syncTabbedHash);
+    window.addEventListener("popstate", syncTabbedHash);
+    syncTabbedHash();
 
     /* ── Early TOC detection: fire ADVANCE px before Material's own IO ────
      *

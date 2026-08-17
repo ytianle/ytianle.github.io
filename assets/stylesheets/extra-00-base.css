@@ -1,5 +1,15 @@
 /* Base theme and scheme overrides */
 
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 [data-md-color-scheme="slate"] {
     --md-code-fg-color: #E3B4A7;
     --md-code-bg-color: #2A1E1B;
@@ -62,10 +72,6 @@
 
 [data-md-color-scheme="slate"]{
     background-color: #0f1115;
-}
-
-:root {
-    zoom: 0.95;
 }
 
 [data-md-color-scheme="default"] .md-content{

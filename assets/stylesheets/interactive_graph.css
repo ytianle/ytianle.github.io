@@ -1,0 +1,273 @@
+.graph {
+  height: 300px;
+  width: 100%;
+  touch-action: none;
+}
+
+.md-sidebar--secondary .graph {
+  width: calc(100% + 1rem);
+  height: min(48vh, 28rem);
+  min-height: 18rem;
+  margin: 1.35rem 0 0 -.5rem;
+}
+
+#modal_background {
+  background: color-mix(in srgb, var(--md-default-bg-color) 42%, transparent);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.graph-modal-shell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: min(92vw, 1600px);
+  height: min(90vh, 1000px);
+  overflow: hidden;
+  color: var(--md-default-fg-color);
+  background: color-mix(in srgb, var(--md-default-bg-color) 94%, transparent);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 14px;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, .28);
+  opacity: 0;
+  transform: translateY(.6rem) scale(.985);
+  transition: opacity 220ms ease, transform 260ms cubic-bezier(.2, .75, .25, 1);
+}
+
+#modal_background.is-open {
+  opacity: 1;
+}
+
+#modal_background.is-open .graph-modal-shell {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+#modal_background.is-closing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal_background.is-closing .graph-modal-shell {
+  opacity: 0;
+  transform: translateY(.35rem) scale(.99);
+}
+
+.graph-modal-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.25rem;
+  padding: .45rem .55rem .45rem .9rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.graph-modal-brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .72rem;
+  font-weight: 650;
+  letter-spacing: .02em;
+}
+
+.graph-modal-brand svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--md-accent-fg-color);
+}
+
+.graph-modal-identity {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: .9rem;
+}
+
+.graph-modal-stats {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: .58rem;
+  color: var(--md-default-fg-color--light);
+  font-size: .55rem;
+  line-height: 1;
+  opacity: 1;
+  transition: opacity 110ms ease, transform 180ms ease;
+  white-space: nowrap;
+}
+
+.graph-modal-stats.is-changing {
+  opacity: 0;
+  transform: translateY(.18rem);
+}
+
+.graph-modal-stats.is-entering {
+  animation: graph-stats-enter 320ms ease both;
+}
+
+.graph-stat,
+.graph-stat-scope {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .2rem;
+}
+
+.graph-stat::before,
+.graph-stat-scope::before {
+  margin-right: .12rem;
+  color: var(--md-default-fg-color--lightest);
+  content: '·';
+}
+
+.graph-stat strong {
+  color: var(--md-default-fg-color);
+  font-size: .61rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 680;
+}
+
+.graph-stat-scope {
+  max-width: 10rem;
+  overflow: hidden;
+  color: var(--md-accent-fg-color);
+  font-weight: 650;
+  text-overflow: ellipsis;
+}
+
+@keyframes graph-stats-enter {
+  from { opacity: 0; transform: translateY(-.14rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.graph-modal-tools {
+  display: flex;
+  gap: .25rem;
+}
+
+.graph-modal-tools button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  color: var(--md-default-fg-color--light);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  font: inherit;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.graph-modal-tools button::after {
+  position: absolute;
+  z-index: 4;
+  top: calc(100% + .45rem);
+  left: 50%;
+  padding: .28rem .45rem;
+  color: var(--md-default-bg-color);
+  background: var(--md-default-fg-color);
+  border-radius: .3rem;
+  content: attr(data-tooltip);
+  font-size: .58rem;
+  font-weight: 550;
+  line-height: 1.2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -.15rem);
+  transition: opacity 120ms ease, transform 120ms ease;
+  white-space: nowrap;
+}
+
+.graph-modal-tools button:hover::after,
+.graph-modal-tools button:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.graph-modal-tools button:last-child::after {
+  right: 0;
+  left: auto;
+  transform: translateY(-.15rem);
+}
+
+.graph-modal-tools button:last-child:hover::after,
+.graph-modal-tools button:last-child:focus-visible::after {
+  transform: translateY(0);
+}
+
+.graph-modal-tools button:hover,
+.graph-modal-tools button.is-active {
+  color: var(--md-accent-fg-color);
+  background: var(--md-default-fg-color--lightest);
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+.graph-control-anchor { font-size: 1.15rem; }
+.graph-control-text { font-size: .68rem; font-weight: 750; }
+
+.modal_graph {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#graph_button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media screen and (max-width: 44.984375em) {
+  .graph-modal-shell {
+    width: 100vw;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .graph-modal-brand span { display: none; }
+
+  .graph-modal-identity { gap: .35rem; }
+
+  .graph-modal-stats { gap: .35rem; }
+
+  .graph-modal-stats .graph-stat[data-metric="branches"],
+  .graph-modal-stats .graph-stat[data-metric="cross-links"],
+  .graph-modal-stats .graph-stat[data-metric="paths"],
+  .graph-modal-stats .graph-stat[data-metric="levels"],
+  .graph-modal-stats .graph-stat-scope {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #modal_background,
+  #modal_background.is-closing,
+  .graph-modal-shell,
+  #modal_background.is-closing .graph-modal-shell {
+    transition: none;
+  }
+
+  .graph-modal-stats {
+    transition: none;
+  }
+
+  .graph-modal-stats.is-entering {
+    animation: none;
+  }
+}
