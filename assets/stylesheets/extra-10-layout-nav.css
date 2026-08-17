@@ -63,9 +63,9 @@
 
     /* Mobile drawer header: retain readable contrast in both palettes. */
     [data-md-color-scheme="default"] .md-nav--primary .md-nav__title[for=__drawer] {
-        background: #f6f7fb;
+        background: #f6f7fb !important;
         box-shadow: 0 1px 0 rgba(12, 15, 22, 0.08);
-        color: #0c0f16;
+        color: #0c0f16 !important;
     }
 
     [data-md-color-scheme="default"] .md-nav--primary .md-nav__title[for=__drawer] .md-logo img {
@@ -73,9 +73,9 @@
     }
 
     [data-md-color-scheme="slate"] .md-nav--primary .md-nav__title[for=__drawer] {
-        background: #141821;
+        background: #141821 !important;
         box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
-        color: #edf2ff;
+        color: #edf2ff !important;
     }
 
     [data-md-color-scheme="slate"] .md-nav--primary .md-nav__title[for=__drawer] .md-logo img {
@@ -90,6 +90,45 @@
     [data-md-color-scheme="slate"] .md-nav--primary .md-nav__source {
         background: #202634;
         color: #edf2ff;
+    }
+
+    /* A drilled-in navigation level is a compact app bar, not a second hero.
+       Material creates this title dynamically after a nested section opens. */
+    .md-nav--primary .md-nav__title:not([for=__drawer]) {
+        display: flex !important;
+        align-items: center;
+        min-height: 4rem;
+        padding: .65rem 1.2rem;
+        position: static;
+        box-shadow: none;
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: .01em;
+    }
+
+    .md-nav--primary .md-nav__title:not([for=__drawer]) .md-nav__button {
+        margin: 0 .85rem 0 0;
+        padding: .35rem;
+    }
+
+    [data-md-color-scheme="default"] .md-nav--primary .md-nav__title:not([for=__drawer]) {
+        background: #e8eeff !important;
+        color: #243654 !important;
+        border-bottom: 1px solid rgba(36, 54, 84, .09);
+    }
+
+    [data-md-color-scheme="slate"] .md-nav--primary .md-nav__title:not([for=__drawer]) {
+        background: #1b2230 !important;
+        color: #edf2ff !important;
+        border-bottom: 1px solid rgba(237, 242, 255, .08);
+    }
+
+    /* The landing-page parallax has its own foreground layers. Hide only
+       those labels while the drawer is open, so they cannot sit above the
+       drawer and its scrim. */
+    [data-md-toggle=drawer]:checked ~ .md-container #text_name,
+    [data-md-toggle=drawer]:checked ~ .md-container #text_welcome {
+        visibility: hidden;
     }
 }
 

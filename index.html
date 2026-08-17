@@ -898,6 +898,45 @@
         }
     }
 
+    /* Phone portrait needs a deliberately compact composition. The inline
+       desktop fallback sizes are intentionally overridden here. */
+    @media screen and (max-width: 51.5625em) {
+        #parallax {
+            height: min(86svh, 40rem);
+            min-height: 33rem;
+        }
+
+        /* Desktop uses an independent sky strip. On phones it creates a
+           visual break, so the scene starts directly with the city layers. */
+        #layer_sk {
+            display: none;
+        }
+
+        #pumpking {
+            left: 57% !important;
+            top: 15% !important;
+        }
+
+        #text_name {
+            font-size: clamp(2rem, 9vw, 3.05rem) !important;
+            left: 6% !important;
+            top: 5.5% !important;
+        }
+
+        #text_welcome {
+            font-size: clamp(2.35rem, 11vw, 3.6rem) !important;
+            left: 8% !important;
+            top: 28% !important;
+        }
+
+        /* Raise every remaining scene layer so they read as one compact
+           illustration rather than separate horizontal bands. */
+        #layer_bg2 { bottom: 40% !important; }
+        #layer_bg1 { bottom: 27% !important; }
+        #layer_main { bottom: 8% !important; }
+        #alice { bottom: 4% !important; }
+    }
+
     /*section::after {
             content: '';
             position: relative;
@@ -1028,16 +1067,16 @@
             if (window.matchMedia("(max-width: 68.75em)").matches) {
                 const value = window.scrollY || 0;
 
-                // A restrained vertical parallax keeps the layered scene alive
-                // without pushing text or artwork outside the narrow viewport.
-                setTransform(layer_sk, 0, value * 0.04);
-                setTransform(text_name, 0, value * 0.025);
-                setTransform(pumpking, 0, value * 0.12);
-                setTransform(layer_bg2, 0, value * 0.035);
-                setTransform(layer_bg1, 0, value * 0.07);
-                setTransform(layer_main, 0, value * 0.11);
-                setTransform(text_welcome, 0, value * 0.055);
-                setTransform(alice, 0, value * 0.14);
+                // Mobile keeps the same depth ordering as desktop, with a
+                // slightly clearer vertical response to scrolling.
+                setTransform(layer_sk, 0, 0);
+                setTransform(text_name, 0, value * 0.04);
+                setTransform(pumpking, 0, value * 0.18);
+                setTransform(layer_bg2, 0, value * 0.06);
+                setTransform(layer_bg1, 0, value * 0.11);
+                setTransform(layer_main, 0, value * 0.16);
+                setTransform(text_welcome, 0, value * 0.085);
+                setTransform(alice, 0, value * 0.2);
                 return;
             }
             const value = window.scrollY || 0;
@@ -1740,6 +1779,8 @@
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="assets/javascripts/toc-anchor-fix.js"></script>
+      
+        <script src="assets/javascripts/smooth-back-to-top.js"></script>
       
         <script src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
       
