@@ -62,6 +62,8 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/extra-40-typography.css">
     
+      <link rel="stylesheet" href="../assets/stylesheets/extra-50-journal.css">
+    
       <link rel="stylesheet" href="../assets/stylesheets/interactive_graph.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -102,6 +104,9 @@
       var key = "sidebarCollapsed"
       var secondaryKey = "sidebarSecondaryCollapsed"
       var root = document.documentElement
+      if (window.location.pathname === "/blog" || window.location.pathname.indexOf("/blog/") === 0) {
+        root.classList.add("journal-context")
+      }
       var stored = localStorage.getItem(key)
       if (stored === "1") {
         root.classList.add("sidebar-collapsed")
@@ -625,6 +630,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -829,6 +836,12 @@
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1389,7 +1402,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden="">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1410,48 +1425,262 @@
             
           
           
+  <aside class="md-sidebar md-sidebar--secondary journal-sidebar" data-md-component="sidebar" data-md-type="journal-timeline">
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        <div class="journal-timeline" aria-label="Journal timeline">
+          <div class="journal-timeline__heading">
+            <span class="journal-timeline__eyebrow">JOURNAL</span>
+            <h2>Timeline</h2>
+            <p>8 posts</p>
+          </div>
+          <ol class="journal-timeline__list">
+            
+              <li class="journal-timeline__item">
+                <a href="#journal-post-1" class="journal-timeline__link">
+                  <span class="journal-timeline__node" aria-hidden="true"></span>
+                  <span class="journal-timeline__date">
+                    <time datetime="2026-08-17 00:00:00+00:00">August 17, 2026</time>
+                  </span>
+                  <span class="journal-timeline__title">This Is No Longer a Tech Blog</span>
+                  
+                    <span class="journal-timeline__category">Digital Garden</span>
+                  
+                </a>
+              </li>
+            
+              <li class="journal-timeline__item">
+                <a href="#journal-post-2" class="journal-timeline__link">
+                  <span class="journal-timeline__node" aria-hidden="true"></span>
+                  <span class="journal-timeline__date">
+                    <time datetime="2026-04-28 00:00:00+00:00">April 28, 2026</time>
+                  </span>
+                  <span class="journal-timeline__title">Look back on linq</span>
+                  
+                    <span class="journal-timeline__category">LINQ</span>
+                  
+                </a>
+              </li>
+            
+              <li class="journal-timeline__item">
+                <a href="#journal-post-3" class="journal-timeline__link">
+                  <span class="journal-timeline__node" aria-hidden="true"></span>
+                  <span class="journal-timeline__date">
+                    <time datetime="2026-04-05 00:00:00+00:00">April 5, 2026</time>
+                  </span>
+                  <span class="journal-timeline__title">PRIVATE source repo → PUBLIC site repo</span>
+                  
+                    <span class="journal-timeline__category">CI/CD</span>
+                  
+                </a>
+              </li>
+            
+              <li class="journal-timeline__item">
+                <a href="#journal-post-4" class="journal-timeline__link">
+                  <span class="journal-timeline__node" aria-hidden="true"></span>
+                  <span class="journal-timeline__date">
+                    <time datetime="2026-04-05 00:00:00+00:00">April 5, 2026</time>
+                  </span>
+                  <span class="journal-timeline__title">VS Code Extension Bisect</span>
+                  
+                    <span class="journal-timeline__category">Programming</span>
+                  
+                </a>
+              </li>
+            
+              <li class="journal-timeline__item">
+                <a href="#journal-post-5" class="journal-timeline__link">
+                  <span class="journal-timeline__node" aria-hidden="true"></span>
+                  <span class="journal-timeline__date">
+                    <time datetime="2026-03-28 00:00:00+00:00">March 28, 2026</time>
+                  </span>
+                  <span class="journal-timeline__title">Desktop App Arch: FastAPI + Web + pywebview</span>
+                  
+                    <span class="journal-timeline__category">Programming</span>
+                  
+                </a>
+              </li>
+            
+              <li class="journal-timeline__item">
+                <a href="#journal-post-6" class="journal-timeline__link">
+                  <span class="journal-timeline__node" aria-hidden="true"></span>
+                  <span class="journal-timeline__date">
+                    <time datetime="2025-05-01 00:00:00+00:00">May 1, 2025</time>
+                  </span>
+                  <span class="journal-timeline__title">What is the difference between Radiosity and Ray Tracing?</span>
+                  
+                    <span class="journal-timeline__category">CG tech</span>
+                  
+                </a>
+              </li>
+            
+              <li class="journal-timeline__item">
+                <a href="#journal-post-7" class="journal-timeline__link">
+                  <span class="journal-timeline__node" aria-hidden="true"></span>
+                  <span class="journal-timeline__date">
+                    <time datetime="2025-04-30 00:00:00+00:00">April 30, 2025</time>
+                  </span>
+                  <span class="journal-timeline__title">Resources of Ray tracer and Path tracer</span>
+                  
+                    <span class="journal-timeline__category">CG tech</span>
+                  
+                </a>
+              </li>
+            
+              <li class="journal-timeline__item">
+                <a href="#journal-post-8" class="journal-timeline__link">
+                  <span class="journal-timeline__node" aria-hidden="true"></span>
+                  <span class="journal-timeline__date">
+                    <time datetime="2025-03-28 00:00:00+00:00">March 28, 2025</time>
+                  </span>
+                  <span class="journal-timeline__title">Goal of using Try-catch</span>
+                  
+                    <span class="journal-timeline__category">Game Development</span>
+                  
+                </a>
+              </li>
+            
+          </ol>
+        </div>
+      </div>
+    </div>
+  </aside>
   <div class="md-content" data-md-component="content">
+    
+      
+
+  
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    HOME
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    JOURNAL
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+    
     <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="journal"><strong>Journal</strong><a class="headerlink" href="#journal" title="Anchor link to this section for reference">⚓︎</a></h1>
+      <section class="journal-posts">
+        <header class="md-typeset journal-intro">
+          <h1 id="journal"><strong>Journal</strong><a class="headerlink" href="#journal" title="Anchor link to this section for reference">⚓︎</a></h1>
 <blockquote>
 <p>Thoughts, interests, brain storms, learning... All the blog article posts will start from the topic shown in this section.</p>
 </blockquote>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
+        </header>
+        
+          
+          <article id="journal-post-1" class="md-post md-post--excerpt">
   <header class="md-post__header">
     
       <nav class="md-post__authors md-typeset">
         
-          <span class="md-author">
-            <img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle">
-          </span>
+          <span class="md-author"><img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle"></span>
         
       </nav>
     
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-04-28 00:00:00+00:00">April 28, 2026</time></li>
+        <li class="md-meta__item"><time datetime="2026-08-17 00:00:00+00:00">August 17, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/digital-garden/" class="md-meta__link">Digital Garden</a>, 
+            
+              <a href="category/speculation/" class="md-meta__link">Speculation</a>, 
+            
+              <a href="category/self-reflection/" class="md-meta__link">Self-reflection</a>
+            
+          </li>
+        
+        
+          <li class="md-meta__item">20 min read</li>
+        
+      </ul>
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="this-is-no-longer-a-tech-blog"><a class="toclink" href="2026/08/17/this-is-no-longer-a-tech-blog/">This Is No Longer a Tech Blog</a></h2>
+<p>Last week, in a conversation with a friend, we brought up some conversations about this "tech blog". I tried to explain my original intention of this blog:</p>
+<ol>
+<li>The best way to learn is to teach. I am used to imagine I am preparing a lecture to teach my students. Thus, I need to try to explain the knowledge in a clear and organized way. And if there is a chance to teach, I will be confident to share my blog with my students as a good reference.</li>
+<li>The palest ink is better than the best memory. The knowledge system will help me to quickly recall the knowledge I have learned, like a dictionary. Or, lazy me treats this blog as my second brain.</li>
+<li>Confucius said: "I reflect on myself three times a day." In the era of AI explosion, keep learning and reflecting is the only way to keep up with the fast changing world. This blog is the best inspiration Dojo to polish my mind and keep me thinking.</li>
+<li>Open source is the best way to share knowledge. As a developer, engineer, or human, I hope my blog can help more people to learn and grow together. I would love to contribute to the human knowledge system and make the world a better place.</li>
+</ol>
+<p>However, even though with above bullets, I still feel like I am not fully satisfied how to introduce my blog the best and most effective way.</p>
+
+    
+      <nav class="md-post__action"><a href="2026/08/17/this-is-no-longer-a-tech-blog/">Continue reading</a></nav>
+    
+  </div>
+</article>
+        
+          
+          <article id="journal-post-2" class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author"><img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle"></span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item"><time datetime="2026-04-28 00:00:00+00:00">April 28, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
               <a href="category/linq/" class="md-meta__link">LINQ</a>, 
-              <a href="category/functional-programming/" class="md-meta__link">Functional Programming</a></li>
-        
-        
-          
-          <li class="md-meta__item">
             
-              20 min read
+              <a href="category/functional-programming/" class="md-meta__link">Functional Programming</a>
             
           </li>
         
         
+          <li class="md-meta__item">20 min read</li>
+        
       </ul>
-      
     </div>
   </header>
   <div class="md-post__content md-typeset">
@@ -1471,50 +1700,40 @@
 </ul>
 
     
-      <nav class="md-post__action">
-        <a href="2026/04/28/look-back-on-linq/">
-          Continue reading
-        </a>
-      </nav>
-    
+      <nav class="md-post__action"><a href="2026/04/28/look-back-on-linq/">Continue reading</a></nav>
     
   </div>
 </article>
-      
-        <article class="md-post md-post--excerpt">
+        
+          
+          <article id="journal-post-3" class="md-post md-post--excerpt">
   <header class="md-post__header">
     
       <nav class="md-post__authors md-typeset">
         
-          <span class="md-author">
-            <img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle">
-          </span>
+          <span class="md-author"><img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle"></span>
         
       </nav>
     
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-04-05 00:00:00+00:00">April 5, 2026</time></li>
+        <li class="md-meta__item"><time datetime="2026-04-05 00:00:00+00:00">April 5, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
               <a href="category/cicd/" class="md-meta__link">CI/CD</a>, 
-              <a href="category/github-actions/" class="md-meta__link">GitHub Actions</a>, 
-              <a href="category/deployment/" class="md-meta__link">Deployment</a></li>
-        
-        
-          
-          <li class="md-meta__item">
             
-              20 min read
+              <a href="category/github-actions/" class="md-meta__link">GitHub Actions</a>, 
+            
+              <a href="category/deployment/" class="md-meta__link">Deployment</a>
             
           </li>
         
         
+          <li class="md-meta__item">20 min read</li>
+        
       </ul>
-      
     </div>
   </header>
   <div class="md-post__content md-typeset">
@@ -1536,50 +1755,40 @@
 </ul>
 
     
-      <nav class="md-post__action">
-        <a href="2026/04/05/private-source-repo--public-site-repo/">
-          Continue reading
-        </a>
-      </nav>
-    
+      <nav class="md-post__action"><a href="2026/04/05/private-source-repo--public-site-repo/">Continue reading</a></nav>
     
   </div>
 </article>
-      
-        <article class="md-post md-post--excerpt">
+        
+          
+          <article id="journal-post-4" class="md-post md-post--excerpt">
   <header class="md-post__header">
     
       <nav class="md-post__authors md-typeset">
         
-          <span class="md-author">
-            <img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle">
-          </span>
+          <span class="md-author"><img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle"></span>
         
       </nav>
     
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-04-05 00:00:00+00:00">April 5, 2026</time></li>
+        <li class="md-meta__item"><time datetime="2026-04-05 00:00:00+00:00">April 5, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
               <a href="category/programming/" class="md-meta__link">Programming</a>, 
-              <a href="category/vs-code/" class="md-meta__link">VS Code</a>, 
-              <a href="category/tips--tricks/" class="md-meta__link">Tips &amp; Tricks</a></li>
-        
-        
-          
-          <li class="md-meta__item">
             
-              5 min read
+              <a href="category/vs-code/" class="md-meta__link">VS Code</a>, 
+            
+              <a href="category/tips--tricks/" class="md-meta__link">Tips &amp; Tricks</a>
             
           </li>
         
         
+          <li class="md-meta__item">5 min read</li>
+        
       </ul>
-      
     </div>
   </header>
   <div class="md-post__content md-typeset">
@@ -1592,50 +1801,40 @@
 <em>Figure: <a href="https://code.visualstudio.com/blogs/2021/02/16/extension-bisect">VS Code's Extension Bisect</a> disables half of the installed extensions at a time to narrow down which one is causing the issue.</em></p>
 
     
-      <nav class="md-post__action">
-        <a href="2026/04/05/vs-code-extension-bisect/">
-          Continue reading
-        </a>
-      </nav>
-    
+      <nav class="md-post__action"><a href="2026/04/05/vs-code-extension-bisect/">Continue reading</a></nav>
     
   </div>
 </article>
-      
-        <article class="md-post md-post--excerpt">
+        
+          
+          <article id="journal-post-5" class="md-post md-post--excerpt">
   <header class="md-post__header">
     
       <nav class="md-post__authors md-typeset">
         
-          <span class="md-author">
-            <img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle">
-          </span>
+          <span class="md-author"><img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle"></span>
         
       </nav>
     
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-28 00:00:00+00:00">March 28, 2026</time></li>
+        <li class="md-meta__item"><time datetime="2026-03-28 00:00:00+00:00">March 28, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
               <a href="category/programming/" class="md-meta__link">Programming</a>, 
-              <a href="category/software-architecture/" class="md-meta__link">Software Architecture</a>, 
-              <a href="category/python/" class="md-meta__link">Python</a></li>
-        
-        
-          
-          <li class="md-meta__item">
             
-              20 min read
+              <a href="category/software-architecture/" class="md-meta__link">Software Architecture</a>, 
+            
+              <a href="category/python/" class="md-meta__link">Python</a>
             
           </li>
         
         
+          <li class="md-meta__item">20 min read</li>
+        
       </ul>
-      
     </div>
   </header>
   <div class="md-post__content md-typeset">
@@ -1657,49 +1856,38 @@
 </ul>
 
     
-      <nav class="md-post__action">
-        <a href="2026/03/28/desktop-app-arch-fastapi--web--pywebview/">
-          Continue reading
-        </a>
-      </nav>
-    
+      <nav class="md-post__action"><a href="2026/03/28/desktop-app-arch-fastapi--web--pywebview/">Continue reading</a></nav>
     
   </div>
 </article>
-      
-        <article class="md-post md-post--excerpt">
+        
+          
+          <article id="journal-post-6" class="md-post md-post--excerpt">
   <header class="md-post__header">
     
       <nav class="md-post__authors md-typeset">
         
-          <span class="md-author">
-            <img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle">
-          </span>
+          <span class="md-author"><img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle"></span>
         
       </nav>
     
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-05-01 00:00:00+00:00">May 1, 2025</time></li>
+        <li class="md-meta__item"><time datetime="2025-05-01 00:00:00+00:00">May 1, 2025</time></li>
         
           <li class="md-meta__item">
             in
             
               <a href="category/cg-tech/" class="md-meta__link">CG tech</a>, 
-              <a href="category/radiosity/" class="md-meta__link">Radiosity</a></li>
-        
-        
-          
-          <li class="md-meta__item">
             
-              20 min read
+              <a href="category/radiosity/" class="md-meta__link">Radiosity</a>
             
           </li>
         
         
+          <li class="md-meta__item">20 min read</li>
+        
       </ul>
-      
     </div>
   </header>
   <div class="md-post__content md-typeset">
@@ -1707,43 +1895,36 @@
 <p>I found the below PDF material (<a href="https://groups.csail.mit.edu/graphics/classes/6.837/F01/Lecture20/lecture20_4up.pdf">Resource from MIT</a>)  provides a good answer to this question:</p>
 <iframe width="100%" height="700" src="/assets/pdfs/Radiosity.pdf" style="width:100%; height:600px; border:none; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2);"></iframe>
     
-    
   </div>
 </article>
-      
-        <article class="md-post md-post--excerpt">
+        
+          
+          <article id="journal-post-7" class="md-post md-post--excerpt">
   <header class="md-post__header">
     
       <nav class="md-post__authors md-typeset">
         
-          <span class="md-author">
-            <img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle">
-          </span>
+          <span class="md-author"><img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle"></span>
         
       </nav>
     
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-04-30 00:00:00+00:00">April 30, 2025</time></li>
+        <li class="md-meta__item"><time datetime="2025-04-30 00:00:00+00:00">April 30, 2025</time></li>
         
           <li class="md-meta__item">
             in
             
               <a href="category/cg-tech/" class="md-meta__link">CG tech</a>, 
-              <a href="category/ray-tracing/" class="md-meta__link">Ray tracing</a></li>
-        
-        
-          
-          <li class="md-meta__item">
             
-              20 min read
+              <a href="category/ray-tracing/" class="md-meta__link">Ray tracing</a>
             
           </li>
         
         
+          <li class="md-meta__item">20 min read</li>
+        
       </ul>
-      
     </div>
   </header>
   <div class="md-post__content md-typeset">
@@ -1752,49 +1933,38 @@
 <p>Here are the useful resources about <code>ray tracing</code> I found today:</p>
 
     
-      <nav class="md-post__action">
-        <a href="2025/04/30/resources-of-ray-tracer-and-path-tracer/">
-          Continue reading
-        </a>
-      </nav>
-    
+      <nav class="md-post__action"><a href="2025/04/30/resources-of-ray-tracer-and-path-tracer/">Continue reading</a></nav>
     
   </div>
 </article>
-      
-        <article class="md-post md-post--excerpt">
+        
+          
+          <article id="journal-post-8" class="md-post md-post--excerpt">
   <header class="md-post__header">
     
       <nav class="md-post__authors md-typeset">
         
-          <span class="md-author">
-            <img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle">
-          </span>
+          <span class="md-author"><img src="https://ytianle.github.io/assets/images/headfile.png" alt="ytianle"></span>
         
       </nav>
     
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-03-28 00:00:00+00:00">March 28, 2025</time></li>
+        <li class="md-meta__item"><time datetime="2025-03-28 00:00:00+00:00">March 28, 2025</time></li>
         
           <li class="md-meta__item">
             in
             
               <a href="category/game-development/" class="md-meta__link">Game Development</a>, 
-              <a href="category/programming/" class="md-meta__link">Programming</a></li>
-        
-        
-          
-          <li class="md-meta__item">
             
-              10 min read
+              <a href="category/programming/" class="md-meta__link">Programming</a>
             
           </li>
         
         
+          <li class="md-meta__item">10 min read</li>
+        
       </ul>
-      
     </div>
   </header>
   <div class="md-post__content md-typeset">
@@ -1804,29 +1974,60 @@
 </blockquote>
 
     
-      <nav class="md-post__action">
-        <a href="2025/03/28/goal-of-using-try-catch/">
-          Continue reading
-        </a>
-      </nav>
-    
+      <nav class="md-post__action"><a href="2025/03/28/goal-of-using-try-catch/">Continue reading</a></nav>
     
   </div>
 </article>
-      
-      
+        
         
           
+            
 
 
 
 <nav class="md-pagination">
   
 </nav>
+          
         
-      
+      </section>
     </div>
   </div>
+  <script>
+    (function () {
+      var root = document.documentElement
+      root.classList.remove("sidebar-collapsed")
+      localStorage.setItem("sidebarCollapsed", "0")
+
+      var links = Array.from(document.querySelectorAll('.journal-timeline__link'))
+      var posts = Array.from(document.querySelectorAll('.journal-posts .md-post'))
+      if (!links.length || !posts.length) return
+
+      function activate(index) {
+        links.forEach(function (link, linkIndex) {
+          var active = linkIndex === index
+          link.classList.toggle('is-active', active)
+          link.setAttribute('aria-current', active ? 'true' : 'false')
+        })
+      }
+
+      links.forEach(function (link, index) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault()
+          posts[index].scrollIntoView({ behavior: 'smooth', block: 'start' })
+          activate(index)
+        })
+      })
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) activate(posts.indexOf(entry.target))
+        })
+      }, { rootMargin: '-18% 0px -62% 0px', threshold: 0 })
+      posts.forEach(function (post) { observer.observe(post) })
+      activate(0)
+    })()
+  </script>
 
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

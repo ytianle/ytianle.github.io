@@ -62,6 +62,8 @@
     
       <link rel="stylesheet" href="../../../../../assets/stylesheets/extra-40-typography.css">
     
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra-50-journal.css">
+    
       <link rel="stylesheet" href="../../../../../assets/stylesheets/interactive_graph.css">
     
     <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -102,6 +104,9 @@
       var key = "sidebarCollapsed"
       var secondaryKey = "sidebarSecondaryCollapsed"
       var root = document.documentElement
+      if (window.location.pathname === "/blog" || window.location.pathname.indexOf("/blog/") === 0) {
+        root.classList.add("journal-context")
+      }
       var stored = localStorage.getItem(key)
       if (stored === "1") {
         root.classList.add("sidebar-collapsed")
@@ -860,6 +865,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1510,6 +1521,75 @@
   
   
 
+
+
+  
+
+  
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    HOME
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    JOURNAL
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Journal
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+    </ol>
+  </nav>
+
+
+
+  <script>document.documentElement.classList.add("journal-post-page")</script>
 
 
 <h1 id="what-is-the-difference-between-radiosity-and-ray-tracing">What is the difference between <code>Radiosity</code> and <code>Ray Tracing</code>?<a class="headerlink" href="#what-is-the-difference-between-radiosity-and-ray-tracing" title="Anchor link to this section for reference">⚓︎</a></h1>

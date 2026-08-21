@@ -1,0 +1,174 @@
+/* Journal timeline */
+.md-content--post .md-path {
+    display: block !important;
+    visibility: visible !important;
+    margin: 0 0 1rem !important;
+    padding-top: 0 !important;
+}
+
+.journal-post-page .md-content--post .md-path__item:last-child {
+    display: none;
+}
+
+.journal-post-page .md-sidebar--primary li:has(> a[href*="/archive/"]),
+.journal-post-page .md-sidebar--primary li:has(> a[href*="/category/"]) {
+    display: none;
+}
+
+/* Archive/category views are still Journal views, but they don't need the
+   empty secondary TOC that the base template emits. */
+.journal-context .md-sidebar--secondary[data-md-type="toc"] {
+    display: none !important;
+}
+
+/* The blog plugin's default view is narrower than normal documentation. On
+   Journal, restore the same full content column used by chapter pages. */
+@media screen and (min-width: 52em) {
+    /* The site's desktop sidebar rules intentionally force secondary sidebars
+       visible; undo that for the hidden empty TOC emitted by the blog plugin. */
+    .md-main__inner > .md-sidebar--secondary[hidden] {
+        display: none !important;
+    }
+
+    .journal-sidebar + .md-content {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0;
+    }
+
+    .journal-sidebar + .md-content > .md-content__inner {
+        width: auto !important;
+        max-width: none !important;
+    }
+}
+
+.journal-intro {
+    margin-bottom: 2.5rem;
+}
+
+.journal-timeline {
+    padding: .2rem 0 .65rem .15rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.journal-timeline__heading {
+    padding: 0 0 .55rem 1rem;
+}
+
+.journal-timeline__eyebrow {
+    color: var(--md-primary-fg-color);
+    font-size: .58rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+}
+
+.journal-timeline h2 {
+    margin: .1rem 0 .12rem;
+    font-size: .98rem;
+    letter-spacing: -.02em;
+}
+
+.journal-timeline__heading p {
+    margin: 0;
+    color: var(--md-default-fg-color--light);
+    font-size: .68rem;
+}
+
+.journal-timeline__list {
+    position: relative;
+    margin: 0;
+    padding: .05rem 0 0;
+    list-style: none;
+}
+
+.journal-timeline__list::before {
+    content: "";
+    position: absolute;
+    top: .65rem;
+    bottom: .75rem;
+    left: .45rem;
+    width: 1px;
+    background: linear-gradient(var(--md-primary-fg-color), color-mix(in srgb, var(--md-primary-fg-color) 15%, transparent));
+}
+
+.journal-timeline__item {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.journal-timeline__link {
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    gap: .1rem .5rem;
+    position: relative;
+    padding: .3rem .2rem .35rem .15rem;
+    border-radius: .35rem;
+    color: inherit;
+    text-decoration: none;
+    transition: background .18s ease, transform .18s ease;
+}
+
+.journal-timeline__link:hover,
+.journal-timeline__link:focus-visible {
+    background: color-mix(in srgb, var(--md-primary-fg-color) 9%, transparent);
+    transform: translateX(2px);
+}
+
+.journal-timeline__link.is-active {
+    color: var(--md-primary-fg-color);
+    background: color-mix(in srgb, var(--md-primary-fg-color) 7%, transparent);
+}
+
+.journal-timeline__link.is-active .journal-timeline__node {
+    background: var(--md-primary-fg-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-primary-fg-color) 16%, transparent);
+}
+
+.journal-timeline__node {
+    grid-row: 1 / span 3;
+    z-index: 1;
+    width: .65rem;
+    height: .65rem;
+    margin-top: .2rem;
+    border: 2px solid var(--md-primary-fg-color);
+    border-radius: 50%;
+    background: var(--md-default-bg-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-default-bg-color) 90%, transparent);
+}
+
+.journal-timeline__date,
+.journal-timeline__category {
+    color: var(--md-default-fg-color--light);
+    font-size: .6rem;
+    letter-spacing: .02em;
+}
+
+.journal-timeline__title {
+    font-size: .74rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.journal-timeline__category {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 62em) {
+    .journal-timeline { padding-left: .1rem; padding-right: 0; }
+}
+
+@media screen and (max-width: 51.5625em) {
+    .journal-sidebar { display: none !important; }
+    .journal-timeline { margin-top: 0; }
+    .journal-timeline__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: .75rem; }
+}
+
+@media screen and (max-width: 34em) {
+    .journal-timeline__list { display: block; }
+}

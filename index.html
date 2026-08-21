@@ -60,6 +60,8 @@
     
       <link rel="stylesheet" href="assets/stylesheets/extra-40-typography.css">
     
+      <link rel="stylesheet" href="assets/stylesheets/extra-50-journal.css">
+    
       <link rel="stylesheet" href="assets/stylesheets/interactive_graph.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -100,6 +102,9 @@
       var key = "sidebarCollapsed"
       var secondaryKey = "sidebarSecondaryCollapsed"
       var root = document.documentElement
+      if (window.location.pathname === "/blog" || window.location.pathname.indexOf("/blog/") === 0) {
+        root.classList.add("journal-context")
+      }
       var stored = localStorage.getItem(key)
       if (stored === "1") {
         root.classList.add("sidebar-collapsed")
@@ -955,20 +960,14 @@
     <section id="parallax" style="">
         <img src="assets/images/layer_sky_blue.png" id="layer_sk" fetchpriority="high" decoding="async" style=" height: 50%; width: auto; margin-left:-90%; margin-Top:35%;">
         <h2 id="text_name" style=" margin-left:90%; margin-Top:-35%; color: rgb(0, 0, 0); position: relative; font-size: 9.5em;">
-            Tianle's Blog</h2>
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="assets/images/03.gif">
-            <img src="assets/images/02.gif" id="pumpking" decoding="async" style=" height: 25%; width: auto; margin-left:37%; margin-top:3%;">
-        </picture>
+            Tianle Scholar's Garden</h2>
+        <img src="assets/images/02.gif" id="pumpking" decoding="async" style=" height: 25%; width: auto; margin-left:37%; margin-top:3%;">
         <img src="assets/images/layer_bg2_blue.png" id="layer_bg2" style=" height: 55%; width: auto; margin-left:0%; margin-top:15%;">
         <img src="assets/images/layer_bg1.png" id="layer_bg1" style=" height: 55%; width: auto; margin-left:0%; margin-top:25%;">
         <h2 id="text_welcome" style=" margin-left:110%; margin-Top: 5%; color: rgb(255, 255, 255); position: relative; font-size: 10em;">
             Welcome!</h2>
         <img src="assets/images/layer_main.png" id="layer_main" fetchpriority="high" decoding="async" style=" height: 45%; width: auto; margin-left:0%; margin-top: 40%;">
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="assets/images/alice.png">
-            <img src="assets/images/empire.png" id="alice" decoding="async" style=" height: 55%; width: auto; margin-left:100%; margin-top: 42%;">
-        </picture>
+        <img src="assets/images/empire.png" id="alice" decoding="async" style=" height: 55%; width: auto; margin-left:100%; margin-top: 42%;">
 
     </section>
 

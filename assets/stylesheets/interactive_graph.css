@@ -7,9 +7,10 @@
 .md-sidebar--secondary .graph {
   box-sizing: border-box;
   width: 100%;
-  height: min(48vh, 28rem);
-  min-height: 18rem;
-  margin: 1.5rem 0 0;
+  height: min(34vh, 18rem);
+  min-height: 13rem;
+  margin: .45rem 0 .8rem;
+  background: transparent;
 }
 
 #modal_background {

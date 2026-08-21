@@ -706,7 +706,8 @@
       animation: true,
       animationDurationUpdate: 280,
       animationEasingUpdate: 'cubicOut',
-      backgroundColor: $('body').css('background-color'),
+      // Let the graph sit naturally in the sidebar, like the surrounding blog UI.
+      backgroundColor: 'transparent',
       tooltip: { show: false },
       series: [{
         name: 'Interactive Graph',
@@ -722,8 +723,8 @@
           position: 'right',
           formatter: '{b}',
           color: colors.text,
-          fontSize: local ? 10 : 11,
-          distance: 4
+          fontSize: local ? 9 : 10,
+          distance: 3
         },
         emphasis: {
           disabled: true,
@@ -736,7 +737,7 @@
         force: reuseGlobalLayout ? {
           initLayout: 'none',
           repulsion: 145,
-          edgeLength: [52, 104],
+          edgeLength: [42, 82],
           gravity: 0.05,
           layoutAnimation: true
         } : local ? {
@@ -746,7 +747,7 @@
           layoutAnimation: true
         } : {
           repulsion: 145,
-          edgeLength: [52, 104],
+          edgeLength: [42, 82],
           gravity: 0.05,
           layoutAnimation: true
         }
@@ -1129,6 +1130,11 @@
   }
 
   function addGraphDiv() {
+    // Journal owns the secondary sidebar with its chronological world tree.
+    // Do not turn that space into the Garden Map minimap.
+    if (window.location.pathname === '/blog' || window.location.pathname.indexOf('/blog/') === 0) {
+      return null;
+    }
     var sidebar = document.querySelector('.md-sidebar--secondary');
     if (!sidebar) return null;
     var old = sidebar.querySelector('#graph');
