@@ -8,7 +8,7 @@
   var globalContainer = null;
   var gardenNavigationToken = 0;
   var globalLayoutCache = null;
-  var globalLayoutStorageKey = 'digital-garden-global-layout-v4';
+  var globalLayoutStorageKey = 'garden-neural-network-global-layout-v4';
 
   function graphLayoutSignature() {
     return graphData.nodes.map(function (node) { return node.id; }).sort().join('|') +
@@ -1631,7 +1631,7 @@
 
     var modal = document.createElement('div');
     modal.id = 'modal_background';
-    modal.innerHTML = '<section class="graph-modal-shell" role="dialog" aria-modal="true" aria-label="Digital Garden"><header class="graph-modal-header"><div class="graph-modal-identity"><div class="graph-modal-brand">' + graphLogo() + '<span>Digital Garden</span></div><div class="graph-modal-stats" aria-live="polite"></div></div><nav class="graph-modal-tools" aria-label="Graph controls"><button type="button" data-action="anchor" data-tooltip="Focus current branch" title="Focus current branch" aria-label="Focus current branch" aria-pressed="false"><span class="graph-control-anchor">⌖</span></button><button type="button" data-action="zoom-out" data-tooltip="Zoom out" title="Zoom out" aria-label="Zoom out">−</button><button type="button" data-action="zoom-in" data-tooltip="Zoom in" title="Zoom in" aria-label="Zoom in">+</button><button type="button" data-action="children" data-tooltip="Show all descendant titles" title="Show all descendant titles" aria-label="Show all descendant titles" aria-pressed="false"><span class="graph-control-text">Aa</span></button><button type="button" data-action="close" data-tooltip="Close" title="Close Digital Garden" aria-label="Close Digital Garden">×</button></nav></header><div id="graph" class="modal_graph graph"></div></section>';
+    modal.innerHTML = '<section class="graph-modal-shell" role="dialog" aria-modal="true" aria-label="Garden Neural Network"><header class="graph-modal-header"><div class="graph-modal-identity"><div class="graph-modal-brand">' + graphLogo() + '<span>Garden Neural Network</span></div><div class="graph-modal-stats" aria-live="polite"></div></div><nav class="graph-modal-tools" aria-label="Graph controls"><button type="button" data-action="anchor" data-tooltip="Focus current branch" title="Focus current branch" aria-label="Focus current branch" aria-pressed="false"><span class="graph-control-anchor">⌖</span></button><button type="button" data-action="zoom-out" data-tooltip="Zoom out" title="Zoom out" aria-label="Zoom out">−</button><button type="button" data-action="zoom-in" data-tooltip="Zoom in" title="Zoom in" aria-label="Zoom in">+</button><button type="button" data-action="children" data-tooltip="Show all descendant titles" title="Show all descendant titles" aria-label="Show all descendant titles" aria-pressed="false"><span class="graph-control-text">Aa</span></button><button type="button" data-action="close" data-tooltip="Close Garden Neural Network" title="Close Garden Neural Network" aria-label="Close Garden Neural Network">×</button></nav></header><div id="graph" class="modal_graph graph"></div></section>';
     document.body.appendChild(modal);
     requestAnimationFrame(function () { modal.classList.add('is-open'); });
     updateGraphStatistics(modal, false);
@@ -1683,7 +1683,7 @@
     if (document.getElementById('graph_button')) return;
     var form = document.createElement('form');
     form.className = 'md-header__option';
-    form.innerHTML = '<button id="graph_button" type="button" class="md-header__button md-icon" aria-label="Open Digital Garden">' + graphLogo() + '</button>';
+    form.innerHTML = '<button id="graph_button" type="button" class="md-header__button md-icon" aria-label="Open Garden Neural Network">' + graphLogo() + '</button>';
     var search = document.querySelector('.md-search');
     if (search && search.parentNode) search.parentNode.insertBefore(form, search);
     form.querySelector('button').addEventListener('click', openGlobal);
